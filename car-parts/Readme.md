@@ -185,11 +185,24 @@ We can change them using a command like this:
 curl -X "POST" "http://localhost:8081/actuator/loggers/web" -H "Content-Type: application/json; charset=utf-8"   -d $'{ "configuredLevel": "TRACE" }'
 ```
 
+We can perform a variety of write operations using actuators:
+
+|Operation|URL|Method|Command|
+|---|---|---|---|
+|Rebuild Integration Graph|http://localhost:8081/actuator/integrationgraph|POST| curl 'http://localhost:8081/actuator/integrationgraph' -i -X POST|
+|Setup Log Levels|http://localhost:8080/actuator/loggers/{path}|POST| see above|
+|Shutdown the application|http://localhost:8080/actuator/shutdown|POST|curl 'http://localhost:8080/actuator/shutdown' -i -X POST
+|Drain and return the application startup steps|http://localhost:8080/actuator/startup|POST|curl 'http://localhost:8080/actuator/startup' -i -X POST
+
+What's important is there there no other method request possibilities such as a PUT request possibility. Even for a change log we still send a POST. I do not know why a POST is warranted for a change log, but as decribed in the documentation, it has to be a POST.
+
 ---
 
 ## Technologies used
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/jetty-50.png "Jetty")](https://www.eclipse.org/jetty/)
+
+---
 
 ## Study steps
 
@@ -221,7 +234,7 @@ curl -X "POST" "http://localhost:8081/actuator/loggers/web" -H "Content-Type: ap
 
 ### Online
 
--   [Spring Boot Actuator Web API Documentation](https://docs.spring.io/spring-boot/docs/2.5.0/actuator-api/htmlsingle/)
+-   [Spring Boot Actuator Web API Documentation](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/)
 -   [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 -   [What’s new in Spring Framework 5](https://developer.ibm.com/languages/java/tutorials/j-whats-new-in-spring-framework-5-theedom)
 -   [Spring Framework Overview](https://docs.spring.io/spring-framework/docs/5.1.18.RELEASE/spring-framework-reference/overview.html)
