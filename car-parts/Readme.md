@@ -171,6 +171,20 @@ If we want to remove the `configuredLevel` value, we can just send an empty JSON
 curl -X "POST" "http://localhost:8081/actuator/loggers/com" -H "Content-Type: application/json; charset=utf-8"   -d $'{ }'
 ```
 
+We can also change the logger groups.   
+By default, Spring offers these pre-configured groups:
+ 
+| Group Name | Package / Class | 
+|---|---|
+|web | org.springframework.core.codec, org.springframework.http, org.springframework.web |
+| sql | org.springframework.jdbc.core, org.hibernate.SQL |
+
+We can change them using a command like this:
+
+```bash
+curl -X "POST" "http://localhost:8081/actuator/loggers/web" -H "Content-Type: application/json; charset=utf-8"   -d $'{ "configuredLevel": "TRACE" }'
+```
+
 ---
 
 ## Technologies used
@@ -207,6 +221,7 @@ curl -X "POST" "http://localhost:8081/actuator/loggers/com" -H "Content-Type: ap
 
 ### Online
 
+-   [Spring Boot Actuator Web API Documentation](https://docs.spring.io/spring-boot/docs/2.5.0/actuator-api/htmlsingle/)
 -   [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 -   [What’s new in Spring Framework 5](https://developer.ibm.com/languages/java/tutorials/j-whats-new-in-spring-framework-5-theedom)
 -   [Spring Framework Overview](https://docs.spring.io/spring-framework/docs/5.1.18.RELEASE/spring-framework-reference/overview.html)
