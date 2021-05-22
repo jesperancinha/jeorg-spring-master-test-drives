@@ -1,6 +1,5 @@
 # car-parts
 
-
 [![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/jesperancinha/jeorg-spring-master-5-test-drives)
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Spring%205%20Test%20Drives&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives)
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/jeorg-spring-master-5-test-drives.svg)](#)
@@ -37,24 +36,26 @@ This is a car-parts application where we are going to make an inventory of items
 In order to get Jetty to run we need to remove Tomcat wich comes along with it:
 
 ```xml
+
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-web</artifactId>
-	<exclusions>
-		<exclusion>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</exclusion>
-	</exclusions>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
 </dependency>
 ```
 
 Then we can add our spring jetty server dependency:
 
 ```xml
+
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-jetty</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jetty</artifactId>
 </dependency>
 ```
 
@@ -63,9 +64,10 @@ Then we can add our spring jetty server dependency:
 First we need to add this dependency:
 
 ```xml
+
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-actuator</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
 ```
 
@@ -148,6 +150,27 @@ We can change this during the server runtime with a request like this:
 curl -X "POST" "http://localhost:8081/actuator/loggers/ROOT" -H "Content-Type: application/json; charset=utf-8"   -d $'{ "configuredLevel": "TRACE" }'
 ```
 
+We can observe that we see two logs configurations per package or class: `configuredLevel` and `effectiveLevel`.
+
+These two variables follow a rule that may feel quite counter-intuitive.   
+This is how it goes:
+
+1. When `configuredLevel` has a value then `effectiveLevel` is always the same.
+2. When `configuredLevel` is null, it means that the log inherits the level from the parent.
+3. The `configuredLevel` of `ROOT` can, of course, never be null.
+
+We can configure both variables this way:
+
+```bash
+curl -X "POST" "http://localhost:8081/actuator/loggers/com" -H "Content-Type: application/json; charset=utf-8"   -d $'{ "effectiveLevel": "TRACE","configuredLevel":"INFO" }'
+```
+
+If we want to remove the `configuredLevel` value, we can just send an empty JSON to the matching endpoint:
+
+```bash
+curl -X "POST" "http://localhost:8081/actuator/loggers/com" -H "Content-Type: application/json; charset=utf-8"   -d $'{ }'
+```
+
 ---
 
 ## Technologies used
@@ -161,16 +184,16 @@ curl -X "POST" "http://localhost:8081/actuator/loggers/ROOT" -H "Content-Type: a
 	1. https://codeahoy.com/java/springboot/tutorial/2019/09/01/spring-boot-replace-tomcat-with-jetty-as-the-embedded-server/
 	
 	2. https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/howto-embedded-servlet-containers.html
-		
-	3. Remove all Tomcat dependencies
-				
-		```xml
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-		```
 	
+	3. Remove all Tomcat dependencies
+	
+				```xml
+				<dependency>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-jasper</artifactId>
+				</dependency>
+				```
+
 ## References
 
 ### Books
