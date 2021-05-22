@@ -25,3 +25,8 @@ hs_err_pid*
 # IntelliJ
 .idea
 *.iml
+
+# Build
+target
+build
+bin
