@@ -78,6 +78,76 @@ And the endpoints available by default are health and info only:
 1. http://localhost:8081/actuator/health
 2. http://localhost:8081/actuator/info
 
+We can also activate all health endpoints and only the health endpoints with:
+
+```properties
+management.endpoints.web.exposure.include=health
+```
+
+This is available with profile `health`.
+
+I made these profiles manually. This means that I intentionally named the profiles available with the name of the actuator we are going to study.
+
+We have a profile called `loggers`, which in this application will allow us to perform some write operations which will allow us to change the log-level of the application.
+
+If we check the loggers endpoint in:
+
+-   http://localhost:8081/actuator/loggers
+
+we'll see a [JSON](./loggers.json) file like this one:
+
+```json
+{
+  "levels": [
+    "OFF",
+    "ERROR",
+    "WARN",
+    "INFO",
+    "DEBUG",
+    "TRACE"
+  ],
+  "loggers": {
+    "ROOT": {
+      "configuredLevel": "INFO",
+      "effectiveLevel": "INFO"
+    },
+    "com": {
+      "configuredLevel": null,
+      "effectiveLevel": "INFO"
+    }
+  },
+  "groups": {
+    "web": {
+      "configuredLevel": null,
+      "members": [
+        "org.springframework.core.codec",
+        "org.springframework.http",
+        "org.springframework.web",
+        "org.springframework.boot.actuate.endpoint.web",
+        "org.springframework.boot.web.servlet.ServletContextInitializerBeans"
+      ]
+    },
+    "sql": {
+      "configuredLevel": null,
+      "members": [
+        "org.springframework.jdbc.core",
+        "org.hibernate.SQL",
+        "org.jooq.tools.LoggerListener"
+      ]
+    }
+  }
+}
+
+```
+
+In this file, we can see the log levels being assigned to packages and classes.
+
+We can change this during the server runtime with a request like this:
+
+```bash
+curl -X "POST" "http://localhost:8081/actuator/loggers/ROOT" -H "Content-Type: application/json; charset=utf-8"   -d $'{ "configuredLevel": "TRACE" }'
+```
+
 ---
 
 ## Technologies used
@@ -101,6 +171,24 @@ And the endpoints available by default are health and info only:
 		</dependency>
 		```
 	
+## References
+
+### Books
+
+-   Cosmina, I. (11th December 2019). <i>Pivotal Certified Professional Core Spring 5 Developer Exam: A Study Guide Using Spring Framework 5</i>. (Second Edition). Apress
+-   Sharma, R. (September 2018). <i>Hands-On Reactive Programming with Reactor</i>. (First Edition). Packt
+-   Cosmina, I. Harrop, R. Schaefer, C. Ho, C. (October 2017). <i>Pro Spring 5 An In-Depth Guide to the Spring Framework and Its Tools</i>. (Fifth Edition). Apress
+-   Winch, R. Mularien, P. (December 2012). <i>Spring Security 3.1</i>. (Second Edition). Packt Publishing
+-   Kurniawan, B. Deck, P. (January 2015). <i>Servlet, JSP & Spring MVC</i>. (First Edition). Brainy Software
+-   Long, J. (2020). <i>Reactive Spring</i>. (First Edition). Josh Long
+
+### Online
+
+-   [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+-   [What’s new in Spring Framework 5](https://developer.ibm.com/languages/java/tutorials/j-whats-new-in-spring-framework-5-theedom)
+-   [Spring Framework Overview](https://docs.spring.io/spring-framework/docs/5.1.18.RELEASE/spring-framework-reference/overview.html)
+-   [Spring Framework Documentation - Current Version](https://docs.spring.io/spring-framework/docs/current/reference/html/index.html)
+
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
