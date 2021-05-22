@@ -30,3 +30,20 @@ hs_err_pid*
 target
 build
 bin
+
+
+# OS
+.DS_Store
+
+# Cookies
+cookies.txt
+
+# Logs
+tmlog.lck
+tmlog*.log
+
+# Coveralls
+.coveralls.yml
+
+# Codecov
+codecov.yml
