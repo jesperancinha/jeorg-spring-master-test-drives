@@ -14,7 +14,16 @@
 	1. https://codeahoy.com/java/springboot/tutorial/2019/09/01/spring-boot-replace-tomcat-with-jetty-as-the-embedded-server/
 	
 	2. https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/howto-embedded-servlet-containers.html
-
+		
+	3. Remove all Tomcat dependencies
+				
+		```xml
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		```
+	
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
