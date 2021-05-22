@@ -56,6 +56,8 @@ Further, we will be looking at what each single parameter of `@Transactional` ac
 Please use this repo for your studies only if you alread have enough baggage from the Spring Framework.
 We will avoid paying attention to basic Spring concepts.
 
+Please have a look at our page where description of in-depth subjects are investigated and resources are provided [Technology](./Technology.md).
+
 João Esperancinha 2021/05/22
 
 ## Build
