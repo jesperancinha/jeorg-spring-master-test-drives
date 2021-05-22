@@ -1,5 +1,20 @@
 # car-parts
 
+## Introduction
+---
+
+## Technologies used
+
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/jetty-50.png "Jetty")](https://www.eclipse.org/jetty/)
+
+## Study steps
+
+1. Changing the embedded server to use Jetty:
+	
+	1. https://codeahoy.com/java/springboot/tutorial/2019/09/01/spring-boot-replace-tomcat-with-jetty-as-the-embedded-server/
+	
+	2. https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/howto-embedded-servlet-containers.html
+
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
