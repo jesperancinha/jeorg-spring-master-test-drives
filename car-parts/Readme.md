@@ -28,6 +28,56 @@
 
 ## Introduction
 
+This is a car-parts application where we are going to make an inventory of items that belong to a car and of course learn Spring with it.
+
+## Application Goals
+
+### Goal 1 - Deployment with embedded Jetty Server
+
+In order to get Jetty to run we need to remove Tomcat wich comes along with it:
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+	<exclusions>
+		<exclusion>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+```
+
+Then we can add our spring jetty server dependency:
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+```
+
+### Goal 2 - Using Actuator
+
+First we need to add this dependency:
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+By default, the actuator is activated and available on this address:
+
+-  http://localhost:8081/actuator
+
+And the endpoints available by default are health and info only:
+
+1. http://localhost:8081/actuator/health
+2. http://localhost:8081/actuator/info
+
 ---
 
 ## Technologies used
