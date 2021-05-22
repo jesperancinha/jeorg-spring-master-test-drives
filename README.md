@@ -10,8 +10,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/wksvhmqaq0sd8505?svg=true)](https://ci.appveyor.com/project/jesperancinha/jeorg-spring-master-5-test-drives)
 [![jeorg-spring-master-5-test-drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml)
 
-TODO: `[![Codacy Badge](https://app.codacy.com/project/badge/Grade/db288a3f092a49fbb60d54ad963a47ed)](https://www.codacy.com/gh/jesperancinha/jeorg-spring-master-5-test-drives/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/jeorg-spring-master-5-test-drives&amp;utm_campaign=Badge_Grade)`
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/db288a3f092a49fbb60d54ad963a47ed)](https://www.codacy.com/gh/jesperancinha/jeorg-spring-master-5-test-drives/dashboard?utm_source=github.com&utm_medium=referral&utm_content=jesperancinha/jeorg-spring-master-5-test-drives&utm_campaign=Badge_Coverage)
 [![codebeat badge](https://codebeat.co/badges/1d960e1b-0c52-4ac0-90eb-d4f06fc97ba0)](https://codebeat.co/projects/github-com-jesperancinha-jeorg-spring-master-5-test-drives-main)
 [![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/jeorg-spring-master-5-test-drives?branch=master)](https://bettercodehub.com/results/jesperancinha/jeorg-spring-master-5-test-drives)
 [![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/jeorg-spring-master-5-test-drives/badge.svg)](https://snyk.io/test/github/jesperancinha/jeorg-spring-master-5-test-drives)
@@ -42,6 +41,21 @@ TODO: `[![Codacy Badge](https://app.codacy.com/project/badge/Grade/db288a3f092a4
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/assertj-50.png "AssertJ")](https://assertj.github.io/doc/)
 
 ---
+
+## Introduction
+
+Welcome [JEOrg Spring Master 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives).   
+In these series we will only have master projects.   
+We won't be looking at the basics so Spring 5. That will still occur in my other repo: [JEOrg Spring 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-5-test-drives).
+
+The setting in this repo is essentially about details.   
+So for example is we are looking at a `@Transactional` annotation, we won't just be looking at what a `@Transactional` does.   
+Further, we will be looking at what each single parameter of `@Transactional` actually does.
+
+Please use this repo for your studies only if you alread have enough baggage from the Spring Framework.
+We will avoid paying attention to basic Spring concepts.
+
+João Esperancinha 2021/05/22
 
 ## Build
 
