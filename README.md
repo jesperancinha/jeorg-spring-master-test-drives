@@ -57,6 +57,8 @@ Please use this repo for your studies only if you already have enough baggage fr
 
 Please have a look at our page where the description of the in-depth subjects investigated and related web resources are provided: [Technology](./Technology.md).
 
+Also, please check our [Reminders](./Reminders.md) page, where short descriptions are presented in a flash card fashion for specific theoretical aspects of the Spring Framework.
+
 João Esperancinha 2021/05/22
 
 ## Build
