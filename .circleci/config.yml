@@ -1,0 +1,62 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: jesperancinha/je-all-build:0.0.1
+
+    working_directory: /home/test/repo
+
+    environment:
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies-
+
+      - run:
+          name: Install Locales
+          command: 'apt-get install -y locales'
+
+      - run:
+          name: Create Group
+          command: 'groupadd postgres'
+
+      - run:
+          name: Create test user
+          command: 'useradd -d /home/test -p $(openssl passwd -crypt test) test'
+
+      - run:
+          name: Add user to postgres
+          command: 'usermod -a -G postgres test'
+
+      - run:
+          name: Add user to root
+          command: 'usermod -a -G postgres root'
+
+      - run:
+          name: Create test folder
+          command: 'mkdir -p /home/test'
+
+      - run:
+          name: Give permissions to test
+          command: 'chown -R test:test /home/test'
+
+      - run:
+          name: Generate Locales
+          command: 'su -c "locale-gen" test'
+
+      - run:
+          name: Build Test and Install
+          command: 'su -c "cd /home/test/repo && mvn clean install" test'
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+
+      - run:
+          name: Integration tests
+          command: 'su -c "cd /home/test/repo && mvn integration-test" test'
