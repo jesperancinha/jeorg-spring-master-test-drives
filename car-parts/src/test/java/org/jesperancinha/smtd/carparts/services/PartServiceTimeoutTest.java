@@ -62,6 +62,7 @@ public class PartServiceTimeoutTest {
     @Test
     public void testCreatePartMixWhenCreatePartMixThenSave2TimesCorrectly() {
         final var engine = Part.builder().name("Engine").build();
+        when(partRepository.save(engine)).thenReturn(engine);
 
         final var partMix = partServiceTimeout.createPartMix(engine);
 
