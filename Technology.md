@@ -12,17 +12,19 @@
 3. https://stackoverflow.com/questions/37217075/spring-nested-transactions
 4. https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth
 
-## Using cassandra with JPA
+## Using cassandra with JPA or anything else
 
 1. https://dzone.com/articles/spring-data-cassandra-using
 2. https://bezkoder.com/spring-boot-cassandra-crud/
 3. https://spring.io/projects/spring-data-cassandra
+4. https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#get-started:first-steps:spring
+5. https://github.com/Impetus/Kundera
+6. https://github.com/nosan/embedded-cassandra
 
 ## Embedded containers
 
 1. https://www.java2novice.com/java_interview_questions/spring-boot-supported-embedded-containers/#:~:text=The%20spring%20boot%20framework%20supports,default)%2C%20Jetty%20and%20Undertow.
 2. https://dzone.com/articles/how-to-package-a-spring-boot-app-as-a-docker-container
-
 
 ## Fat JAR and WAR
 
@@ -98,7 +100,7 @@
 9. https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/
 
 ## Packaging multiple embedded servlet containers
-				
+
 1. https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
 2. https://www.dailyrazor.com/blog/tomcat-vs-jetty/
 3. https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/html/howto-embedded-servlet-containers.html
@@ -117,7 +119,7 @@
 
 ## Injecting @Controller or @RestController
 
-1. 
+1.
 
 ---
 

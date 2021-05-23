@@ -314,6 +314,11 @@ Documentation:
 
 In regard to annotations we need to pay attention to semantics and how annotated components are described. If we look at the documentation, we see that `@Controller` or `@RestController` inherit the `@Component` annotation. They are not referred as to actually being a component. This means that they are not effectively components, although they are treated pretty much as such.
 
+### Goal 7 - Persisting in Cassandra.
+
+The Spring framework does not provide DAO's to access Cassandra in a JPA fashion. Cassandra is a NoSQL database, which follows a very different paradigms.
+Instead, Spring offers [Spring Data For Apache Cassandra](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#preface).
+
 ---
 
 ## Technologies used
