@@ -9,13 +9,13 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class PartControllerIT {
+public class PartControllerIT {
 
     @Autowired
     private TestRestTemplate testRestTemplate;
 
     @Test
-    void testPostNewPartWhenSendingNoTimeoutReturnGoodOk() {
+    public void testPostNewPartWhenSendingNoTimeoutReturnGoodOk() {
         final var engine = Part.builder().name("Engine").build();
 
         final var partResponseEntity =

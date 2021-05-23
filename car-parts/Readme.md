@@ -226,71 +226,71 @@ docker run  docker.io/library/car-parts:1.0.0-SNAPSHOT
 We can also customize our container build by changing the configuration from
 
 ```xml
+
 <plugin>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-maven-plugin</artifactId>
-	<configuration>
-		<image />
-	</configuration>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <image/>
+    </configuration>
 </plugin>
 ```
 
 to
 
 ```xml
+
 <plugin>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-maven-plugin</artifactId>
-  <configuration>
-    <layers>
-      <enabled>true</enabled>
-    </layers>
-    <image>
-      <name>car-parts:${project.version}</name>
-      <env>
-        <BP_JVM_VERSION>14</BP_JVM_VERSION>
-      </env>
-    </image>
-  </configuration>
-  <executions>
-    <execution>
-      <goals>
-        <goal>build-image</goal>
-      </goals>
-    </execution>
-  </executions>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <layers>
+            <enabled>true</enabled>
+        </layers>
+        <image>
+            <name>car-parts:${project.version}</name>
+            <env>
+                <BP_JVM_VERSION>14</BP_JVM_VERSION>
+            </env>
+        </image>
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>build-image</goal>
+            </goals>
+        </execution>
+    </executions>
 </plugin>
 ```
 
 ### Goal 5 - Packaging servlet containers
 
-We can package a servlet container of our choice.
-If we go for an embedded solution, we can choose between Apache Tomcat, Eclipse Jetty or Red Hat Undertow.
+We can package a servlet container of our choice. If we go for an embedded solution, we can choose between Apache Tomcat, Eclipse Jetty or Red Hat Undertow.
 
-In order to continue, let's first of all prevent our image to be created by the default `mvn clean install`.
-We remove the execution goal and define our MainClass:
+In order to continue, let's first of all prevent our image to be created by the default `mvn clean install`. We remove the execution goal and define our MainClass:
 
 ```xml
+
 <plugin>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-maven-plugin</artifactId>
-	<configuration>
-		<layers>
-			<enabled>true</enabled>
-		</layers>
-		<image>
-				<name>car-parts:${project.version}</name>
-				<env>
-					<BP_JVM_VERSION>11</BP_JVM_VERSION>
-				</env>
-		</image>
-		<mainClass>org.jesperancinha.smtd.carparts.CarPartsLauncher</mainClass>
-	</configuration>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <layers>
+            <enabled>true</enabled>
+        </layers>
+        <image>
+            <name>car-parts:${project.version}</name>
+            <env>
+                <BP_JVM_VERSION>11</BP_JVM_VERSION>
+            </env>
+        </image>
+        <mainClass>org.jesperancinha.smtd.carparts.CarPartsLauncher</mainClass>
+    </configuration>
 </plugin>
 ```
 
-What is important to know at this point is that the Spring Boot plugin, needs to be instructed to repackage the resulting war create by maven, in the case we want to use an embedded servlet container.
-In our case we are using Jetty. The repackaging trigger is done by parameter `spring-boot:repackage`. Knowing this, we can creat a one-liner to create our war:
+What is important to know at this point is that the Spring Boot plugin, needs to be instructed to repackage the resulting war create by maven, in the case we want to use an embedded servlet container. In our case we are using Jetty. The repackaging trigger is done by parameter `spring-boot:repackage`. Knowing this, we can creat a one-liner to create our war:
 
 ```bash
 mvn clean install package spring-boot:repackage
@@ -301,6 +301,18 @@ We can start our war with a simple `java -jar` command:
 ```bash
 java -jar target/car-parts-1.0.0-SNAPSHOT.war
 ```
+
+### Goal 6 - Injecting Controllers
+
+Controllers like `@Controller` or `@RestController`, can be injected and that is what we explore on the context unit test in the `CarPartsLauncherTest` class. All controllers can also be regarded as component. They inherit the annotation `@Component`.
+
+Documentation:
+
+1.  [@Controller](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Controller.html)
+2.  [@RestController](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RestController.html)
+3.  [@Component](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Component.html)
+
+In regard to annotations we need to pay attention to semantics and how annotated components are described. If we look at the documentation, we see that `@Controller` or `@RestController` inherit the `@Component` annotation. They are not referred as to actually being a component. This means that they are not effectively components, although they are treated pretty much as such.
 
 ---
 

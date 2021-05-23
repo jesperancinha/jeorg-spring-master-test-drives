@@ -2,9 +2,9 @@ package org.jesperancinha.smtd.carparts.controller;
 
 import org.junit.jupiter.api.Test;
 
-class PartControllerTest {
+public class PartControllerTest {
 
     @Test
-    void postNewPart() {
+    public void postNewPart() {
     }
 }
