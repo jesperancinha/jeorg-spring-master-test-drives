@@ -17,4 +17,4 @@ jobs:
       script:
         - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN} | egrep "Building|Tests|SpringBoot|jesperancinha"
         - bash <(curl -s https://codecov.io/bash)
-        - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Java Kotlin $(find **/jacoco*.xml -printf '-r %p ')
+        - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Java $(find **/jacoco*.xml -printf '-r %p ')
