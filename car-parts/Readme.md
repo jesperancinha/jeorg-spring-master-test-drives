@@ -139,7 +139,6 @@ we'll see a [JSON](./loggers.json) file like this one:
     }
   }
 }
-
 ```
 
 In this file, we can see the log levels being assigned to packages and classes.
@@ -173,7 +172,7 @@ curl -X "POST" "http://localhost:8081/actuator/loggers/com" -H "Content-Type: ap
 
 We can also change the logger groups.   
 By default, Spring offers these pre-configured groups:
- 
+
 | Group Name | Package / Class | 
 |---|---|
 |web | org.springframework.core.codec, org.springframework.http, org.springframework.web |
@@ -196,6 +195,22 @@ We can perform a variety of write operations using actuators:
 
 What's important is there there no other method request possibilities such as a PUT request possibility. Even for a change log we still send a POST. I do not know why a POST is warranted for a change log, but as decribed in the documentation, it has to be a POST.
 
+### Goal 3 - The @Transactional annotation
+
+The `@Transactional` annotation uses AOP proxies in order to create point-cuts for the target methods. Methods are run, this way within a transaction. There are several configurable params for this. They are `transactionManager` which is the `value`, `propagation`, `isolation`, `timeout`, `readOnly`, `rollbackFor`, `noRollbackFor`, `rollbackForClassName`, `noRollbackForClassName`.
+
+In our module, we see that it is difficult to simulate a database timout since we are working with an [H2](https://www.h2database.com/html/main.html) database. However,if we reduce the `timeout` to a minimum of 1 millisecond, then can see this `@Transactional` property in action, allowing us to test a multitude of variants.
+
+In our case, we will test two distinct aspects of `@Transactional`:
+
+1. Timeout configuration in nested transactions. Test methods are `createPart` and `createPartTimeout`
+2. Calling inner methods annotated with the transactional annotation. Test methods are `createPartExtra` and `createPartMix`
+
+If we run the unit tests we see that the Parent `@Transactional` on a class level, does not override the methods annotated with the same annotation. Instead, the opposite is true. The methods annotated with `@Transactional`, do override the `timeout` property. This means that, when we invoke the any method without any annotation, it will inherit the class timeout. In this case, it is 1ms, which, given that it is such a small figure, it will imediatelly timeout.
+
+For point two we see that when we call the inner methods, we are no longer within the CGLIB proxy. Instead, calling the inner metho, will just call the method as if it had no annotation on it. In this case, the proxy isn't called.
+
+
 ---
 
 ## Technologies used
@@ -213,13 +228,13 @@ What's important is there there no other method request possibilities such as a 
 	2. https://docs.spring.io/spring-boot/docs/1.2.2.RELEASE/reference/html/howto-embedded-servlet-containers.html
 	
 	3. Remove all Tomcat dependencies
-	
-				```xml
-				<dependency>
-					<groupId>org.apache.tomcat.embed</groupId>
-					<artifactId>tomcat-embed-jasper</artifactId>
-				</dependency>
-				```
+
+```xml   
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+```
 
 ## References
 
