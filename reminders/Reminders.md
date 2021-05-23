@@ -1,4 +1,4 @@
-# Spring Master 5 Test Drives Reminders
+# Spring Master 5 - Test Drives Reminders
 
 ## 1. Spring Boot Starter Test Dependency
 
@@ -9,7 +9,7 @@
 |Operation|URL|Method|Command|
 |---|---|---|---|
 |Rebuild Integration Graph|http://localhost:8081/actuator/integrationgraph|POST| curl 'http://localhost:8081/actuator/integrationgraph' -i -X POST|
-|Setup Log Levels|http://localhost:8080/actuator/loggers/{path}|POST| see module [car-parts](./car-parts)|
+|Setup Log Levels|http://localhost:8080/actuator/loggers/{path}|POST| see module [car-parts](dev/src/jofisaes/jeorg-spring-master-5-test-drives/car-parts)|
 |Shutdown the application|http://localhost:8080/actuator/shutdown|POST|curl 'http://localhost:8080/actuator/shutdown' -i -X POST
 |Drain and return the application startup steps|http://localhost:8080/actuator/startup|POST|curl 'http://localhost:8080/actuator/startup' -i -X POST
 
@@ -27,4 +27,4 @@
 
 ---
 
-[Back](./README.md)
+[Back](../README.md)  | [Technology](../Technology.md) | [Spring Boot](./SpringBoot.md)
