@@ -264,7 +264,43 @@ to
 
 ### Goal 5 - Packaging servlet containers
 
-...
+We can package a servlet container of our choice.
+If we go for an embedded solution, we can choose between Apache Tomcat, Eclipse Jetty or Red Hat Undertow.
+
+In order to continue, let's first of all prevent our image to be created by the default `mvn clean install`.
+We remove the execution goal and define our MainClass:
+
+```xml
+<plugin>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-maven-plugin</artifactId>
+	<configuration>
+		<layers>
+			<enabled>true</enabled>
+		</layers>
+		<image>
+				<name>car-parts:${project.version}</name>
+				<env>
+					<BP_JVM_VERSION>11</BP_JVM_VERSION>
+				</env>
+		</image>
+		<mainClass>org.jesperancinha.smtd.carparts.CarPartsLauncher</mainClass>
+	</configuration>
+</plugin>
+```
+
+What is important to know at this point is that the Spring Boot plugin, needs to be instructed to repackage the resulting war create by maven, in the case we want to use an embedded servlet container.
+In our case we are using Jetty. The repackaging trigger is done by parameter `spring-boot:repackage`. Knowing this, we can creat a one-liner to create our war:
+
+```bash
+mvn clean install package spring-boot:repackage
+```
+
+We can start our war with a simple `java -jar` command:
+
+```bash
+java -jar target/car-parts-1.0.0-SNAPSHOT.war
+```
 
 ---
 

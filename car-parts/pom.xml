@@ -48,10 +48,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
         </dependency>
@@ -154,14 +150,8 @@
                             <BP_JVM_VERSION>11</BP_JVM_VERSION>
                         </env>
                     </image>
+                    <mainClass>org.jesperancinha.smtd.carparts.CarPartsLauncher</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build-image</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -196,5 +186,5 @@
             </plugin>
         </plugins>
     </build>
-
+    <packaging>war</packaging>
 </project>

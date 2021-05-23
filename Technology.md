@@ -1,37 +1,37 @@
 # Spring Master 5 Test Drives
 
--   Actuator environment change and log level changes
+## Actuator environment change and log level changes
 
 1. https://stackoverflow.com/questions/33844580/how-do-i-change-log-level-in-runtime-without-restarting-spring-boot-application
 2. https://dzone.com/articles/5-ways-to-change-the-log-levels-at-runtime
 
--   The @Transactional annotation
+## The @Transactional annotation
 
 1. https://dzone.com/articles/spring-transaction-management-an-unconventional-gu
 2. https://www.logicbig.com/tutorials/spring-framework/spring-data/transactions.html
 3. https://stackoverflow.com/questions/37217075/spring-nested-transactions
 4. https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth
 
--   Using cassandra with JPA
+## Using cassandra with JPA
 
 1. https://dzone.com/articles/spring-data-cassandra-using
 2. https://bezkoder.com/spring-boot-cassandra-crud/
 3. https://spring.io/projects/spring-data-cassandra
 
--   Embedded containers
+## Embedded containers
 
 1. https://www.java2novice.com/java_interview_questions/spring-boot-supported-embedded-containers/#:~:text=The%20spring%20boot%20framework%20supports,default)%2C%20Jetty%20and%20Undertow.
 2. https://dzone.com/articles/how-to-package-a-spring-boot-app-as-a-docker-container
 
 
--   Fat JAR and WAR
+## Fat JAR and WAR
 
 1. https://stackoverflow.com/questions/45165428/differences-between-jar-and-war-in-spring-boot
 2. https://springhow.com/convert-spring-boot-jar-in-to-war/
 3. https://www.programmersought.com/article/16464558534/
 4. https://www.dist.cloud/blog/comparing-spring-boot-deployment-options/
 
--   ConditionalOnBean vs ConditionalOnClass
+## ConditionalOnBean vs ConditionalOnClass
 
 1. https://docs.spring.io/spring-boot/docs/1.0.0.RELEASE/reference/html/boot-features-developing-auto-configuration.html
 2. https://stackoverflow.com/questions/31799855/spring-annotation-conditionalonbean-not-working
@@ -46,7 +46,7 @@
 3. https://www.onlineinterviewquestions.com/why-in-spring-boot-opinionated-is/
 4. fusion-reactor.com/blog/technical-blogs/what-is-spring-boot/
 
--   Low level paradigms in a developper perspective
+## Low level paradigms in a developper perspective
 
 1. https://www.toptal.com/spring/top-10-most-common-spring-framework-mistakes
 2. https://kodytechnolab.com/why-to-choose-spring-framework
@@ -97,23 +97,25 @@
 8. https://www.profit4cloud.nl/blog/building-containers-with-spring-boot-2-3/
 9. https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/
 
--   Packaging multiple embedded servlet containers
+## Packaging multiple embedded servlet containers
 				
 1. https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
 2. https://www.dailyrazor.com/blog/tomcat-vs-jetty/
 3. https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/html/howto-embedded-servlet-containers.html
 4. https://vaadin.com/docs/v14/guide/production/servlet-containers
 5. https://programmer.ink/think/using-external-servlet-container-in-springboot.html
+6. https://spring.io/blog/2017/03/22/spring-tips-servlet-container-deployment-options
+7. https://docs.spring.io/spring-boot/docs/1.0.x/reference/html/build-tool-plugins-maven-plugin.html
 
-- Using Spring @Transactional vs using Javax @Transactional
-
-1.
-
-- The database that the TestTemplate uses
+## Using Spring @Transactional vs using Javax @Transactional
 
 1.
 
-- Injecting @Controller or @RestController
+## The database that the TestTemplate uses
+
+1.
+
+## Injecting @Controller or @RestController
 
 1. 
 
