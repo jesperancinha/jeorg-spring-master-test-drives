@@ -46,6 +46,12 @@
 3. https://www.onlineinterviewquestions.com/why-in-spring-boot-opinionated-is/
 4. fusion-reactor.com/blog/technical-blogs/what-is-spring-boot/
 
+-   Low level paradigms in a developper perspective
+
+1. https://www.toptal.com/spring/top-10-most-common-spring-framework-mistakes
+2. https://kodytechnolab.com/why-to-choose-spring-framework
+3. https://www.educative.io/blog/40-spring-interview-questions
+
 - Bean Lifecycle Order (constructor, setup, etc...)
 
 1. https://reflectoring.io/spring-bean-lifecycle/
@@ -79,17 +85,37 @@
 3. https://javapapers.com/spring/spring-component-service-repository-controller-difference/
 4. https://www.edureka.co/community/31568/component-controller-repository-service-annotations-framework
 
--  Packing multiple containers in one
+-  Packaging containers in Spring
 
-1.
+1. https://howtodoinjava.com/spring-boot2/war-packaging-example/
+2. https://www.javatpoint.com/spring-boot-packaging
+3. https://www.codejava.net/frameworks/spring-boot/how-to-package-spring-boot-application-to-jar-and-war
+4. http://dolszewski.com/spring/dual-jar-war-build-for-spring-boot/
+5. https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.traditional-deployment
+6. https://spring.io/blog/2018/11/08/spring-boot-in-a-container
+7. https://dzone.com/articles/packaging-springboot-application-with-external-dep
+8. https://www.profit4cloud.nl/blog/building-containers-with-spring-boot-2-3/
+9. https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/
+
+-   Packaging multiple embedded servlet containers
+				
+1. https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
+2. https://www.dailyrazor.com/blog/tomcat-vs-jetty/
+3. https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/html/howto-embedded-servlet-containers.html
+4. https://vaadin.com/docs/v14/guide/production/servlet-containers
+5. https://programmer.ink/think/using-external-servlet-container-in-springboot.html
 
 - Using Spring @Transactional vs using Javax @Transactional
 
 1.
 
-- The database that the TestTemplateUses
+- The database that the TestTemplate uses
 
 1.
+
+- Injecting @Controller or @RestController
+
+1. 
 
 ---
 

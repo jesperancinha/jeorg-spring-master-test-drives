@@ -199,7 +199,7 @@ What's important is there there no other method request possibilities such as a 
 
 The `@Transactional` annotation uses AOP proxies in order to create point-cuts for the target methods. Methods are run, this way within a transaction. There are several configurable params for this. They are `transactionManager` which is the `value`, `propagation`, `isolation`, `timeout`, `readOnly`, `rollbackFor`, `noRollbackFor`, `rollbackForClassName`, `noRollbackForClassName`.
 
-In our module, we see that it is difficult to simulate a database timout since we are working with an [H2](https://www.h2database.com/html/main.html) database. However,if we reduce the `timeout` to a minimum of 1 millisecond, then can see this `@Transactional` property in action, allowing us to test a multitude of variants.
+In our module, we see that it is difficult to simulate a database timeout since we are working with an [H2](https://www.h2database.com/html/main.html) database. However,if we reduce the `timeout` to a minimum of 1 millisecond, then can see this `@Transactional` property in action, allowing us to test a multitude of variants.
 
 In our case, we will test two distinct aspects of `@Transactional`:
 
@@ -208,8 +208,63 @@ In our case, we will test two distinct aspects of `@Transactional`:
 
 If we run the unit tests we see that the Parent `@Transactional` on a class level, does not override the methods annotated with the same annotation. Instead, the opposite is true. The methods annotated with `@Transactional`, do override the `timeout` property. This means that, when we invoke the any method without any annotation, it will inherit the class timeout. In this case, it is 1ms, which, given that it is such a small figure, it will imediatelly timeout.
 
-For point two we see that when we call the inner methods, we are no longer within the CGLIB proxy. Instead, calling the inner metho, will just call the method as if it had no annotation on it. In this case, the proxy isn't called.
+For point two we see that when we call the inner methods, we are no longer within the CGLIB proxy. Instead, calling the inner method, will just call the method as if it had no annotation on it. In this case, the proxy isn't called.
 
+### Goal 4 - Packaging multiple containers
+
+We can package lots of wars and put them through a container, but essentially, one jar can only be served by one container.
+
+This is done by the usage of the [spring maven plugin](https://docs.spring.io/spring-boot/docs/2.5.x/maven-plugin/reference/htmlsingle/). First we better have something like [Docker Desktop](https://www.docker.com/products/docker-desktop).
+
+Here is how can use this plugin:
+
+```bash
+mvn spring-boot:build-image
+docker run  docker.io/library/car-parts:1.0.0-SNAPSHOT
+```
+
+We can also customize our container build by changing the configuration from
+
+```xml
+<plugin>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-maven-plugin</artifactId>
+	<configuration>
+		<image />
+	</configuration>
+</plugin>
+```
+
+to
+
+```xml
+<plugin>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-maven-plugin</artifactId>
+  <configuration>
+    <layers>
+      <enabled>true</enabled>
+    </layers>
+    <image>
+      <name>car-parts:${project.version}</name>
+      <env>
+        <BP_JVM_VERSION>14</BP_JVM_VERSION>
+      </env>
+    </image>
+  </configuration>
+  <executions>
+    <execution>
+      <goals>
+        <goal>build-image</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+### Goal 5 - Packaging servlet containers
+
+...
 
 ---
 
