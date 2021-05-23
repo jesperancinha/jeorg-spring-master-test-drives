@@ -39,7 +39,7 @@
 4. https://reflectoring.io/spring-boot-conditionals/
 5. https://www.slideshare.net/Pivotal/its-a-kind-of-magic-under-the-covers-of-spring-boot
 
--  Opinionated Spring Boot
+## Opinionated Spring Boot
 
 1. https://stackoverflow.com/questions/47018071/what-is-meant-by-spring-boot-follows-opinionated-defaults-configuration-approa/47018551
 2. https://dzone.com/articles/perils-of-opinionated-frameworks-like-spring-boot
@@ -52,40 +52,40 @@
 2. https://kodytechnolab.com/why-to-choose-spring-framework
 3. https://www.educative.io/blog/40-spring-interview-questions
 
-- Bean Lifecycle Order (constructor, setup, etc...)
+## Bean Lifecycle Order (constructor, setup, etc...)
 
 1. https://reflectoring.io/spring-bean-lifecycle/
 
--  Health indicators
+## Health indicators
 
 1. https://reflectoring.io/spring-boot-health-check/
 
--  TestRestTemplate
+## TestRestTemplate
 
 1. https://stackoverflow.com/questions/25901985/difference-between-mockmvc-and-resttemplate-in-integration-tests
 2. https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/TestRestTemplate.html
 3. https://howtodoinjava.com/spring-boot2/testing/testresttemplate-post-example/
 
--  Secure Actuators
+## Secure Actuators
 
 1. https://stackoverflow.com/questions/56117631/how-to-secure-actuator-endpoints-with-role-in-spring-boot-2
 2. https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/
 3. https://stackabuse.com/monitoring-with-spring-boot-actuator/
 4. https://howtodoinjava.com/spring-boot/actuator-endpoints-example/
 
--  Spring MVC / REST and JAX-RS
+## Spring MVC / REST and JAX-RS
 
 1. https://stackoverflow.com/questions/42944777/difference-between-jax-rs-and-spring-rest
 2. https://www.infoq.com/articles/springmvc_jsx-rs/
 
--  @Component vs @Controller
+## @Component vs @Controller
 
 1. https://javarevisited.blogspot.com/2017/11/%C2%A7-between-component-service.html#:~:text=%40Component%20is%20a%20generic%20stereotype,layer%20(spring-MVC).
 2. https://stackoverflow.com/questions/20959969/inject-controller-into-another-spring-bean
 3. https://javapapers.com/spring/spring-component-service-repository-controller-difference/
 4. https://www.edureka.co/community/31568/component-controller-repository-service-annotations-framework
 
--  Packaging containers in Spring
+## Packaging containers in Spring
 
 1. https://howtodoinjava.com/spring-boot2/war-packaging-example/
 2. https://www.javatpoint.com/spring-boot-packaging
