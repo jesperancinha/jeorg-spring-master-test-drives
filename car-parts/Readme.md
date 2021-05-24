@@ -349,7 +349,9 @@ The following are dependencies that are mandatory in order for spring to work. W
 </dependency>
 ```
 
+### Goal 8 - Securing Actuator Endpoints
 
+...
 
 ---
 

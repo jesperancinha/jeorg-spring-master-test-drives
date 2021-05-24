@@ -74,6 +74,8 @@
 2. https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/
 3. https://stackabuse.com/monitoring-with-spring-boot-actuator/
 4. https://howtodoinjava.com/spring-boot/actuator-endpoints-example/
+5. https://www.devglan.com/spring-security/securing-spring-boot-actuator-endpoints-with-spring-security
+6. https://www.devglan.com/spring-boot/spring-boot-actuator-tutorial-guide
 
 ## Spring MVC / REST and JAX-RS
 
