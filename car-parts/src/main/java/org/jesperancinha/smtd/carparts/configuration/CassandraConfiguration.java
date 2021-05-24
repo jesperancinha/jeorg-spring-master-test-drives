@@ -12,7 +12,7 @@ import java.util.List;
 
 @Configuration
 @EnableCassandraRepositories
-@Profile("test")
+@Profile({"test", "prod"})
 public class CassandraConfiguration extends AbstractCassandraConfiguration {
 
     @Override

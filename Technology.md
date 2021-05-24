@@ -33,7 +33,7 @@
 3. https://www.programmersought.com/article/16464558534/
 4. https://www.dist.cloud/blog/comparing-spring-boot-deployment-options/
 
-## ConditionalOnBean vs ConditionalOnClass
+## ConditionalOnBean vs ConditionalOnClass for classes and methods at the same time and not
 
 1. https://docs.spring.io/spring-boot/docs/1.0.0.RELEASE/reference/html/boot-features-developing-auto-configuration.html
 2. https://stackoverflow.com/questions/31799855/spring-annotation-conditionalonbean-not-working
@@ -120,6 +120,11 @@
 1.
 
 ## Injecting @Controller or @RestController
+
+1.
+
+
+## Configuring Security from Specific to General and from General to Specific
 
 1.
 

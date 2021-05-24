@@ -6,20 +6,26 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@Profile("!prod && !prod1 && !prod2")
-public class PartWebSecurity extends WebSecurityConfigurerAdapter {
+@Profile("prod2")
+public class PartWebSecurityProd2 extends WebSecurityConfigurerAdapter {
 
     /**
      * Creates the security configuration.
+     * In this case we configure our actuator to be protected in the prod profile
      *
      * @param http HttpSecurity configuration {@link HttpSecurity}
      * @throws Exception {@link Exception} If anything goes wrong while configuring security
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .authorizeRequests()
+                .antMatchers("/actuator**")
+                .authenticated()
                 .antMatchers("/**")
                 .permitAll()
+                .and()
+                .formLogin()
                 .and()
                 .csrf().disable();
     }

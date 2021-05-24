@@ -336,7 +336,7 @@ In order to start with cassandra, we need the following dependencies:
 </dependency>
 ```
 
-The following are dependencies that are mandatory in order for spring to work. We can think of this in an analogous way as we do with JPA and the PostgreSQL, H2, MySQL dependencies and so forth. We need the correct drivers for  this to work and in our case  we are using the DataStax driver for Cassandra.
+The following are dependencies that are mandatory in order for spring to work. We can think of this in an analogous way as we do with JPA and the PostgreSQL, H2, MySQL dependencies and so forth. We need the correct drivers for this to work and in our case we are using the DataStax driver for Cassandra.
 
 ```xml   
 <dependency>
@@ -351,7 +351,53 @@ The following are dependencies that are mandatory in order for spring to work. W
 
 ### Goal 8 - Securing Actuator Endpoints
 
-...
+In current spring boot versions, there is no separate security configuration for the actuators. Instead, we can configure this using the [WebSecurityConfigurerAdapter](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html). Overriding the [configure](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)) method, we can configure our [HttpSecurity](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/config/annotation/web/builders/HttpSecurity.html) object in order to secure only the `actuator` endpoints, just like we normally would with any other endpoint.
+
+Probably the most basic way to secure an actuator endpoint is by configuring our application properties this way:
+
+```properties
+management.endpoints.web.exposure.include=*
+spring.autoconfigure.exclude=
+spring.security.user.name=admin
+spring.security.user.password=admin
+```
+
+This way, all available actuator endpoints get to be available.	We will be using BASIC authentication given that it is the most basic form, and we want to simplify our illustrations.
+
+Further we need to make some changes in the code:
+
+```java   
+  http
+        .authorizeRequests()
+        .antMatchers("/actuator**")
+        .authenticated()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/**")
+        .permitAll()
+        .and()
+        .formLogin()
+        .and()
+        .csrf().disable();
+```
+
+This is just one of the most expressive ways to declare security constraints in Spring. One of the ways to read this is that, everytime we try to access a page, this chain will be triggered and only when a negative condition is found, will we get an unauthorized or unauthenticated message. On the other hand, the first positive constraint found will allow us to access the page.	This is the reason why we find in many blog posts that it is better to start from the most restrictive constraint, to the more generic one.	If we start restrictive, this means that we will get our application more protected. Remember that the chain follows this order for all the matches found. In our case both `/actuator**` and `/**` match. If we have not logged in yet, then the first match is analysed first. In our specific case, the `/actuator` is analysed first. The authentication fails and we get redirected to the login page.
+
+---
+
+## Profiles available
+
+|Profile|Goal|Security|Actuator|
+|---|---|---|---|
+|Default|Root configuration that configures H2 in memory database and excludes Cassandra|❌|Default: info & health|
+|env|Enables the actuator env endpoint only|❌|env|
+|health|Enables the actuator health endpoint only|❌|health|
+|integrationgraph|Enables the actuator integrationgraph endpoint only|❌|integrationgraph|
+|loggers|Enables the actuator loggers endpoint only|❌|loggers|
+|prod|Implements BASIC authentication with username/password combination of admin/admin and provides a protected actuator. Cassandra is activated. All actuator endpoints are available|✅|All|
+|prod1|Implements BASIC authentication with username/password combination of admin/admin and provides a misconfiguration in protecting protected actuator. Cassandra is activated. All actuator endpoints are available|❌|All|
+|prod2|Implements BASIC authentication with username/password combination of admin/admin and provides a protected actuator using a shorter configuration. Cassandra is activated. All actuator endpoints are available|✅|All|
+|test|Authentication is not activated and there is no security. All actuator endpoints are available|✅|All|
 
 ---
 
