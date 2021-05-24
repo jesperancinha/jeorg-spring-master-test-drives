@@ -472,6 +472,15 @@ This means that an authenticated and authorized user will be able to see somethi
 }
 ```
 
+### Goal 12 - Spring MVC / Spring REST / JAX-RS / JERSEY
+
+1. JAX-RS is a specification of RESTful web services
+2. JERSEY is an implementation of JAX-RS
+3. Spring REST specifies RESTful web services in an alternative way
+4. Spring MVC provides annotations to implement REST services and the MVC pattern
+
+Essentially, the point is that JAX-RS is specifically made to be used with JEE. Spring, on the other hand, offers an alternative solution to this. Using, for example, Jersey and JAX-RS in the same package with Spring MVC works. However, this is an unnecessary usage of resources.
+
 ---
 
 ## Profiles available

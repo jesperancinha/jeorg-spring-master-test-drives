@@ -24,6 +24,12 @@
 |web | org.springframework.core.codec, org.springframework.http, org.springframework.web |
 |sql | org.springframework.jdbc.core, org.hibernate.SQL |
 
+## 5. Spring MVC / Spring REST / JAX-RS / JERSEY
+
+1. JAX-RS is a specification of RESTful web services
+2. JERSEY is an implementation of JAX-RS
+3. Spring REST specifies RESTful web services in an alternative way
+4. Spring MVC provides annotations to implement REST services and the MVC pattern
 
 ---
 
