@@ -81,6 +81,8 @@
 
 1. https://stackoverflow.com/questions/42944777/difference-between-jax-rs-and-spring-rest
 2. https://www.infoq.com/articles/springmvc_jsx-rs/
+3. https://learnjava.co.in/jax-rs-vs-spring-rest/
+4. https://www.benchresources.net/resteasy-jax-rs-web-service-integrating-with-spring-mvc-web-framework/
 
 ## @Component vs @Controller
 

@@ -390,13 +390,87 @@ In regard to these two conditions about Bean generation, what we need to underst
 [ConditionalOnClass](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnClass.html) is a condition about the existence of a class in the classpath.
 [ConditionalOnBean](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnBean.html) is a condition about the existence of a bean in the application context.
 
-The parameter `name`, has of course different meanings for the different configurations. This is the reason why `type` has been created in the `ConditionalOnBean` annotation. This way we can use `name`, which semantically means the name of the bean which makes more sense.	For `ConditionalOnClass`, `name`, has of course no purposes in naming a bean, and if we talk about the name of a class, it does not make sense to do this in other form than the canonical form.
+The parameter `name`, has of course different meanings for the different configurations. This is the reason why `type` has been created in the `ConditionalOnBean` annotation. This way we can use `name`, which semantically means the name of the bean which makes more sense. For `ConditionalOnClass`, `name`, has of course no purposes in naming a bean, and if we talk about the name of a class, it does not make sense to do this in other form than the canonical form.
 
 ### Goal 10 - TestRestTemplate
 
-The [TestRestTemplate](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/TestRestTemplate.html), is created within a Spring Boot context.	It wraps the production graded [RestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html) and uses its own RootUriTemplateHandler. This handler is the LocalHostUriTemplateHandler. It is here that the TestRestTemplate creates the URL. It uses an algorithm that detects if the URL that is used as input parameter is an absolute URL or a reference path to the root.	The [LocalHostUriTemplateHandler](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/LocalHostUriTemplateHandler.html) creates the absolute URL by checking properties `local.server.port` and `server.servlet.context-path`. The result is a hardcoded concatenation between the current scheme (http/https) plus `://localhost`, plus the port, plus the context path and finally the relative path that used as parameter.
+The [TestRestTemplate](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/TestRestTemplate.html), is created within a Spring Boot context. It wraps the production graded [RestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html) and uses its own RootUriTemplateHandler. This handler is the LocalHostUriTemplateHandler. It is here that the TestRestTemplate creates the URL. It uses an algorithm that detects if the URL that is used as input parameter is an absolute URL or a reference path to the root. The [LocalHostUriTemplateHandler](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/LocalHostUriTemplateHandler.html) creates the absolute URL by checking properties `local.server.port` and `server.servlet.context-path`. The result is a hardcoded concatenation between the current scheme (http/https) plus `://localhost`, plus the port, plus
+the context path and finally the relative path that used as parameter.
 
 We can saw that the TestRestTemplate is perfectly aware of the port and the servlet context path being used. There is no need to specify them during an integration test. The possibility to use external URL's is still there in case urls external to the application context need to be accessed.
+
+### Goal 11 - HealthIndicator
+
+In order to implement a [HealthIndicator](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/actuate/health/HealthIndicator.html), we need to consider how to implement, if we want it secure and if and how do we want to present the detail.	We have this example with profile `prod`:
+
+```properties   
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=when_authorized
+spring.autoconfigure.exclude=
+spring.security.user.name=admin
+spring.security.user.password=admin
+```
+
+The `when_authorided` value, will only allow the disclosure of the health indicator details if the user is authenticated and authorized.	In our example, user `admin` is authorized to access all details.
+
+Finally we can implement one Health endpoint:
+
+```java
+
+@Component
+public class PartHealthIndicator implements HealthIndicator {
+    private static final String[] CAR_PARTS = new String[]{"Engine", "Transmission", "Gear", "Wheel"};
+    private static final Status[] STATUSES = new Status[]{Status.DOWN, Status.UNKNOWN, Status.UP, Status.OUT_OF_SERVICE};
+
+    @Override
+    public Health health() {
+        int iState = (int) (STATUSES.length * Math.random());
+        int iLyrics = (int) (CAR_PARTS.length * Math.random());
+        return Health.status(STATUSES[iState]).withDetail("parts", CAR_PARTS[iLyrics]).build();
+    }
+}
+```
+
+This means that an authenticated and authorized user will be able to see something like this using the actuator health endpoint:
+
+```json
+{
+  "status": "UP",
+  "components": {
+    "cassandra": {
+      "status": "UP",
+      "details": {
+        "version": "3.11.10"
+      }
+    },
+    "db": {
+      "status": "UP",
+      "details": {
+        "database": "H2",
+        "result": 1,
+        "validationQuery": "SELECT 1"
+      }
+    },
+    "diskSpace": {
+      "status": "UP",
+      "details": {
+        "total": 250685575168,
+        "free": 9385320448,
+        "threshold": 10485760
+      }
+    },
+    "part": {
+      "status": "UP",
+      "details": {
+        "parts": "Transmission"
+      }
+    },
+    "ping": {
+      "status": "UP"
+    }
+  }
+}
+```
 
 ---
 
