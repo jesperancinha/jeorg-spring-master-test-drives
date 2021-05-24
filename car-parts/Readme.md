@@ -362,7 +362,7 @@ spring.security.user.name=admin
 spring.security.user.password=admin
 ```
 
-This way, all available actuator endpoints get to be available.	We will be using BASIC authentication given that it is the most basic form, and we want to simplify our illustrations.
+This way, all available actuator endpoints get to be available. We will be using BASIC authentication given that it is the most basic form, and we want to simplify our illustrations.
 
 Further we need to make some changes in the code:
 
@@ -381,7 +381,7 @@ Further we need to make some changes in the code:
         .csrf().disable();
 ```
 
-This is just one of the most expressive ways to declare security constraints in Spring. One of the ways to read this is that, everytime we try to access a page, this chain will be triggered and only when a negative condition is found, will we get an unauthorized or unauthenticated message. On the other hand, the first positive constraint found will allow us to access the page.	This is the reason why we find in many blog posts that it is better to start from the most restrictive constraint, to the more generic one.	If we start restrictive, this means that we will get our application more protected. Remember that the chain follows this order for all the matches found. In our case both `/actuator**` and `/**` match. If we have not logged in yet, then the first match is analysed first. In our specific case, the `/actuator` is analysed first. The authentication fails and we get redirected to the login page.
+This is just one of the most expressive ways to declare security constraints in Spring. One of the ways to read this is that, everytime we try to access a page, this chain will be triggered and only when a negative condition is found, will we get an unauthorized or unauthenticated message. On the other hand, the first positive constraint found will allow us to access the page. This is the reason why we find in many blog posts that it is better to start from the most restrictive constraint, to the more generic one. If we start restrictive, this means that we will get our application more protected. Remember that the chain follows this order for all the matches found. In our case both `/actuator**` and `/**` match. If we have not logged in yet, then the first match is analysed first. In our specific case, the `/actuator` is analysed first. The authentication fails and we get redirected to the login page.
 
 ### Goal 9 - ConditionalOnBean vs ConditionalOnClass
 
@@ -390,8 +390,13 @@ In regard to these two conditions about Bean generation, what we need to underst
 [ConditionalOnClass](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnClass.html) is a condition about the existence of a class in the classpath.
 [ConditionalOnBean](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnBean.html) is a condition about the existence of a bean in the application context.
 
-The parameter `name`, has of course different meanings for the different configurations. This is the reason why `type` has been created in the `ConditionalOnBean` annotation. This way we can use `name`, which semantically means the name of the bean which makes more sense.
-For `ConditionalOnClass`, `name`, has of course no purposes in naming a bean, and if we talk about the name of a class, it does not make sense to do this in other form than the canonical form.
+The parameter `name`, has of course different meanings for the different configurations. This is the reason why `type` has been created in the `ConditionalOnBean` annotation. This way we can use `name`, which semantically means the name of the bean which makes more sense.	For `ConditionalOnClass`, `name`, has of course no purposes in naming a bean, and if we talk about the name of a class, it does not make sense to do this in other form than the canonical form.
+
+### Goal 10 - TestRestTemplate
+
+The [TestRestTemplate](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/TestRestTemplate.html), is created within a Spring Boot context.	It wraps the production graded [RestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html) and uses its own RootUriTemplateHandler. This handler is the LocalHostUriTemplateHandler. It is here that the TestRestTemplate creates the URL. It uses an algorithm that detects if the URL that is used as input parameter is an absolute URL or a reference path to the root.	The [LocalHostUriTemplateHandler](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/client/LocalHostUriTemplateHandler.html) creates the absolute URL by checking properties `local.server.port` and `server.servlet.context-path`. The result is a hardcoded concatenation between the current scheme (http/https) plus `://localhost`, plus the port, plus the context path and finally the relative path that used as parameter.
+
+We can saw that the TestRestTemplate is perfectly aware of the port and the servlet context path being used. There is no need to specify them during an integration test. The possibility to use external URL's is still there in case urls external to the application context need to be accessed.
 
 ---
 
