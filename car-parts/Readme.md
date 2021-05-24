@@ -393,6 +393,7 @@ The following are dependencies that are mandatory in order for spring to work. W
 
 ### Online
 
+-   [Spring Data Cassandra](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#preface)
 -   [Spring Boot Actuator Web API Documentation](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/)
 -   [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 -   [What’s new in Spring Framework 5](https://developer.ibm.com/languages/java/tutorials/j-whats-new-in-spring-framework-5-theedom)
