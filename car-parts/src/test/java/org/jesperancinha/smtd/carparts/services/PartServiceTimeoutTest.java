@@ -1,6 +1,6 @@
 package org.jesperancinha.smtd.carparts.services;
 
-import org.jesperancinha.smtd.carparts.model.Part;
+import org.jesperancinha.smtd.carparts.model.jpa.Part;
 import org.jesperancinha.smtd.carparts.repos.PartRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

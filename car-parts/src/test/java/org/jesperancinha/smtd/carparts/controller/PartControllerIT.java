@@ -1,6 +1,6 @@
 package org.jesperancinha.smtd.carparts.controller;
 
-import org.jesperancinha.smtd.carparts.model.Part;
+import org.jesperancinha.smtd.carparts.model.jpa.Part;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

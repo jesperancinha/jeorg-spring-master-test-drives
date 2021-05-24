@@ -316,14 +316,50 @@ In regard to annotations we need to pay attention to semantics and how annotated
 
 ### Goal 7 - Persisting in Cassandra.
 
-The Spring framework does not provide DAO's to access Cassandra in a JPA fashion. Cassandra is a NoSQL database, which follows a very different paradigms.
-Instead, Spring offers [Spring Data For Apache Cassandra](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#preface).
+The Spring framework does not provide DAO's to access Cassandra in a JPA fashion. Cassandra is a NoSQL database, which follows a very different paradigms. Instead, Spring offers [Spring Data For Apache Cassandra](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#preface).
+
+For this project, we could add an embedded Cassandra. We could use this one: [Embedded Cassandra](https://nosan.github.io/embedded-cassandra/2.0.4/), but we are using JDK 11, which means that this one won't work for now.   
+Since I could not find any suitable candidate, I resorted to using docker for testing:
+
+We download and run a cassandra docker image:
+
+```bash
+docker run -p 9042:9042 cassandra
+```
+
+In order to start with cassandra, we need the following dependencies:
+
+```xml   
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
+
+The following are dependencies that are mandatory in order for spring to work. We can think of this in an analogous way as we do with JPA and the PostgreSQL, H2, MySQL dependencies and so forth. We need the correct drivers for  this to work and in our case  we are using the DataStax driver for Cassandra.
+
+```xml   
+<dependency>
+	<groupId>com.datastax.oss</groupId>
+	<artifactId>java-driver-core</artifactId>
+</dependency>
+<dependency>
+	<groupId>com.codahale.metrics</groupId>
+	<artifactId>metrics-core</artifactId>
+</dependency>
+```
+
+
 
 ---
 
 ## Technologies used
 
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/lombok-50.png "Lombok")](https://projectlombok.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/jetty-50.png "Jetty")](https://www.eclipse.org/jetty/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-50.png "Docker")](https://www.docker.com/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-compose-50.png "Docker Compose")](https://docs.docker.com/compose/)
 
 ---
 

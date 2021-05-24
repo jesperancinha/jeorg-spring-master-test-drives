@@ -1,4 +1,4 @@
-package org.jesperancinha.smtd.carparts.model;
+package org.jesperancinha.smtd.carparts.model.jpa;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

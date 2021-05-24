@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-parent</artifactId>
-        <version>2.2.0.RELEASE</version>
+        <version>2.2.4.RELEASE</version>
     </parent>
 
 
@@ -102,6 +102,10 @@
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <kotlinx-serialization-json.version>1.2.0</kotlinx-serialization-json.version>
+        <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
+        <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
+        <java-driver-core.version>4.11.1</java-driver-core.version>
+        <metrics-core.version>3.0.2</metrics-core.version>
     </properties>
 
     <build>
@@ -438,7 +442,32 @@
                 <artifactId>kotlinx-serialization-json</artifactId>
                 <version>${kotlinx-serialization-json.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.cassandraunit</groupId>
+                <artifactId>cassandra-unit</artifactId>
+                <version>${cassandra-unit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.cassandraunit</groupId>
+                <artifactId>cassandra-unit-spring</artifactId>
+                <version>${cassandra-unit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.nosan</groupId>
+                <artifactId>embedded-cassandra</artifactId>
+                <version>${embedded-cassandra.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.datastax.oss</groupId>
+                <artifactId>java-driver-core</artifactId>
+                <version>${java-driver-core.version}</version>
+            </dependency>
+            <!-- This is needed in order for the Cassandra drive to run-->
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-core</artifactId>
+                <version>${metrics-core.version}</version>
+            </dependency>
 
             <!-- Test dependencies -->
             <dependency>
@@ -516,7 +545,13 @@
                 <artifactId>cucumber-spring</artifactId>
                 <version>${cucumber.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.nosan</groupId>
+                <artifactId>embedded-cassandra-test</artifactId>
+                <version>${embedded-cassandra.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
 </project>
