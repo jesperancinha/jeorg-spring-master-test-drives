@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(timeout = 1)
 public class PartServiceTimeout {
 
-    private final PartRepository partRepository;
+    private PartRepository partRepository;
 
     public PartServiceTimeout(PartRepository partRepository) {
         this.partRepository = partRepository;
