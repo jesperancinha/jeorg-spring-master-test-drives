@@ -15,6 +15,6 @@ jobs:
       install:
         - mvn dependency:resolve | egrep "Building|Tests|SpringBoot|jesperancinha"
       script:
-        - mvn clean install package spring-boot:repackage coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN} | egrep "Building|Tests|SpringBoot|jesperancinha"
+        - mvn clean install package coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
         - bash <(curl -s https://codecov.io/bash)
         - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Java Kotlin $(find **/jacoco*.xml -printf '-r %p ')
