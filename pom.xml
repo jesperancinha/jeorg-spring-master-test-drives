@@ -10,7 +10,6 @@
         <version>2.2.4.RELEASE</version>
     </parent>
 
-
     <groupId>org.jesperancinha.smtd</groupId>
     <artifactId>jeorg-spring-master-5-test-drives</artifactId>
     <packaging>pom</packaging>
@@ -83,7 +82,6 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-io.version>2.8.0</commons-io.version>
         <cucumber.version>6.10.2</cucumber.version>
-        <spring-boot-maven-plugin.version>2.4.4</spring-boot-maven-plugin.version>
         <log4j.version>2.14.0</log4j.version>
         <mariadb-java-client.version>1.5.7</mariadb-java-client.version>
         <embedded-mariadb.version>2.0.6</embedded-mariadb.version>
@@ -95,9 +93,6 @@
         <cglib.version>2.2.2</cglib.version>
         <jstl.version>1.2</jstl.version>
         <commons-logging.version>1.1.1</commons-logging.version>
-        <spring-security-oauth2-client.version>5.4.5</spring-security-oauth2-client.version>
-        <spring-security-oauth2.version>2.5.0.RELEASE</spring-security-oauth2.version>
-        <spring-hateoas.version>1.2.4</spring-hateoas.version>
         <groovy.version>3.0.7</groovy.version>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
@@ -112,11 +107,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot-maven-plugin.version}</version>
-                </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -209,29 +199,6 @@
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-spring</artifactId>
                 <version>${camel.version}</version>
-            </dependency>
-
-            <!-- Spring -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>jeorg-spring-data-commons</artifactId>
-                <version>${spring-data.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>${spring-data.version}</version>
             </dependency>
 
             <!-- Hibernate -->
@@ -419,21 +386,6 @@
                 <version>${commons-logging.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-oauth2-client</artifactId>
-                <version>${spring-security-oauth2-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security.oauth</groupId>
-                <artifactId>spring-security-oauth2</artifactId>
-                <version>${spring-security-oauth2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.hateoas</groupId>
-                <artifactId>spring-hateoas</artifactId>
-                <version>${spring-hateoas.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy</artifactId>
                 <version>${groovy.version}</version>
@@ -483,12 +435,7 @@
                 <version>${assertj-core.version}</version>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>jeorg-spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
+
             <!-- Mockito -->
             <!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
             <dependency>
