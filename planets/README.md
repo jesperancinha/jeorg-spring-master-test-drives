@@ -43,6 +43,30 @@ We can have different servlet containers package into on single [Spring Boot War
 
 ## 10 - Spring Boot Auto-Configuration
 
+We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file.
+In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
+
+```text   
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target [Bindable@e8e0dec type = org.jesperancinha.smtd.planets.configuration.PlanetConfiguration$$EnhancerBySpringCGLIB$$4463d7b5, value = 'provided', annotations = array<Annotation>[@org.springframework.boot.context.properties.ConfigurationProperties(ignoreInvalidFields=false, ignoreUnknownFields=false, prefix=smtd.earth, value=smtd.earth)]] failed:
+
+    Property: smtd.earth.habitable
+    Value: true
+    Origin: class path resource [application.properties]:5:22
+    Reason: The elements [smtd.earth.habitable] were left unbound.
+
+Action:
+
+Update your application's configuration
+```
+
+Finally we can see
+
 ## 11 - Spring Boot Actuator
 
 ## 12 - Spring Boot Testing
