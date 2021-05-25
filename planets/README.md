@@ -65,7 +65,27 @@ Action:
 Update your application's configuration
 ```
 
-Finally we can see
+Finally, we can see that an invalid field, is a value in the properties value that cannot be converted. It is therefore an invalid value. This is our volume field example:
+
+```text   
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'smtd.earth.volume' to java.lang.Long:
+
+    Property: smtd.earth.volume
+    Value: volume
+    Origin: class path resource [application.properties]:5:19
+    Reason: failed to convert java.lang.String to java.lang.Long
+
+Action:
+
+Update your application's configuration
+```
+
 
 ## 11 - Spring Boot Actuator
 

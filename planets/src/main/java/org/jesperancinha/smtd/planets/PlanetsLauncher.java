@@ -36,6 +36,9 @@ public class PlanetsLauncher implements ApplicationRunner {
                 .newLine()
                 .orange("And a volume of").blue(planetConfiguration.getVolume()).orange("km3")
                 .newLine()
+                .orange("We don't know if it is habitable(this is our unknown field")
+                .newLine()
+                .orange("We don't know the volume(this is our invalid field. it was given with the value volume")
                 .reset();
     }
 }
