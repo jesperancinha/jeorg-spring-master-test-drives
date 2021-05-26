@@ -105,6 +105,8 @@
         <java-driver-core.version>4.11.1</java-driver-core.version>
         <metrics-core.version>3.0.2</metrics-core.version>
         <javax.inject.version>1</javax.inject.version>
+        <hsqldb.version>2.6.0</hsqldb.version>
+        <derby.version>10.11.1.1</derby.version>
     </properties>
 
     <build>
@@ -175,6 +177,16 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>${h2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derby</artifactId>
+                <version>${derby.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

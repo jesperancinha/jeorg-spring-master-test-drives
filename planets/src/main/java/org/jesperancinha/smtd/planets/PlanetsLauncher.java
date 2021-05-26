@@ -2,7 +2,7 @@ package org.jesperancinha.smtd.planets;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.jesperancinha.smtd.planets.configuration.PlanetConfiguration;
-import org.jesperancinha.smtd.planets.model.Planet;
+import org.jesperancinha.smtd.planets.dto.Planet;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,6 +1,6 @@
 package org.jesperancinha.smtd.planets.components;
 
-import org.jesperancinha.smtd.planets.model.Planet;
+import org.jesperancinha.smtd.planets.dto.Planet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -28,13 +28,50 @@ We can have different servlet containers package into on single [Spring Boot War
 </dependency>
 ```
 
-We can use paramter injection in the constructors, method injection for the methods and we can also inject instances.	We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330.	We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
+We can use paramter injection in the constructors, method injection for the methods and we can also inject instances. We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330. We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
 
 ## 2 - AOP
 
 ## 3 - Transactions
 
 ## 4 - JPA
+
+1. https://reflectoring.io/spring-boot-data-jpa-test/
+2. https://zetcode.com/springboot/datajpatest/
+3. https://www.arhohuttunen.com/spring-boot-datajpatest/
+4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
+5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
+6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
+
+The `@DataJpaTest` annotation allows us to specify that we want to use an embedded database for our tests. We can specify the embedded database we want to use with the `@AutoConfigureTestDatabase` annotation. This is one example:
+
+```java   
+@DataJpaTest
+@MockBean(Planet.class)
+@AutoConfigureTestDatabase(replace= AUTO_CONFIGURED, connection = HSQL)
+public class PlanetRepositoryHSQLTest {
+```
+
+If we don't specify the database we want to use, Spring will iterate through the supported databases until it finds an available and suitable driver. If we look inside [EmbeddedDatabaseConnection](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/jdbc/EmbeddedDatabaseConnection.html), we find 4 possible values in this order: `NONE`, `H2`, `DERBY` and `HSQL`.
+In the code we find this:
+
+```java   
+public static EmbeddedDatabaseConnection get(ClassLoader classLoader) {
+	EmbeddedDatabaseConnection[] var1 = values();
+	int var2 = var1.length;
+
+	for(int var3 = 0; var3 < var2; ++var3) {
+					EmbeddedDatabaseConnection candidate = var1[var3];
+					if (candidate != NONE && ClassUtils.isPresent(candidate.getDriverClassName(), classLoader)) {
+									return candidate;
+					}
+	}
+
+	return NONE;
+}
+```
+
+And this is how Spring finds the next best embedded database to use.
 
 ## 5 - MVC Basics
 
@@ -48,7 +85,7 @@ We can use paramter injection in the constructors, method injection for the meth
 
 ## 10 - Spring Boot Auto-Configuration
 
-We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file.	In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
+We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file. In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
 
 ```text   
 ***************************
