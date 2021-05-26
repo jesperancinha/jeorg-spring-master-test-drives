@@ -2,6 +2,7 @@ package org.jesperancinha.smtd.planets;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.jesperancinha.smtd.planets.configuration.PlanetConfiguration;
+import org.jesperancinha.smtd.planets.model.Planet;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,8 +15,11 @@ public class PlanetsLauncher implements ApplicationRunner {
 
     private final PlanetConfiguration planetConfiguration;
 
-    public PlanetsLauncher(PlanetConfiguration planetConfiguration) {
+    private final Planet planet;
+
+    public PlanetsLauncher(PlanetConfiguration planetConfiguration, Planet planet) {
         this.planetConfiguration = planetConfiguration;
+        this.planet = planet;
     }
 
     public static void main(String[] args) {
@@ -39,6 +43,13 @@ public class PlanetsLauncher implements ApplicationRunner {
                 .orange("We don't know if it is habitable(this is our unknown field")
                 .newLine()
                 .orange("We don't know the volume(this is our invalid field. it was given with the value volume")
+                .reset();
+
+        ConsolerizerComposer.outSpace()
+                .blue("Planet X is:")
+                .cyan()
+                .jsonPrettyPrint(planet)
+                .newLine()
                 .reset();
     }
 }

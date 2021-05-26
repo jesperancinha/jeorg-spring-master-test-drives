@@ -27,9 +27,7 @@ We can have different servlet containers package into on single [Spring Boot War
 </dependency>
 ```
 
-We can use paramter injection in the constructors, method injection for the methods and we can also inject instances.
-We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330.
-
+We can use paramter injection in the constructors, method injection for the methods and we can also inject instances.	We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330.	We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
 
 ## 2 - AOP
 
@@ -49,8 +47,7 @@ We can do that by using `@Autowired`, or by using the `@Inject` annotation of JS
 
 ## 10 - Spring Boot Auto-Configuration
 
-We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file.
-In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
+We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file.	In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
 
 ```text   
 ***************************
@@ -92,6 +89,7 @@ Action:
 Update your application's configuration
 ```
 
+A curious thing about `@ConfigurationProperties`, is that it containes `@Indexed` in its composition. `@Indexed` is a stereotype annotation. We do, however, need to add `@Component` to our configuration class in order for its instance to become injectable.
 
 ## 11 - Spring Boot Actuator
 

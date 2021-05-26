@@ -71,6 +71,12 @@ We all know, in a way, what Spring Boot is, but sometimes it is very important t
 
 João Esperancinha 2021/05/22
 
+
+## Specs
+
+1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
+2.  Spring Boot: [org.springframework.boot/spring-boot-starter-parent](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent) - 2.3.11.RELEASE
+
 ## Build
 
 Note that if you want to build this project from the root, you need to use one of the JDK 11 or upper versions.
