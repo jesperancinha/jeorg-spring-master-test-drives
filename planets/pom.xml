@@ -32,6 +32,12 @@
             <groupId>org.jesperancinha.console</groupId>
             <artifactId>consolerizer</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
