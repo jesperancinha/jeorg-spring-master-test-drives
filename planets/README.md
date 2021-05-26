@@ -28,7 +28,51 @@ We can have different servlet containers package into on single [Spring Boot War
 </dependency>
 ```
 
-We can use paramter injection in the constructors, method injection for the methods and we can also inject instances. We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330. We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
+We can use parameter injection in the constructors, method injection for the methods, and we can also inject instances. We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330. We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
+
+A bean has a lifecycle whihc is quite complex when we look at the details. 
+By running this application, we can see this result:
+
+```text
+called: PlanetFactoryPostProcessor#postProcessBeanFactory BeanFactoryPostProcessor 
+Planet called: Planet#setSomething 
+Planet called: BeanNameAware#setBeanName 
+Planet called: BeanClassLoaderAware#setBeanClassLoader 
+Planet called: BeanFactoryAware#setBeanFactory 
+Planet called: ResourceLoaderAware#setResourceLoader 
+Planet called: ApplicationEventPublisherAware#setApplicationEventPublisher 
+Planet called: MessageSourceAware#setMessageSource 
+Planet called: ApplicationContextAware#setApplicationContext 
+called: PlanetPostBeanProcessor#postProcessBeforeInitialization BeanPostProcessor 
+Planet called: Planet#postConstruct 
+Planet called: InitializingBean#afterPropertiesSet 
+Planet called: Planet#initMethod 
+called: PlanetPostBeanProcessor#postProcessAfterInitialization BeanPostProcessor 
+Planet called: Planet#preDestroy 
+Planet called: DisposableBean#destroy 
+Planet called: Planet#destroyMethod 
+```
+
+This is an illustration of the following when it comes to a bean lifecycle, assuming the bean implements all necessary interfaces:
+
+1. Bean metadata is set
+2. Bean constructor is called
+3. Setter injection
+4. Assign bean name
+5. Assign bean class loader
+6. Assign bean factory
+7. Assign resource loader
+8. Assign application event publisher
+9. Assign message source
+10. Assign Application Context
+11. Process bean before initialization
+12. Post Construct
+13. AfterPropertiesSet
+14. Custom Init method
+15. Process bean after initialization
+16. Pre Destroy
+17. Disposable Bean destroy method
+18. Custom Bean destroy method
 
 ## 2 - AOP
 
@@ -85,7 +129,8 @@ And this is how Spring finds the next best embedded database to use.
 4. https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
 5. https://www.youtube.com/watch?v=lxmBJmUhqss
 6. https://www.youtube.com/watch?v=xEnvAAhMGu4
-
+7. https://github.com/jzheaux/springone2019
+8. https://github.com/jzheaux/springone2020
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
