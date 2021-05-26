@@ -79,6 +79,27 @@ And this is how Spring finds the next best embedded database to use.
 
 ## 7 - Security
 
+1. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
+2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/DelegatingFilterProxy.html
+3. https://stackoverflow.com/questions/6725234/whats-the-point-of-spring-mvcs-delegatingfilterproxy
+4. https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
+5. https://www.youtube.com/watch?v=lxmBJmUhqss
+6. https://www.youtube.com/watch?v=xEnvAAhMGu4
+
+
+<div align="center">
+      <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
+     <img 
+          src="https://img.youtube.com/vi/lxmBJmUhqss/0.jpg" 
+          style="width:10%;">
+      </a>
+      <a title="Spring Security Patterns @ SpringOne" href="https://www.youtube.com/watch?v=xEnvAAhMGu4">
+     <img 
+          src="https://img.youtube.com/vi/xEnvAAhMGu4/0.jpg" 
+          style="width:10%;">
+      </a>
+</div>
+
 ## 8 - Testing
 
 ## 9 - Spring Boot Basics
@@ -176,9 +197,9 @@ A curious thing about `@ConfigurationProperties`, is that it containes `@Indexed
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/undertow-50.png "Undertow")](https://undertow.io/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockito-50.png "Mockito")](https://site.mockito.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/assertj-50.png "AssertJ")](https://assertj.github.io/doc/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-50.png "Docker")](https://www.docker.com/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-compose-50.png "Docker Compose")](https://docs.docker.com/compose/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/h2-50.png "H2")](https://www.h2database.com/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/derby-50.png "Derby")](https://db.apache.org/derby/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/hsql-50.png "HSQL")](http://hsqldb.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/postgres-50.png "Postgres")](https://www.postgresql.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/cassandra-50.png "Cassandra")](http://cassandra.apache.org/)
 
