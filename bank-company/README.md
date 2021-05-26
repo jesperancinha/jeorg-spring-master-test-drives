@@ -11,69 +11,6 @@ Using Planets and their different names, distances and compositions, we'll see i
 3. https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
 4. https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
 
-We can have different servlet containers package into on single [Spring Boot War](https://spring.io/guides/gs/convert-jar-to-war/) file. Tomcat has precedence. If we don't remove it from [spring-boot-starter-web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web), we will never see Jetty or Undertow in action. In our package we are using these three servlet container, but only tomcat is activated:
-
-```xml   
-<dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-web</artifactId>
-</dependency>
-<dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-jetty</artifactId>
-</dependency>
-<dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-undertow</artifactId>
-</dependency>
-```
-
-We can use parameter injection in the constructors, method injection for the methods, and we can also inject instances. We can do that by using `@Autowired`, or by using the `@Inject` annotation of JSR-330. We can apply `@Inject` pretty much in the same way as `@Autowired` and the only difference is that we cannot inject `PARAMETER` through it.
-
-A bean has a lifecycle whihc is quite complex when we look at the details. 
-By running this application, we can see this result:
-
-```text
-called: PlanetFactoryPostProcessor#postProcessBeanFactory BeanFactoryPostProcessor 
-Planet called: Planet#setSomething 
-Planet called: BeanNameAware#setBeanName 
-Planet called: BeanClassLoaderAware#setBeanClassLoader 
-Planet called: BeanFactoryAware#setBeanFactory 
-Planet called: ResourceLoaderAware#setResourceLoader 
-Planet called: ApplicationEventPublisherAware#setApplicationEventPublisher 
-Planet called: MessageSourceAware#setMessageSource 
-Planet called: ApplicationContextAware#setApplicationContext 
-called: PlanetPostBeanProcessor#postProcessBeforeInitialization BeanPostProcessor 
-Planet called: Planet#postConstruct 
-Planet called: InitializingBean#afterPropertiesSet 
-Planet called: Planet#initMethod 
-called: PlanetPostBeanProcessor#postProcessAfterInitialization BeanPostProcessor 
-Planet called: Planet#preDestroy 
-Planet called: DisposableBean#destroy 
-Planet called: Planet#destroyMethod 
-```
-
-This is an illustration of the following when it comes to a bean lifecycle, assuming the bean implements all necessary interfaces:
-
-1. Bean metadata is set
-2. Bean constructor is called
-3. Setter injection
-4. Assign bean name
-5. Assign bean class loader
-6. Assign bean factory
-7. Assign resource loader
-8. Assign application event publisher
-9. Assign message source
-10. Assign Application Context
-11. Process bean before initialization
-12. Post Construct
-13. AfterPropertiesSet
-14. Custom Init method
-15. Process bean after initialization
-16. Pre Destroy
-17. Disposable Bean destroy method
-18. Custom Bean destroy method
-
 ## 2 - AOP
 
 ## 3 - Transactions
@@ -86,36 +23,6 @@ This is an illustration of the following when it comes to a bean lifecycle, assu
 4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
 5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
 6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
-
-The `@DataJpaTest` annotation allows us to specify that we want to use an embedded database for our tests. We can specify the embedded database we want to use with the `@AutoConfigureTestDatabase` annotation. This is one example:
-
-```java   
-@DataJpaTest
-@MockBean(Planet.class)
-@AutoConfigureTestDatabase(replace= AUTO_CONFIGURED, connection = HSQL)
-public class PlanetRepositoryHSQLTest {
-```
-
-If we don't specify the database we want to use, Spring will iterate through the supported databases until it finds an available and suitable driver. If we look inside [EmbeddedDatabaseConnection](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/jdbc/EmbeddedDatabaseConnection.html), we find 4 possible values in this order: `NONE`, `H2`, `DERBY` and `HSQL`.
-In the code we find this:
-
-```java   
-public static EmbeddedDatabaseConnection get(ClassLoader classLoader) {
-	EmbeddedDatabaseConnection[] var1 = values();
-	int var2 = var1.length;
-
-	for(int var3 = 0; var3 < var2; ++var3) {
-					EmbeddedDatabaseConnection candidate = var1[var3];
-					if (candidate != NONE && ClassUtils.isPresent(candidate.getDriverClassName(), classLoader)) {
-									return candidate;
-					}
-	}
-
-	return NONE;
-}
-```
-
-And this is how Spring finds the next best embedded database to use.
 
 ## 5 - MVC Basics
 
@@ -151,55 +58,15 @@ And this is how Spring finds the next best embedded database to use.
       </a>
 </div>
 
+In terms os security we need to implement our own persistence layer for our `BankCompanyUser`. `UserDetails`, have to exist within the application since this is the type that enables Authentication to exist. In the `UserDetails`, identifiable data can be stored, plus password, granted authorities, if the user is enabled, non-locked, non-expired and if the credentials are non-expired.
+
+Storing our user or how we store it, is entirely custom-made by the developer.
+
 ## 8 - Testing
 
 ## 9 - Spring Boot Basics
 
 ## 10 - Spring Boot Auto-Configuration
-
-We can use the [ConfigurationProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/properties/ConfigurationProperties.html) annotation, to specify a group of configuration parameters from the configuration file. In our smtd.earth field group, we have habitable which I explicitly did not declare in the class in order to show what would happen should we use property `ignoreInvalidFields` to `false`, which is its default value:
-
-```text   
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Binding to target [Bindable@e8e0dec type = org.jesperancinha.smtd.planets.configuration.PlanetConfiguration$$EnhancerBySpringCGLIB$$4463d7b5, value = 'provided', annotations = array<Annotation>[@org.springframework.boot.context.properties.ConfigurationProperties(ignoreInvalidFields=false, ignoreUnknownFields=false, prefix=smtd.earth, value=smtd.earth)]] failed:
-
-    Property: smtd.earth.habitable
-    Value: true
-    Origin: class path resource [application.properties]:5:22
-    Reason: The elements [smtd.earth.habitable] were left unbound.
-
-Action:
-
-Update your application's configuration
-```
-
-Finally, we can see that an invalid field, is a value in the properties value that cannot be converted. It is therefore an invalid value. This is our volume field example:
-
-```text   
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to bind properties under 'smtd.earth.volume' to java.lang.Long:
-
-    Property: smtd.earth.volume
-    Value: volume
-    Origin: class path resource [application.properties]:5:19
-    Reason: failed to convert java.lang.String to java.lang.Long
-
-Action:
-
-Update your application's configuration
-```
-
-A curious thing about `@ConfigurationProperties`, is that it containes `@Indexed` in its composition. `@Indexed` is a stereotype annotation. We do, however, need to add `@Component` to our configuration class in order for its instance to become injectable.
 
 ## 11 - Spring Boot Actuator
 

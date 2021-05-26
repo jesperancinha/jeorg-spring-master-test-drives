@@ -17,6 +17,7 @@
     <modules>
         <module>car-parts</module>
         <module>planets</module>
+        <module>bank-company</module>
     </modules>
 
     <properties>
