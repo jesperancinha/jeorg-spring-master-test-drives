@@ -1,7 +1,6 @@
 package org.jesperancinha.smtd.planets.components;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
@@ -11,13 +10,14 @@ public class PlanetXInject {
 
     private final String atmosphere;
 
+    @Inject
     PlanetXInject(
-            @Autowired
             final String atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlanetXInject constructor")
                 .orange("We can also initialize our beans atmosphere")
                 .red("Take note that @Inject cannot be used in constructor parameters")
+                .green("It can however still be used on a constructor level")
                 .orange("These constructor gets called just after the %s phase and just before the %s phase", "phase1", "phase2")
                 .none().orange("The planet's atmosphere is").blue(atmosphere)
                 .newLine()
