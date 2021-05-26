@@ -9,6 +9,7 @@ Using Planets and their different names, distances and compositions, we'll see i
 1. https://springframework.guru/best-practices-for-dependency-injection-with-spring/
 2. https://dzone.com/articles/spring-bean-lifecycle
 3. https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
+4. https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
 
 We can have different servlet containers package into on single [Spring Boot War](https://spring.io/guides/gs/convert-jar-to-war/) file. Tomcat has precedence. If we don't remove it from [spring-boot-starter-web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web), we will never see Jetty or Undertow in action. In our package we are using these three servlet container, but only tomcat is activated:
 

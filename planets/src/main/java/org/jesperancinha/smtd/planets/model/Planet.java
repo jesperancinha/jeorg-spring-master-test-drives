@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
@@ -13,12 +14,33 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.context.MessageSource;
+import org.springframework.context.MessageSourceAware;
+import org.springframework.context.ResourceLoaderAware;
+import org.springframework.context.weaving.LoadTimeWeaverAware;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.instrument.classloading.LoadTimeWeaver;
+import org.springframework.jmx.export.notification.NotificationPublisher;
+import org.springframework.jmx.export.notification.NotificationPublisherAware;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Data
-public class Planet implements ApplicationContextAware, BeanNameAware, BeanFactoryAware, InitializingBean, DisposableBean {
+public class Planet implements
+        ApplicationContextAware,
+        BeanNameAware,
+        BeanFactoryAware,
+        InitializingBean,
+        DisposableBean,
+        ApplicationEventPublisherAware,
+        BeanClassLoaderAware,
+        LoadTimeWeaverAware,
+        MessageSourceAware,
+        NotificationPublisherAware,
+        ResourceLoaderAware {
     String name;
 
     String scientificName;
@@ -150,6 +172,79 @@ public class Planet implements ApplicationContextAware, BeanNameAware, BeanFacto
                 .magenta("Planet")
                 .blue("called:")
                 .cyan("Planet#setSomething")
+                .newLine()
+                .reset();
+        this.message = "something";
+    }
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("ApplicationEventPublisherAware#setApplicationEventPublisher")
+                .newLine()
+                .reset();
+        this.message = "something";
+    }
+
+    @Override
+    public void setBeanClassLoader(ClassLoader classLoader) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("BeanClassLoaderAware#setBeanClassLoader")
+                .newLine()
+                .reset();
+        this.message = "something";
+
+    }
+
+    @Override
+    public void setLoadTimeWeaver(LoadTimeWeaver loadTimeWeaver) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("LoadTimeWeaverAware#setLoadTimeWeaver")
+                .newLine()
+                .reset();
+        this.message = "something";
+    }
+
+    @Override
+    public void setMessageSource(MessageSource messageSource) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("MessageSourceAware#setMessageSource")
+                .newLine()
+                .reset();
+        this.message = "something";
+    }
+
+    @Override
+    public void setResourceLoader(ResourceLoader resourceLoader) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("ResourceLoaderAware#setResourceLoader")
+                .newLine()
+                .reset();
+        this.message = "something";
+    }
+
+    @Override
+    public void setNotificationPublisher(NotificationPublisher notificationPublisher) {
+        ConsolerizerComposer.outSpace()
+                .none()
+                .magenta("Planet")
+                .blue("called:")
+                .cyan("NotificationPublisherAware#setNotificationPublisher")
                 .newLine()
                 .reset();
         this.message = "something";
