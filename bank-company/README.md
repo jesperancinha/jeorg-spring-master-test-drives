@@ -44,6 +44,17 @@ private String salariesString;
 private String bankContextString;
 ```
 
+Injection of beans can be done in very unusual ways. Probably not the highest quality of ways, but we can also inject beans by using one of th ApplicationContext interfaces. One of the, the `BeanFactory`, can be used this way:
+
+```java
+@Autowired
+private BeanFactory beanFactory;
+
+...
+
+final var bankCompanyUserRepository = (BankCompanyUserRepository) beanFactory.getBean("bankCompanyUserRepository");
+```
+
 ## 2 - AOP
 
 ## 3 - Transactions
