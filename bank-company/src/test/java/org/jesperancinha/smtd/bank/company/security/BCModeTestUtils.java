@@ -8,6 +8,8 @@ import org.springframework.security.core.context.SecurityContextImpl;
 
 import java.util.Objects;
 
+import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
+
 public class BCModeTestUtils {
     public static void initializeTest(String strategyName) {
         SecurityContextHolder.setStrategyName(strategyName);
@@ -47,5 +49,14 @@ public class BCModeTestUtils {
         SecurityContextImpl sc = new SecurityContextImpl();
         sc.setAuthentication(new UsernamePasswordAuthenticationToken(username, password));
         return sc;
+    }
+
+    public static void initializationCount() {
+        SecurityContextHolder.clearContext();
+        ConsolerizerComposer
+                .outSpace()
+                .yellow(title("Total Security Context context clears is %d", SecurityContextHolder.getInitializeCount()))
+                .newLine()
+                .reset();
     }
 }

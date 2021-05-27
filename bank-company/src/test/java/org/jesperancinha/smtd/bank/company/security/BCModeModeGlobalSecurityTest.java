@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.createContext;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.currentStatus;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalCompletion;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalTestResult;
@@ -36,7 +37,7 @@ class BCModeModeGlobalSecurityTest {
     }
 
     @Test
-    public void testModeInheritableThreadLocalWhenCreatingWithInheritableThreadLocalThenNewContextGetsUser() {
+    public void testModeGlobalWhenCreatingWithGlobalThenNewContextGetsUser() {
         final var securityContext = SecurityContextHolder.getContext();
         assertThat(securityContext).isNotNull();
         final var authentication = securityContext.getAuthentication();
@@ -48,7 +49,7 @@ class BCModeModeGlobalSecurityTest {
 
 
     @Test
-    public void testMultiThreadModeInheritableThreadLocalWhenCreatingWithInheritableThreadLocalThenNewContextGetsUser() throws InterruptedException {
+    public void testMultiThreadModeGlobalWhenCreatingWithGlobalThenNewContextGetsUser() throws InterruptedException {
         final var principal = new AtomicReference<>();
         final var clerkThread = new Thread(() -> {
             principal.set(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
@@ -62,7 +63,7 @@ class BCModeModeGlobalSecurityTest {
     }
 
     @Test
-    public void testMultiThreadPoolModeInheritableThreadLocalWhenCreatingWithInheritableThreadLocalThenFail() throws InterruptedException, ExecutionException {
+    public void testMultiThreadPoolModeGlobalWhenCreatingWithGlobalThenFail() throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         final var principal = new AtomicReference<>();
         currentStatus(SecurityContextHolder.getContext());
@@ -94,7 +95,7 @@ class BCModeModeGlobalSecurityTest {
 
 
     @Test
-    public void testMultiThreadPooWithDelegatorlModeInheritableThreadLocalWhenCreatingWithInheritableThreadLocalThenFail() throws InterruptedException, ExecutionException {
+    public void testMultiThreadPooWithDelegatorlModeGlobalWhenCreatingWithGlobalThenFail() throws InterruptedException, ExecutionException {
         final var executorService = Executors.newSingleThreadExecutor();
         final var delegatingSecurityContextExecutorService = new DelegatingSecurityContextExecutorService(executorService);
         final var principal = new AtomicReference<>();
@@ -127,11 +128,6 @@ class BCModeModeGlobalSecurityTest {
 
     @AfterEach
     public void tearDown() {
-        SecurityContextHolder.clearContext();
-        ConsolerizerComposer
-                .outSpace()
-                .yellow(title("Total Security Context context clears is %d", SecurityContextHolder.getInitializeCount()))
-                .newLine()
-                .reset();
+        initializationCount();
     }
 }

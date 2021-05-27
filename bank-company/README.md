@@ -44,7 +44,7 @@ Using Planets and their different names, distances and compositions, we'll see i
 12. https://javarevisited.blogspot.com/2018/02/what-is-securitycontext-and-SecurityContextHolder-Spring-security.html#axzz6w2sHEiVK
 13. https://docs.spring.io/spring-security/site/docs/3.0.x/reference/technical-overview.html
 14. https://www.mfvitale.me/blog/2021/02/24/security.context.and.concurrency.html
-
+15. https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">

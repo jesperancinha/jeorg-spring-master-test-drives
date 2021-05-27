@@ -21,6 +21,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
 import static org.springframework.security.core.context.SecurityContextHolder.MODE_GLOBAL;
 import static org.springframework.security.core.context.SecurityContextHolder.MODE_THREADLOCAL;
@@ -135,11 +136,6 @@ class BCModeModeThreadLocalSecurityTest {
 
     @AfterEach
     public void tearDown() {
-        SecurityContextHolder.clearContext();
-        ConsolerizerComposer
-                .outSpace()
-                .yellow(title("Total Security Context context clears is %d", SecurityContextHolder.getInitializeCount()))
-                .newLine()
-                .reset();
+        initializationCount();
     }
 }

@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.createContext;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.currentStatus;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalCompletion;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalTestResult;
@@ -127,11 +128,6 @@ class BCModeInheritableThreadLocalSecurityTest {
 
     @AfterEach
     public void tearDown() {
-        SecurityContextHolder.clearContext();
-        ConsolerizerComposer
-                .outSpace()
-                .yellow(title("Total Security Context context clears is %d", SecurityContextHolder.getInitializeCount()))
-                .newLine()
-                .reset();
+        initializationCount();
     }
 }
