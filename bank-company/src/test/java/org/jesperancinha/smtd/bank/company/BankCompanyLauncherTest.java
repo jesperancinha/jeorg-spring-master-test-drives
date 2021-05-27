@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
@@ -23,9 +25,18 @@ public class BankCompanyLauncherTest {
     @Autowired
     private BeanFactory beanFactory;
 
+    @Autowired
+    private DefaultListableBeanFactory defaultListableBeanFactory;
+
     @Test
     public void contextLoads() {
         final var bankCompanyUserRepository = (BankCompanyUserRepository) beanFactory.getBean("bankCompanyUserRepository");
+        ConsolerizerComposer.outSpace()
+                .green("bankCompanyUserRepository")
+                .black()
+                .bgGreen(bankCompanyUserRepository)
+                .reset();
+        defaultListableBeanFactory.registerBeanDefinition("myBean", new GenericBeanDefinition());
         ConsolerizerComposer.outSpace()
                 .green("bankCompanyUserRepository")
                 .black()

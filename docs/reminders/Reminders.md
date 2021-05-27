@@ -49,6 +49,19 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 5. [@PostFilter](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/access/prepost/PostFilter.html)
 6. [@Value](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html)
 
+## 8. Spring provides the following Mock Objects
+
+1. Environment
+2. JNDI
+3. Servlet API
+3. Portlet API
+
+## 9. HATEOAS automatic configuration
+
+1. ObjectMapper
+2. LinkDiscoverer
+3. [@EnableHypermediaSupport](https://docs.spring.io/spring-hateoas/docs/current/api/org/springframework/hateoas/config/EnableHypermediaSupport.html)
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)

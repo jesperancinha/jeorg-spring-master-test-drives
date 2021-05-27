@@ -144,6 +144,8 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 
 ## 8 - Testing
 
+1. https://docs.spring.io/spring-framework/docs/4.3.12.RELEASE/spring-framework-reference/html/unit-testing.html
+
 ## 9 - Spring Boot Basics
 
 1. https://springframework.guru/spring-external-configuration-data/
