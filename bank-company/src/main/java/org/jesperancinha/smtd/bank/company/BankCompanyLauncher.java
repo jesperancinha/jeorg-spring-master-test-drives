@@ -22,7 +22,6 @@ public class BankCompanyLauncher implements ApplicationRunner {
     @Value("#{ systemProperties['user.country'] }")
     private String country;
 
-
     @Value("#{'${jeorg.bank.salaries}'.split(',').?[new Integer(#this) > 10]}")
     private List<Long> salaries;
 
@@ -31,6 +30,9 @@ public class BankCompanyLauncher implements ApplicationRunner {
 
     @Value("${jeorg.bank.salaries}")
     private String salariesString;
+
+    @Value("#{'${jeorg.bank.salaries}'}")
+    private String salariesString2;
 
     @Value("#{#root.toString()}")
     private String bankContextString;
@@ -74,6 +76,11 @@ public class BankCompanyLauncher implements ApplicationRunner {
         ConsolerizerComposer.outSpace()
                 .none()
                 .blue(salaries)
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue(salariesString2)
                 .newLine()
                 .reset();
         ConsolerizerComposer.outSpace()
