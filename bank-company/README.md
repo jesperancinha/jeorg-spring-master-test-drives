@@ -1,4 +1,4 @@
-# Spring Master 5 Test Drives - Planets
+# Spring Master 5 Test Drives - Bank Company 🏦
 
 ## Introduction
 
@@ -10,6 +10,38 @@ Using Planets and their different names, distances and compositions, we'll see i
 2. https://dzone.com/articles/spring-bean-lifecycle
 3. https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
 4. https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
+5. https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html
+6. https://docs.spring.io/spring-integration/docs/current/reference/html/spel.html#spel
+7. https://www.dev2qa.com/spring-expression-language-example-vs/
+
+A [SpEL](https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html), can be built using essentially two forms:
+
+1. using `$`, we inject a variable name
+2. using `#`, we inject an expression
+
+If we use an expression, we can include within it, a variable name by using the normal definition within single quotes.
+I have implemented these examples for this module:
+
+```java
+@Value("#{ systemProperties['user.region'] }")
+private String region;
+
+@Value("#{ systemProperties['user.country'] }")
+private String country;
+
+
+@Value("#{'${jeorg.bank.salaries}'.split(',').?[new Integer(#this) > 10]}")
+private List<Long> salaries;
+
+@Value("#{ T(java.lang.Math).random() * 100.0 }")
+private Long randomNumber;
+
+@Value("${jeorg.bank.salaries}")
+private String salariesString;
+
+@Value("#{#root.toString()}")
+private String bankContextString;
+```
 
 ## 2 - AOP
 
