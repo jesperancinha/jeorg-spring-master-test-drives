@@ -20,8 +20,7 @@ A [SpEL](https://docs.spring.io/spring-framework/docs/3.0.x/reference/expression
 1. using `$`, we inject a variable name
 2. using `#`, we inject an expression
 
-If we use an expression, we can include within it, a variable name by using the normal definition within single quotes.
-I have implemented these examples for this module:
+If we use an expression, we can include within it, a variable name by using the normal definition within single quotes. I have implemented these examples for this module:
 
 ```java
 @Value("#{ systemProperties['user.region'] }")
@@ -50,9 +49,9 @@ Injection of beans can be done in very unusual ways. Probably not the highest qu
 @Autowired
 private BeanFactory beanFactory;
 
-...
+        ...
 
-final var bankCompanyUserRepository = (BankCompanyUserRepository) beanFactory.getBean("bankCompanyUserRepository");
+final var bankCompanyUserRepository=(BankCompanyUserRepository)beanFactory.getBean("bankCompanyUserRepository");
 ```
 
 ## 2 - AOP
@@ -61,9 +60,7 @@ final var bankCompanyUserRepository = (BankCompanyUserRepository) beanFactory.ge
 
 1. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html
 
-The annotation `@Transactional` contains a very interesting property called `readOnly`. This property could semantically have a better name like `maybeReadOnly`, `tryReadOnly`, `tryNotToRead`, or anything that would suggest an attempt to reject write operations.
-What in reality, this property does, is that it tells Spring to hint the Transaction manager that it should not allow write operations. The Transaction manager may or may not interpret this hint correctly.
-Having said this, what this property also does is allow optimizations to occur for read operations during runtime. This of course depends on how the Transaction manager interprets the hint given by the Spring Framework.
+The annotation `@Transactional` contains a very interesting property called `readOnly`. This property could semantically have a better name like `maybeReadOnly`, `tryReadOnly`, `tryNotToRead`, or anything that would suggest an attempt to reject write operations. What in reality, this property does, is that it tells Spring to hint the Transaction manager that it should not allow write operations. The Transaction manager may or may not interpret this hint correctly. Having said this, what this property also does is allow optimizations to occur for read operations during runtime. This of course depends on how the Transaction manager interprets the hint given by the Spring Framework.
 
 ## 4 - JPA
 
@@ -124,17 +121,16 @@ In terms os security we need to implement our own persistence layer for our `Ban
 
 Storing our user or how we store it, is entirely custom-made by the developer.
 
-
 In the `SecurityContextHolder` class, we find different ways to implement the strategy and also which system variable is being used:
 
 ```java
-public static final String MODE_THREADLOCAL = "MODE_THREADLOCAL";
-public static final String MODE_INHERITABLETHREADLOCAL = "MODE_INHERITABLETHREADLOCAL";
-public static final String MODE_GLOBAL = "MODE_GLOBAL";
-public static final String SYSTEM_PROPERTY = "spring.security.strategy";
-private static String strategyName = System.getProperty("spring.security.strategy");
+public static final String MODE_THREADLOCAL="MODE_THREADLOCAL";
+public static final String MODE_INHERITABLETHREADLOCAL="MODE_INHERITABLETHREADLOCAL";
+public static final String MODE_GLOBAL="MODE_GLOBAL";
+public static final String SYSTEM_PROPERTY="spring.security.strategy";
+private static String strategyName=System.getProperty("spring.security.strategy");
 private static SecurityContextHolderStrategy strategy;
-private static int initializeCount = 0;
+private static int initializeCount=0;
 ```
 
 Your IDE might say that the property `spring.security.strategy` cannot be found, but it is there 😉. This property is not a mode. Instead, it is the default Strategy creatd when starting the container. It is no longer re-read after that.
@@ -159,6 +155,141 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 ## 10 - Spring Boot Auto-Configuration
 
 ## 11 - Spring Boot Actuator
+
+1. https://dzone.com/articles/maven-git-commit-id-plugin
+2. https://codeboje.de/spring-boot-info-actuator/
+
+We can add a lot of information to our `info` actuator endpoint. This has to be done before starting the server. In our example we'll see a few examples:
+
+1. Adding Maven Build information
+2. Adding custom data in the properties file
+3. Adding Git data
+
+In order to add maven, we can rely on a simple replacement function provided by maven. For that we need to add this to our `pom.xml` file:
+
+```xml   
+<resources>
+	<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+	</resource>
+</resources>
+```
+
+Our `spring-boot-maven-plugin` needs to have these `executions` properly configured:
+
+```xml   
+<executions>
+		<execution>
+						<goals>
+										<goal>build-info</goal>
+										<goal>repackage</goal>
+						</goals>
+		</execution>
+</executions>
+```
+
+We can also add custom properties to our `application.properties` file. They all only need to start with `info`:
+
+```properties   
+info.app.name = @project.name@
+info.app.groupId = @project.groupId@
+info.app.artifactId = @project.artifactId@
+info.app.version = @project.version@
+info.cowabunga=cowabunga
+```
+
+Adding the GIT repo information is as easy as adding the following plugin with its configuration:
+
+```xml   
+<plugin>
+    <groupId>pl.project13.maven</groupId>
+    <artifactId>git-commit-id-plugin</artifactId>
+    <version>3.0.1</version>
+    <executions>
+        <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+                <goal>revision</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+        <prefix>git</prefix>
+        <verbose>false</verbose>
+        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+        <format>properties</format>
+        <gitDescribe>
+            <skip>false</skip>
+            <always>false</always>
+            <dirty>-dirty</dirty>
+        </gitDescribe>
+    </configuration>
+</plugin>
+```
+
+And if we want even more detail to be shown, we can also configure the `management` configuration for that:
+
+```properties
+management.info.git.mode=full
+```
+
+With all set and configured we should be getting two files:
+
+1. `git.properties`, on the root of the classpath
+2. `build-info.propertis`, on the META-INF directory
+
+Running our Spring Boot application, we'll see that our actuator located at http://localhost:8081/actuator/info, now contains information like this one:
+
+```json
+{
+  "app": {
+    "name": "Bank Company",
+    "groupId": "org.jesperancinha.smtd",
+    "artifactId": "bank-company",
+    "version": "1.0.0-SNAPSHOT"
+  },
+  "cowabunga": "cowabunga",
+  "git": {
+    "local": {
+      "branch": {
+        "ahead": "0",
+        "behind": "0"
+      }
+    },
+    "commit": {
+      "message": {
+        "short": "\uD83C\uDF31 jeorg-spring-master-5-test-drives - \uD83C\uDFE6 - BankCompany - app and build for the Info actuator",
+        "full": "\uD83C\uDF31 jeorg-spring-master-5-test-drives - \uD83C\uDFE6 - BankCompany - app and build for the Info actuator"
+      },
+      "user": {
+        "name": "Joao Esperancinha",
+        "email": "jofisaes@gmail.com"
+      },
+      "time": "2021-05-27T20:41:07Z"
+    },
+    "branch": "main",
+    "build": {
+      "time": "2021-05-27T21:04:27Z",
+      "version": "1.0.0-SNAPSHOT",
+      "user": {
+        "name": "Joao Esperancinha",
+      }
+    }
+  },
+  "build": {
+    "artifact": "bank-company",
+    "name": "Bank Company",
+    "time": "2021-05-27T21:04:23.456Z",
+    "version": "1.0.0-SNAPSHOT",
+    "group": "org.jesperancinha.smtd"
+  }
+}
+```
+
+I removed some nodes because the retrieve GIT information is quite extensive and probably not recommended using in production.
 
 ## 12 - Spring Boot Testing
 

@@ -138,6 +138,8 @@
 ## Changing Info Actuator endpoint content
 
 1. https://codeboje.de/spring-boot-info-actuator/
+2. https://dzone.com/articles/spring-sweets-add-git-info-to-info-endpoint
+
 
 ## TestTransaction
 
