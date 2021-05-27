@@ -45,6 +45,7 @@ Using Planets and their different names, distances and compositions, we'll see i
 13. https://docs.spring.io/spring-security/site/docs/3.0.x/reference/technical-overview.html
 14. https://www.mfvitale.me/blog/2021/02/24/security.context.and.concurrency.html
 15. https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
+16. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
@@ -88,6 +89,8 @@ In short, there are only three strategy modes and we can define them shortly lik
 1. `MODE_THREADLOCAL` - The principal isn't shared to new thread, but the same context and principal are accessed throughout the execution of the thread.
 2. `MODE_INHERITABLETHREADLOCAL` - Every new thread gets a new context, with the same principal. Changes in the generated contexts do not affect the others. For that we need to use a `DelegatingSecurityContextExecutorService`.
 3. `MODE_GLOBAL` - The context is shared. Every new thread shares the same principal.
+
+The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in the `SecurityFilterAutoConfiguration` class, which creates a bean of type `DelegatingFilterProxyRegistrationBean` under the name `springSecurityFilterChain`.
 
 ## 8 - Testing
 
