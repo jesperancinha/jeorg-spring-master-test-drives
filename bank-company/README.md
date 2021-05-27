@@ -40,6 +40,8 @@ Using Planets and their different names, distances and compositions, we'll see i
 8. https://github.com/jzheaux/springone2020
 9. https://www.youtube.com/watch?v=TDuVY8PFU3Q
 10. https://docs.spring.io/spring-security/site/docs/4.2.20.RELEASE/apidocs/org/springframework/security/core/context/SecurityContextHolder.html
+11. https://programmersought.com/article/63182958726/
+12. https://javarevisited.blogspot.com/2018/02/what-is-securitycontext-and-SecurityContextHolder-Spring-security.html#axzz6w2sHEiVK
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
@@ -62,6 +64,21 @@ Using Planets and their different names, distances and compositions, we'll see i
 In terms os security we need to implement our own persistence layer for our `BankCompanyUser`. `UserDetails`, have to exist within the application since this is the type that enables Authentication to exist. In the `UserDetails`, identifiable data can be stored, plus password, granted authorities, if the user is enabled, non-locked, non-expired and if the credentials are non-expired.
 
 Storing our user or how we store it, is entirely custom-made by the developer.
+
+
+In the `SecurityContextHolder` class, we find different ways to implement the strategy and also which system variable is being used:
+
+```java
+public static final String MODE_THREADLOCAL = "MODE_THREADLOCAL";
+public static final String MODE_INHERITABLETHREADLOCAL = "MODE_INHERITABLETHREADLOCAL";
+public static final String MODE_GLOBAL = "MODE_GLOBAL";
+public static final String SYSTEM_PROPERTY = "spring.security.strategy";
+private static String strategyName = System.getProperty("spring.security.strategy");
+private static SecurityContextHolderStrategy strategy;
+private static int initializeCount = 0;
+```
+
+Your IDE might say that the property `spring.security.strategy` cannot be found, but it is there 😉.
 
 ## 8 - Testing
 
