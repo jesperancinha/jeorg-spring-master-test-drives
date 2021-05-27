@@ -12,6 +12,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 public class BankCompanyLauncher implements ApplicationRunner {
@@ -36,6 +37,12 @@ public class BankCompanyLauncher implements ApplicationRunner {
 
     @Value("#{#root.toString()}")
     private String bankContextString;
+
+    @Value("#{${jeorg.bank.dependencies}}")
+    private Map<String, Long> bankDependencies;
+
+    @Value("#{${jeorg.bank.salariesexplained}.?[#this>2]}")
+    private List<Long> salariesexplained;
 
     private final ApplicationContext applicationContext;
 
@@ -96,6 +103,19 @@ public class BankCompanyLauncher implements ApplicationRunner {
         ConsolerizerComposer.outSpace()
                 .none()
                 .blue(bankContextString)
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue(bankDependencies)
+                .magenta(bankDependencies.get("olhao"))
+                .magenta(bankDependencies.get("amsterdam"))
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue(salariesexplained)
+                .magenta(salariesexplained.size())
                 .newLine()
                 .reset();
 

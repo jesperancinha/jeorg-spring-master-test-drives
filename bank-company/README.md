@@ -13,6 +13,7 @@ Using Planets and their different names, distances and compositions, we'll see i
 5. https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html
 6. https://docs.spring.io/spring-integration/docs/current/reference/html/spel.html#spel
 7. https://www.dev2qa.com/spring-expression-language-example-vs/
+8. https://dzone.com/articles/beginners-guide-to-spring-expression-language-with
 
 A [SpEL](https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html), can be built using essentially two forms:
 
