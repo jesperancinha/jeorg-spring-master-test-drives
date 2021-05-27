@@ -137,11 +137,11 @@
 
 ## Changing Info Actuator endpoint content
 
-1.
+1. https://codeboje.de/spring-boot-info-actuator/
 
 ## TestTransaction
 
-1.
+1. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#testcontext-tx-programmatic-tx-mgt
 
 ---
 
