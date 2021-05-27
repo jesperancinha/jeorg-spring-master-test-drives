@@ -113,6 +113,11 @@ Having said this, what this property also does is allow optimizations to occur f
           src="https://img.youtube.com/vi/TDuVY8PFU3Q/0.jpg" 
           style="width:10%;">
       </a>
+      <a title="4 . The need of DelegatingFilterProxy - the entry point of Spring Security" href="https://www.youtube.com/watch?v=JP5XC6PUe8M">
+     <img 
+          src="https://img.youtube.com/vi/JP5XC6PUe8M/0.jpg" 
+          style="width:10%;">
+      </a>
 </div>
 
 In terms os security we need to implement our own persistence layer for our `BankCompanyUser`. `UserDetails`, have to exist within the application since this is the type that enables Authentication to exist. In the `UserDetails`, identifiable data can be stored, plus password, granted authorities, if the user is enabled, non-locked, non-expired and if the credentials are non-expired.

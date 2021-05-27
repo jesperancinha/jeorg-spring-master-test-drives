@@ -119,7 +119,12 @@
 
 ## The database that the TestTemplate uses
 
-1.
+1. https://reflectoring.io/spring-boot-data-jpa-test/
+2. https://zetcode.com/springboot/datajpatest/
+3. https://www.arhohuttunen.com/spring-boot-datajpatest/
+4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
+5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
+6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
 
 ## Injecting @Controller or @RestController
 
@@ -127,6 +132,14 @@
 
 
 ## Configuring Security from Specific to General and from General to Specific
+
+1.
+
+## Changing Info Actuator endpoint content
+
+1.
+
+## TestTransaction
 
 1.
 
