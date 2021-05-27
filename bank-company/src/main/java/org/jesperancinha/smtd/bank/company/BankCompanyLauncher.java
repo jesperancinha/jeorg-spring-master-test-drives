@@ -44,6 +44,9 @@ public class BankCompanyLauncher implements ApplicationRunner {
     @Value("#{${jeorg.bank.salariesexplained}.?[#this>2]}")
     private List<Long> salariesexplained;
 
+    @Value("#{${spring.config.name:null}}")
+    private String applicationPropertiesFileName;
+
     private final ApplicationContext applicationContext;
 
     public BankCompanyLauncher(ApplicationContext applicationContext) {
@@ -116,6 +119,11 @@ public class BankCompanyLauncher implements ApplicationRunner {
                 .none()
                 .blue(salariesexplained)
                 .magenta(salariesexplained.size())
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue(applicationPropertiesFileName)
                 .newLine()
                 .reset();
 
