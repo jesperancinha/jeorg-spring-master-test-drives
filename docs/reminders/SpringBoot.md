@@ -7,5 +7,5 @@
 
 ---
 
-[Back](../README.md) | [Technology](../Technology.md) | [Reminders](./Reminders.md)
+[Back](../index.md) | [Index](./index.md) | [Spring Boot](./SpringBoot.md) | [Reminders](./Reminders.md) | [Spring Boot Actuator](./SpringBootActuator.md)
 

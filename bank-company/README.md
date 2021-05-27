@@ -39,6 +39,7 @@ Using Planets and their different names, distances and compositions, we'll see i
 7. https://github.com/jzheaux/springone2019
 8. https://github.com/jzheaux/springone2020
 9. https://www.youtube.com/watch?v=TDuVY8PFU3Q
+10. https://docs.spring.io/spring-security/site/docs/4.2.20.RELEASE/apidocs/org/springframework/security/core/context/SecurityContextHolder.html
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">

@@ -67,9 +67,9 @@ Please use this repo for your studies only if you already have enough baggage fr
 
 Please have a look at our page where the description of the in-depth subjects investigated and related web resources are provided: [Technology](./Technology.md).
 
-Also, please check our [Reminders](./reminders/Reminders.md) page, where short descriptions are presented in a flash card fashion for specific theoretical aspects of the Spring Framework.
+Also, please check our [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) page, where short descriptions are presented in a flash card fashion for specific theoretical aspects of the Spring Framework.
 
-We all know, in a way, what Spring Boot is, but sometimes it is very important to explain what it actually is. Find more in our [Spring Boot](./reminders/SpringBoot.md) section.
+We all know, in a way, what Spring Boot is, but sometimes it is very important to explain what it actually is. Find more in our [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md) section.
 
 João Esperancinha 2021/05/22
 

@@ -1,4 +1,4 @@
-# Spring Master 5 - Test Drives Reminders
+# Spring Master 5 Test Drives - Test Drives Reminders
 
 ## 1. Spring Boot Starter Test Dependency
 
@@ -31,6 +31,10 @@
 3. Spring REST specifies RESTful web services in an alternative way
 4. Spring MVC provides annotations to implement REST services and the MVC pattern
 
+## 6. SecurityContextHolder modes
+
+`MODE_GLOBAL`, `MODE_INHERITABLETHREADLOCAL`, `MODE_THREADLOCAL`, `SYSTEM_PROPERTY`
+
 ---
 
-[Back](../README.md)  | [Technology](../Technology.md) | [Spring Boot](./SpringBoot.md)
+[Back](../index.md) | [Index](./index.md) | [Spring Boot](./SpringBoot.md) | [Reminders](./Reminders.md) | [Spring Boot Actuator](./SpringBootActuator.md)

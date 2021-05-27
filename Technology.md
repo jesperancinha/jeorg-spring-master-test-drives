@@ -132,4 +132,4 @@
 
 ---
 
-[Back](./README.md)  | [Reminders](./reminders/Reminders.md) | [Spring Boot](./reminders/SpringBoot.md)
+[Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md)
