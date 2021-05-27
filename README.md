@@ -159,6 +159,8 @@ i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams
 
 ### Online
 
+-   [Spring Framework All Classes](https://docs.spring.io/spring-framework/docs/current/javadoc-api/)
+-   [Spring Security All Classes](https://docs.spring.io/spring-security/site/docs/current/api/allclasses.html)
 -   [Spring Data Cassandra](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#preface)
 -   [Spring Boot Actuator Web API Documentation](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/)
 -   [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)

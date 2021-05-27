@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.values;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT,
         properties = {
@@ -27,10 +28,18 @@ public class BankCompanyLauncherOtherPropertiesTest {
     @Value("${jeorg.bank.customer}")
     private String customer;
 
+    @Value("${jeorg.bank.sa.name}")
+    private String name;
+
+    @Value("${jeorg.bank.sa.surname}")
+    private String surname;
+
     @Test
     public void contextLoads() {
         assertThat(banking).isNotNull();
         assertThat(customer).isNotNull();
+        assertThat(name).isNotNull();
+        assertThat(surname).isNotNull();
         ConsolerizerComposer.outSpace()
                 .none()
                 .cyan(environment)
@@ -41,6 +50,12 @@ public class BankCompanyLauncherOtherPropertiesTest {
                 .newLine()
                 .magenta("Customer is:")
                 .red(customer)
+                .magenta("!")
+                .newLine()
+                .magenta("I am ")
+                .red(name)
+                .orange(surname)
+                .green(". \"What more can I say ?\"")
                 .magenta("!")
                 .reset();
     }

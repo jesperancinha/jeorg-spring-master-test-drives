@@ -9,6 +9,8 @@ import org.springframework.context.annotation.PropertySources;
         @PropertySource(value = "classpath:test.properties",
                 encoding = "UTF-8"),
         @PropertySource(value = "classpath:customer.properties",
+                encoding = "UTF-8"),
+        @PropertySource(value = "classpath:${spring.datasource.username}.properties",
                 encoding = "UTF-8")
 })
 public class BankCompanyTestConfiguration {
