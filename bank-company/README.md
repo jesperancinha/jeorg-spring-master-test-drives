@@ -42,6 +42,9 @@ Using Planets and their different names, distances and compositions, we'll see i
 10. https://docs.spring.io/spring-security/site/docs/4.2.20.RELEASE/apidocs/org/springframework/security/core/context/SecurityContextHolder.html
 11. https://programmersought.com/article/63182958726/
 12. https://javarevisited.blogspot.com/2018/02/what-is-securitycontext-and-SecurityContextHolder-Spring-security.html#axzz6w2sHEiVK
+13. https://docs.spring.io/spring-security/site/docs/3.0.x/reference/technical-overview.html
+14. https://www.mfvitale.me/blog/2021/02/24/security.context.and.concurrency.html
+
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
@@ -78,7 +81,13 @@ private static SecurityContextHolderStrategy strategy;
 private static int initializeCount = 0;
 ```
 
-Your IDE might say that the property `spring.security.strategy` cannot be found, but it is there 😉.
+Your IDE might say that the property `spring.security.strategy` cannot be found, but it is there 😉. This property is not a mode. Instead, it is the default Strategy creatd when starting the container. It is no longer re-read after that.
+
+In short, there are only three strategy modes and we can define them shortly like this:
+
+1. `MODE_THREADLOCAL` - The principal isn't shared to new thread, but the same context and principal are accessed throughout the execution of the thread.
+2. `MODE_INHERITABLETHREADLOCAL` - Every new thread gets a new context, with the same principal. Changes in the generated contexts do not affect the others. For that we need to use a `DelegatingSecurityContextExecutorService`.
+3. `MODE_GLOBAL` - The context is shared. Every new thread shares the same principal.
 
 ## 8 - Testing
 
