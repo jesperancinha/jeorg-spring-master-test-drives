@@ -130,6 +130,7 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 ## 9 - Spring Boot Basics
 
 1. https://springframework.guru/spring-external-configuration-data/
+2. https://mkyong.com/spring/spring-propertysources-example/
 
 ## 10 - Spring Boot Auto-Configuration
 
