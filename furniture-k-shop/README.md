@@ -37,6 +37,7 @@ With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` 
 1. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html
 2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Propagation.html
 3. https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/transaction.html
+4. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/TransactionTemplate.html
 
 In a transaction, the `readOnly`, only means possible performance improvements.
 
