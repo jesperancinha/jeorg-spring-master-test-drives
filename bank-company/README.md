@@ -60,6 +60,7 @@ final var bankCompanyUserRepository=(BankCompanyUserRepository)beanFactory.getBe
 
 1. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html
 2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Propagation.html
+3. https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/transaction.html
 
 The annotation `@Transactional` contains a very interesting property called `readOnly`. This property could semantically have a better name like `maybeReadOnly`, `tryReadOnly`, `tryNotToRead`, or anything that would suggest an attempt to reject write operations. What in reality, this property does, is that it tells Spring to hint the Transaction manager that it should not allow write operations. The Transaction manager may or may not interpret this hint correctly. Having said this, what this property also does is allow optimizations to occur for read operations during runtime. This of course depends on how the Transaction manager interprets the hint given by the Spring Framework.
 

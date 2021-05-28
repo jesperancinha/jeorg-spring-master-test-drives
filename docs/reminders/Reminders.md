@@ -88,6 +88,14 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 8. JSON Mapping View
 9. XML Mapping View
 
+## 12 Transaction API's supported by spring
+
+1. JDO
+2. JTA
+3. JPA
+4. Hibernate
+5. JDBC
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
