@@ -16,7 +16,9 @@ With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` 
 ### Endpoints
 
 1. http://localhost:8081 - The start of the application
-
+2. http://127.0.0.1:8081/actuator/metrics - Metrics
+3. http://127.0.0.1:8081/actuator/metrics/process.cpu.usage - Metrics - CPU Usage
+4. http://127.0.0.1:8081/actuator/metrics/http.server.requests - Metrics Http Server Requests
 ## 1 - Container, Dependency and IoC
 
 1. https://springframework.guru/best-practices-for-dependency-injection-with-spring/

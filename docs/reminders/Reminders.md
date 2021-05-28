@@ -17,7 +17,8 @@
 
 ## 3. Default Actuator endpoints
 
-`health`, `info`
+Via Http: `health`, `info`
+Via JMS: All of them
 
 ## 4. Default Logger groups
 
@@ -145,8 +146,12 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 14. `Application properties` outside of your packaged jar (application.properties and YAML variants).
 15. `Application properties` packaged inside your jar (application.properties and YAML variants). 
 16. `@PropertySource` annotations on `@Configuration` classes.
+17. Default properties (specified by setting SpringApplication.setDefaultProperties).
 
-Default properties (specified by setting SpringApplication.setDefaultProperties).
+## 18 [Supported Pointcut Designators](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-pointcuts-designators)
+
+`execution`, `within`, `this`, `target`, `within`, `this`, `target`, `args`, `@target`, `@args`, `@within`, `@annotation`, `args`, `@target`, `@args`, `@within`, `@annotation`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
