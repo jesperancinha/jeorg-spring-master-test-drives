@@ -145,6 +145,11 @@
 
 1. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#testcontext-tx-programmatic-tx-mgt
 
+
+## Http Tracing
+
+1. https://docs.spring.io/spring-boot/docs/2.1.0.M1/reference/html/production-ready-http-tracing.html
+
 ---
 
 [Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md)

@@ -96,12 +96,12 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 4. Hibernate
 5. JDBC
 
-## Spring Factories functions
+## 13 Spring Factories functions
 
 1. Activate Listeners
 2. Add more auto-configuration candidates
 
-## @WebMvcTest Autoconfiguration
+## 14 @WebMvcTest Autoconfiguration
 
 1. Disables full auto-configuration 
 2. Enables configuration related to MVC tests
@@ -109,6 +109,14 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 4. @Component, @Service or @Repository do not get configured
 5. Spring Security and MockMvc (include support for HtmlUnit WebClient and Selenium WebDriver).
 6. @AutoConfigureMockMvc annotation can be used as an alternative
+
+
+## 15. Spring  Test Dependency
+
+1. JUnit support
+2. Mockito support
+3. Doest not include AssertJ
+4. It supports EasyMock
 
 ---
 

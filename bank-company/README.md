@@ -162,6 +162,7 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 ## 8 - Testing
 
 1. https://docs.spring.io/spring-framework/docs/4.3.12.RELEASE/spring-framework-reference/html/unit-testing.html
+2. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
 
 ## 9 - Spring Boot Basics
 
@@ -178,6 +179,7 @@ Spring Boot auto-configuration `spring.factories` can affect the way the `Enviro
 
 1. https://dzone.com/articles/maven-git-commit-id-plugin
 2. https://codeboje.de/spring-boot-info-actuator/
+3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints.exposing
 
 We can add a lot of information to our `info` actuator endpoint. This has to be done before starting the server. In our example we'll see a few examples:
 
@@ -310,6 +312,8 @@ Running our Spring Boot application, we'll see that our actuator located at http
 ```
 
 I removed some nodes because the retrieve GIT information is quite extensive and probably not recommended using in production.
+
+As described in section [6.2.2. Exposing Endpoints](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints.exposing) of the actuator documentation, the actuator exposes all endpoints via `JMX` by default. Via `HTTP`, we only have `info` and `health` as default available endpoints.
 
 ## 12 - Spring Boot Testing
 
