@@ -7,7 +7,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @SpringBootApplication
 @EnableTransactionManagement
 open class FurnitureKShopRunner {
-    fun main(args: Array<String>) {
-        SpringApplication.run(FurnitureKShopRunner::class.java, *args)
-    }
+
+}
+fun main(args: Array<String>) {
+    SpringApplication.run(FurnitureKShopRunner::class.java, *args)
 }

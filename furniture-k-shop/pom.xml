@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>furniture-k-shop</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>org.jesperancinha.console</groupId>

@@ -2,7 +2,20 @@
 
 ## Introduction
 
-Using Planets and their different names, distances and compositions, we'll see in this app how to work through important Spring topics.
+This is a furniture shop. Here we will use Kotlin as the language to investigate Spring
+
+## How to run
+
+There are a few profiles available.
+
+### Profile `broken`
+
+This profile is a broken application profile. The profile creates and uses a `ChairDelegatingFilterProxy`, which overrides the entry point of the application in `doFilter`. 
+With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` as a bean instead of leaving that to Tomcat. Since we do not invoke the filter chain, we cannot and won't reach any of the controllers available.
+
+### Endpoints
+
+1. http://localhost:8081 - The start of the application
 
 ## 1 - Container, Dependency and IoC
 
