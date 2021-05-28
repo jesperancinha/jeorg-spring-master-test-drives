@@ -73,7 +73,7 @@ We can configure many `@Transactional` propagation types:
 5. `REQUIRES_NEW` - Creates a new transaction regardless if one already exist
 6. `SUPPORTS` - Always executes a query regardless of a transaction exists or not. It will only execute transactional if a transaction already exists.
 
-None of the transactional modes are the same, and they server very different purposes.	The `SUPPORTS` propagation type can be sometimes confused with `REQUIRED`.	The difference is that `REQUIRED` only fails if a transaction isn't possible to create.
+None of the transactional modes are the same, and they server very different purposes. The `SUPPORTS` propagation type can be sometimes confused with `REQUIRED`. The difference is that `REQUIRED` only fails if a transaction isn't possible to create.
 `SUPPORTS` however, doesn't make it mandatory to create a transaction.
 
 ## 4 - JPA
@@ -169,6 +169,10 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 2. https://mkyong.com/spring/spring-propertysources-example/
 
 ## 10 - Spring Boot Auto-Configuration
+
+1. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-auto-configuration
+
+Spring Boot auto-configuration `spring.factories` can affect the way the `Environment` and the `ApplicationContext` are configured during startup. This is because they can register custom listeners and extra register extra custom configurations.
 
 ## 11 - Spring Boot Actuator
 
