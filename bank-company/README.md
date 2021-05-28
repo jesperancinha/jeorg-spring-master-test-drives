@@ -172,6 +172,7 @@ The `DelegatingFilterProxy` resolves the `filterChain` and it gets registered in
 ## 10 - Spring Boot Auto-Configuration
 
 1. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-auto-configuration
+2. https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config
 
 Spring Boot auto-configuration `spring.factories` can affect the way the `Environment` and the `ApplicationContext` are configured during startup. This is because they can register custom listeners and extra register extra custom configurations.
 

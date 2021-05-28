@@ -64,7 +64,7 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 ## 10 @Transactional propagation modes
 
 1. `MANDATORY` - A transaction must exist
-2. `NESTED` - Exectus withing a nested transaction
+2. `NESTED` - Executes withing a nested transaction. It behaves as `REQUIRED` if no transaction exists.
 3. `NOT_SUPPORTED` - Stops existing transactions, if any, and executes non-transactional.
 4. `REQUIRED` - Always runs in a transactional mode and creates a new transaction if none exists
 5. `REQUIRES_NEW` - Creates a new transaction regardless if one already exist
@@ -118,6 +118,35 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 3. Doest not include AssertJ
 4. It supports EasyMock
 
+
+## 16. Bean Scopes
+
+1. Singleton (`singleton`)
+2. Prototype (`prototype`)
+3. Request (`request`)
+4. Session (`session`)
+5. Global Session (`global-session`)
+
+## 17 [Configuration order](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config)
+
+1. Devtools global settings properties in the $HOME/.config/spring-boot directory when devtools is active.
+2. @TestPropertySource annotations on your tests.
+3. Test property attributes. Examples are @SpringBootTest and test annotations.
+4. Command line arguments.
+5. Properties from `SPRING_APPLICATION_JSON` (inline JSON embedded in an environment variable or system property).
+6. ServletConfig init parameters.
+7. ServletContext init parameters.
+8. JNDI attributes from `java:comp/env`.
+9. Java System properties (`System.getProperties()`).
+10. OS environment variables.
+11. A `RandomValuePropertySource` that has properties only in `random.*`.
+12. `Profile-specific application properties` outside packaged jar (application-{profile}.properties and YAML variants).
+13. `Profile-specific application properties` packaged inside jar (application-{profile}.properties and YAML variants).
+14. `Application properties` outside of your packaged jar (application.properties and YAML variants).
+15. `Application properties` packaged inside your jar (application.properties and YAML variants). 
+16. `@PropertySource` annotations on `@Configuration` classes.
+
+Default properties (specified by setting SpringApplication.setDefaultProperties).
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
