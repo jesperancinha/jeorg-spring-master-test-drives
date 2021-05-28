@@ -18,6 +18,7 @@
         <module>car-parts</module>
         <module>planets</module>
         <module>bank-company</module>
+        <module>furniture-k-shop</module>
     </modules>
 
     <properties>
@@ -59,6 +60,7 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <maven-compiler-plugin.source>${java.version}</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>${java.version}</maven-compiler-plugin.target>
+        <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
         <args4j-maven-plugin.version>2.33</args4j-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -100,7 +102,6 @@
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
-        <kotlinx-serialization-json.version>1.2.0</kotlinx-serialization-json.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
         <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
         <java-driver-core.version>4.11.1</java-driver-core.version>
@@ -109,6 +110,11 @@
         <hsqldb.version>2.6.0</hsqldb.version>
         <derby.version>10.11.1.1</derby.version>
         <git-commit-id-plugin.version>3.0.1</git-commit-id-plugin.version>
+
+        <!-- Kotlin -->
+        <kotlinx-serialization-json.version>1.2.0</kotlinx-serialization-json.version>
+        <kotlin.version>1.4.30</kotlin.version>
+        <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
     </properties>
 
     <build>
@@ -416,6 +422,21 @@
                 <groupId>org.jetbrains.kotlinx</groupId>
                 <artifactId>kotlinx-serialization-json</artifactId>
                 <version>${kotlinx-serialization-json.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.cassandraunit</groupId>
