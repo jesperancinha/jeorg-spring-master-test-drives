@@ -158,9 +158,17 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 2. Support for serving static resources, including support for `WebJars`.
 3. Automatic registration of `Converter`, `GenericConverter`, and `Formatter` beans.
 4. Support for `HttpMessageConverters`.
-5. Automatic registration of `MessageCodesResolver`.
+5. Automatic registration of `Mes	sageCodesResolver`.
 6. Static `index.html` support.
 7. Automatic use of a `ConfigurableWebBindingInitializer` bean.
+
+## 20 [@DataJpaTest](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/orm/jpa/DataJpaTest.html)
+
+1. Disables full auto-configuration
+2. Only configuration related to JPA tests.
+3. Tests with `@DataJpaTest` are `transactional` and roll back at the end of each test.
+4. They use an embedded in-memory database (replacing any explicit or usually auto-configured `DataSource`). 
+5. The `@AutoConfigureTestDatabase` annotation can be used to override these settings.
 
 ---
 
