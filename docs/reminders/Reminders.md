@@ -62,6 +62,15 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 2. LinkDiscoverer
 3. [@EnableHypermediaSupport](https://docs.spring.io/spring-hateoas/docs/current/api/org/springframework/hateoas/config/EnableHypermediaSupport.html)
 
+## 10 @Transactional propagation modes
+
+1. `MANDATORY` - A transaction must exist
+2. `NESTED` - Exectus withing a nested transaction
+3. `NOT_SUPPORTED` - Stops existing transactions, if any, and executes non-transactional.
+4. `REQUIRED` - Always runs in a transactional mode and creates a new transaction if none exists
+5. `REQUIRES_NEW` - Creates a new transaction regardless if one already exist
+6. `SUPPORTS` - Always executes a query regardless of a transaction exists or not. It will only execute transactional if a transaction already exists.
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
