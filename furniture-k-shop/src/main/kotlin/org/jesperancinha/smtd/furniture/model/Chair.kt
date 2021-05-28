@@ -7,10 +7,9 @@ import javax.persistence.*
 data class Chair(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: String,
-    var designation: String,
-    var weight: Long
+    var id: Long,
+    var designation: String?,
+    var weight: Long?
 ) {
-    constructor() : this("", "", 0L) {
-    }
+    constructor() : this(0L, null, null)
 }
