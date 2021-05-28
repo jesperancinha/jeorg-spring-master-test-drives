@@ -152,6 +152,16 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 
 `execution`, `within`, `this`, `target`, `within`, `this`, `target`, `args`, `@target`, `@args`, `@within`, `@annotation`, `args`, `@target`, `@args`, `@within`, `@annotation`
 
+## 19 [Spring MVC Auto-configuration](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-web-applications.spring-mvc.auto-configuration)
+
+1. Inclusion of `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
+2. Support for serving static resources, including support for `WebJars`.
+3. Automatic registration of `Converter`, `GenericConverter`, and `Formatter` beans.
+4. Support for `HttpMessageConverters`.
+5. Automatic registration of `MessageCodesResolver`.
+6. Static `index.html` support.
+7. Automatic use of a `ConfigurableWebBindingInitializer` bean.
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)

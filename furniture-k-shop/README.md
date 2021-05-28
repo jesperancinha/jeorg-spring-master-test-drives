@@ -88,6 +88,7 @@ In a transaction, the `readOnly`, only means possible performance improvements.
 
 1. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-auto-configuration
 2. https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config
+3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration
 
 ## 11 - Spring Boot Actuator
 
