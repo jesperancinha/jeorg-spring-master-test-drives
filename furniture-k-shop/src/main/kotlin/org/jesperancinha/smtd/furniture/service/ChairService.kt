@@ -5,7 +5,6 @@ import org.jesperancinha.smtd.furniture.model.Chair
 import org.jesperancinha.smtd.furniture.repository.ChairRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
-import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Propagation.REQUIRES_NEW
 import org.springframework.transaction.annotation.Transactional
 
@@ -34,4 +33,9 @@ open class ChairService(
     fun deleteChair(id: Long) = chairRepository.deleteById(id)
 
     fun updateChair(chair: Chair) = chairRepository.save(chair)
+
+    fun weightOfAllChairs(): Long {
+        val chairs = getAll()
+        return chairs.map { it.weight }.fold(0L) { sum, item -> sum + (item ?: 0) }
+    }
 }

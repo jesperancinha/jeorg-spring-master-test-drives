@@ -150,6 +150,10 @@
 
 1. https://docs.spring.io/spring-boot/docs/2.1.0.M1/reference/html/production-ready-http-tracing.html
 
+## External test libraries
+
+1. https://www.journaldev.com/22193/easymock-tutorial
+
 ---
 
 [Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md)
