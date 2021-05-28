@@ -37,7 +37,6 @@
 
 `MODE_GLOBAL`, `MODE_INHERITABLETHREADLOCAL`, `MODE_THREADLOCAL`, `SYSTEM_PROPERTY`
 
-
 ## 7. Where can we use SpEL?
 
 We can use SpEL on a variaty of annotations that support SpEL. The ones I dentified so far are:
@@ -70,6 +69,24 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 4. `REQUIRED` - Always runs in a transactional mode and creates a new transaction if none exists
 5. `REQUIRES_NEW` - Creates a new transaction regardless if one already exist
 6. `SUPPORTS` - Always executes a query regardless of a transaction exists or not. It will only execute transactional if a transaction already exists.
+
+## 11 Supported MVC template engines
+
+1. Thymeleaf
+2. Groovy Markup Templates
+3. Velocity & FreeMarker
+4. JSP & JSTL
+5. Script templates
+	1. Handlebars
+	2. Mustache
+	3. React
+	4. EJS
+	5. ERB
+	6. String templates
+6. XSLT
+7. Document views (PDF/Excel)
+8. JSON Mapping View
+9. XML Mapping View
 
 ---
 

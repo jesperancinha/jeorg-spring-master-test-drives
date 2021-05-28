@@ -88,6 +88,8 @@ None of the transactional modes are the same, and they server very different pur
 
 ## 6 - MVC REST
 
+1. https://spring.io/guides/gs/serving-web-content/
+
 ## 7 - Security
 
 1. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
