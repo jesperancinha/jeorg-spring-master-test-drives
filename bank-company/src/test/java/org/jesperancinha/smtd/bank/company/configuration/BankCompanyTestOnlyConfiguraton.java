@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.TestConfiguration;
 
 /**
- * Using Configuration we get properties from both production and test
+ * Using TestConfiguration we get properties from both production and test
  * It does not get automatically scanned
  */
 @Data
@@ -21,4 +21,5 @@ public class BankCompanyTestOnlyConfiguraton {
 
     @Value("${info.app.name:fail}")
     private String appName;
+
 }
