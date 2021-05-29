@@ -172,7 +172,7 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 
 ## 21 Bean Lifecycle
 
-1. called: `BeanFactoryPostProcessor`#`postProcessBeanFactory`
+1. called: `BeanFactoryPostProcessor`#`postProcessBeanFactory` => Bean definitions
 2. Bean called: Bean#setSomething => `setter injection`
 3. Bean called: `BeanNameAware`#`setBeanName` 
 4. Bean called: `BeanClassLoaderAware`#`setBeanClassLoader` 

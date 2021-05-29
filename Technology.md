@@ -57,6 +57,7 @@
 ## Bean Lifecycle Order (constructor, setup, etc...)
 
 1. https://reflectoring.io/spring-bean-lifecycle/
+2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html
 
 ## Health indicators
 
