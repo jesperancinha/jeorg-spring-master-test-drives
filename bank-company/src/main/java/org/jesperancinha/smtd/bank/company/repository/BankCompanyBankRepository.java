@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BankCompanyBankRepository extends JpaRepository<Bank, Long> {
     Long countAllByIdAfter(Long id);
+
+    Bank findByNameNull();
 }
