@@ -10,8 +10,7 @@ There are a few profiles available.
 
 ### Profile `broken`
 
-This profile is a broken application profile. The profile creates and uses a `ChairDelegatingFilterProxy`, which overrides the entry point of the application in `doFilter`. 
-With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` as a bean instead of leaving that to Tomcat. Since we do not invoke the filter chain, we cannot and won't reach any of the controllers available.
+This profile is a broken application profile. The profile creates and uses a `ChairDelegatingFilterProxy`, which overrides the entry point of the application in `doFilter`.	With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` as a bean instead of leaving that to Tomcat. Since we do not invoke the filter chain, we cannot and won't reach any of the controllers available.
 
 ### Endpoints
 
@@ -22,16 +21,23 @@ With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` 
 
 ## 1 - Container, Dependency and IoC
 
-1. https://springframework.guru/best-practices-for-dependency-injection-with-spring/
-2. https://dzone.com/articles/spring-bean-lifecycle
-3. https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
-4. https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
-5. https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html
-6. https://docs.spring.io/spring-integration/docs/current/reference/html/spel.html#spel
-7. https://www.dev2qa.com/spring-expression-language-example-vs/
-8. https://dzone.com/articles/beginners-guide-to-spring-expression-language-with
+1.  https://springframework.guru/best-practices-for-dependency-injection-with-spring/
+2.  https://dzone.com/articles/spring-bean-lifecycle
+3.  https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
+4.  https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
+5.  https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html
+6.  https://docs.spring.io/spring-integration/docs/current/reference/html/spel.html#spel
+7.  https://www.dev2qa.com/spring-expression-language-example-vs/
+8.  https://dzone.com/articles/beginners-guide-to-spring-expression-language-with
+9.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/annotation/Order.html
+10. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Lazy.html
+11. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Import.html
+12. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/DependsOn.html
 
 ## 2 - AOP
+
+1. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes-other-injection-proxies
+2. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-proxying
 
 ## 3 - Transactions
 
