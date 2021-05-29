@@ -104,13 +104,12 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 
 ## 14 @WebMvcTest Autoconfiguration
 
-1. Disables full auto-configuration 
+1. Disables full auto-configuration
 2. Enables configuration related to MVC tests
 3. @Controller, @ControllerAdvice, @JsonComponent, Converter/GenericConverter, Filter, WebMvcConfigurer and HandlerMethodArgumentResolver beans
 4. @Component, @Service or @Repository do not get configured
 5. Spring Security and MockMvc (include support for HtmlUnit WebClient and Selenium WebDriver).
 6. @AutoConfigureMockMvc annotation can be used as an alternative
-
 
 ## 15. Spring  Test Dependency
 
@@ -118,7 +117,6 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 2. Mockito support
 3. Doest not include AssertJ
 4. It supports EasyMock
-
 
 ## 16. Bean Scopes
 
@@ -144,7 +142,7 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 12. `Profile-specific application properties` outside packaged jar (application-{profile}.properties and YAML variants).
 13. `Profile-specific application properties` packaged inside jar (application-{profile}.properties and YAML variants).
 14. `Application properties` outside of your packaged jar (application.properties and YAML variants).
-15. `Application properties` packaged inside your jar (application.properties and YAML variants). 
+15. `Application properties` packaged inside your jar (application.properties and YAML variants).
 16. `@PropertySource` annotations on `@Configuration` classes.
 17. Default properties (specified by setting SpringApplication.setDefaultProperties).
 
@@ -167,27 +165,27 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 1. Disables full auto-configuration
 2. Only configuration related to JPA tests.
 3. Tests with `@DataJpaTest` are `transactional` and roll back at the end of each test.
-4. They use an embedded in-memory database (replacing any explicit or usually auto-configured `DataSource`). 
+4. They use an embedded in-memory database (replacing any explicit or usually auto-configured `DataSource`).
 5. The `@AutoConfigureTestDatabase` annotation can be used to override these settings.
 
 ## 21 Bean Lifecycle
 
 1. called: `BeanFactoryPostProcessor`#`postProcessBeanFactory` => Bean definitions
 2. Bean called: Bean#setSomething => `setter injection`
-3. Bean called: `BeanNameAware`#`setBeanName` 
-4. Bean called: `BeanClassLoaderAware`#`setBeanClassLoader` 
-5. Bean called: `BeanFactoryAware`#`setBeanFactory` 
-6. Bean called: `ResourceLoaderAware`#`setResourceLoader` 
-7. Bean called: `ApplicationEventPublisherAware`#`setApplicationEventPublisher` 
-8. Bean called: `MessageSourceAware`#`setMessageSource` 
-9. Bean called: `ApplicationContextAware`#`setApplicationContext` 
-10. called: `BeanPostProcessor`#`postProcessBeforeInitialization` 
+3. Bean called: `BeanNameAware`#`setBeanName`
+4. Bean called: `BeanClassLoaderAware`#`setBeanClassLoader`
+5. Bean called: `BeanFactoryAware`#`setBeanFactory`
+6. Bean called: `ResourceLoaderAware`#`setResourceLoader`
+7. Bean called: `ApplicationEventPublisherAware`#`setApplicationEventPublisher`
+8. Bean called: `MessageSourceAware`#`setMessageSource`
+9. Bean called: `ApplicationContextAware`#`setApplicationContext`
+10. called: `BeanPostProcessor`#`postProcessBeforeInitialization`
 11. Bean called: Bean#`postConstruct`
-12. Bean called: `InitializingBean`#`afterPropertiesSet` 
+12. Bean called: `InitializingBean`#`afterPropertiesSet`
 13. Bean called: Bean#`initMethod` => Custom init
 14. called: `BeanPostProcessor`#`postProcessAfterInitialization`
-15. Bean called: Bean#`preDestroy` 
-16. Bean called: `DisposableBean`#`destroy` 
+15. Bean called: Bean#`preDestroy`
+16. Bean called: `DisposableBean`#`destroy`
 17. Bean called: Bean#`destroyMethod` => Custom destroy
 
 ## 22 Shutting down a Spring Boot application
@@ -197,9 +195,9 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 3. curl -X POST localhost:port/actuator/shutdown - gracious shutdown
 
 ## 23 [MVC Allowed Method Arguments](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)
- 
+
 `WebRequest`, `NativeWebRequest`,
-`javax.servlet.ServletRequest`, `javax.servlet.ServletResponse`, 
+`javax.servlet.ServletRequest`, `javax.servlet.ServletResponse`,
 `javax.servlet.http.HttpSession`,
 `javax.servlet.http.PushBuilder`, `java.security.Principal`,
 `java.util.TimeZone`, `java.time.ZoneId`, `java.io.InputStream`,
@@ -227,15 +225,19 @@ Other argument types: from [documentation](https://docs.spring.io/spring-framewo
 `java.util.Map`, `org.springframework.ui.Model`,
 `@ModelAttribute`, `ModelAndView`,
 `void`, `DeferredResult<V>`,
-`Callable<V>`, `ListenableFuture<V>`, `java.util.concurrent.CompletionStage<V>`, 
+`Callable<V>`, `ListenableFuture<V>`, `java.util.concurrent.CompletionStage<V>`,
 `java.util.concurrent.CompletableFuture<V>`,
 `ResponseBodyEmitter`, `SseEmitter`,
-`StreamingResponseBody`, 
+`StreamingResponseBody`,
 `Reactive types - Reactor, RxJava, or others through ReactiveAdapterRegistry`,
 
 Other argument types: from [documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types):
 
 > Any return value that does not match any of the earlier values in this table and that is a String or void is treated as a view name (default view name selection through RequestToViewNameTranslator applies), provided it is not a simple type, as determined by BeanUtils#isSimpleProperty. Values that are simple types remain unresolved.
+
+## 25 JPA [Query Creation](https://docs.spring.io/spring-data/jpa/docs/current-SNAPSHOT/reference/html/#jpa.query-methods.query-creation)
+
+`Distinct`,`And`,`Or`,`Is, Equals`,`Between`,`LessThan`,`LessThanEqual`,`GreaterThan`,`GreaterThanEqual`,`After`,`Before`,`IsNull, Null`,`IsNotNull, NotNull`,`Like`,`NotLike`,`StartingWith`,`EndingWith`,`Containing`,`OrderBy`,`Not`,`In`,`NotIn`,`True`,`False`,`IgnoreCase`
 
 ---
 
