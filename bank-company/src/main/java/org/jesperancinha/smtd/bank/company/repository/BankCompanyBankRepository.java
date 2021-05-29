@@ -7,4 +7,6 @@ public interface BankCompanyBankRepository extends JpaRepository<Bank, Long> {
     Long countAllByIdAfter(Long id);
 
     Bank findByNameNull();
+
+    Long countAllByNameIgnoreCase(String name);
 }
