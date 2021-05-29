@@ -102,7 +102,7 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 1. Activate Listeners
 2. Add more auto-configuration candidates
 
-## 14 @WebMvcTest Autoconfiguration
+## 14 [@WebMvcTest](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/web/servlet/WebMvcTest.html) Autoconfiguration
 
 1. Disables full auto-configuration
 2. Enables configuration related to MVC tests
@@ -110,6 +110,9 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 4. @Component, @Service or @Repository do not get configured
 5. Spring Security and MockMvc (include support for HtmlUnit WebClient and Selenium WebDriver).
 6. @AutoConfigureMockMvc annotation can be used as an alternative
+7. `@AutoConfigureCache`
+8. `@AutoConfigureWebMvc`
+9. `@AutoConfigureMockMvc`
 
 ## 15. Spring  Test Dependency
 
