@@ -170,6 +170,26 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 4. They use an embedded in-memory database (replacing any explicit or usually auto-configured `DataSource`). 
 5. The `@AutoConfigureTestDatabase` annotation can be used to override these settings.
 
+## 21 Bean Lifecycle
+
+1. called: `BeanFactoryPostProcessor`#`postProcessBeanFactory`
+2. Bean called: Bean#setSomething => `setter injection`
+3. Bean called: `BeanNameAware`#`setBeanName` 
+4. Bean called: `BeanClassLoaderAware`#`setBeanClassLoader` 
+5. Bean called: `BeanFactoryAware`#`setBeanFactory` 
+6. Bean called: `ResourceLoaderAware`#`setResourceLoader` 
+7. Bean called: `ApplicationEventPublisherAware`#`setApplicationEventPublisher` 
+8. Bean called: `MessageSourceAware`#`setMessageSource` 
+9. Bean called: `ApplicationContextAware`#`setApplicationContext` 
+10. called: `BeanPostProcessor`#`postProcessBeforeInitialization` 
+11. Bean called: Bean#`postConstruct`
+12. Bean called: `InitializingBean`#`afterPropertiesSet` 
+13. Bean called: Bean#`initMethod` => Custom init
+14. called: `BeanPostProcessor`#`postProcessAfterInitialization`
+15. Bean called: Bean#`preDestroy` 
+16. Bean called: `DisposableBean`#`destroy` 
+17. Bean called: Bean#`destroyMethod` => Custom destroy
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)

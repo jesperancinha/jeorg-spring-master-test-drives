@@ -100,6 +100,7 @@ In a transaction, the `readOnly`, only means possible performance improvements.
 ## 12 - Spring Boot Testing
 
 1. https://howtodoinjava.com/spring-boot2/testing/springboot-test-configuration/
+2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Lazy.html
 
 ---
 
