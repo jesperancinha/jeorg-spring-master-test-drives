@@ -26,4 +26,13 @@ public class BankCompanyTestForLazyConfiguraton {
                 .reset();
         return new Bank();
     }
+    @Bean
+    public Bank bank1() {
+        ConsolerizerComposer.outSpace()
+                .unicorns(100)
+                .yellow("Bank has been initialized!")
+                .unicorns(100)
+                .reset();
+        return Bank.builder().name("Bank 1").build();
+    }
 }
