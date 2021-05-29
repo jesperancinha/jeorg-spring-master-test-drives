@@ -167,6 +167,10 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 3. Tests with `@DataJpaTest` are `transactional` and roll back at the end of each test.
 4. They use an embedded in-memory database (replacing any explicit or usually auto-configured `DataSource`).
 5. The `@AutoConfigureTestDatabase` annotation can be used to override these settings.
+6. `@AutoConfigureCache`
+7. `@AutoConfigureDataJpa`
+8. `@AutoConfigureTestDatabase`
+9. `@AutoConfigureTestEntityManager`
 
 ## 21 Bean Lifecycle
 
