@@ -190,6 +190,53 @@ We can use SpEL on a variaty of annotations that support SpEL. The ones I dentif
 16. Bean called: `DisposableBean`#`destroy` 
 17. Bean called: Bean#`destroyMethod` => Custom destroy
 
+## 22 Shutting down a Spring Boot application
+
+1. `ApplicationContext`.close - instance method - programmatically
+2. `SpringApplication`.exit - static method using context
+3. curl -X POST localhost:port/actuator/shutdown - gracious shutdown
+
+## 23 [MVC Allowed Method Arguments](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments)
+ 
+`WebRequest`, `NativeWebRequest`,
+`javax.servlet.ServletRequest`, `javax.servlet.ServletResponse`, 
+`javax.servlet.http.HttpSession`,
+`javax.servlet.http.PushBuilder`, `java.security.Principal`,
+`java.util.TimeZone`, `java.time.ZoneId`, `java.io.InputStream`,
+`java.io.Reader`, `java.io.OutputStream`, `java.io.Writer`,
+`@PathVariable`, `@MatrixVariable`, `@RequestParam`, `@RequestHeader`,
+`@CookieValue`, `@RequestBody`,
+`HttpMethod`, `java.util.Locale`,
+`HttpEntity<T>`, `@RequestPart`, `java.util.Map`, `org.springframework.ui.Model`,
+`org.springframework.ui.ModelMap`,
+`RedirectAttributes`, `@ModelAttribute`,
+`Errors`, `BindingResult`,
+`SessionStatus`, `class-level @SessionAttributes`,
+`UriComponentsBuilder`, `@SessionAttribute`, `@RequestAttribute`
+
+Other argument types: from [documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments):
+
+> If a method argument is not matched to any of the earlier values in this table and it is a simple type (as determined by BeanUtils#isSimpleProperty, it is a resolved as a @RequestParam. Otherwise, it is resolved as a @ModelAttribute
+
+## 24 [MVC Allowed return types](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types)
+
+`@ResponseBody`,
+`HttpEntity<B>`, `ResponseEntity<B>`,
+`HttpHeaders`,
+`String`, `View`,
+`java.util.Map`, `org.springframework.ui.Model`,
+`@ModelAttribute`, `ModelAndView`,
+`void`, `DeferredResult<V>`,
+`Callable<V>`, `ListenableFuture<V>`, `java.util.concurrent.CompletionStage<V>`, 
+`java.util.concurrent.CompletableFuture<V>`,
+`ResponseBodyEmitter`, `SseEmitter`,
+`StreamingResponseBody`, 
+`Reactive types - Reactor, RxJava, or others through ReactiveAdapterRegistry`,
+
+Other argument types: from [documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-return-types):
+
+> Any return value that does not match any of the earlier values in this table and that is a String or void is treated as a view name (default view name selection through RequestToViewNameTranslator applies), provided it is not a simple type, as determined by BeanUtils#isSimpleProperty. Values that are simple types remain unresolved.
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)

@@ -19,6 +19,7 @@ With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` 
 2. http://127.0.0.1:8081/actuator/metrics - Metrics
 3. http://127.0.0.1:8081/actuator/metrics/process.cpu.usage - Metrics - CPU Usage
 4. http://127.0.0.1:8081/actuator/metrics/http.server.requests - Metrics Http Server Requests
+
 ## 1 - Container, Dependency and IoC
 
 1. https://springframework.guru/best-practices-for-dependency-injection-with-spring/
@@ -52,6 +53,8 @@ In a transaction, the `readOnly`, only means possible performance improvements.
 
 ## 5 - MVC Basics
 
+1. https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
+
 ## 6 - MVC REST
 
 1. https://spring.io/guides/gs/serving-web-content/
@@ -84,6 +87,7 @@ In a transaction, the `readOnly`, only means possible performance improvements.
 
 1. https://springframework.guru/spring-external-configuration-data/
 2. https://mkyong.com/spring/spring-propertysources-example/
+3. http://www.dailycodebuffer.com/shutdown-a-spring-boot-application/#:~:text=Close%20ApplicationContext,method%20to%20close%20ApplicationContext%20programmatically.
 
 ## 10 - Spring Boot Auto-Configuration
 
