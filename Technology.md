@@ -155,6 +155,11 @@
 
 1. https://www.journaldev.com/22193/easymock-tutorial
 
+
+## Interview Questions
+
+1. https://www.java67.com/2021/02/spring-boot-actuator-interview-questions-answers-java.html
+
 ---
 
 [Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md)
