@@ -40,6 +40,7 @@ This profile is a broken application profile. The profile creates and uses a `Ch
 2. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-proxying
 3. https://stackoverflow.com/questions/22861587/why-protected-methods-are-not-intercepted-by-spring-aop#:~:text=Due%20to%20the%20proxy%2Dbased,not%20recommendable%20for%20AOP%20purposes).
 4. https://stackoverflow.com/questions/51795511/when-is-cglib-proxy-used-by-spring-aop
+5. https://howtodoinjava.com/spring-aop/aspectj-pointcut-expressions/
 
 ## 3 - Transactions
 
@@ -49,6 +50,8 @@ This profile is a broken application profile. The profile creates and uses a `Ch
 4. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/TransactionTemplate.html
 
 In a transaction, the `readOnly`, only means possible performance improvements.
+
+Calling private methods withing a class TODO:
 
 ## 4 - JPA
 

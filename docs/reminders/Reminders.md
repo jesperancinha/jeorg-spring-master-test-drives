@@ -292,7 +292,17 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 
 > Due to the proxy-based nature of Spring’s AOP framework, calls within the target object are, by definition, not intercepted. For JDK proxies, only public interface method calls on the proxy can be intercepted. With CGLIB, public and protected method calls on the proxy are intercepted (and even package-visible methods, if necessary). However, common interactions through proxies should always be designed through public signatures.
 
+## 30 [AOP in Spring](https://docs.spring.io/spring-framework/docs/3.0.x/reference/aop.html)
 
+1. [Runtime Weaving](https://docs.spring.io/spring-framework/docs/3.0.x/reference/aop.html)
+> Weaving: linking aspects with other application types or objects to create an advised object. This can be done at compile time (using the AspectJ compiler, for example), load time, or at runtime. Spring AOP, like other pure Java AOP frameworks, performs weaving at runtime.
+2. Code is modified during runtime by proxies
+> Target object: object being advised by one or more aspects. Also referred to as the advised object. Since Spring AOP is implemented using runtime proxies, this object will always be a proxied object.
+3. JDK proxies support `final` classes and methods, purely because they support interfaces. Using the interfaces, it doesn't matter if the concrete `class` is `final` or has `final` methods.
+4. [AspectJ Expression Language](https://www.eclipse.org/aspectj/)
+5. Spring AOP only supports method execution join points. If ewe look at the available point cut designators, we also see that they only ever work as a filter for method join points.
+6. CGLIB constructors get called twice
+>The constructor of your proxied object will be called twice. This is a natural consequence of the CGLIB proxy model whereby a subclass is generated for each proxied object. For each proxied instance, two objects are created: the actual proxied object and an instance of the subclass that implements the advice. This behavior is not exhibited when using JDK proxies. Usually, calling the constructor of the proxied type twice, is not an issue, as there are usually only assignments taking place and no real logic is implemented in the constructor.
 
 ---
 
