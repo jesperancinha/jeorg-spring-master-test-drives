@@ -18,7 +18,7 @@
 ## 3. Default Actuator endpoints
 
 1. Via Http: `health`, `info`
-2. Via JMS: All of them
+2. Via JMX: All of them
 
 ## 4. Default Logger groups
 
