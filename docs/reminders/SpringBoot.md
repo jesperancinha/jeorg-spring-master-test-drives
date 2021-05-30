@@ -1,5 +1,7 @@
 # Spring Master 5 - What is Spring Boot
 
+[Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
+
 ---
 
 1. Spring Boot is opinionated

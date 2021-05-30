@@ -1,4 +1,8 @@
-# Goals
+# Spring Master 5 Test Drives - Goals
+
+[Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
+
+---
 
 ### Goal 1 - Deployment with embedded Jetty Server
 
