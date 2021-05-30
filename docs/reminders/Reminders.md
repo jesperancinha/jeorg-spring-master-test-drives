@@ -282,6 +282,18 @@ All [Spring testing annotations](https://docs.spring.io/spring-framework/docs/cu
 `@SpyBean`,
 `@MockBean`
 
+## 29 [AOP proxies](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-pointcuts-designators)
+
+Spring AOP recommends only using `public` method visibility in AOP propxies. For JDK proxies, this is mandatory given that interfaces are also mandatory.
+
+However, in case of `@EnableAspectJAutoProxy(proxyTargetClass = true)`, even though we force the usage of CGLIB proxies in the spring framework, it is still only recommended to use `public` visibility. However, it is still technically possible to use CGLIB proxies with methods with visibility `protected` and `package`.
+
+From [documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-pointcuts-designators):
+
+> Due to the proxy-based nature of Spring’s AOP framework, calls within the target object are, by definition, not intercepted. For JDK proxies, only public interface method calls on the proxy can be intercepted. With CGLIB, public and protected method calls on the proxy are intercepted (and even package-visible methods, if necessary). However, common interactions through proxies should always be designed through public signatures.
+
+
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)

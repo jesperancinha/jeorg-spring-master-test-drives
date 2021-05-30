@@ -38,6 +38,8 @@ This profile is a broken application profile. The profile creates and uses a `Ch
 
 1. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes-other-injection-proxies
 2. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-proxying
+3. https://stackoverflow.com/questions/22861587/why-protected-methods-are-not-intercepted-by-spring-aop#:~:text=Due%20to%20the%20proxy%2Dbased,not%20recommendable%20for%20AOP%20purposes).
+4. https://stackoverflow.com/questions/51795511/when-is-cglib-proxy-used-by-spring-aop
 
 ## 3 - Transactions
 
