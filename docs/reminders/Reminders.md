@@ -248,6 +248,11 @@ Other argument types: from [documentation](https://docs.spring.io/spring-framewo
 
 `Distinct`,`And`,`Or`,`Is, Equals`,`Between`,`LessThan`,`LessThanEqual`,`GreaterThan`,`GreaterThanEqual`,`After`,`Before`,`IsNull, Null`,`IsNotNull, NotNull`,`Like`,`NotLike`,`StartingWith`,`EndingWith`,`Containing`,`OrderBy`,`Not`,`In`,`NotIn`,`True`,`False`,`IgnoreCase`
 
+## 26 [WebAppConfiguration](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/web/WebAppConfiguration.html)
+
+Established the resource path to the root directory of the web application.
+By default, it is `src/main/webapp`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
