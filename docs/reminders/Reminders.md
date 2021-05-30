@@ -11,7 +11,7 @@
 |Operation|URL|Method|Command|
 |---|---|---|---|
 |Rebuild Integration Graph|http://localhost:8081/actuator/integrationgraph|POST| curl 'http://localhost:8081/actuator/integrationgraph' -i -X POST|
-|Setup Log Levels|http://localhost:8080/actuator/loggers/{path}|POST| see module [car-parts](dev/src/jofisaes/jeorg-spring-master-5-test-drives/car-parts)|
+|Setup Log Levels|http://localhost:8080/actuator/loggers/{path}|POST| see module [Goals](./Goals.md)|
 |Shutdown the application|http://localhost:8080/actuator/shutdown|POST|curl 'http://localhost:8080/actuator/shutdown' -i -X POST
 |Drain and return the application startup steps|http://localhost:8080/actuator/startup|POST|curl 'http://localhost:8080/actuator/startup' -i -X POST
 
@@ -282,4 +282,4 @@ All [Spring testing annotations](https://docs.spring.io/spring-framework/docs/cu
 
 ---
 
-[Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
+[Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
