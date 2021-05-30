@@ -273,6 +273,13 @@ Established the resource path to the root directory of the web application.	By d
 `@SqlMergeMode`,
 `@SqlGroup`
 
+## 28 [Spring Boot testing annotations](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing)
+
+All [Spring testing annotations](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring) plus:
+
+`@SpyBean`,
+`@MockBean`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md)
