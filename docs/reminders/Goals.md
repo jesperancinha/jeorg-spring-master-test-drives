@@ -4,6 +4,8 @@
 
 ---
 
+## Project [car-parts](./../../car-parts)
+
 ### Goal 1 - Deployment with embedded Jetty Server
 
 In order to get Jetty to run we need to remove Tomcat wich comes along with it:
@@ -456,7 +458,7 @@ Essentially, the point is that JAX-RS is specifically made to be used with JEE. 
 
 ---
 
-## Profiles available
+### Profiles available
 
 |Profile|Goal|Security|Actuator|
 |---|---|---|---|
