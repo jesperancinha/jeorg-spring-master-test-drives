@@ -250,8 +250,28 @@ Other argument types: from [documentation](https://docs.spring.io/spring-framewo
 
 ## 26 [WebAppConfiguration](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/web/WebAppConfiguration.html)
 
-Established the resource path to the root directory of the web application.
-By default, it is `src/main/webapp`
+Established the resource path to the root directory of the web application.	By default, it is `src/main/webapp`
+
+## 27 [Spring testing annotations](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring)
+
+`@BootstrapWith`,
+`@ContextConfiguration`,
+`@WebAppConfiguration`,
+`@ContextHierarchy`,
+`@ActiveProfiles`,
+`@TestPropertySource`,
+`@DynamicPropertySource`,
+`@DirtiesContext`,
+`@TestExecutionListeners`,
+`@RecordApplicationEvents`,
+`@Commit`,
+`@Rollback`,
+`@BeforeTransaction`,
+`@AfterTransaction`,
+`@Sql`,
+`@SqlConfig`,
+`@SqlMergeMode`,
+`@SqlGroup`
 
 ---
 
