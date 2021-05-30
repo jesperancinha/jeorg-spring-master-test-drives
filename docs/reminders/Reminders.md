@@ -161,7 +161,7 @@ We can use SpEL on a variety of annotations that support SpEL. The ones I have i
 2. Support for serving static resources, including support for `WebJars`.
 3. Automatic registration of `Converter`, `GenericConverter`, and `Formatter` beans.
 4. Support for `HttpMessageConverters`.
-5. Automatic registration of `Mes	sageCodesResolver`.
+5. Automatic registration of `MessageCodesResolver`.
 6. Static `index.html` support.
 7. Automatic use of a `ConfigurableWebBindingInitializer` bean.
 
