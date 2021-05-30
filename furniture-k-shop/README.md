@@ -61,6 +61,7 @@ Calling private methods withing a class TODO:
 4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
 5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
 6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
+7. https://howtodoinjava.com/spring-boot2/datasource-configuration/
 
 ## 5 - MVC Basics
 

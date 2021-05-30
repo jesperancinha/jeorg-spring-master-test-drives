@@ -304,6 +304,13 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 6. CGLIB constructors get called twice
 >The constructor of your proxied object will be called twice. This is a natural consequence of the CGLIB proxy model whereby a subclass is generated for each proxied object. For each proxied instance, two objects are created: the actual proxied object and an instance of the subclass that implements the advice. This behavior is not exhibited when using JDK proxies. Usually, calling the constructor of the proxied type twice, is not an issue, as there are usually only assignments taking place and no real logic is implemented in the constructor.
 
+## 31 Data Source configurations
+
+1. JNDI - When deploying to an application server using `spring.datasource.jndi-name`
+2. application.properties - Directly using `spring.datasource.*`
+3. Programmatically creating `@Bean` `DataSource` under `@Configuration`
+4. Simply adding dependency when using embedded databases like `H2`, `HSQL` or `Derby`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
