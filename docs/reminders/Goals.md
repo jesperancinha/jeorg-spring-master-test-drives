@@ -4,7 +4,7 @@
 
 ---
 
-## Project [car-parts](./../../car-parts)
+## Project [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Car%20Parts&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/tree/main/car-parts)
 
 ### Goal 1 - Deployment with embedded Jetty Server
 
