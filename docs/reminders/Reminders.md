@@ -17,8 +17,8 @@
 
 ## 3. Default Actuator endpoints
 
-Via Http: `health`, `info`
-Via JMS: All of them
+1. Via Http: `health`, `info`
+2. Via JMS: All of them
 
 ## 4. Default Logger groups
 
@@ -36,11 +36,13 @@ Via JMS: All of them
 
 ## 6. SecurityContextHolder modes
 
-`MODE_GLOBAL`, `MODE_INHERITABLETHREADLOCAL`, `MODE_THREADLOCAL`, `SYSTEM_PROPERTY`
+`MODE_GLOBAL`, `MODE_INHERITABLETHREADLOCAL`, `MODE_THREADLOCAL`
+
+`SYSTEM_PROPERTY` - This variable contains value `spring.security.strategy`, and it is used if configured.
 
 ## 7. Where can we use SpEL?
 
-We can use SpEL on a variaty of annotations that support SpEL. The ones I dentified so far are:
+We can use SpEL on a variety of annotations that support SpEL. The ones I have identified so far are:
 
 1. [@PropertySource](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/PropertySource.html)
 2. [@PreAuthorize](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/access/prepost/PreAuthorize.html)
