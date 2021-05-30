@@ -153,7 +153,7 @@ We can use SpEL on a variety of annotations that support SpEL. The ones I have i
 
 ## 18 [Supported Pointcut Designators](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-pointcuts-designators)
 
-`execution`, `within`, `this`, `target`, `within`, `this`, `target`, `args`, `@target`, `@args`, `@within`, `@annotation`, `args`, `@target`, `@args`, `@within`, `@annotation`
+`execution`, `within`, `this`, `target`, `args`, `@target`, `@args`, `@within`, `@annotation`
 
 ## 19 [Spring MVC Auto-configuration](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-web-applications.spring-mvc.auto-configuration)
 
