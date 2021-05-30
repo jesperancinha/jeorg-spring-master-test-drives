@@ -332,7 +332,7 @@ In order to start with cassandra, we need the following dependencies:
 ```xml   
 <dependency>
 	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-security</artifactId>
+	<artifactId>spring-boot-starter-data-cassandra</artifactId>
 </dependency>
 ```
 
