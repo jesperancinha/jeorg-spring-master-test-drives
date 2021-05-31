@@ -74,6 +74,7 @@ We can use SpEL on a variety of annotations that support SpEL. The ones I have i
 4. `REQUIRED` - Always runs in a transactional mode and creates a new transaction if none exists
 5. `REQUIRES_NEW` - Creates a new transaction regardless if one already exist
 6. `SUPPORTS` - Always executes a query regardless of a transaction exists or not. It will only execute transactional if a transaction already exists.
+7. `NEVER` - Throws an exception if a transaction is present. It always executes non-transactionally
 
 ## 11 Supported MVC template engines
 
