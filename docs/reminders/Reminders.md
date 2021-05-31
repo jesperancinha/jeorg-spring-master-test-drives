@@ -8,6 +8,11 @@
 
 `JUnit`, `Spring Test & Spring Boot Test`, `AssertJ`, `Hamcrest`, `Mockito`, `JSONassert`, `JsonPath`
 
+Smaller utilities included:
+
+1. `XmlUnit` - [XmlExpectationsHelper](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/util/XmlExpectationsHelper.html)
+2. `AopTest` - [AopTestUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/util/AopTestUtils.html)
+
 ## 2. Write operations in actuators
 
 |Operation|URL|Method|Command|
