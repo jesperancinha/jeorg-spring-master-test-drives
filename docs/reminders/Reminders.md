@@ -253,7 +253,7 @@ Other argument types: from [documentation](https://docs.spring.io/spring-framewo
 
 ## 26 [WebAppConfiguration](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/web/WebAppConfiguration.html)
 
-Established the resource path to the root directory of the web application.	By default, it is `src/main/webapp`
+Established the resource path to the root directory of the web application. By default, it is `src/main/webapp`
 
 ## 27 [Spring testing annotations](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring)
 
@@ -296,13 +296,18 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 ## 30 [AOP in Spring](https://docs.spring.io/spring-framework/docs/3.0.x/reference/aop.html)
 
 1. [Runtime Weaving](https://docs.spring.io/spring-framework/docs/3.0.x/reference/aop.html)
+
 > Weaving: linking aspects with other application types or objects to create an advised object. This can be done at compile time (using the AspectJ compiler, for example), load time, or at runtime. Spring AOP, like other pure Java AOP frameworks, performs weaving at runtime.
+
 2. Code is modified during runtime by proxies
+
 > Target object: object being advised by one or more aspects. Also referred to as the advised object. Since Spring AOP is implemented using runtime proxies, this object will always be a proxied object.
+
 3. JDK proxies support `final` classes and methods, purely because they support interfaces. Using the interfaces, it doesn't matter if the concrete `class` is `final` or has `final` methods.
 4. [AspectJ Expression Language](https://www.eclipse.org/aspectj/)
 5. Spring AOP only supports method execution join points. If ewe look at the available point cut designators, we also see that they only ever work as a filter for method join points.
 6. CGLIB constructors get called twice
+
 >The constructor of your proxied object will be called twice. This is a natural consequence of the CGLIB proxy model whereby a subclass is generated for each proxied object. For each proxied instance, two objects are created: the actual proxied object and an instance of the subclass that implements the advice. This behavior is not exhibited when using JDK proxies. Usually, calling the constructor of the proxied type twice, is not an issue, as there are usually only assignments taking place and no real logic is implemented in the constructor.
 
 ## 31 Data Source configurations
@@ -311,6 +316,25 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 2. application.properties - Directly using `spring.datasource.*`
 3. Programmatically creating `@Bean` `DataSource` under `@Configuration`
 4. Simply adding dependency when using embedded databases like `H2`, `HSQL` or `Derby`
+
+## 32 [Spring DataSource](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/package-summary.html)
+
+`AbstractDataSource`,
+`AbstractDriverBasedDataSource`,
+`ConnectionHolder`,
+`DataSourceTransactionManager`,
+`DataSourceUtils`,
+`DelegatingDataSource`,
+`DriverManagerDataSource`,
+`IsolationLevelDataSourceAdapter`,
+`JdbcTransactionObjectSupport`,
+`LazyConnectionDataSourceProxy`,
+`SimpleConnectionHandle`,
+`SimpleDriverDataSource`,
+`SingleConnectionDataSource`,
+`TransactionAwareDataSourceProxy`,
+`UserCredentialsDataSourceAdapter`,
+`WebSphereDataSourceAdapter`
 
 ---
 
