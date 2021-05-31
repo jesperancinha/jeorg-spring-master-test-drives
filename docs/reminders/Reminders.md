@@ -391,6 +391,24 @@ The difference between the above two is that ImportAutoConfiguration is a restri
 2. `never` - No initialization at all (i.e. if we want to do it programmatically)
 3. `embedded` - Specific for embedded
 
+## 37 @AutoConfigure test annotations
+
+1. `@DataCassandraTest`
+1. `@DataJdbcTest`
+1. `@DataJpaTest`
+1. `@DataLdapTest`
+1. `@DataMongoTest`
+1. `@DataNeo4jTest`
+1. `@DataR2dbcTest`
+1. `@DataRedisTest`
+1. `@JdbcTest`
+1. `@JooqTest`
+1. `@JsonTest`
+1. `@RestClientTest`
+1. `@WebFluxTest`
+1. `@WebMvcTest`
+1. `@WebServiceClientTest`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
