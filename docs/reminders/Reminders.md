@@ -423,6 +423,20 @@ The difference between the above two is that ImportAutoConfiguration is a restri
 3. Support for JUL - Supported
 4. Commons Logging - Internal Logs
 
+## 40 Health indicator statuses severity order
+
+By default property `management.health.status.order` has these values:
+
+`DOWN`, `OUT_OF_SERVICE`, `UP`, `UNKNOWN`
+
+This means that, from left to right, the aggregated state is calculated by the existence of one instance.
+
+Examples:
+
+1. All Unknown and one up => UP
+2. All UP and one DOWN => DOWN
+3. All Unknown, one out of service and one down => DOWN
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
