@@ -361,6 +361,36 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 
 The difference between the above two is that ImportAutoConfiguration is a restrictive annotation.	EnableAutoConfiguration is a general annotation that we can restrict in a declarative way.
 
+## 35 [Supported Monitoring Systems](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.metrics)
+
+`AppOptics`,
+`Atlas`,
+`Datadog`,
+`Dynatrace`,
+`Elastic`,
+`Ganglia`,
+`Graphite`,
+`Humio`,
+`Influx`,
+`JMX`,
+`KairosDB`,
+`New Relic`,
+`Prometheus`,
+`SignalFx`,
+`Simple (in-memory)`,
+`Stackdriver`,
+`StatsD`,
+`Wavefront`
+
+
+## 36 Database initialization modes
+
+`spring.datasource.initialization-mode`: 
+
+1. `always` - For real databases
+2. `never` - No initialization at all (i.e. if we want to do it programmatically)
+3. `embedded` - Specific for embedded
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)

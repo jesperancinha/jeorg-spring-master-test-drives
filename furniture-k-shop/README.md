@@ -115,6 +115,8 @@ Calling private methods withing a class TODO:
 1. https://dzone.com/articles/maven-git-commit-id-plugin
 2. https://codeboje.de/spring-boot-info-actuator/
 3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints.exposing
+4. https://www.logicbig.com/tutorials/spring-framework/spring-boot/accessing-jmx-actuator-endpoints.html
+5. https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.jmx
 
 ## 12 - Spring Boot Testing
 
