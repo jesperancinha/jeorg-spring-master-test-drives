@@ -319,6 +319,13 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 
 ## 32 [Spring DataSource](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/package-summary.html)
 
+#### Interfaces
+
+`ConnectionHandle`,
+`ConnectionProxy`,
+`SmartDataSource`
+
+#### Classes
 `AbstractDataSource`,
 `AbstractDriverBasedDataSource`,
 `ConnectionHolder`,
