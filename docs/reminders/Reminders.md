@@ -343,6 +343,10 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 `UserCredentialsDataSourceAdapter`,
 `WebSphereDataSourceAdapter`
 
+## 33 [EnableTransactionManagement](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/EnableTransactionManagement.html) advice modes
+
+1. `ASPECTJ` - AspectJ weaving-based advice - Self method invocation supported
+2. `PROXY` - JDK proxy-based advice - Self method invocation not supported
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
