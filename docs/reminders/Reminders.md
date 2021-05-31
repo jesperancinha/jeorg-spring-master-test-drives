@@ -331,6 +331,7 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 `SmartDataSource`
 
 #### Classes
+
 `AbstractDataSource`,
 `AbstractDriverBasedDataSource`,
 `ConnectionHolder`,
@@ -352,6 +353,14 @@ From [documentation](https://docs.spring.io/spring-framework/docs/current/refere
 
 1. `ASPECTJ` - AspectJ weaving-based advice - Self method invocation supported
 2. `PROXY` - JDK proxy-based advice - Self method invocation not supported
+
+## 34 Excluding classes from autoconfiguration
+
+1. [ImportAutoConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/ImportAutoConfiguration.html) - `exclude`
+2. [EnableAutoConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/EnableAutoConfiguration.html) - `exclude`
+
+The difference between the above two is that ImportAutoConfiguration is a restrictive annotation.	EnableAutoConfiguration is a general annotation that we can restrict in a declarative way.
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)
