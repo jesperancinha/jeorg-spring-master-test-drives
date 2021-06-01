@@ -100,6 +100,7 @@ Calling private methods withing a class TODO:
 4. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
 5. https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing
 6. https://examples.javacodegeeks.com/enterprise-java/spring/using-mockrestserviceserver-test-rest-client/
+7. https://stackoverflow.com/questions/43653655/what-is-difference-between-importautoconfiguration-and-import
 
 ## 9 - Spring Boot Basics
 

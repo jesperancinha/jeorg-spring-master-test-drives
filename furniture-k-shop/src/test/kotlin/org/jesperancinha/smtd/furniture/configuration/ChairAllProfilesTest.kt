@@ -20,9 +20,9 @@ class ChairAllProfilesTest(
 
     @Test
     fun testBeanExistsWhenProfileBigAndSmallThenNull(){
-        assertThat(chairBigSmall).isNotNull;
-        assertThat(chairBigSmall?.id).isEqualTo(124L);
-        assertThat(chairBigSmall?.weight).isEqualTo(100L);
-        assertThat(chairBigSmall?.designation).isEqualTo("arm chair");
+        assertThat(chairBigSmall).isNotNull
+        assertThat(chairBigSmall?.id).isEqualTo(124L)
+        assertThat(chairBigSmall?.weight).isEqualTo(100L)
+        assertThat(chairBigSmall?.designation).isEqualTo("arm chair")
     }
 }
