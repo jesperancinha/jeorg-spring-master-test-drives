@@ -474,4 +474,67 @@ Essentially, the point is that JAX-RS is specifically made to be used with JEE. 
 
 ---
 
+## [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Furniture%20K%20Shop&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/tree/main/furniture-k-shop)
+
+### Goal 1 - Transactional inner methods call
+
+Proxied method calls cannot be made from within. `@Transactional` has no effect on methods if they are called from within and not via the proxy.
+However, in one very odd situation, we can actually call them from within.
+
+First we annotate our configuration class:
+
+```java
+@Profile("aspectj")
+@Configuration
+@EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
+```
+
+Then we add dependencies
+
+```xml
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjweaver</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-aspects</artifactId>
+</dependency>
+```
+
+Finally the plugin
+
+```xml
+<plugin>
+	<groupId>com.nickwongdev</groupId>
+	<artifactId>aspectj-maven-plugin</artifactId>
+	<version>1.12.6</version>
+	<configuration>
+		<showWeaveInfo>true</showWeaveInfo>
+		<aspectLibraries>
+			<aspectLibrary>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+			</aspectLibrary>
+		</aspectLibraries>
+	</configuration>
+	<executions>
+			<execution>
+							<goals>
+											<goal>compile</goal>
+											<goal>test-compile</goal>
+							</goals>
+			</execution>
+</executions>
+</plugin>
+```
+
+In my example, the unit tests work, but, with H2, this example does not work and so the expectation reflects complete non-usage of `@Transactional`. Changing the datasource, should find working cases.
+
+---
+
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)

@@ -8,11 +8,11 @@ import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.actuate.autoconfigure.health.HealthProperties
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.context.annotation.AdviceMode
 import org.springframework.context.annotation.EnableAspectJAutoProxy
 import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @SpringBootApplication
-@EnableTransactionManagement
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 open class FurnitureKShopRunner(
     @Value("\${management.endpoints.web.exposure.include}")
