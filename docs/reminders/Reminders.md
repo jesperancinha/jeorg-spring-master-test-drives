@@ -437,6 +437,10 @@ Examples:
 2. All UP and one DOWN => DOWN
 3. All Unknown, one out of service and one down => DOWN
 
+## 41 Test tools
+
+`MockRestServiceServer`, `@ContextConfiguration`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)

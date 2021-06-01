@@ -99,6 +99,7 @@ Calling private methods withing a class TODO:
 3. https://www.concretepage.com/spring-5/webappconfiguration-example-spring-test
 4. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
 5. https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing
+6. https://examples.javacodegeeks.com/enterprise-java/spring/using-mockrestserviceserver-test-rest-client/
 
 ## 9 - Spring Boot Basics
 
