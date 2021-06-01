@@ -33,7 +33,7 @@
 
 ## Introduction
  
-[Reminders Main Page](./reminders/index.md) | [General Reminders](./reminders/Reminders.md) | [Spring Boot](./reminders/SpringBoot.md) | [Spring Boot Actuator](./reminders/SpringBootActuator.md) |  [Goals](./reminders/Goals.md)
+[Reminders Main Page](./reminders/index.md) | [General Reminders](./reminders/Reminders.md) | [Spring Boot](./reminders/SpringBoot.md) | [Spring Boot Actuator](./reminders/SpringBootActuator.md) |  [Goals](./reminders/Goals.md) |  [Annotations](./reminders/Annotations.md)
 
 Welcome to [JEOrg Spring Master 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives).   
 In these series we will only have master projects available. We won't be looking at the basics of Spring 5.  
