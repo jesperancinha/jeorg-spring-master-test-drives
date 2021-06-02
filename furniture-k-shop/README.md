@@ -35,6 +35,7 @@ This profile is a broken application profile. The profile creates and uses a `Ch
 12. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/DependsOn.html
 13. https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.application.failure-analyzer
 14. https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.application.customize-the-environment-or-application-context
+15. https://zetcode.com/springboot/applicationcontext/
 
 ## 2 - AOP
 

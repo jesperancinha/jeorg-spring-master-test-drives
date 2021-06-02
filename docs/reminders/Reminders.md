@@ -441,6 +441,15 @@ Examples:
 
 `MockRestServiceServer`, `@ContextConfiguration`
 
+
+## 42 ApplicationContext
+
+1. Bean factory methods to accessing application components and beans
+2. Load resources
+3. Publish events to registered listeners
+4. Resolves messages
+5. Supports internationalization
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
