@@ -138,6 +138,7 @@ We can use SpEL on a variety of annotations that support SpEL. The ones I have i
 3. Request (`request`)
 4. Session (`session`)
 5. Global Session (`global-session`)
+6. Global Session (`application`)
 
 ## 17 [Configuration order](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config)
 

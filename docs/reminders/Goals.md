@@ -181,7 +181,7 @@ In our case, we will test two distinct aspects of `@Transactional`:
 1. Timeout configuration in nested transactions. Test methods are `createPart` and `createPartTimeout`
 2. Calling inner methods annotated with the transactional annotation. Test methods are `createPartExtra` and `createPartMix`
 
-If we run the unit tests we see that the Parent `@Transactional` on a class level, does not override the methods annotated with the same annotation. Instead, the opposite is true. The methods annotated with `@Transactional`, do override the `timeout` property. This means that, when we invoke the any method without any annotation, it will inherit the class timeout. In this case, it is 1ms, which, given that it is such a small figure, it will imediatelly timeout.
+If we run the unit tests we see that the Parent `@Transactional` on a class level, does not override the methods annotated with the same annotation. Instead, it specifies the methods behaviour by default. The methods annotated with `@Transactional`, define the `timeout` property. This means that, when we invoke the any method without any annotation, it will inherit the class timeout. In this case, it is 1ms, which, given that it is such a small figure, it will imediatelly timeout.
 
 For point two we see that when we call the inner methods, we are no longer within the CGLIB proxy. Instead, calling the inner method, will just call the method as if it had no annotation on it. In this case, the proxy isn't called.
 
