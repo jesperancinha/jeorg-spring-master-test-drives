@@ -502,6 +502,44 @@ private String literally;
 
 `@Before`,`@Around`, `@AfterThrowing`, `@AfterReturning`, `@After`
 
+## 46 [JdbcTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html) acquire and release
+
+`JdbcTemplate` Acquires and releases a connection per method. We can prove this just by looking at the source code:
+
+In [execute](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html#execute-java.lang.String-) method:
+
+```java
+public <T> T execute(ConnectionCallback<T> action) throws DataAccessException {
+				Assert.notNull(action, "Callback object must not be null");
+				Connection con = DataSourceUtils.getConnection(this.obtainDataSource());
+
+				Object var10;
+				try {
+								Connection conToUse = this.createConnectionProxy(con);
+								var10 = action.doInConnection(conToUse);
+				} catch (SQLException var8) {
+								String sql = getSql(action);
+								DataSourceUtils.releaseConnection(con, this.getDataSource());
+								con = null;
+								throw this.translateException("ConnectionCallback", sql, var8);
+				} finally {
+								DataSourceUtils.releaseConnection(con, this.getDataSource());
+				}
+
+				return var10;
+}
+```
+
+## 47 Transaction Managers [PlatformTransactionManager](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/PlatformTransactionManager.html)
+
+All implement PlatformTransactionManager
+
+1. HibernateTransactionManager -> AbstractPlatformTransactionManager
+2. DataSourceTransactionManager -> AbstractPlatformTransactionManager
+3. JpaTransactionManager -> AbstractPlatformTransactionManager
+4. JtaTransactionManager -> AbstractPlatformTransactionManager
+5. WebLogicJtaTransactionManager -> JtaTransactionManager -> AbstractPlatformTransactionManager
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
