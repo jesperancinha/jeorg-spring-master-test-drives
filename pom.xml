@@ -19,6 +19,7 @@
         <module>planets</module>
         <module>bank-company</module>
         <module>furniture-k-shop</module>
+        <module>the-vault</module>
     </modules>
 
     <properties>

@@ -1,16 +1,11 @@
 package org.jesperancinha.smtd.bank.company.security;
 
-import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.concurrent.DelegatingSecurityContextExecutorService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.context.SecurityContextImpl;
 
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
@@ -20,19 +15,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
-import static org.springframework.security.core.context.SecurityContextHolder.MODE_GLOBAL;
-import static org.springframework.security.core.context.SecurityContextHolder.MODE_THREADLOCAL;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.createContext;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.currentStatus;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalCompletion;
 import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalTestResult;
-import static org.springframework.security.core.context.SecurityContextHolder.MODE_INHERITABLETHREADLOCAL;
+import static org.springframework.security.core.context.SecurityContextHolder.MODE_THREADLOCAL;
 
 @SpringBootTest
 class BCModeModeThreadLocalSecurityTest {
