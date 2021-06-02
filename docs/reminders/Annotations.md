@@ -69,6 +69,16 @@ It only applies after user-beans have been registered. This means that they get 
 11. `timeoutString` - transaction timeoutString - `Exclusively designed for use with Propagation.REQUIRED or Propagation.REQUIRES_NEW since it only applies to newly started transactions`
 12. `transactionManager` - specification of the transaction manager if multiple are available to choose from
 13. value - an alias for `transactionManager`
+
+## 7 [Query](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/Query.html)
+
+1. `countName` - the name of the @NamedQuery that we want to use for count queries
+2. `countProjection` - projection part of the count query
+3. `countQuery` - query to count number of elements in a page
+4. `name` - The named query to be used
+5. `nativeQuery` - if this is a native query
+6. `value` - JPA query
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
