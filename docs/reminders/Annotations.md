@@ -48,7 +48,13 @@ It only applies after user-beans have been registered. This means that they get 
 1. exclude - Excludes specific classes so that they never apply
 2. excludeNames - Excludes specific class names so that they never apply
 
+## 5 [PropertySource](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/PropertySource.html)
 
+1. encoding - encoding for the file
+2. factory - a custom PropertySourceFactory
+3. ignoreResourceNotFound (false) - Throw an exception by default if the resource is not found.
+4. name - The name of this property source
+5. value - the resource location. Ex: `@PropertySource("classpath:/com/myco/app.properties")`
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
