@@ -541,6 +541,20 @@ All implement PlatformTransactionManager
 4. JtaTransactionManager -> AbstractPlatformTransactionManager
 5. WebLogicJtaTransactionManager -> JtaTransactionManager -> AbstractPlatformTransactionManager
 
+## All Conditionals
+
+1. Class Conditions
+
+2. Bean Conditions
+
+3. Property Conditions
+
+4. Resource Conditions
+
+5. Web Application Conditions
+
+6. SpEL Expression Conditions
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
