@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Using Planets and their different names, distances and compositions, we'll see in this app how to work through important Spring topics.
+Banking app
 
 ## 1 - Container, Dependency and IoC
 

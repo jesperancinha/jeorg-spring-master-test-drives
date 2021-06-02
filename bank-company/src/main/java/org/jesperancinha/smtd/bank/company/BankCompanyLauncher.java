@@ -47,6 +47,12 @@ public class BankCompanyLauncher implements ApplicationRunner {
     @Value("#{${spring.config.name:null}}")
     private String applicationPropertiesFileName;
 
+    @Value("${info.app.name}")
+    private String appName;
+
+    @Value("Cool")
+    private String literally;
+
     private final ApplicationContext applicationContext;
 
     public BankCompanyLauncher(ApplicationContext applicationContext) {
@@ -124,6 +130,18 @@ public class BankCompanyLauncher implements ApplicationRunner {
         ConsolerizerComposer.outSpace()
                 .none()
                 .blue(applicationPropertiesFileName)
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue("literally")
+                .blue(literally)
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue("property")
+                .blue(appName)
                 .newLine()
                 .reset();
 

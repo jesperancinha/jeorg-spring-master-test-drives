@@ -450,6 +450,58 @@ Examples:
 4. Resolves messages
 5. Supports internationalization
 
+## 43 `@Value` Examples
+
+```java
+@Value("#{ systemProperties['user.region'] }")
+private String region;
+
+@Value("#{ systemProperties['user.country'] }")
+private String country;
+
+@Value("#{'${jeorg.bank.salaries}'.split(',').?[new Integer(#this) > 10]}")
+private List<Long> salaries;
+
+@Value("#{ T(java.lang.Math).random() * 100.0 }")
+private Long randomNumber;
+
+@Value("${jeorg.bank.salaries}")
+private String salariesString;
+
+@Value("#{'${jeorg.bank.salaries}'}")
+private String salariesString2;
+
+@Value("#{#root.toString()}")
+private String bankContextString;
+
+@Value("#{${jeorg.bank.dependencies}}")
+private Map<String, Long> bankDependencies;
+
+@Value("#{${jeorg.bank.salariesexplained}.?[#this>2]}")
+private List<Long> salariesexplained;
+
+@Value("#{${spring.config.name:null}}")
+private String applicationPropertiesFileName;
+
+@Value("${info.app.name}")
+private String appName;
+
+@Value("Cool")
+private String literally;
+```
+
+## 44 Property sources in Spring
+
+1. JVM System properties
+2. Operating System Environment Variables
+3. Command Line Arguments
+4. Application.properties
+5. Application.yml
+
+## 45 Possible advices
+
+`@Before`,`@Around`, `@AfterThrowing`, `@AfterReturning`, `@After`
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)

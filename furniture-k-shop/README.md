@@ -36,6 +36,13 @@ This profile is a broken application profile. The profile creates and uses a `Ch
 13. https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.application.failure-analyzer
 14. https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.application.customize-the-environment-or-application-context
 15. https://zetcode.com/springboot/applicationcontext/
+16. https://zetcode.com/springboot/profile/
+17. https://docs.spring.io/spring-boot/docs/1.2.0.M1/reference/html/boot-features-profiles.html
+18. https://www.amitph.com/how-to-use-spring-profiles/
+19. https://springframework.guru/spring-profiles/
+20. https://devs4j.com/2017/10/30/support-multiple-profiles-with-spring-boot/
+21. https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles
+22. https://sookocheff.com/post/java/understanding-springs-environment-abstraction/
 
 ## 2 - AOP
 
