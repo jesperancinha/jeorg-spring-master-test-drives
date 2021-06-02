@@ -100,7 +100,8 @@ Calling private methods withing a class TODO:
 14. https://www.mfvitale.me/blog/2021/02/24/security.context.and.concurrency.html
 15. https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
 16. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
-
+17. https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se#:~:text=The%20SecurityContext%20is%20used%20to,access%20to%20the%20security%20context.
+				
 ## 8 - Testing
 
 1. https://docs.spring.io/spring-framework/docs/4.3.12.RELEASE/spring-framework-reference/html/unit-testing.html
