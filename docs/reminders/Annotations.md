@@ -33,9 +33,21 @@
 7. name - The name of the context hierarchy level used
 8. value is an alias for locations. Ex: `@ContextConfiguration("/test-config.xml")`
 
-## 3. ImportAutoConfiguration
+## 3. [ImportAutoConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/ImportAutoConfiguration.html)
 
-## 4. EnableAutoConfiguration
+Key factor is that is excludes `spring.factories` and it works like `@EnableAutoConfiguration`.
+
+1. classes - autoconfiguration classes that should be imported.
+2. exclude - specifically excludes some classes
+3. value is an alias to classes
+
+## 4. [EnableAutoConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/EnableAutoConfiguration.html)
+
+It only applies after user-beans have been registered. This means that they get registered anyway even though they are excluded.
+
+1. exclude - Excludes specific classes so that they never apply
+2. excludeNames - Excludes specific class names so that they never apply
+
 
 ---
 
