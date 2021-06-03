@@ -8,6 +8,12 @@ This is a furniture shop. Here we will use Kotlin as the language to investigate
 
 There are a few profiles available.
 
+## Curl
+
+```bash
+curl -i -X POST http://localhost:8081/chairs -H 'Content-type: application/json' --data '{ "id": "1", "designation":"TABLE123", "weight":"100"}'
+```
+
 ### Profile `broken`
 
 This profile is a broken application profile. The profile creates and uses a `ChairDelegatingFilterProxy`, which overrides the entry point of the application in `doFilter`.	With `@Component`, we are allowing Spring to manage our `DelegatingFilterProxy` as a bean instead of leaving that to Tomcat. Since we do not invoke the filter chain, we cannot and won't reach any of the controllers available.

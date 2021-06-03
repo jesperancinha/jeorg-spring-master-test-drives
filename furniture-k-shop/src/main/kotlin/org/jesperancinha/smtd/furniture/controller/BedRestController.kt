@@ -3,8 +3,15 @@ package org.jesperancinha.smtd.furniture.controller
 import io.micrometer.core.instrument.Counter
 import io.micrometer.core.instrument.MeterRegistry
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RestController
+import org.jesperancinha.smtd.furniture.dto.ChairDto
+import org.jesperancinha.smtd.furniture.service.ChairDtoValidator
+import org.springframework.beans.propertyeditors.CustomDateEditor
+import org.springframework.validation.Validator
+import org.springframework.validation.annotation.Validated
+import org.springframework.web.bind.WebDataBinder
+import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
+
 
 @RestController
 class BedRestController(
@@ -24,9 +31,20 @@ class BedRestController(
             .register(meterRegistry);
     }
 
+
+    @InitBinder
+    fun customizeBinding(binder: WebDataBinder) {
+        binder.addValidators(ChairDtoValidator())
+    }
+
     @GetMapping(path = ["/beds"])
     fun bedCountCall(): Double {
         bedCount.increment()
         return bedCount.count()
+    }
+
+    @PostMapping(path = ["chairs"])
+    fun createChair(@Valid @RequestBody chair: ChairDto){
+
     }
 }

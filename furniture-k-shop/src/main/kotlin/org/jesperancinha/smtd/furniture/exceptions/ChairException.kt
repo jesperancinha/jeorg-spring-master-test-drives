@@ -1,4 +1,3 @@
 package org.jesperancinha.smtd.furniture.exceptions
 
-class ChairException(message: String?) : RuntimeException(message) {
-}
+class ChairException(message: String?) : RuntimeException(message)
