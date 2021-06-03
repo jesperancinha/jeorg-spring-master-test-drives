@@ -508,7 +508,7 @@ private String literally;
 
 ## 46 [JdbcTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html) acquire and release
 
-`JdbcTemplate` Acquires and releases a connection per method. We can prove this just by looking at the source code:
+`JdbcTemplate` Acquires and releases a connection per `execute` method. We can prove this just by looking at the source code:
 
 In [execute](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html#execute-java.lang.String-) method:
 
@@ -533,6 +533,8 @@ public <T> T execute(ConnectionCallback<T> action) throws DataAccessException {
 				return var10;
 }
 ```
+
+The remaining queryMethods and updates all end up using one execute, which means this `acquires` and `release` also happens in all other methods.
 
 ## 47 Transaction Managers [PlatformTransactionManager](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/PlatformTransactionManager.html)
 
