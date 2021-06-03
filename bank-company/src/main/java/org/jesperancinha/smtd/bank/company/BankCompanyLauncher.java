@@ -26,6 +26,9 @@ public class BankCompanyLauncher implements ApplicationRunner {
     @Value("#{'${jeorg.bank.salaries}'.split(',').?[new Integer(#this) > 10]}")
     private List<Long> salaries;
 
+    @Value("#{'${jeorg.bank.salaries}'.split(',').![new Integer(#this) /2]}")
+    private List<Long> salariesPerTwo;
+
     @Value("#{ T(java.lang.Math).random() * 100.0 }")
     private Long randomNumber;
 
@@ -92,6 +95,12 @@ public class BankCompanyLauncher implements ApplicationRunner {
         ConsolerizerComposer.outSpace()
                 .none()
                 .blue(salaries)
+                .newLine()
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .none()
+                .blue("Salaries per two")
+                .blue(salariesPerTwo)
                 .newLine()
                 .reset();
         ConsolerizerComposer.outSpace()
