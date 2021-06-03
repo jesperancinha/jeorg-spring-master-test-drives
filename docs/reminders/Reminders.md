@@ -541,7 +541,7 @@ All implement PlatformTransactionManager
 4. JtaTransactionManager -> AbstractPlatformTransactionManager
 5. WebLogicJtaTransactionManager -> JtaTransactionManager -> AbstractPlatformTransactionManager
 
-## All Conditionals
+## 48 All Conditionals
 
 1. Class Conditions
 
@@ -554,6 +554,39 @@ All implement PlatformTransactionManager
 5. Web Application Conditions
 
 6. SpEL Expression Conditions
+
+## 49 Message Converters
+
+1. ByteArrayMessageConverter
+2. GenericMessageConverter
+3. CompositeMessageConverter
+4. MappingJackson2MessageConverter
+5. ProtobufJsonFormatMessageConverter
+6. StringMessageConverter
+
+## 50 Health Indicators
+
+1. ElasticsearchRestHealthIndicator
+2. DiskSpaceHealthIndicator
+3. SolrHealthIndicator
+4. RedisHealthIndicator
+5. RedisReactiveHealthIndicator
+6. ConnectionFactoryHealthIndicator
+7. Neo4jHealthIndicator
+8. MongoHealthIndicator
+9. MongoReactiveHealthIndicator
+10. MailHealthIndicator
+11. LdapHealthIndicator
+12. JmsHealthIndicator
+13. DataSourceHealthIndicator
+14. InfluxDbHealthIndicator
+15. HazelcastHealthIndicator
+16. CouchbaseHealthIndicator
+17. CassandraHealthIndicator
+18. AvailabilityStateHealthIndicator
+19. LivenessStateHealthIndicator
+20. ReadinessStateHealthIndicator
+21. RabbitHealthIndicator
 
 ---
 
