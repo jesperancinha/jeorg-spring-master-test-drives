@@ -79,6 +79,130 @@ It only applies after user-beans have been registered. This means that they get 
 5. `nativeQuery` - if this is a native query
 6. `value` - JPA query
 
+
+## 8 [ConditionalOnBean](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnBean.html) vs [ConditionalOnClass](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnClass.html)
+
+```java
+@Builder
+@Data
+@Configuration
+@ConditionalOnBean(name = "partConfigurationDone2")
+public class PartConfigurationToFix {
+
+    @Bean
+    @ConditionalOnBean(PartConfigurationDone.class)
+    public PartConfigurationToFix partConfigurationToFix2() {
+        ConsolerizerComposer.outSpace().green("We are able to create PartConfigurationToFix, because one PartConfigurationDone exists")
+                .green("We can use the bean name in this case.")
+                .reset();
+        return PartConfigurationToFix.builder().build();
+    }
+}
+```
+
+```java
+@Builder
+@Data
+@Configuration
+@ConditionalOnClass(name = "MarsBase")
+public class PartConfigurationNotDone {
+
+    @ConditionalOnClass(Garage.class)
+    @Bean
+    public PartConfigurationNotDone partConfigurationNotDone() {
+        ConsolerizerComposer.outSpace().red("If this happens we exit. This is not supposed to occur")
+                .reset();
+        System.exit(1);
+        return PartConfigurationNotDone.builder().build();
+    }
+}
+```
+
+```java
+@Builder
+@Data
+@Configuration
+@ConditionalOnClass(name = "org.jesperancinha.smtd.carparts.beans.Garage")
+public class PartConfigurationDone {
+
+    @Bean
+    @ConditionalOnClass(Garage.class)
+    public PartConfigurationDone partConfigurationDone2() {
+        ConsolerizerComposer.outSpace().green("We are able to create PartConfigurationDone, because the Garage exists")
+                .green("If we want to use the class name as a string, we have to use the canonical form.")
+                .green("The short form won't work.")
+                .reset();
+        return PartConfigurationDone.builder().build();
+    }
+}
+```
+
+```java
+@ConditionalOnClass(name = {
+        "org.jesperancinha.smtd.carparts.beans.AutoFixCompany",
+        "org.jesperancinha.smtd.carparts.beans.Garage"
+})
+@ConditionalOnBean(type = {"AutoFixCompany", "Garage"})
+@Configuration
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PartCompanyConfiguration {
+
+    private AutoFixCompany autoFixCompany;
+
+    private Garage garage;
+
+
+    @Bean
+    public PartCompanyConfiguration partCompanyConfigurationMain(
+            final AutoFixCompany autoFixCompany,
+            final Garage garage
+    ){
+       return PartCompanyConfiguration
+               .builder()
+               .autoFixCompany(autoFixCompany)
+               .garage(garage)
+               .build();
+    }
+}
+```
+
+From the definition:
+
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Conditional({OnBeanCondition.class})
+public @interface ConditionalOnBean {
+    Class<?>[] value() default {};
+
+    String[] type() default {};
+
+    Class<? extends Annotation>[] annotation() default {};
+
+    String[] name() default {};
+
+    SearchStrategy search() default SearchStrategy.ALL;
+
+    Class<?>[] parameterizedContainer() default {};
+}
+```
+
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Conditional({OnClassCondition.class})
+public @interface ConditionalOnClass {
+    Class<?>[] value() default {};
+
+    String[] name() default {};
+}
+```
+
 ---
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
