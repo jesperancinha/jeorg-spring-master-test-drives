@@ -643,8 +643,8 @@ All implement PlatformTransactionManager
 
 ## 51 JSR-330 vs JSR-303
 
-1. JSR-330 - Validation
-2. JSR-303 - Injection
+1. JSR-330 - Injection
+2. JSR-303 - Validation
 
 ---
 
