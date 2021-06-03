@@ -185,6 +185,9 @@ We can use SpEL on a variety of annotations that support SpEL. The ones I have i
 7. `@AutoConfigureDataJpa`
 8. `@AutoConfigureTestDatabase`
 9. `@AutoConfigureTestEntityManager`
+10. Flyway and Liquibase
+11. JdbcTemplate
+12. Caching
 
 ## 21 Bean Lifecycle
 
@@ -637,6 +640,11 @@ All implement PlatformTransactionManager
 `tomcat.sessions.created`,
 `tomcat.sessions.expired`,
 `tomcat.sessions.rejected`
+
+## 51 JSR-330 vs JSR-303
+
+1. JSR-330 - Validation
+2. JSR-303 - Injection
 
 ---
 
