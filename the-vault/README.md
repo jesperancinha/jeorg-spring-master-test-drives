@@ -6,8 +6,8 @@ In the Vault we test security
 
 Users available are:
 
-1. keeper_role/keeper_role - Logs in with role `ROLE_KEEPER`
-2. keeper_auth/keeper_auth - Logs in with authority `KEEPER`
+1.  keeper_role/keeper_role - Logs in with role `ROLE_KEEPER`
+2.  keeper_auth/keeper_auth - Logs in with authority `KEEPER`
 
 In this exercise we check how security works and how matches work in the authorities resolution
 
@@ -34,7 +34,7 @@ That ones says that only a user with authority `KEEPER` is allowed to login. Thi
 
 ### Endpoints
 
-1. http://127.0.0.1:8081/vault/silver/test
+1.  http://127.0.0.1:8081/vault/silver/test
 
 ## 1 - Container, Dependency and IoC
 
@@ -63,18 +63,18 @@ That ones says that only a user with authority `KEEPER` is allowed to login. Thi
 
 ## 2 - AOP
 
-1. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes-other-injection-proxies
-2. https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-proxying
-3. https://stackoverflow.com/questions/22861587/why-protected-methods-are-not-intercepted-by-spring-aop#:~:text=Due%20to%20the%20proxy%2Dbased,not%20recommendable%20for%20AOP%20purposes).
-4. https://stackoverflow.com/questions/51795511/when-is-cglib-proxy-used-by-spring-aop
-5. https://howtodoinjava.com/spring-aop/aspectj-pointcut-expressions/
+1.  https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes-other-injection-proxies
+2.  https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-proxying
+3.  https://stackoverflow.com/questions/22861587/why-protected-methods-are-not-intercepted-by-spring-aop#:~:text=Due%20to%20the%20proxy%2Dbased,not%20recommendable%20for%20AOP%20purposes).
+4.  https://stackoverflow.com/questions/51795511/when-is-cglib-proxy-used-by-spring-aop
+5.  https://howtodoinjava.com/spring-aop/aspectj-pointcut-expressions/
 
 ## 3 - Transactions
 
-1. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html
-2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Propagation.html
-3. https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/transaction.html
-4. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/TransactionTemplate.html
+1.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html
+2.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Propagation.html
+3.  https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/transaction.html
+4.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/TransactionTemplate.html
 
 In a transaction, the `readOnly`, only means possible performance improvements.
 
@@ -82,34 +82,34 @@ Calling private methods withing a class TODO:
 
 ## 4 - JPA
 
-1. https://reflectoring.io/spring-boot-data-jpa-test/
-2. https://zetcode.com/springboot/datajpatest/
-3. https://www.arhohuttunen.com/spring-boot-datajpatest/
-4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
-5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
-6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
-7. https://howtodoinjava.com/spring-boot2/datasource-configuration/
-8. https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query
+1.  https://reflectoring.io/spring-boot-data-jpa-test/
+2.  https://zetcode.com/springboot/datajpatest/
+3.  https://www.arhohuttunen.com/spring-boot-datajpatest/
+4.  https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
+5.  https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
+6.  https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
+7.  https://howtodoinjava.com/spring-boot2/datasource-configuration/
+8.  https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query
 			
 ## 5 - MVC Basics
 
-1. https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
+1.  https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
 
 ## 6 - MVC REST
 
-1. https://spring.io/guides/gs/serving-web-content/
+1.  https://spring.io/guides/gs/serving-web-content/
 
 ## 7 - Security
 
-1. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
-2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/DelegatingFilterProxy.html
-3. https://stackoverflow.com/questions/6725234/whats-the-point-of-spring-mvcs-delegatingfilterproxy
-4. https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
-5. https://www.youtube.com/watch?v=lxmBJmUhqss
-6. https://www.youtube.com/watch?v=xEnvAAhMGu4
-7. https://github.com/jzheaux/springone2019
-8. https://github.com/jzheaux/springone2020
-9. https://www.youtube.com/watch?v=TDuVY8PFU3Q
+1.  https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
+2.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/DelegatingFilterProxy.html
+3.  https://stackoverflow.com/questions/6725234/whats-the-point-of-spring-mvcs-delegatingfilterproxy
+4.  https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
+5.  https://www.youtube.com/watch?v=lxmBJmUhqss
+6.  https://www.youtube.com/watch?v=xEnvAAhMGu4
+7.  https://github.com/jzheaux/springone2019
+8.  https://github.com/jzheaux/springone2020
+9.  https://www.youtube.com/watch?v=TDuVY8PFU3Q
 10. https://docs.spring.io/spring-security/site/docs/4.2.20.RELEASE/apidocs/org/springframework/security/core/context/SecurityContextHolder.html
 11. https://programmersought.com/article/63182958726/
 12. https://javarevisited.blogspot.com/2018/02/what-is-securitycontext-and-SecurityContextHolder-Spring-security.html#axzz6w2sHEiVK
@@ -121,43 +121,43 @@ Calling private methods withing a class TODO:
 				
 ## 8 - Testing
 
-1. https://docs.spring.io/spring-framework/docs/4.3.12.RELEASE/spring-framework-reference/html/unit-testing.html
-2. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
-3. https://www.concretepage.com/spring-5/webappconfiguration-example-spring-test
-4. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
-5. https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing
-6. https://examples.javacodegeeks.com/enterprise-java/spring/using-mockrestserviceserver-test-rest-client/
-7. https://stackoverflow.com/questions/43653655/what-is-difference-between-importautoconfiguration-and-import
-8. https://www.concretepage.com/spring-5/dirtiescontext-example-spring-test
-9. https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring
+1.  https://docs.spring.io/spring-framework/docs/4.3.12.RELEASE/spring-framework-reference/html/unit-testing.html
+2.  https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
+3.  https://www.concretepage.com/spring-5/webappconfiguration-example-spring-test
+4.  https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
+5.  https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing
+6.  https://examples.javacodegeeks.com/enterprise-java/spring/using-mockrestserviceserver-test-rest-client/
+7.  https://stackoverflow.com/questions/43653655/what-is-difference-between-importautoconfiguration-and-import
+8.  https://www.concretepage.com/spring-5/dirtiescontext-example-spring-test
+9.  https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring
 10. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/ContextConfiguration.html
 
 
 ## 9 - Spring Boot Basics
 
-1. https://springframework.guru/spring-external-configuration-data/
-2. https://mkyong.com/spring/spring-propertysources-example/
-3. http://www.dailycodebuffer.com/shutdown-a-spring-boot-application/#:~:text=Close%20ApplicationContext,method%20to%20close%20ApplicationContext%20programmatically.
+1.  https://springframework.guru/spring-external-configuration-data/
+2.  https://mkyong.com/spring/spring-propertysources-example/
+3.  http://www.dailycodebuffer.com/shutdown-a-spring-boot-application/#:~:text=Close%20ApplicationContext,method%20to%20close%20ApplicationContext%20programmatically.
 
 ## 10 - Spring Boot Auto-Configuration
 
-1. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-auto-configuration
-2. https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config
-3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration
+1.  https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.developing-auto-configuration
+2.  https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-external-config
+3.  https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration
 
 ## 11 - Spring Boot Actuator
 
-1. https://dzone.com/articles/maven-git-commit-id-plugin
-2. https://codeboje.de/spring-boot-info-actuator/
-3. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints.exposing
-4. https://www.logicbig.com/tutorials/spring-framework/spring-boot/accessing-jmx-actuator-endpoints.html
-5. https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.jmx
+1.  https://dzone.com/articles/maven-git-commit-id-plugin
+2.  https://codeboje.de/spring-boot-info-actuator/
+3.  https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints.exposing
+4.  https://www.logicbig.com/tutorials/spring-framework/spring-boot/accessing-jmx-actuator-endpoints.html
+5.  https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.jmx
 
 ## 12 - Spring Boot Testing
 
-1. https://howtodoinjava.com/spring-boot2/testing/springboot-test-configuration/
-2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Lazy.html
-3. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseBuilder.html
+1.  https://howtodoinjava.com/spring-boot2/testing/springboot-test-configuration/
+2.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Lazy.html
+3.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseBuilder.html
 
 ---
 
@@ -359,6 +359,7 @@ i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams
 
 ## Achievements
 
+[![VMware Spring Professional 2021](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/vmware-spring-professional-2021.png "VMware Spring Professional 2021")](https://www.credly.com/badges/762fa7a4-9cf4-417d-bd29-7e072d74cdb7)
 [![Oracle Certified Professional, JEE 7 Developer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-ee-7-application-developer-100.png "Oracle Certified Professional, JEE7 Developer")](https://www.credly.com/badges/27a14e06-f591-4105-91ca-8c3215ef39a2)
 [![Oracle Certified Professional, Java SE 11 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-11-developer-100.png "Oracle Certified Professional, Java SE 11 Programmer")](https://www.credly.com/badges/87609d8e-27c5-45c9-9e42-60a5e9283280)
 [![Oracle Certified Professional, Java SE 8 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-8-programmer-100.png "Oracle Certified Professional, Java SE 8 Programmer")](https://www.credly.com/badges/92e036f5-4e11-4cff-9935-3e62266d2074)

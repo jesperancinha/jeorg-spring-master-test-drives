@@ -77,8 +77,8 @@ By default, the actuator is activated and available on this address:
 
 And the endpoints available by default are health and info only:
 
-1. http://localhost:8081/actuator/health
-2. http://localhost:8081/actuator/info
+1.  http://localhost:8081/actuator/health
+2.  http://localhost:8081/actuator/info
 
 We can also activate all health endpoints and only the health endpoints with:
 
@@ -154,9 +154,9 @@ We can observe that we see two logs configurations per package or class: `config
 These two variables follow a rule that may feel quite counter-intuitive.   
 This is how it goes:
 
-1. When `configuredLevel` has a value then `effectiveLevel` is always the same.
-2. When `configuredLevel` is null, it means that the log inherits the level from the parent.
-3. The `configuredLevel` of `ROOT` can, of course, never be null.
+1.  When `configuredLevel` has a value then `effectiveLevel` is always the same.
+2.  When `configuredLevel` is null, it means that the log inherits the level from the parent.
+3.  The `configuredLevel` of `ROOT` can, of course, never be null.
 
 We can configure both variables this way:
 
@@ -203,8 +203,8 @@ In our module, we see that it is difficult to simulate a database timeout since 
 
 In our case, we will test two distinct aspects of `@Transactional`:
 
-1. Timeout configuration in nested transactions. Test methods are `createPart` and `createPartTimeout`
-2. Calling inner methods annotated with the transactional annotation. Test methods are `createPartExtra` and `createPartMix`
+1.  Timeout configuration in nested transactions. Test methods are `createPart` and `createPartTimeout`
+2.  Calling inner methods annotated with the transactional annotation. Test methods are `createPartExtra` and `createPartMix`
 
 If we run the unit tests we see that the Parent `@Transactional` on a class level, does not override the methods annotated with the same annotation. Instead, it defines the default configuration should the method not be annotated. The methods annotated with `@Transactional`, define a new `timeout` property. This means that, when we invoke the any method without any annotation, it will inherit the class timeout. In this case, it is 1ms, which, given that it is such a small figure, it will immediately timeout.
 
@@ -476,10 +476,10 @@ This means that an authenticated and authorized user will be able to see somethi
 
 ### Goal 12 - Spring MVC / Spring REST / JAX-RS / JERSEY
 
-1. JAX-RS is a specification of RESTful web services
-2. JERSEY is an implementation of JAX-RS
-3. Spring REST specifies RESTful web services in an alternative way
-4. Spring MVC provides annotations to implement REST services and the MVC pattern
+1.  JAX-RS is a specification of RESTful web services
+2.  JERSEY is an implementation of JAX-RS
+3.  Spring REST specifies RESTful web services in an alternative way
+4.  Spring MVC provides annotations to implement REST services and the MVC pattern
 
 Essentially, the point is that JAX-RS is specifically made to be used with JEE. Spring, on the other hand, offers an alternative solution to this. Using, for example, Jersey and JAX-RS in the same package with Spring MVC works. However, this is an unnecessary usage of resources.
 
@@ -513,7 +513,7 @@ Essentially, the point is that JAX-RS is specifically made to be used with JEE. 
 
 ## Study steps
 
-1. Changing the embedded server to use Jetty:
+1.  Changing the embedded server to use Jetty:
 	
 	1. https://codeahoy.com/java/springboot/tutorial/2019/09/01/spring-boot-replace-tomcat-with-jetty-as-the-embedded-server/
 	
@@ -590,6 +590,7 @@ Essentially, the point is that JAX-RS is specifically made to be used with JEE. 
 
 ## Achievements
 
+[![VMware Spring Professional 2021](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/vmware-spring-professional-2021.png "VMware Spring Professional 2021")](https://www.credly.com/badges/762fa7a4-9cf4-417d-bd29-7e072d74cdb7)
 [![Oracle Certified Professional, JEE 7 Developer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-ee-7-application-developer-100.png "Oracle Certified Professional, JEE7 Developer")](https://www.credly.com/badges/27a14e06-f591-4105-91ca-8c3215ef39a2)
 [![Oracle Certified Professional, Java SE 11 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-11-developer-100.png "Oracle Certified Professional, Java SE 11 Programmer")](https://www.credly.com/badges/87609d8e-27c5-45c9-9e42-60a5e9283280)
 [![Oracle Certified Professional, Java SE 8 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-8-programmer-100.png "Oracle Certified Professional, Java SE 8 Programmer")](https://www.credly.com/badges/92e036f5-4e11-4cff-9935-3e62266d2074)

@@ -6,10 +6,10 @@ Using Planets and their different names, distances and compositions, we'll see i
 
 ## 1 - Container, Dependency and IoC
 
-1. https://springframework.guru/best-practices-for-dependency-injection-with-spring/
-2. https://dzone.com/articles/spring-bean-lifecycle
-3. https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
-4. https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
+1.  https://springframework.guru/best-practices-for-dependency-injection-with-spring/
+2.  https://dzone.com/articles/spring-bean-lifecycle
+3.  https://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it
+4.  https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
 
 We can have different servlet containers package into on single [Spring Boot War](https://spring.io/guides/gs/convert-jar-to-war/) file. Tomcat has precedence. If we don't remove it from [spring-boot-starter-web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web), we will never see Jetty or Undertow in action. In our package we are using these three servlet container, but only tomcat is activated:
 
@@ -55,15 +55,15 @@ Planet called: Planet#destroyMethod
 
 This is an illustration of the following when it comes to a bean lifecycle, assuming the bean implements all necessary interfaces:
 
-1. Bean metadata is set
-2. Bean constructor is called
-3. Setter injection
-4. Assign bean name
-5. Assign bean class loader
-6. Assign bean factory
-7. Assign resource loader
-8. Assign application event publisher
-9. Assign message source
+1.  Bean metadata is set
+2.  Bean constructor is called
+3.  Setter injection
+4.  Assign bean name
+5.  Assign bean class loader
+6.  Assign bean factory
+7.  Assign resource loader
+8.  Assign application event publisher
+9.  Assign message source
 10. Assign Application Context
 11. Process bean before initialization
 12. Post Construct
@@ -80,12 +80,12 @@ This is an illustration of the following when it comes to a bean lifecycle, assu
 
 ## 4 - JPA
 
-1. https://reflectoring.io/spring-boot-data-jpa-test/
-2. https://zetcode.com/springboot/datajpatest/
-3. https://www.arhohuttunen.com/spring-boot-datajpatest/
-4. https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
-5. https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
-6. https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
+1.  https://reflectoring.io/spring-boot-data-jpa-test/
+2.  https://zetcode.com/springboot/datajpatest/
+3.  https://www.arhohuttunen.com/spring-boot-datajpatest/
+4.  https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/
+5.  https://howtodoinjava.com/spring-boot2/testing/datajpatest-annotation/
+6.  https://www.javaguides.net/2018/09/spring-data-jpa-repository-testing-using-spring-boot-datajpatest.html
 
 The `@DataJpaTest` annotation allows us to specify that we want to use an embedded database for our tests. We can specify the embedded database we want to use with the `@AutoConfigureTestDatabase` annotation. This is one example:
 
@@ -123,15 +123,15 @@ And this is how Spring finds the next best embedded database to use.
 
 ## 7 - Security
 
-1. https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
-2. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/DelegatingFilterProxy.html
-3. https://stackoverflow.com/questions/6725234/whats-the-point-of-spring-mvcs-delegatingfilterproxy
-4. https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
-5. https://www.youtube.com/watch?v=lxmBJmUhqss
-6. https://www.youtube.com/watch?v=xEnvAAhMGu4
-7. https://github.com/jzheaux/springone2019
-8. https://github.com/jzheaux/springone2020
-9. https://www.youtube.com/watch?v=TDuVY8PFU3Q
+1.  https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do
+2.  https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/DelegatingFilterProxy.html
+3.  https://stackoverflow.com/questions/6725234/whats-the-point-of-spring-mvcs-delegatingfilterproxy
+4.  https://springbootdev.com/2017/09/09/spring-security-delegatingfilterproxy/
+5.  https://www.youtube.com/watch?v=lxmBJmUhqss
+6.  https://www.youtube.com/watch?v=xEnvAAhMGu4
+7.  https://github.com/jzheaux/springone2019
+8.  https://github.com/jzheaux/springone2020
+9.  https://www.youtube.com/watch?v=TDuVY8PFU3Q
 
 <div align="center">
       <a title="5. Spring Security is Servlet Filter Based - DelegatingFilterProxy, FilterChainProxy and More... by Miss Xing" href="https://www.youtube.com/watch?v=lxmBJmUhqss">
@@ -405,6 +405,7 @@ i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams
 
 ## Achievements
 
+[![VMware Spring Professional 2021](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/vmware-spring-professional-2021.png "VMware Spring Professional 2021")](https://www.credly.com/badges/762fa7a4-9cf4-417d-bd29-7e072d74cdb7)
 [![Oracle Certified Professional, JEE 7 Developer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-ee-7-application-developer-100.png "Oracle Certified Professional, JEE7 Developer")](https://www.credly.com/badges/27a14e06-f591-4105-91ca-8c3215ef39a2)
 [![Oracle Certified Professional, Java SE 11 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-11-developer-100.png "Oracle Certified Professional, Java SE 11 Programmer")](https://www.credly.com/badges/87609d8e-27c5-45c9-9e42-60a5e9283280)
 [![Oracle Certified Professional, Java SE 8 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-8-programmer-100.png "Oracle Certified Professional, Java SE 8 Programmer")](https://www.credly.com/badges/92e036f5-4e11-4cff-9935-3e62266d2074)
