@@ -28,8 +28,6 @@ private String region;
 
 @Value("#{ systemProperties['user.country'] }")
 private String country;
-
-
 @Value("#{'${jeorg.bank.salaries}'.split(',').?[new Integer(#this) > 10]}")
 private List<Long> salaries;
 
@@ -327,7 +325,6 @@ As described in section [6.2.2. Exposing Endpoints](https://docs.spring.io/sprin
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives.svg?style=svg)](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives)
-[![Build Status](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives.svg?branch=main)](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives)
 [![Build status](https://ci.appveyor.com/api/projects/status/wksvhmqaq0sd8505?svg=true)](https://ci.appveyor.com/project/jesperancinha/jeorg-spring-master-5-test-drives)
 [![jeorg-spring-master-5-test-drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml)
 
@@ -396,9 +393,6 @@ Note that if you want to build this project from the root, you need to use one o
 
 <i>See [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints%26Tricks.md)
 document for more details</i>
-
-Running on Travis.
-
 ```bash
 mvn clean install -Dconsolerizer.show=false
 ```

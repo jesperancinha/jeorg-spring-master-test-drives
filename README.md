@@ -8,7 +8,6 @@
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives.svg?style=svg)](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives)
-[![Build Status](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives.svg?branch=main)](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives)
 [![Build status](https://ci.appveyor.com/api/projects/status/wksvhmqaq0sd8505?svg=true)](https://ci.appveyor.com/project/jesperancinha/jeorg-spring-master-5-test-drives)
 [![jeorg-spring-master-5-test-drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml)
 
@@ -72,8 +71,6 @@ Also, please check our [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-d
 We all know, in a way, what Spring Boot is, but sometimes it is very important to explain what it actually is. Find more in our [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md) section.
 
 João Esperancinha 2021/05/22
-
-
 ## Specs
 
 1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
@@ -85,9 +82,6 @@ Note that if you want to build this project from the root, you need to use one o
 
 <i>See [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints%26Tricks.md)
 document for more details</i>
-
-Running on Travis.
-
 ```bash
 mvn clean install -Dconsolerizer.show=false
 ```

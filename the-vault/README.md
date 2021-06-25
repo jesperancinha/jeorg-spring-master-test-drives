@@ -131,8 +131,6 @@ Calling private methods withing a class TODO:
 8.  https://www.concretepage.com/spring-5/dirtiescontext-example-spring-test
 9.  https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#integration-testing-annotations-spring
 10. https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/ContextConfiguration.html
-
-
 ## 9 - Spring Boot Basics
 
 1.  https://springframework.guru/spring-external-configuration-data/
@@ -167,7 +165,6 @@ Calling private methods withing a class TODO:
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives.svg?style=svg)](https://circleci.com/gh/jesperancinha/jeorg-spring-master-5-test-drives)
-[![Build Status](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives.svg?branch=main)](https://travis-ci.com/jesperancinha/jeorg-spring-master-5-test-drives)
 [![Build status](https://ci.appveyor.com/api/projects/status/wksvhmqaq0sd8505?svg=true)](https://ci.appveyor.com/project/jesperancinha/jeorg-spring-master-5-test-drives)
 [![jeorg-spring-master-5-test-drives](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/actions/workflows/jeorg-spring-master-5-test-drives.yml)
 
@@ -236,9 +233,6 @@ Note that if you want to build this project from the root, you need to use one o
 
 <i>See [Hints&Tricks](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/Hints%26Tricks.md)
 document for more details</i>
-
-Running on Travis.
-
 ```bash
 mvn clean install -Dconsolerizer.show=false
 ```
