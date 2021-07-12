@@ -20,6 +20,7 @@
         <module>bank-company</module>
         <module>furniture-k-shop</module>
         <module>the-vault</module>
+        <module>simple-app</module>
     </modules>
 
     <properties>
