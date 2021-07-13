@@ -41,6 +41,7 @@
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/tomcat-50.png "Tomcat")](http://tomcat.apache.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/undertow-50.png "Undertow")](https://undertow.io/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockito-50.png "Mockito")](https://site.mockito.org/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockk-50.png "MockK")](https://mockk.io/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/assertj-50.png "AssertJ")](https://assertj.github.io/doc/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-50.png "Docker")](https://www.docker.com/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/docker-compose-50.png "Docker Compose")](https://docs.docker.com/compose/)
@@ -71,6 +72,7 @@ Also, please check our [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-d
 We all know, in a way, what Spring Boot is, but sometimes it is very important to explain what it actually is. Find more in our [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md) section.
 
 João Esperancinha 2021/05/22
+
 ## Specs
 
 1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
@@ -153,6 +155,7 @@ i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams
 
 ### Online
 
+-   [Mockk](https://mockk.io/)
 -   [Spring HATEOAS](https://docs.spring.io/spring-hateoas)
 -   [Spring HATEOAS All Classes](https://docs.spring.io/spring-hateoas/docs/current/api/)
 -   [Spring Framework All Classes](https://docs.spring.io/spring-framework/docs/current/javadoc-api/)
