@@ -94,7 +94,6 @@
         <embedded-mariadb.version>2.0.6</embedded-mariadb.version>
         <mariaDB4j-springboot.version>2.4.0</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
-        <de.flapdoodle.embed.process.version>2.0.5</de.flapdoodle.embed.process.version>
         <atomikos.transactions.version>5.0.8</atomikos.transactions.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <cglib.version>2.2.2</cglib.version>
@@ -371,11 +370,6 @@
                 <groupId>ru.yandex.qatools.embed</groupId>
                 <artifactId>postgresql-embedded</artifactId>
                 <version>${postgresql-embedded.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.flapdoodle.embed</groupId>
-                <artifactId>de.flapdoodle.embed.process</artifactId>
-                <version>${de.flapdoodle.embed.process.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.atomikos</groupId>
