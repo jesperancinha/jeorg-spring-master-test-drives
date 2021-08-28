@@ -144,6 +144,12 @@ i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams
 `Cassandra support`, `Transaction under Transaction`, `Health indicators`, `packaging`
 `containers`, `tomcat`, `jetty`
 
+## Buy me a coffee
+
+I hope you enjoyed this repository. If you did please buy me a coffee which enables me to constantly improve and make new free content regularly for everyone. Thank you so much!
+
+<a href="https://www.buymeacoffee.com/jesperancinha" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## References
 
 ### Books
