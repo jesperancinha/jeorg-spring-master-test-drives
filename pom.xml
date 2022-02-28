@@ -40,12 +40,12 @@
         <!-- Databases -->
         <h2.version>1.4.200</h2.version>
         <postgresql.version>42.2.13</postgresql.version>
-        <hibernate-entitymanager.version>5.4.24.Final</hibernate-entitymanager.version>
+        <hibernate-entitymanager.version>5.6.5.Final</hibernate-entitymanager.version>
         <spring-data.version>2.2.4.RELEASE</spring-data.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
-        <camel.version>3.0.1</camel.version>
+        <camel.version>3.15.0</camel.version>
 
         <!-- Logs -->
         <slf4j.version>1.7.35</slf4j.version>
@@ -89,7 +89,7 @@
         <httpclient.version>4.5.13</httpclient.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-io.version>2.8.0</commons-io.version>
-        <cucumber.version>6.10.2</cucumber.version>
+        <cucumber.version>7.2.3</cucumber.version>
         <mariadb-java-client.version>1.5.7</mariadb-java-client.version>
         <embedded-mariadb.version>2.0.6</embedded-mariadb.version>
         <mariaDB4j-springboot.version>2.4.0</mariaDB4j-springboot.version>
@@ -101,7 +101,7 @@
         <commons-logging.version>1.1.1</commons-logging.version>
         <groovy.version>3.0.7</groovy.version>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
-        <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
         <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
         <java-driver-core.version>4.13.0</java-driver-core.version>
