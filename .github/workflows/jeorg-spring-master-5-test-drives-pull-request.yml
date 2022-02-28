@@ -2,7 +2,7 @@ name: jeorg-spring-master-5-test-drives-pull-request
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
