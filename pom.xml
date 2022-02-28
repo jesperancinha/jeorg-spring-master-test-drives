@@ -94,7 +94,7 @@
         <embedded-mariadb.version>2.0.6</embedded-mariadb.version>
         <mariaDB4j-springboot.version>2.4.0</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
-        <atomikos.transactions.version>5.0.8</atomikos.transactions.version>
+        <atomikos.transactions.version>5.0.9</atomikos.transactions.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <cglib.version>2.2.2</cglib.version>
         <jstl.version>1.2</jstl.version>
