@@ -45,7 +45,7 @@
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
-        <camel.version>3.0.1</camel.version>
+        <camel.version>3.15.0</camel.version>
 
         <!-- Logs -->
         <slf4j.version>1.7.35</slf4j.version>
@@ -100,8 +100,8 @@
         <jstl.version>1.2</jstl.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <groovy.version>3.0.7</groovy.version>
-        <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
-        <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
         <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
         <java-driver-core.version>4.13.0</java-driver-core.version>
