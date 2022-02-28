@@ -1,62 +1,41 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+
 version: 2
+machine: true
 jobs:
   build:
-    docker:
-      - image: jesperancinha/je-all-build:0.0.1
+    machine:
+      image: ubuntu-2004:202010-01
 
-    working_directory: /home/test/repo
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
 
     environment:
+      # Customize the JVM maximum heap limit
       MAVEN_OPTS: -Xmx3200m
 
     steps:
       - checkout
+
+      # Download and cache dependencies
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
+            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
-      - run:
-          name: Install Locales
-          command: 'apt-get install -y locales'
-
-      - run:
-          name: Create Group
-          command: 'groupadd postgres'
-
-      - run:
-          name: Create test user
-          command: 'useradd -d /home/test -p $(openssl passwd -crypt test) test'
-
-      - run:
-          name: Add user to postgres
-          command: 'usermod -a -G postgres test'
-
-      - run:
-          name: Add user to root
-          command: 'usermod -a -G postgres root'
-
-      - run:
-          name: Create test folder
-          command: 'mkdir -p /home/test'
-
-      - run:
-          name: Give permissions to test
-          command: 'chown -R test:test /home/test'
-
-      - run:
-          name: Generate Locales
-          command: 'su -c "locale-gen" test'
-
-      - run:
-          name: Build Test and Install
-          command: 'su -c "cd /home/test/repo && mvn clean install" test'
 
       - save_cache:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
+      # run tests!
       - run:
-          name: Integration tests
-          command: 'su -c "cd /home/test/repo && mvn integration-test" test'
+          name: All tests
+          command: mvn clean install
