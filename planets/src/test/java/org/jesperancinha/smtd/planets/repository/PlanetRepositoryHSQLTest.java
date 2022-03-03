@@ -13,12 +13,12 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.boot.jdbc.EmbeddedDatabaseConnection.HSQL;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.AUTO_CONFIGURED;
 
 @DataJpaTest
 @MockBean(Planet.class)
-@AutoConfigureTestDatabase(replace= AUTO_CONFIGURED, connection = HSQL)
+@AutoConfigureTestDatabase(replace = AUTO_CONFIGURED,
+        connection = EmbeddedDatabaseConnection.HSQLDB)
 public class PlanetRepositoryHSQLTest {
 
     @Autowired
