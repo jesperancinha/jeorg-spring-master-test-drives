@@ -118,6 +118,12 @@
         <easymock.version>4.3</easymock.version>
         <micrometer.version>1.8.3</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
+        <kotest.version>5.2.1</kotest.version>
+        <mockk.version>1.12.3</mockk.version>
+        <kotest-extensions-spring.version>1.1.0</kotest-extensions-spring.version>
+        <kotlinx-coroutines-core.version>1.6.0-native-mt</kotlinx-coroutines-core.version>
+        <kotlinx-coroutines-core-jvm.version>1.6.0</kotlinx-coroutines-core-jvm.version>
+        <springmockk.version>3.1.1</springmockk.version>
     </properties>
 
     <build>
@@ -171,7 +177,6 @@
     </build>
     <dependencyManagement>
         <dependencies>
-            <!-- External Dependencies -->
             <dependency>
                 <groupId>org.jesperancinha.console</groupId>
                 <artifactId>consolerizer</artifactId>
@@ -540,6 +545,52 @@
                 <version>${jackson.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-runner-junit5-jvm</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.mockk</groupId>
+                <artifactId>mockk</artifactId>
+                <version>${mockk.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest.extensions</groupId>
+                <artifactId>kotest-extensions-spring</artifactId>
+                <version>${kotest-extensions-spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-framework-engine-jvm</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-framework-api-jvm</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core</artifactId>
+                <version>${kotlinx-coroutines-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core-jvm</artifactId>
+                <version>${kotlinx-coroutines-core-jvm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ninja-squad</groupId>
+                <artifactId>springmockk</artifactId>
+                <version>${springmockk.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
