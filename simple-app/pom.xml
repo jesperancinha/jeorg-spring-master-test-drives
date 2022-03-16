@@ -26,7 +26,6 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>io.kotest.extensions</groupId>
@@ -38,16 +37,21 @@
             <artifactId>kotest-runner-junit5-jvm</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.kotest/kotest-framework-engine-jvm -->
         <dependency>
             <groupId>io.kotest</groupId>
-            <artifactId>kotest-framework-engine-jvm</artifactId>
-            <scope>test</scope>
+            <artifactId>kotest-framework-api-jvm</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>io.mockk</groupId>
-            <artifactId>mockk</artifactId>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-core-jvm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ninja-squad</groupId>
+            <artifactId>springmockk</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -100,12 +104,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <useFile>false</useFile>
-                    <includes>
-                        <include>**/*Test.*</include>
-                    </includes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

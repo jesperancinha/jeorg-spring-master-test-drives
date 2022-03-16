@@ -121,6 +121,9 @@
         <kotest.version>5.2.1</kotest.version>
         <mockk.version>1.12.3</mockk.version>
         <kotest-extensions-spring.version>1.1.0</kotest-extensions-spring.version>
+        <kotlinx-coroutines-core.version>1.6.0-native-mt</kotlinx-coroutines-core.version>
+        <kotlinx-coroutines-core-jvm.version>1.6.0</kotlinx-coroutines-core-jvm.version>
+        <springmockk.version>3.1.1</springmockk.version>
     </properties>
 
     <build>
@@ -564,6 +567,28 @@
                 <groupId>io.kotest</groupId>
                 <artifactId>kotest-framework-engine-jvm</artifactId>
                 <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-framework-api-jvm</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core</artifactId>
+                <version>${kotlinx-coroutines-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core-jvm</artifactId>
+                <version>${kotlinx-coroutines-core-jvm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ninja-squad</groupId>
+                <artifactId>springmockk</artifactId>
+                <version>${springmockk.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

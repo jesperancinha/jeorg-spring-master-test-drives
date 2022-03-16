@@ -1,9 +1,9 @@
 package org.jesperancinha.smtd.simple
 
+import com.ninjasquad.springmockk.MockkBean
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.extensions.spring.SpringExtension
 import io.kotest.matchers.shouldNotBe
-import io.mockk.impl.annotations.MockK
 import org.jesperancinha.smtd.simple.service.Service
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
@@ -16,7 +16,7 @@ class HelloTestMockk : StringSpec() {
 
     override fun extensions() = listOf(SpringExtension)
 
-    @MockK(relaxed = true)
+    @MockkBean(relaxed = true)
     lateinit var service: Service
 
     init {
