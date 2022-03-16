@@ -14,13 +14,6 @@
 
     <name>simple-app</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.6.10</kotlin.version>
-        <kotlin.code.style>official</kotlin.code.style>
-        <junit.version>4.13.2</junit.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -38,27 +31,23 @@
         <dependency>
             <groupId>io.kotest.extensions</groupId>
             <artifactId>kotest-extensions-spring</artifactId>
-            <version>1.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.kotest</groupId>
             <artifactId>kotest-runner-junit5-jvm</artifactId>
-            <version>5.2.1</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.kotest/kotest-framework-engine-jvm -->
         <dependency>
             <groupId>io.kotest</groupId>
             <artifactId>kotest-framework-engine-jvm</artifactId>
-            <version>5.1.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.mockk</groupId>
             <artifactId>mockk</artifactId>
-            <version>1.12.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
