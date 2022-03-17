@@ -40,7 +40,7 @@
         <!-- Databases -->
         <h2.version>2.1.210</h2.version>
         <postgresql.version>42.3.3</postgresql.version>
-        <hibernate-entitymanager.version>5.6.6.Final</hibernate-entitymanager.version>
+        <hibernate-entitymanager.version>5.6.7.Final</hibernate-entitymanager.version>
         <spring-data.version>2.2.4.RELEASE</spring-data.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
