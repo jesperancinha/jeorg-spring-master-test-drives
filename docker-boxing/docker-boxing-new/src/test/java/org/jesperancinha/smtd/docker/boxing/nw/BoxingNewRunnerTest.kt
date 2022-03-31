@@ -29,7 +29,6 @@ internal class BoxingNewRunnerTest {
 
     @Test
     fun `should start test Containers`() {
-
     }
 
     private class DockerCompose(files: List<File>) : DockerComposeContainer<DockerCompose>(files)
