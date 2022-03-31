@@ -21,6 +21,7 @@
         <module>furniture-k-shop</module>
         <module>the-vault</module>
         <module>simple-app</module>
+        <module>docker-boxing</module>
     </modules>
 
     <properties>

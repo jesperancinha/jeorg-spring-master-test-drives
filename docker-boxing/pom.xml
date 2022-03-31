@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>jeorg-spring-master-5-test-drives</artifactId>
+        <groupId>org.jesperancinha.smtd</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>docker-boxing</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Docker boxing</name>
+
+    <modules>
+        <module>docker-boxing-old</module>
+        <module>docker-boxing-new</module>
+    </modules>
+
+</project>
