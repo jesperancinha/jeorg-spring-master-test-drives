@@ -37,7 +37,7 @@ internal class BoxingNewRunnerTest {
         private val dockerCompose by lazy {
             DockerCompose(listOf(File("docker-compose.yml")))
                 .withOptions("--compatibility")
-                .withExposedService("adopt2_1", 8080, Wait.defaultWaitStrategy())
+                .withExposedService("adopt2_1", 8080, Wait.forHealthcheck())
                 .withLocalCompose(true)
                 .also { it.start() }
         }
