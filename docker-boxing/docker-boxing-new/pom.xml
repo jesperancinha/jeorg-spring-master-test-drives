@@ -44,7 +44,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot-maven-plugin.version}</version>
                 <configuration>
-                    <mainClass>org.jesperancinha.smtd.docker.boxing.new.BoxingNewRunner</mainClass>
+                    <mainClass>org.jesperancinha.smtd.docker.boxing.nw.BoxingNewRunner</mainClass>
                 </configuration>
                 <executions>
                     <execution>

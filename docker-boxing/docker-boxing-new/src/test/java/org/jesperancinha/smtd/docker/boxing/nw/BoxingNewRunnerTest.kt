@@ -1,6 +1,5 @@
-package org.jesperancinha.smtd.docker.boxing.old
+package org.jesperancinha.smtd.docker.boxing.nw
 
-import org.jesperancinha.smtd.docker.boxing.old.BoxingOldRunnerTest.BoxerInitializer
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.slf4j.Logger
@@ -21,8 +20,8 @@ import java.time.temporal.ChronoUnit
  * @see <a href="https://github.com/jesperancinha/vma-archiver/blob/master/vma-service-backend/src/test/kotlin/org/jesperancinha/vma/utils/AbstractVmaTest.kt">AbstractVmaTest.kt</a>
  */
 @SpringBootTest
-@ContextConfiguration(initializers = [BoxerInitializer::class])
-internal class BoxingOldRunnerTest {
+@ContextConfiguration(initializers = [BoxingNewRunnerTest.BoxerInitializer::class])
+internal class BoxingNewRunnerTest {
 
     @BeforeEach
     fun setUp() {
@@ -39,21 +38,21 @@ internal class BoxingOldRunnerTest {
         private val dockerCompose by lazy {
             DockerCompose(listOf(File("docker-compose.yml")))
                 .withOptions("--compatibility")
-                .withExposedService("adopt_1", 8080, Wait.defaultWaitStrategy())
+                .withExposedService("adopt2_1", 8080, Wait.defaultWaitStrategy())
                 .withLocalCompose(true)
                 .also { it.start() }
         }
 
         override fun initialize(applicationContext: ConfigurableApplicationContext) {
             logger.info("Starting IT -> ${LocalDateTime.now()}")
-            dockerCompose.getServiceHost("adopt_1", 8080)
+            dockerCompose.getServiceHost("adopt2_1", 8080)
             logger.info("End IT -> ${LocalDateTime.now()}")
             logger.info("Time Elapsed IT -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
 
         }
 
         companion object {
-            val logger: Logger = LoggerFactory.getLogger(BoxingOldRunnerTest::class.java)
+            val logger: Logger = LoggerFactory.getLogger(BoxingNewRunnerTest::class.java)
             val startup = LocalDateTime.now()
         }
     }

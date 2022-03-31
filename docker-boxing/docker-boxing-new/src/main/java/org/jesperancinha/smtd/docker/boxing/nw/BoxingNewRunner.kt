@@ -1,4 +1,4 @@
-package org.jesperancinha.smtd.docker.boxing.old
+package org.jesperancinha.smtd.docker.boxing.nw
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -14,16 +14,16 @@ import java.util.concurrent.TimeUnit
  * Created by jofisaes on 31/03/2022
  */
 @SpringBootApplication
-class BoxingOldRunner : ApplicationRunner {
+class BoxingNewRunner : ApplicationRunner {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
             logger.info("Starting server -> ${LocalDateTime.now()}")
             Thread.sleep(TimeUnit.SECONDS.toMillis(2))
-            runApplication<BoxingOldRunner>(*args)
+            runApplication<BoxingNewRunner>(*args)
         }
 
-        val logger: Logger = LoggerFactory.getLogger(BoxingOldRunner::class.java)
+        val logger: Logger = LoggerFactory.getLogger(BoxingNewRunner::class.java)
         val startup = LocalDateTime.now()
     }
 
