@@ -6,6 +6,8 @@ import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import java.util.concurrent.TimeUnit
@@ -14,6 +16,7 @@ import java.util.concurrent.TimeUnit
  * Created by jofisaes on 31/03/2022
  */
 @SpringBootApplication
+@RestController
 class BoxingNewRunner : ApplicationRunner {
     companion object {
         @JvmStatic
@@ -31,4 +34,7 @@ class BoxingNewRunner : ApplicationRunner {
         logger.info("Service started -> ${LocalDateTime.now()}")
         logger.info("Time Elapsed -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
     }
+
+    @RequestMapping
+    fun health() = "OK"
 }
