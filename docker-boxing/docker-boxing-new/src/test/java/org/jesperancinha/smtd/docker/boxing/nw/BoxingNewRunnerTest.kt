@@ -47,7 +47,6 @@ internal class BoxingNewRunnerTest {
             dockerCompose.getServiceHost("adopt2_1", 8080)
             logger.info("End IT -> ${LocalDateTime.now()}")
             logger.info("Time Elapsed IT -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
-
         }
 
         companion object {
