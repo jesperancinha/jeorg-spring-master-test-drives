@@ -2,10 +2,10 @@ version: '3.1'
 
 services:
 
-  adopt-old-1:
+  adopt-port-1:
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
 
-  adopt-old-2:
+  adopt-port-2:
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null

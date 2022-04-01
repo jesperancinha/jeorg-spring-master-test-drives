@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
 
-  adopt-new-1:
+  adopt-health-1:
     build: .
     entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:
@@ -12,7 +12,7 @@ services:
       start_period: 0s
       timeout: 10s
 
-  adopt-new-2:
+  adopt-health-2:
     build: .
     entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:
