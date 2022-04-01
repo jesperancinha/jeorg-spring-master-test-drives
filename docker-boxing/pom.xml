@@ -15,8 +15,8 @@
     <name>Docker boxing</name>
 
     <modules>
-        <module>docker-boxing-old</module>
-        <module>docker-boxing-new</module>
+        <module>docker-boxing-port</module>
+        <module>docker-boxing-health</module>
     </modules>
 
 </project>
