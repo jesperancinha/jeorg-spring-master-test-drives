@@ -4,7 +4,7 @@ services:
 
   adopt-new-1:
     build: .
-    entrypoint: java -jar ~/docker-boxing-new.jar && tail -f /dev/null
+    entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:
       test: curl --fail http://localhost:8080 || exit 1
       interval: 1s
@@ -14,7 +14,7 @@ services:
 
   adopt-new-2:
     build: .
-    entrypoint: java -jar ~/docker-boxing-new.jar && tail -f /dev/null
+    entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:
       test: curl --fail http://localhost:8080 || exit 1
       interval: 1s

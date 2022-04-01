@@ -4,8 +4,8 @@ services:
 
   adopt-old-1:
     build: .
-    entrypoint: java -jar ~/docker-boxing-old.jar && tail -f /dev/null
+    entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
 
   adopt-old-2:
     build: .
-    entrypoint: java -jar ~/docker-boxing-old.jar && tail -f /dev/null
+    entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
