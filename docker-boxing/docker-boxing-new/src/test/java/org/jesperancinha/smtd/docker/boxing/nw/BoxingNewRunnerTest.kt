@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.test.context.ContextConfiguration
 import org.testcontainers.containers.DockerComposeContainer
-import org.testcontainers.containers.wait.strategy.Wait
+import org.testcontainers.containers.wait.strategy.Wait.forHealthcheck
 import java.io.File
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
@@ -36,15 +36,16 @@ internal class BoxingNewRunnerTest {
     class BoxerInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
         private val dockerCompose by lazy {
             DockerCompose(listOf(File("docker-compose.yml")))
-                .withOptions("--compatibility")
-                .withExposedService("adopt2_1", 8080, Wait.forHealthcheck())
+                .withExposedService("adopt-new-2_1", 8080, forHealthcheck())
+                .withExposedService("adopt-new-1_1", 8080, forHealthcheck())
                 .withLocalCompose(true)
                 .also { it.start() }
         }
 
-        override fun initialize(applicationContext: ConfigurableApplicationContext) {
+        override fun initialize(applicationContextx: ConfigurableApplicationContext) {
             logger.info("Starting IT -> ${LocalDateTime.now()}")
-            dockerCompose.getServiceHost("adopt2_1", 8080)
+            logger.info("Starting service 1 at ${dockerCompose.getServiceHost("adopt-new-1_1", 8080)}")
+            logger.info("Starting service 2 at ${dockerCompose.getServiceHost("adopt-new-2_1", 8080)}")
             logger.info("End IT -> ${LocalDateTime.now()}")
             logger.info("Time Elapsed IT -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
         }
