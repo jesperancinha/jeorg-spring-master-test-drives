@@ -112,7 +112,7 @@
 
         <!-- Kotlin -->
         <kotlinx-serialization-json.version>1.3.2</kotlinx-serialization-json.version>
-        <kotlin.version>1.6.10</kotlin.version>
+        <kotlin.version>1.6.20</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>4.3</easymock.version>
         <micrometer.version>1.8.4</micrometer.version>
