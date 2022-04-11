@@ -117,7 +117,7 @@
         <easymock.version>4.3</easymock.version>
         <micrometer.version>1.8.4</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
-        <kotest.version>5.2.2</kotest.version>
+        <kotest.version>5.2.3</kotest.version>
         <mockk.version>1.12.3</mockk.version>
         <kotest-extensions-spring.version>1.1.0</kotest-extensions-spring.version>
         <kotlinx-coroutines-core.version>1.6.1-native-mt</kotlinx-coroutines-core.version>
