@@ -11,9 +11,9 @@
 
     <artifactId>docker-boxing-health</artifactId>
 
-    <description>A corrected implementation of a Testcontainer based Integration tests</description>
+    <description>An implementation of a Testcontainer based on Health</description>
 
-    <name>Docker boxing New</name>
+    <name>Docker boxing Health</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,12 +57,20 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
                 <executions>
                     <execution>
                         <id>compile</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -85,6 +93,11 @@
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
