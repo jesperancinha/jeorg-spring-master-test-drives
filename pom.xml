@@ -88,7 +88,7 @@
         <httpclient.version>4.5.13</httpclient.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-io.version>2.11.0</commons-io.version>
-        <cucumber.version>7.3.1</cucumber.version>
+        <cucumber.version>7.3.4</cucumber.version>
         <mariadb-java-client.version>3.0.4</mariadb-java-client.version>
         <embedded-mariadb.version>2.1.8</embedded-mariadb.version>
         <mariaDB4j-springboot.version>2.5.3</mariaDB4j-springboot.version>
@@ -103,7 +103,7 @@
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
         <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
-        <java-driver-core.version>4.14.0</java-driver-core.version>
+        <java-driver-core.version>4.14.1</java-driver-core.version>
         <metrics-core.version>3.0.2</metrics-core.version>
         <javax.inject.version>1</javax.inject.version>
         <hsqldb.version>2.6.1</hsqldb.version>
@@ -117,7 +117,7 @@
         <easymock.version>4.3</easymock.version>
         <micrometer.version>1.8.5</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
-        <kotest.version>5.2.3</kotest.version>
+        <kotest.version>5.3.0</kotest.version>
         <mockk.version>1.12.3</mockk.version>
         <kotest-extensions-spring.version>1.1.1</kotest-extensions-spring.version>
         <kotlinx-coroutines-core.version>1.6.1-native-mt</kotlinx-coroutines-core.version>
