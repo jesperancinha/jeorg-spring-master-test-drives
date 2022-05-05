@@ -11,10 +11,9 @@
 
     <artifactId>docker-boxing-port</artifactId>
 
-    <name>Docker boxing Old</name>
+    <description>An implementation of a Testcontainer based on Port</description>
 
-    <description>A purposely wrong implementation of a Testcontainer based Integration tests</description>
-
+    <name>Docker boxing Port</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
