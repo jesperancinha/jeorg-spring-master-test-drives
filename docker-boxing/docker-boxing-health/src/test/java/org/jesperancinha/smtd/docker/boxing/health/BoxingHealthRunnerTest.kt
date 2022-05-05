@@ -52,7 +52,7 @@ internal class BoxingHealthRunnerTest {
 
         companion object {
             val logger: Logger = LoggerFactory.getLogger(BoxingHealthRunnerTest::class.java)
-            val startup = LocalDateTime.now()
+            private val startup: LocalDateTime = LocalDateTime.now()
         }
     }
 }
