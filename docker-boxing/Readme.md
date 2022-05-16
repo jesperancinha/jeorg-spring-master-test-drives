@@ -2,7 +2,7 @@
 
 ## References
 
-- [Compose file versions and upgrading](https://docs.docker.com/compose/compose-file/compose-versioning/)
+-   [Compose file versions and upgrading](https://docs.docker.com/compose/compose-file/compose-versioning/)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
