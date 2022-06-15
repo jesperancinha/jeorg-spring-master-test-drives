@@ -1,3 +1,3 @@
-FROM adoptopenjdk:16-jre-hotspot-focal
+FROM openjdk:17.0.2-jdk
 
 COPY target/docker-boxing-port.jar ~/
