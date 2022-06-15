@@ -7,8 +7,8 @@ version: 2
 machine: true
 jobs:
   build:
-    machine:
-      image: ubuntu-2204:2022.04.1
+    docker:
+      - image: cimg/openjdk:17.0.3
 
     environment:
       # Customize the JVM maximum heap limit
@@ -17,7 +17,9 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
 
       - restore_cache:
           keys:
