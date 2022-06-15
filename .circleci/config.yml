@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run:
           name: JDK17 installation
-          command: wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.tar.gz -O jdk17.tar.gz && tar -xvzf jdk17.tar.gz && mv jdk-17* jdk17 && sudo mv jdk17 /opt/ && export JAVA_HOME=/opt/jdk17 && export $PATH=$PATH::$JAVA_HOME/bin
+          command: wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.tar.gz -O jdk17.tar.gz && tar -xvzf jdk17.tar.gz && mv jdk-17* jdk17 && sudo mv jdk17 /opt/ && export JAVA_HOME=/opt/jdk17 && export PATH=$PATH::$JAVA_HOME/bin
 
       - run:
           name: All tests
