@@ -1,3 +1,3 @@
-FROM adoptopenjdk:16-jre-hotspot-focal
+FROM adoptopenjdk:17-jre-hotspot-focal
 
 COPY target/docker-boxing-health.jar ~/
