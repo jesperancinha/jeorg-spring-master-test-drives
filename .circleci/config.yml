@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run:
           name: JDK17 installation
-          command: sudo add-apt-repository ppa:openjdk-r/ppa -y && sudo apt-get install openjdk-17-jdk -y
+          command: sudo add-apt-repository ppa:openjdk-r/ppa -y && sudo apt-get install openjdk-17-jdk -y && source ~/.bashrc
 
       - run:
           name: All tests
