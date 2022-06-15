@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run:
           name: JDK17 installation
-          command: sudo add-apt-repository ppa:openjdk-r/ppa -y && sudo apt-get install openjdk-17-jdk -y && source ~/.bashrc
+          command: wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.deb -O jdk17.deb && dpkg -i jdk17.deb
 
       - run:
           name: All tests
