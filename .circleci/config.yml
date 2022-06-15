@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run:
           name: JDK17 installation
-          command: sudo apt-get install openjdk-17-jdk -y
+          command: sudo apt-get install openjdk-17-jdk --allow
 
       - run:
           name: All tests
