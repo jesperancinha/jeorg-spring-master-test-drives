@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-parent</artifactId>
-        <version>2.6.4</version>
+        <version>2.7.0</version>
     </parent>
 
     <groupId>org.jesperancinha.smtd</groupId>
@@ -21,6 +21,7 @@
         <module>furniture-k-shop</module>
         <module>the-vault</module>
         <module>simple-app</module>
+        <module>docker-boxing</module>
     </modules>
 
     <properties>
@@ -29,23 +30,23 @@
 
         <!-- External -->
         <spring.version>5.2.1.RELEASE</spring.version>
-        <lombok.version>1.18.22</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
         <jscience>4.3.1</jscience>
         <commons.lang3>3.4</commons.lang3>
         <guava.version>31.1-jre</guava.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <consolerizer.version>2.0.12</consolerizer.version>
-        <jackson.version>2.13.2</jackson.version>
+        <jackson.version>2.13.3</jackson.version>
 
         <!-- Databases -->
-        <h2.version>2.1.210</h2.version>
-        <postgresql.version>42.3.3</postgresql.version>
-        <hibernate-entitymanager.version>5.6.5.Final</hibernate-entitymanager.version>
+        <h2.version>2.1.214</h2.version>
+        <postgresql.version>42.4.0</postgresql.version>
+        <hibernate-entitymanager.version>5.6.9.Final</hibernate-entitymanager.version>
         <spring-data.version>2.2.4.RELEASE</spring-data.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
-        <camel.version>3.15.0</camel.version>
+        <camel.version>3.17.0</camel.version>
 
         <!-- Logs -->
         <slf4j.version>1.7.36</slf4j.version>
@@ -56,12 +57,10 @@
         <mockito-core.version>3.1.0</mockito-core.version>
 
         <!-- Plugins -->
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
-        <maven-compiler-plugin.source>${java.version}</maven-compiler-plugin.source>
-        <maven-compiler-plugin.target>${java.version}</maven-compiler-plugin.target>
         <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
         <args4j-maven-plugin.version>2.33</args4j-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -72,7 +71,7 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
-        <spring-boot-maven-plugin.version>2.6.4</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>2.7.0</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
         <ehcache.version>3.10.0</ehcache.version>
@@ -85,13 +84,13 @@
         <bootstrap.version>5.1.3</bootstrap.version>
         <stomp-websocket.version>2.3.4</stomp-websocket.version>
         <sockjs-client.version>1.5.1</sockjs-client.version>
-        <webjars-locator-core.version>0.50</webjars-locator-core.version>
+        <webjars-locator-core.version>0.51</webjars-locator-core.version>
         <httpclient.version>4.5.13</httpclient.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-io.version>2.11.0</commons-io.version>
-        <cucumber.version>7.2.3</cucumber.version>
-        <mariadb-java-client.version>3.0.3</mariadb-java-client.version>
-        <embedded-mariadb.version>2.1.0</embedded-mariadb.version>
+        <cucumber.version>7.3.4</cucumber.version>
+        <mariadb-java-client.version>3.0.5</mariadb-java-client.version>
+        <embedded-mariadb.version>2.2.2</embedded-mariadb.version>
         <mariaDB4j-springboot.version>2.5.3</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
         <atomikos.transactions.version>5.0.9</atomikos.transactions.version>
@@ -99,31 +98,32 @@
         <cglib.version>3.3.0</cglib.version>
         <jstl.version>1.2</jstl.version>
         <commons-logging.version>1.2</commons-logging.version>
-        <groovy.version>3.0.10</groovy.version>
-        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <groovy.version>3.0.11</groovy.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
         <embedded-cassandra.version>2.0.4</embedded-cassandra.version>
-        <java-driver-core.version>4.14.0</java-driver-core.version>
+        <java-driver-core.version>4.14.1</java-driver-core.version>
         <metrics-core.version>3.0.2</metrics-core.version>
         <javax.inject.version>1</javax.inject.version>
         <hsqldb.version>2.6.1</hsqldb.version>
-        <derby.version>10.15.2.0</derby.version>
+        <derby.version>10.16.1.1</derby.version>
         <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
 
         <!-- Kotlin -->
-        <kotlinx-serialization-json.version>1.3.2</kotlinx-serialization-json.version>
-        <kotlin.version>1.6.10</kotlin.version>
+        <kotlinx-serialization-json.version>1.3.3</kotlinx-serialization-json.version>
+        <kotlin.version>1.7.0</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>4.3</easymock.version>
-        <micrometer.version>1.8.3</micrometer.version>
+        <micrometer.version>1.9.0</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
-        <kotest.version>5.2.1</kotest.version>
-        <mockk.version>1.12.3</mockk.version>
-        <kotest-extensions-spring.version>1.1.0</kotest-extensions-spring.version>
-        <kotlinx-coroutines-core.version>1.6.0-native-mt</kotlinx-coroutines-core.version>
-        <kotlinx-coroutines-core-jvm.version>1.6.0</kotlinx-coroutines-core-jvm.version>
+        <kotest.version>5.3.1</kotest.version>
+        <mockk.version>1.12.4</mockk.version>
+        <kotest-extensions-spring.version>1.1.1</kotest-extensions-spring.version>
+        <kotlinx-coroutines-core.version>1.6.1-native-mt</kotlinx-coroutines-core.version>
+        <kotlinx-coroutines-core-jvm.version>1.6.1-native-mt</kotlinx-coroutines-core-jvm.version>
         <springmockk.version>3.1.1</springmockk.version>
+        <testcontainers.version>1.17.2</testcontainers.version>
     </properties>
 
     <build>
@@ -596,6 +596,12 @@
                 <groupId>com.ninja-squad</groupId>
                 <artifactId>springmockk</artifactId>
                 <version>${springmockk.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${testcontainers.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
