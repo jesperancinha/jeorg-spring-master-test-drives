@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run:
           name: JDK17 installation
-          command: wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.deb -O jdk17.deb && sudo dpkg -i jdk17.deb
+          command: sudo apt-get install libc6-i386 -y && sudo apt-get install libc6-x32 -y &&  wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.deb -O jdk17.deb && sudo dpkg -i jdk17.deb
 
       - run:
           name: All tests
