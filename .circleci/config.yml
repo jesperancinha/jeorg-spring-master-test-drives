@@ -8,7 +8,7 @@ machine: true
 jobs:
   build:
     machine:
-      image: ubuntu-2204:2022.04.1
+      image: ubuntu-2004:202010-01
 
     environment:
       # Customize the JVM maximum heap limit
@@ -16,8 +16,6 @@ jobs:
 
     steps:
       - checkout
-
-      # Download and cache dependencies
 
       - restore_cache:
           keys:
@@ -32,5 +30,9 @@ jobs:
 
       # run tests!
       - run:
+          name: JDK17 installation
+          command: wget https://download.oracle.com/java/17/archive/jdk-17.0.3.1_linux-x64_bin.tar.gz -O jdk17.tar.gz && tar -xvzf jdk17.tar.gz && mv jdk-17* jdk17 && sudo mv jdk17 /opt/
+
+      - run:
           name: All tests
-          command: mvn clean install -DskipTests && mvn test
+          command: export JAVA_HOME=/opt/jdk17 && export PATH=$PATH::$JAVA_HOME/bin && mvn clean install -DskipTests && mvn test
