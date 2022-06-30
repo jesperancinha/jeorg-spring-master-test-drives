@@ -124,6 +124,7 @@
         <kotlinx-coroutines-core-jvm.version>1.6.3-native-mt</kotlinx-coroutines-core-jvm.version>
         <springmockk.version>3.1.1</springmockk.version>
         <testcontainers.version>1.17.3</testcontainers.version>
+        <kotlinx-coroutines-debug.version>1.6.3</kotlinx-coroutines-debug.version>
     </properties>
 
     <build>
