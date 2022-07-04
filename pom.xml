@@ -50,7 +50,7 @@
 
         <!-- Logs -->
         <slf4j.version>1.7.36</slf4j.version>
-        <log4j.version>2.17.2</log4j.version>
+        <log4j.version>2.18.0</log4j.version>
 
         <!-- Test -->
         <assertj-core.version>3.13.2</assertj-core.version>
