@@ -118,7 +118,7 @@
         <micrometer.version>1.9.4</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
         <kotest.version>5.4.2</kotest.version>
-        <mockk.version>1.12.8</mockk.version>
+        <mockk.version>1.13.1</mockk.version>
         <kotest-extensions-spring.version>1.1.2</kotest-extensions-spring.version>
         <kotlinx-coroutines-core.version>1.6.3-native-mt</kotlinx-coroutines-core.version>
         <kotlinx-coroutines-core-jvm.version>1.6.3-native-mt</kotlinx-coroutines-core-jvm.version>
