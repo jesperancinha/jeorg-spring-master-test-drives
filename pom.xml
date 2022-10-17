@@ -114,7 +114,7 @@
         <kotlinx-serialization-json.version>1.4.1</kotlinx-serialization-json.version>
         <kotlin.version>1.7.20</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
-        <easymock.version>4.3</easymock.version>
+        <easymock.version>5.0.0</easymock.version>
         <micrometer.version>1.9.5</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
         <kotest.version>5.5.1</kotest.version>
