@@ -106,7 +106,7 @@
         <java-driver-core.version>4.15.0</java-driver-core.version>
         <metrics-core.version>3.0.2</metrics-core.version>
         <javax.inject.version>1</javax.inject.version>
-        <hsqldb.version>2.7.0</hsqldb.version>
+        <hsqldb.version>2.7.1</hsqldb.version>
         <derby.version>10.16.1.1</derby.version>
         <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
 
