@@ -74,7 +74,7 @@
         <spring-boot-maven-plugin.version>2.7.5</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
-        <ehcache.version>3.10.6</ehcache.version>
+        <ehcache.version>3.10.8</ehcache.version>
         <ehcache-core.version>2.6.11</ehcache-core.version>
 
         <!-- External -->
