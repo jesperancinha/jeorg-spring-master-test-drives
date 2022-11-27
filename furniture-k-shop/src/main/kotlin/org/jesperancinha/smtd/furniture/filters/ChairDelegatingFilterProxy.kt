@@ -3,9 +3,9 @@ package org.jesperancinha.smtd.furniture.filters
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.DelegatingFilterProxy
-import javax.servlet.FilterChain
-import javax.servlet.ServletRequest
-import javax.servlet.ServletResponse
+import jakarta.servlet.FilterChain
+import jakarta.servlet.ServletRequest
+import jakarta.servlet.ServletResponse
 
 @Component
 @Profile("broken")
