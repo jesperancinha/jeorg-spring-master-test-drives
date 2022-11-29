@@ -5,5 +5,5 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      - dependency-name: "jakarta.servlet-api"
+      - dependency-name: "jakarta.servlet:jakarta.servlet-api"
         versions: ["6.0.0"]
