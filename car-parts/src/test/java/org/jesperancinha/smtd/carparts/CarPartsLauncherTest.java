@@ -1,14 +1,17 @@
 package org.jesperancinha.smtd.carparts;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
+import org.jesperancinha.smtd.carparts.configuration.PartWebSecurity;
 import org.jesperancinha.smtd.carparts.controller.PartController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
+@Import(PartWebSecurity.class)
 public class CarPartsLauncherTest {
 
     @Autowired

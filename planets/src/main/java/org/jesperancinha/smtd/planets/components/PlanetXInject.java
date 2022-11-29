@@ -1,16 +1,16 @@
 package org.jesperancinha.smtd.planets.components;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 
 @Component
 public class PlanetXInject {
 
     private final String atmosphere;
 
-    @Inject
+    @Autowired
     PlanetXInject(
             final String atmosphere) {
         ConsolerizerComposer.outSpace()
@@ -27,7 +27,7 @@ public class PlanetXInject {
     }
 
 
-    @Inject
+    @Autowired
     public void setupAtmosphere(final String atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlanetXInject#setupAtmosphere method")

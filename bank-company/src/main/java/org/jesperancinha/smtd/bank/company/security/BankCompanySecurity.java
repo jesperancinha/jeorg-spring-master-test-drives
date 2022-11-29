@@ -4,7 +4,7 @@ import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 @Configuration
 public class BankCompanySecurity {

@@ -1,6 +1,6 @@
 package org.jesperancinha.smtd.furniture.model
 
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "shelf_case")

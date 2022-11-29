@@ -1,22 +1,17 @@
 package org.jesperancinha.smtd.planets.components;
 
+import jakarta.annotation.PostConstruct;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 
 @Component
 public class PlanetXSimple {
 
-    @Inject
-    private String atmosphere;
+    private final String atmosphere;
 
-    @Autowired
-    private String temperature;
+    private final String temperature;
 
-    public PlanetXSimple() {
+    public PlanetXSimple(String temperature, String atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlanetXSimple constructor")
                 .orange("In the constructor we have no info when using FIELD injection")
@@ -27,6 +22,8 @@ public class PlanetXSimple {
                 .blue(temperature)
                 .newLine()
                 .reset();
+        this.temperature = temperature;
+        this.atmosphere = atmosphere;
     }
 
     @PostConstruct
