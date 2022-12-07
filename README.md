@@ -4,7 +4,6 @@
 
 [![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/jesperancinha/jeorg-spring-master-test-drives)
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Spring%20Master%205%20Test%20Drives&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-test-drives)
-[![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/jeorg-spring-master-test-drives.svg)](#)
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/jeorg-spring-master-test-drives.svg?style=svg)](https://circleci.com/gh/jesperancinha/jeorg-spring-master-test-drives)
@@ -57,24 +56,7 @@
 
 ## Introduction
 
-Welcome to [JEOrg Spring Master 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-master-test-drives).   
-In these series we will only have master projects available. We won't be looking at the basics of Spring 5.   
-That will still occur in my other repo: [JEOrg Spring 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-5-test-drives).
-
-The setting in this repo is essentially about details.   
-So for example if we are looking at a `@Transactional` annotation, we won't just be looking at what a `@Transactional` does.   
-Further, we will be looking at what each single parameter of `@Transactional` actually does.
-
-Please use this repo for your studies only if you already have enough baggage from the Spring Framework. We will avoid paying attention to basic Spring concepts.
-
-Please have a look at our page where the description of the in-depth subjects investigated and related web resources are provided: [Technology](./Technology.md).
-
-Also, please check our [Reminders](dev/src/jofisaes/jeorg-spring-master-test-drives/docs/reminders/Reminders.md) page, where short descriptions are presented in a flash card fashion for specific theoretical aspects of the Spring Framework.
-
-We all know, in a way, what Spring Boot is, but sometimes it is very important to explain what it actually is. Find more in our [Spring Boot](dev/src/jofisaes/jeorg-spring-master-test-drives/docs/reminders/SpringBoot.md) section.
-
-João Esperancinha 2021/05/22
-
+Study Project for the Spring Framework. For more infor check the [LogBook](./LogBook.md) file.
 ## Specs
 
 1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
