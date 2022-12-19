@@ -57,6 +57,12 @@
 ## Introduction
 
 Study Project for the Spring Framework. For more infor check the [LogBook](./LogBook.md) file.
+
+#### Stable releases
+
+- [1.0.0](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/1.0.0) - [960c0dbfbe9aef8c11c432c2c380814acf409b37](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/1.0.0) - Spring boot 2.7.5
+- [2.0.0](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/2.0.0) - [efe08c01f3e67dcb9d18707c9cc662c8ece4bfbc](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/2.0.0) - Spring boot 3.0.0
+
 ## Specs
 
 1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
