@@ -65,8 +65,8 @@ Study Project for the Spring Framework. For more infor check the [LogBook](./Log
 
 ## Specs
 
-1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/) - 5.2.15.RELEASE
-2.  Spring Boot: [org.springframework.boot/spring-boot-starter-parent](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent) - 2.3.11.RELEASE
+1.  Spring: [org.springframework](https://mvnrepository.com/artifact/org.springframework/)
+2.  Spring Boot: [org.springframework.boot/spring-boot-starter-parent](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent)
 
 ## Build
 
