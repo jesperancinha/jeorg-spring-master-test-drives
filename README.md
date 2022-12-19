@@ -56,7 +56,7 @@
 
 ## Introduction
 
-Study Project for the Spring Framework. For more infor check the [LogBook](./LogBook.md) file.
+Study Project for the Spring Framework. For more info check the [LogBook](./LogBook.md) file.
 
 #### Stable releases
 
