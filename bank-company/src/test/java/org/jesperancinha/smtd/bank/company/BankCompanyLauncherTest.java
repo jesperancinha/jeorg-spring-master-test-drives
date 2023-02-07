@@ -61,7 +61,6 @@ public class BankCompanyLauncherTest {
                 .black()
                 .bgGreen(bankCompanyUserRepository)
                 .reset();
-        BankCompanyLauncher.main(new String[0]);
         ConsolerizerComposer.outSpace()
                 .cyan(environment)
                 .newLine()
