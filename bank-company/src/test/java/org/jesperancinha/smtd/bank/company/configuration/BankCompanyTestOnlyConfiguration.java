@@ -14,12 +14,12 @@ import org.springframework.boot.test.context.TestConfiguration;
 @TestConfiguration
 @AllArgsConstructor
 @NoArgsConstructor
-public class BankCompanyTestOnlyConfiguraton {
+public class BankCompanyTestOnlyConfiguration {
 
     @Value("${jeorg.bank.testing:fail}")
-    private String value;
+    public String value;
 
     @Value("${info.app.name:fail}")
-    private String appName;
+    public String appName;
 
 }

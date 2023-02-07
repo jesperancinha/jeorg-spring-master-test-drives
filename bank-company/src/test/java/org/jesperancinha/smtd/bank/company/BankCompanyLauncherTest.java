@@ -1,7 +1,7 @@
 package org.jesperancinha.smtd.bank.company;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
-import org.jesperancinha.smtd.bank.company.configuration.BankCompanyTestOnlyConfiguraton;
+import org.jesperancinha.smtd.bank.company.configuration.BankCompanyTestOnlyConfiguration;
 import org.jesperancinha.smtd.bank.company.model.Bank;
 import org.jesperancinha.smtd.bank.company.repository.BankCompanyUserRepository;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = RANDOM_PORT,
         properties = "environment=Great👍")
 @ActiveProfiles("test")
-@ContextConfiguration(classes = BankCompanyTestOnlyConfiguraton.class)
+@ContextConfiguration(classes = BankCompanyTestOnlyConfiguration.class)
 public class BankCompanyLauncherTest {
 
     /**
@@ -41,7 +41,7 @@ public class BankCompanyLauncherTest {
     private DefaultListableBeanFactory defaultListableBeanFactory;
 
     @Autowired
-    private BankCompanyTestOnlyConfiguraton bankCompanyTestOnlyConfiguraton;
+    private BankCompanyTestOnlyConfiguration bankCompanyTestOnlyConfiguration;
 
     @Autowired
     @Named("bank1")
@@ -69,9 +69,9 @@ public class BankCompanyLauncherTest {
 
         ConsolerizerComposer.outSpace()
                 .cyan("We do get the test variable value")
-                .blue(bankCompanyTestOnlyConfiguraton.getValue())
+                .blue(bankCompanyTestOnlyConfiguration.getValue())
                 .cyan("And we can also get variable names in production")
-                .blue(bankCompanyTestOnlyConfiguraton.getAppName())
+                .blue(bankCompanyTestOnlyConfiguration.getAppName())
                 .magenta("@TestConfiguration Does not get auto-scanned")
                 .reset();
 
