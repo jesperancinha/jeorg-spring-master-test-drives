@@ -1,5 +1,8 @@
 package org.jesperancinha.smtd.bank.company.security
 
+import io.kotest.matchers.nulls.shouldBeNull
+import io.kotest.matchers.nulls.shouldNotBeNull
+import io.kotest.matchers.should
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
@@ -16,10 +19,10 @@ import java.util.concurrent.atomic.AtomicReference
 internal class BCModeInheritableThreadLocalSecurityKotlinTest {
     @BeforeEach
     fun setup() {
-        val securityContext = SecurityContextHolder.getContext()
-        Assertions.assertThat(securityContext).isNotNull
-        val authentication = securityContext.authentication
-        Assertions.assertThat(authentication).isNull()
+        SecurityContextHolder.getContext().shouldNotBeNull()
+            .should { securityContext ->
+                securityContext.authentication.shouldBeNull()
+            }
         BCModeTestUtils.initializeTest(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL)
     }
 
