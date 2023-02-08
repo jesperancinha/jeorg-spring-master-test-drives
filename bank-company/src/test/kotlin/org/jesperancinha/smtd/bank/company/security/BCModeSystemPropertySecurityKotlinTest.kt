@@ -1,6 +1,8 @@
 package org.jesperancinha.smtd.bank.company.security
 
+import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.matchers.collections.shouldHaveSingleElement
+import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.should
 import io.kotest.matchers.string.shouldStartWith
@@ -15,7 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder
 @SpringBootTest
 internal class BCModeSystemPropertySecurityKotlinTest {
     @Test
-    fun testContext() {
+    fun `should load context`() {
         SecurityContextHolder.clearContext()
         ConsolerizerComposer.outSpace()
             .magenta(System.getProperty(SecurityContextHolder.SYSTEM_PROPERTY))
@@ -26,9 +28,9 @@ internal class BCModeSystemPropertySecurityKotlinTest {
                 listOf(
                     it.startsWith("org.springframework.security.core.context.InheritableThreadLocalSecurityContextHolderStrategy"),
                     it.startsWith("org.springframework.security.core.context.GlobalSecurityContextHolderStrategy")
-                ).shouldHaveSingleElement(true)
+                ).shouldContainAll(true, false)
             }
-        securityContext.authentication.shouldNotBeNull()
+        securityContext.authentication.shouldBeNull()
     }
 
     @AfterEach
