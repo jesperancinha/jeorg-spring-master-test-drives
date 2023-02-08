@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration
 @SpringBootTest
 @AutoConfigureWebTestClient
 @ContextConfiguration(classes = [(Service::class)])
-class HelloTestMockk : StringSpec() {
+class HelloMockkTest : StringSpec() {
 
     override fun extensions() = listOf(SpringExtension)
 
