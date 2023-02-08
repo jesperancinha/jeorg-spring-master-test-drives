@@ -1,20 +1,15 @@
 package org.jesperancinha.smtd.bank.company.security
 
-import com.ninjasquad.springmockk.MockkBean
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import io.mockk.verify
-import org.assertj.core.api.Assertions
 import org.jesperancinha.smtd.bank.company.model.BankCompanyUser
 import org.jesperancinha.smtd.bank.company.repository.BankCompanyUserRepository
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.junit.jupiter.MockitoExtension
 
 @ExtendWith(MockKExtension::class)
 class BankCompanyUserDetailsServiceKotlinTest {
