@@ -1,5 +1,6 @@
 package org.jesperancinha.smtd.bank.company
 
+import io.kotest.matchers.nulls.shouldNotBeNull
 import org.assertj.core.api.Assertions
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.junit.jupiter.api.Test
@@ -31,10 +32,10 @@ class BankCompanyLauncherOtherPropertiesKotlinTest {
     private val surname: String? = null
     @Test
     fun contextLoads() {
-        Assertions.assertThat(banking).isNotNull
-        Assertions.assertThat(customer).isNotNull
-        Assertions.assertThat(name).isNotNull
-        Assertions.assertThat(surname).isNotNull
+        banking.shouldNotBeNull()
+        customer.shouldNotBeNull()
+        name.shouldNotBeNull()
+        surname.shouldNotBeNull()
         ConsolerizerComposer.outSpace()
             .none()
             .cyan(environment)

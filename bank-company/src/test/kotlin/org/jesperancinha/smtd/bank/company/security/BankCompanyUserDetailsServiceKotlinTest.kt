@@ -1,5 +1,8 @@
 package org.jesperancinha.smtd.bank.company.security
 
+import com.ninjasquad.springmockk.MockkBean
+import io.kotest.matchers.booleans.shouldBeTrue
+import io.kotest.matchers.shouldBe
 import org.assertj.core.api.Assertions
 import org.jesperancinha.smtd.bank.company.model.BankCompanyUser
 import org.jesperancinha.smtd.bank.company.repository.BankCompanyUserRepository
@@ -27,11 +30,11 @@ class BankCompanyUserDetailsServiceKotlinTest {
             .build()
         Mockito.`when`(bankCompanyUserRepository.findByName(companyTest)).thenReturn(bankCompanyUser)
         val userDetails = bankCompanyUserDetailsService.loadUserByUsername(companyTest)
-        Assertions.assertThat(userDetails.username).isEqualTo(companyTest)
-        Assertions.assertThat(userDetails.password).isEqualTo(password)
+        userDetails.username shouldBe companyTest
+        userDetails.password shouldBe password
         val optionalGrantedAuthority = userDetails.authorities.stream().findFirst()
-        Assertions.assertThat(optionalGrantedAuthority.isPresent).isTrue
-        Assertions.assertThat(optionalGrantedAuthority.get().toString()).isEqualTo("ROLE_roles")
+        optionalGrantedAuthority.isPresent.shouldBeTrue()
+        optionalGrantedAuthority.get().toString() shouldBe "ROLE_roles"
         Mockito.verify(bankCompanyUserRepository, Mockito.only()).findByName(companyTest)
     }
 }

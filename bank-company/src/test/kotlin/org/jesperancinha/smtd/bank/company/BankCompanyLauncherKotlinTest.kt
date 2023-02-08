@@ -1,5 +1,6 @@
 package org.jesperancinha.smtd.bank.company
 
+import io.kotest.matchers.shouldBe
 import jakarta.inject.Named
 import org.assertj.core.api.Assertions
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
@@ -64,6 +65,6 @@ class BankCompanyLauncherKotlinTest @Autowired constructor(
         ConsolerizerComposer.outSpace()
             .red(bank)
             .reset()
-        Assertions.assertThat(bank.name).isEqualTo("Bank 1")
+        bank.name shouldBe "Bank 1"
     }
 }
