@@ -1,19 +1,21 @@
 package org.jesperancinha.smtd.bank.company.security
 
-import org.assertj.core.api.Assertions
+import io.kotest.matchers.booleans.shouldBeTrue
+import io.kotest.matchers.shouldBe
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
+import io.mockk.junit5.MockKExtension
+import io.mockk.verify
 import org.jesperancinha.smtd.bank.company.model.BankCompanyUser
 import org.jesperancinha.smtd.bank.company.repository.BankCompanyUserRepository
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.junit.jupiter.MockitoExtension
 
-@ExtendWith(MockitoExtension::class)
+@ExtendWith(MockKExtension::class)
 class BankCompanyUserDetailsServiceKotlinTest {
     @Test
     fun loadUserByUsername(
-        @Mock bankCompanyUserRepository: BankCompanyUserRepository
+        @MockK(relaxed = true) bankCompanyUserRepository: BankCompanyUserRepository
     ) {
         val bankCompanyUserDetailsService = BankCompanyUserDetailsService(bankCompanyUserRepository)
         val companyTest = "Company Test"
@@ -25,13 +27,13 @@ class BankCompanyUserDetailsServiceKotlinTest {
             .password(password)
             .roles(roles)
             .build()
-        Mockito.`when`(bankCompanyUserRepository.findByName(companyTest)).thenReturn(bankCompanyUser)
+        every { bankCompanyUserRepository.findByName(companyTest) } returns bankCompanyUser
         val userDetails = bankCompanyUserDetailsService.loadUserByUsername(companyTest)
-        Assertions.assertThat(userDetails.username).isEqualTo(companyTest)
-        Assertions.assertThat(userDetails.password).isEqualTo(password)
+        userDetails.username shouldBe companyTest
+        userDetails.password shouldBe password
         val optionalGrantedAuthority = userDetails.authorities.stream().findFirst()
-        Assertions.assertThat(optionalGrantedAuthority.isPresent).isTrue
-        Assertions.assertThat(optionalGrantedAuthority.get().toString()).isEqualTo("ROLE_roles")
-        Mockito.verify(bankCompanyUserRepository, Mockito.only()).findByName(companyTest)
+        optionalGrantedAuthority.isPresent.shouldBeTrue()
+        optionalGrantedAuthority.get().toString() shouldBe "ROLE_roles"
+        verify { bankCompanyUserRepository.findByName(companyTest) }
     }
 }

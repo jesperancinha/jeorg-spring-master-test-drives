@@ -1,7 +1,7 @@
 package org.jesperancinha.smtd.bank.company
 
+import io.kotest.matchers.shouldBe
 import jakarta.inject.Named
-import org.assertj.core.api.Assertions
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.bank.company.configuration.BankCompanyTestOnlyConfiguration
 import org.jesperancinha.smtd.bank.company.model.Bank
@@ -43,7 +43,7 @@ class BankCompanyLauncherKotlinTest @Autowired constructor(
             .black()
             .bgGreen(bankCompanyUserRepository)
             .reset()
-        defaultListableBeanFactory.registerBeanDefinition("myBean", GenericBeanDefinition())
+        defaultListableBeanFactory.registerBeanDefinition("myBeanKotlin", GenericBeanDefinition())
         ConsolerizerComposer.outSpace()
             .green("bankCompanyUserRepository")
             .black()
@@ -64,6 +64,7 @@ class BankCompanyLauncherKotlinTest @Autowired constructor(
         ConsolerizerComposer.outSpace()
             .red(bank)
             .reset()
-        Assertions.assertThat(bank.name).isEqualTo("Bank 1")
+        bank.name shouldBe "Bank 1"
+        defaultListableBeanFactory.destroySingleton("myBeanKotlin")
     }
 }

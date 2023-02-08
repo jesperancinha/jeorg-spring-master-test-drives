@@ -1,6 +1,6 @@
 package org.jesperancinha.smtd.bank.company
 
-import org.assertj.core.api.Assertions
+import io.kotest.matchers.nulls.shouldNotBeNull
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Value
@@ -16,25 +16,25 @@ class BankCompanyLauncherOtherPropertiesKotlinTest {
      * Properties and environment variables
      */
     @Value("\${environment}")
-    private val environment: String? = null
+    private lateinit var environment: String
 
     @Value("\${jeorg.bank.banking}")
-    private val banking: String? = null
+    private lateinit var banking: String
 
     @Value("\${jeorg.bank.customer}")
-    private val customer: String? = null
+    private lateinit var customer: String
 
     @Value("\${jeorg.bank.sa.name}")
-    private val name: String? = null
+    private lateinit var name: String
 
     @Value("\${jeorg.bank.sa.surname}")
-    private val surname: String? = null
+    private lateinit var surname: String
     @Test
     fun contextLoads() {
-        Assertions.assertThat(banking).isNotNull
-        Assertions.assertThat(customer).isNotNull
-        Assertions.assertThat(name).isNotNull
-        Assertions.assertThat(surname).isNotNull
+        banking.shouldNotBeNull()
+        customer.shouldNotBeNull()
+        name.shouldNotBeNull()
+        surname.shouldNotBeNull()
         ConsolerizerComposer.outSpace()
             .none()
             .cyan(environment)

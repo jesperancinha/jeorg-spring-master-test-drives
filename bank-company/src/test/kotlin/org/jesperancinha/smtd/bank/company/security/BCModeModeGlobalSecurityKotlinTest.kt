@@ -1,6 +1,9 @@
 package org.jesperancinha.smtd.bank.company.security
 
-import org.assertj.core.api.Assertions
+import io.kotest.matchers.booleans.shouldBeTrue
+import io.kotest.matchers.nulls.shouldBeNull
+import io.kotest.matchers.nulls.shouldNotBeNull
+import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -17,20 +20,20 @@ internal class BCModeModeGlobalSecurityKotlinTest {
     @BeforeEach
     fun setup() {
         val securityContext = SecurityContextHolder.getContext()
-        Assertions.assertThat(securityContext).isNotNull
+        securityContext.shouldNotBeNull()
         val authentication = securityContext.authentication
-        Assertions.assertThat(authentication).isNull()
+        authentication.shouldBeNull()
         BCModeTestUtils.initializeTest(SecurityContextHolder.MODE_GLOBAL)
     }
 
     @Test
     fun testModeGlobalWhenCreatingWithGlobalThenNewContextGetsUser() {
         val securityContext = SecurityContextHolder.getContext()
-        Assertions.assertThat(securityContext).isNotNull
+        securityContext.shouldNotBeNull()
         val authentication = securityContext.authentication
-        Assertions.assertThat(authentication).isNotNull
+        authentication.shouldNotBeNull()
         val principal = authentication.principal
-        Assertions.assertThat(principal).isEqualTo("clerk")
+        principal shouldBe "clerk"
         BCModeTestUtils.principalTestResult(principal)
     }
 
@@ -44,7 +47,7 @@ internal class BCModeModeGlobalSecurityKotlinTest {
         }
         clerkThread.start()
         clerkThread.join()
-        Assertions.assertThat(principal.get()).isEqualTo("clerk")
+        principal.get() shouldBe "clerk"
         BCModeTestUtils.principalTestResult(principal)
     }
 
@@ -61,8 +64,8 @@ internal class BCModeModeGlobalSecurityKotlinTest {
             true
         }
         val done = submit.get()
-        Assertions.assertThat(done).isTrue
-        Assertions.assertThat(principal.get()).isEqualTo("clerk")
+        done.shouldBeTrue()
+        principal.get() shouldBe "clerk"
         SecurityContextHolder.setContext(BCModeTestUtils.createContext("janitor", "1234"))
         BCModeTestUtils.currentStatus(SecurityContextHolder.getContext())
         executorService.execute {
@@ -72,8 +75,8 @@ internal class BCModeModeGlobalSecurityKotlinTest {
         }
         executorService.shutdown()
         val done2 = executorService.awaitTermination(1, TimeUnit.SECONDS)
-        Assertions.assertThat(done2).isTrue
-        Assertions.assertThat(principal.get()).isEqualTo("janitor")
+        done2.shouldBeTrue()
+        principal.get() shouldBe "janitor"
         BCModeTestUtils.principalTestResult(principal)
     }
 
@@ -91,8 +94,8 @@ internal class BCModeModeGlobalSecurityKotlinTest {
             true
         }
         val done1 = submit.get()
-        Assertions.assertThat(done1).isTrue
-        Assertions.assertThat(principal.get()).isEqualTo("clerk")
+        done1.shouldBeTrue()
+        principal.get() shouldBe "clerk"
         SecurityContextHolder.setContext(BCModeTestUtils.createContext("janitor", "1234"))
         BCModeTestUtils.currentStatus(SecurityContextHolder.getContext())
         delegatingSecurityContextExecutorService.execute {
@@ -102,8 +105,8 @@ internal class BCModeModeGlobalSecurityKotlinTest {
         }
         delegatingSecurityContextExecutorService.shutdown()
         val done2 = delegatingSecurityContextExecutorService.awaitTermination(1, TimeUnit.SECONDS)
-        Assertions.assertThat(done2).isTrue
-        Assertions.assertThat(principal.get()).isEqualTo("janitor")
+        done2.shouldBeTrue()
+        principal.get() shouldBe "janitor"
         BCModeTestUtils.principalTestResult(principal)
     }
 

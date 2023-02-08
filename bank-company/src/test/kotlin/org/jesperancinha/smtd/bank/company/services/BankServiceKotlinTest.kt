@@ -1,32 +1,33 @@
 package org.jesperancinha.smtd.bank.company.services
 
-import org.assertj.core.api.Assertions
+import com.ninjasquad.springmockk.MockkBean
+import io.kotest.matchers.nulls.shouldNotBeNull
+import io.kotest.matchers.shouldBe
+import io.mockk.every
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.bank.company.configuration.BankCompanyTestForLazyConfiguraton
 import org.jesperancinha.smtd.bank.company.model.Bank
 import org.jesperancinha.smtd.bank.company.repository.BankCompanyBankRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.context.annotation.Lazy
 import org.springframework.test.context.ContextConfiguration
 
 @Lazy
 @SpringBootTest
 @ContextConfiguration(classes = [BankService::class, BankCompanyTestForLazyConfiguraton::class])
-class BankServiceKotlinTest {
-    @MockBean
-    private val bankCompanyBankRepository: BankCompanyBankRepository? = null
-
-    @Autowired
-    private val bankService: BankService? = null
-
+class BankServiceKotlinTest @Autowired constructor(
+    private val bankService: BankService,
     @Lazy
-    @Autowired(required = false)
-    private val bank: Bank? = null
+    @Autowired
+    private val bank: Bank
+
+) {
+    @MockkBean(relaxed = true)
+    lateinit var bankCompanyBankRepository: BankCompanyBankRepository
+
     @BeforeEach
     fun setup() {
         ConsolerizerComposer.outSpace().magenta("We just started our unit test").reset()
@@ -34,18 +35,18 @@ class BankServiceKotlinTest {
 
     @Test
     fun testCountBanksWhenCalleThenGetExpectedCount() {
-        Mockito.`when`(bankCompanyBankRepository!!.countAllByIdAfter(0L)).thenReturn(5L)
-        val locationCount = bankService!!.countLocations()
+        every { bankCompanyBankRepository.countAllByIdAfter(0L) } returns 5L
+        val locationCount = bankService.countLocations()
         ConsolerizerComposer.outSpace().magenta("We are in the middle of our test").reset()
-        Assertions.assertThat(locationCount).isEqualTo(5L)
-        Assertions.assertThat(bank).isNotNull
+        locationCount shouldBe 5L
+        bank.shouldNotBeNull()
     }
 
     @Test
     fun testCountBanksWhenCalleThenGetExpectedCountVersion2() {
-        Mockito.`when`(bankCompanyBankRepository!!.countAllByIdAfter(0L)).thenReturn(5L)
-        val locationCount = bankService!!.countLocations()
+        every { bankCompanyBankRepository.countAllByIdAfter(0L) } returns 5L
+        val locationCount = bankService.countLocations()
         ConsolerizerComposer.outSpace().magenta("We are in the middle of our test").reset()
-        Assertions.assertThat(locationCount).isEqualTo(5L)
+        locationCount shouldBe 5L
     }
 }
