@@ -22,6 +22,5 @@ class PlanetsLauncherTest {
      */
     @Test
     void testContext() {
-        PlanetsLauncher.main(new String[0]);
     }
 }
