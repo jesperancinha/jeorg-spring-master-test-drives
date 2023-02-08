@@ -19,11 +19,9 @@ public class CarPartsLauncherTest {
 
     @Test
     public void testContext() {
-        CarPartsLauncher.main(new String[0]);
-
         ConsolerizerComposer.outSpace()
                 .unicorns(100)
-                .orange("Never do this in production!!!")
+                .orange("Never Inject a Controller in production code!!!")
                 .orange("This is just to show that we can Inject Controller, RestController or Component.")
                 .orange("A RestController is also a Controller, which is also a Component.")
                 .orange("This means that we can inject this:")
