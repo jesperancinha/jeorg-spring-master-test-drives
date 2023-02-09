@@ -1,10 +1,10 @@
-# Spring Master 5 Test Drives - Goals
+# Spring Master Test Drives - Goals
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
 
 ---
 
-## [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Car%20Parts&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/tree/main/car-parts)
+## [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Car%20Parts&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/main/car-parts)
 
 ### Goal 1 - Deployment with embedded Jetty Server
 
@@ -474,7 +474,7 @@ Essentially, the point is that JAX-RS is specifically made to be used with JEE. 
 
 ---
 
-## [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Furniture%20K%20Shop&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-5-test-drives/tree/main/furniture-k-shop)
+## [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Furniture%20K%20Shop&color=informational)](https://github.com/jesperancinha/jeorg-spring-master-test-drives/tree/main/furniture-k-shop)
 
 ### Goal 1 - Transactional inner methods call
 

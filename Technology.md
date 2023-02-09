@@ -1,4 +1,4 @@
-# Spring Master 5 Test Drives
+# Spring Master Test Drives
 
 ## Actuator environment change and log level changes
 
@@ -162,4 +162,4 @@
 
 ---
 
-[Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-5-test-drives/docs/reminders/SpringBoot.md)
+[Back](./README.md)  | [Reminders](dev/src/jofisaes/jeorg-spring-master-test-drives/docs/reminders/Reminders.md) | [Spring Boot](dev/src/jofisaes/jeorg-spring-master-test-drives/docs/reminders/SpringBoot.md)

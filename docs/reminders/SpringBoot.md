@@ -1,4 +1,4 @@
-# Spring Master 5 - What is Spring Boot
+# Spring Master - What is Spring Boot
 
 [Back](../index.md) | [Index](./index.md) | [General Reminders](./Reminders.md) | [Spring Boot](./SpringBoot.md) | [Spring Boot Actuator](./SpringBootActuator.md) | [Goals](./Goals.md)  | [Annotations](./Annotations.md)
 
