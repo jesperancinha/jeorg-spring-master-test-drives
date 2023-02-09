@@ -5,17 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jesperancinha.smtd</groupId>
-        <artifactId>jeorg-spring-master-test-drives</artifactId>
+        <artifactId>great-mathematicians</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <name>JEORG-SMTD :: Great Mathematicians</name>
+    <name>JEORG-SMTD :: GM Client</name>
 
-    <artifactId>great-mathematicians</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>client</artifactId>
 
-    <modules>
-        <module>server</module>
-        <module>client</module>
-    </modules>
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 </project>
