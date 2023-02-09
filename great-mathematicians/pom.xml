@@ -5,11 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jesperancinha.smtd</groupId>
-        <artifactId>jeorg-spring-master-5-test-drives</artifactId>
+        <artifactId>jeorg-spring-master-test-drives</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>great-mathematicians</artifactId>
+
+    <name>JEORG-SMTD :: Great Mathematicians</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

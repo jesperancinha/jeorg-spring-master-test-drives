@@ -5,7 +5,7 @@ cache:
 jobs:
   include:
     - language: java
-      stage: JEOrg Spring Master 5 Full (Codacy/Coveralls/Codecov reports - Limited Logs)
+      stage: JEOrg Spring Master Full (Codacy/Coveralls/Codecov reports - Limited Logs)
       jdk:
         - openjdk11
       cache:

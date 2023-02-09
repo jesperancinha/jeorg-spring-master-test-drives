@@ -2,7 +2,7 @@
 
 <ins>2021/05/22</ins>
 
-Welcome to [JEOrg Spring Master 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-master-test-drives).   
+Welcome to [JEOrg Spring Master Test Drives](https://github.com/jesperancinha/jeorg-spring-master-test-drives).   
 In these series we will only have master projects available. We won't be looking at the basics of Spring 5.   
 That will still occur in my other repo: [JEOrg Spring 5 Test Drives](https://github.com/jesperancinha/jeorg-spring-5-test-drives).
 
