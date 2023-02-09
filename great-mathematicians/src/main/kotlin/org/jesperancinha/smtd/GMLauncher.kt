@@ -1,7 +1,11 @@
-package org.jesperancinha.smtd;
+package org.jesperancinha.smtd
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+
+@SpringBootApplication
+class GMLauncher
+
+fun main(args: Array<String>) {
+    SpringApplication.run(GMLauncher::class.java, *args)
 }
