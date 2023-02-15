@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Table(name = "shelf_case")
 data class Case(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
     var designation: String?,
     var weight: Long?

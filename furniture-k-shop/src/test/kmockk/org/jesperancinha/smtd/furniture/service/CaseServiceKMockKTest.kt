@@ -1,17 +1,19 @@
 package org.jesperancinha.smtd.furniture.service
 
+import io.kotest.assertions.throwables.shouldThrow
 import io.mockk.MockKAnnotations
+import io.mockk.every
+import io.mockk.junit5.MockKExtension
+import io.mockk.mockk
+import io.mockk.verify
 import org.jesperancinha.smtd.furniture.exceptions.CaseException
 import org.jesperancinha.smtd.furniture.model.Case
 import org.jesperancinha.smtd.furniture.repository.CaseRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.Mockito.*
-import org.mockito.junit.jupiter.MockitoExtension
 
-@ExtendWith(MockitoExtension::class)
+@ExtendWith(MockKExtension::class)
 internal class CaseServiceKMockKTest {
 
     @BeforeEach
@@ -19,7 +21,7 @@ internal class CaseServiceKMockKTest {
         MockKAnnotations.init(this, relaxUnitFun = true)
     }
 
-    var caseRepository: CaseRepository = mock(CaseRepository::class.java)
+    private var caseRepository: CaseRepository = mockk(relaxed = true)
 
     @Test
     fun insertCaseStartOneTransactional() {
@@ -30,10 +32,11 @@ internal class CaseServiceKMockKTest {
             weight = 4000L
         )
 
-        assertThrows<CaseException> {
+        every { caseRepository.save(any()) } returns case
+        shouldThrow<CaseException> {
             caseService.insertCaseStartOneTransactional(case)
         }
 
-        verify(caseRepository, times(2)).save(case)
+        verify(exactly = 2) { caseRepository.save(case) }
     }
 }
