@@ -11,9 +11,12 @@ open class TheVaultSecurityAdapter {
 
     @Bean
     open fun filterChain(http: HttpSecurity): SecurityFilterChain = http.authorizeRequests()
-        ?.requestMatchers(HttpMethod.GET, "/vault/silver/**")?.hasAuthority("KEEPER")
-        ?.requestMatchers(HttpMethod.GET, "/vault/silver/**")?.hasRole("KEEPER")
-        ?.requestMatchers(HttpMethod.GET, "/vault/silver/test")?.permitAll()
+        ?.requestMatchers(HttpMethod.GET, "/vault/silver/**")
+        ?.hasAuthority("KEEPER")
+        ?.requestMatchers(HttpMethod.GET, "/vault/silver/**")
+        ?.hasRole("KEEPER")
+        ?.requestMatchers(HttpMethod.GET, "/vault/silver/test")
+        ?.permitAll()
         ?.and()
         ?.httpBasic()
         ?.and()
