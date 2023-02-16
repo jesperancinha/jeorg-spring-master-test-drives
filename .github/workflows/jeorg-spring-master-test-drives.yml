@@ -1,4 +1,4 @@
-name: jeorg-spring-master-test-drives
+name: JSMTD jeorg-spring-master-test-drives
 
 on:
   push:

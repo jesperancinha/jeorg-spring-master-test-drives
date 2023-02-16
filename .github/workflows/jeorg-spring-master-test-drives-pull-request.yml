@@ -1,4 +1,4 @@
-name: jeorg-spring-master-test-drives-pull-request
+name: JSMTD jeorg-spring-master-test-drives-pull-request
 
 on:
   pull_request:

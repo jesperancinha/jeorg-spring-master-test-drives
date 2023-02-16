@@ -1,4 +1,4 @@
-name: Dependabot auto-merge
+name: JSMTD Dependabot auto-merge
 on: pull_request
 
 permissions:
