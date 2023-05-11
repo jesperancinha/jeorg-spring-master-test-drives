@@ -118,7 +118,7 @@
         <kotlinx-coroutines-core.version>1.6.3-native-mt</kotlinx-coroutines-core.version>
         <kotlinx-coroutines-core-jvm.version>1.6.3-native-mt</kotlinx-coroutines-core-jvm.version>
         <springmockk.version>4.0.2</springmockk.version>
-        <testcontainers.version>1.18.0</testcontainers.version>
+        <testcontainers.version>1.18.1</testcontainers.version>
         <kotlinx-coroutines-debug.version>1.7.0</kotlinx-coroutines-debug.version>
         <spring-boot-starter-parent.version>3.0.6</spring-boot-starter-parent.version>
         <micrometer-tracing-bridge-otel.version>1.1.0</micrometer-tracing-bridge-otel.version>
