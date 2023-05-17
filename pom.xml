@@ -82,7 +82,7 @@
         <webjars-locator-core.version>0.52</webjars-locator-core.version>
         <httpclient.version>4.5.14</httpclient.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>2.12.0</commons-io.version>
         <cucumber.version>7.12.0</cucumber.version>
         <mariadb-java-client.version>3.1.4</mariadb-java-client.version>
         <embedded-mariadb.version>2.3.2</embedded-mariadb.version>
