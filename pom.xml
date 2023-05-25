@@ -123,7 +123,7 @@
         <spring-boot-starter-parent.version>3.1.0</spring-boot-starter-parent.version>
         <micrometer-tracing-bridge-otel.version>1.1.1</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.26.0</opentelemetry-exporter-zipkin.version>
-        <loki-logback-appender.version>1.4.0</loki-logback-appender.version>
+        <loki-logback-appender.version>1.4.1</loki-logback-appender.version>
     </properties>
 
     <build>
