@@ -32,7 +32,7 @@ jobs:
             docker-compose -v
 
       - run:
-          name: Build & Test
+          name: Build
           command: docker-compose -v &&
             java -version &&
             mvn clean install -DskipTests
