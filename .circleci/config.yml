@@ -31,6 +31,7 @@ jobs:
           name: Test
           command: export JAVA_HOME=/opt/jdk19 &&
             export PATH=$PATH:$JAVA_HOME/bin &&
+            java -version &&
             make b
 
       - save_cache:
