@@ -4,11 +4,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @Profile("prod2")
-public class PartWebSecurityProd2   {
+public class PartWebSecurityProd2 {
 
     /**
      * Creates the security configuration.
@@ -19,15 +20,16 @@ public class PartWebSecurityProd2   {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-       return http
-                .authorizeRequests()
-                .requestMatchers("/actuator**")
-                .authenticated()
-                .requestMatchers("/**")
-                .permitAll()
-                .and()
-                .formLogin()
-                .and()
-                .csrf().disable().build();
+        return http
+                .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
+                        authorizationManagerRequestMatcherRegistry
+                                .requestMatchers("/actuator**")
+                                .authenticated()
+                                .requestMatchers("/**")
+                                .permitAll()
+                )
+                .formLogin(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
+                .build();
     }
 }
