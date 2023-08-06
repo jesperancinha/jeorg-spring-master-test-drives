@@ -29,11 +29,11 @@ jobs:
             mkdir -p $DOCKER_CONFIG/cli-plugins &&
             curl -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose &&
             chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose &&
-            docker-compose -version
+            docker-compose -v
 
       - run:
           name: Build & Test
-          command: docker-compose -version &&
+          command: docker-compose -v &&
             java -version &&
             mvn clean install -DskipTests &&
             make b
