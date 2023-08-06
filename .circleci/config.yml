@@ -24,7 +24,8 @@ jobs:
 
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
+          command: java -version &&
+            mvn -B -DskipTests clean package
 
       - run:
           name: Test
@@ -35,4 +36,3 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
-
