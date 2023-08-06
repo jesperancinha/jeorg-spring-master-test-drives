@@ -36,7 +36,7 @@ jobs:
           command: docker-compose -v &&
             java -version &&
             mvn clean install -DskipTests &&
-            make b
+            mvn test jacoco:prepare-agent package jacoco:report
 
       - save_cache:
           paths:
