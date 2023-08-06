@@ -1,5 +1,8 @@
+SHELL := /bin/bash
+
 b: build
 build:
+	java -version
 	mvn clean install -DskipTests
 	mvn test
 test:
