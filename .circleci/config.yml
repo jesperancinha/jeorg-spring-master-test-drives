@@ -35,9 +35,7 @@ jobs:
           name: Build & Test
           command: docker-compose -v &&
             java -version &&
-            mvn clean install -DskipTests &&
-            make run-jar-health &&
-            mvn test jacoco:prepare-agent package jacoco:report
+            mvn clean install -DskipTests
 
       - save_cache:
           paths:

@@ -9,6 +9,10 @@
       retries: 40
       start_period: 0s
       timeout: 20s
+    deploy:
+      resources:
+        limits:
+          memory: 500M
 
   adopt-health-2:
     build: .
@@ -19,3 +23,7 @@
       retries: 40
       start_period: 0s
       timeout: 20s
+    deploy:
+      resources:
+        limits:
+          memory: 500M
