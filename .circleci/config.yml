@@ -23,13 +23,9 @@ jobs:
             echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc
 
       - run:
-          name: Build
+          name: Build & Test
           command: java -version &&
-            mvn clean install -DskipTests
-
-      - run:
-          name: Test
-          command: java -version &&
+            mvn clean install -DskipTests &&
             make b
 
       - save_cache:
