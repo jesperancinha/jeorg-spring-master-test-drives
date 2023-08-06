@@ -5,7 +5,15 @@ services:
   adopt-port-1:
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
+    deploy:
+      resources:
+        limits:
+          memory: 500M
 
   adopt-port-2:
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
+    deploy:
+      resources:
+        limits:
+          memory: 500M
