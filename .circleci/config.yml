@@ -20,13 +20,11 @@ jobs:
             sudo mv jdk-19*/ /opt/jdk19 &&
             export JAVA_HOME=/opt/jdk19 &&
             echo "export JAVA_HOME=/opt/jdk19" >> ~/.bashrc &&
-            echo "export PATH=$PATH:$JAVA_HOME/bin" >> ~/.bashrc &&
-            cat ~/.bashrc
+            echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc
 
       - run:
           name: Build
-          command: cat ~/.bashrc &&
-            java -version &&
+          command: java -version &&
             mvn -B -DskipTests clean package
 
       - run:
