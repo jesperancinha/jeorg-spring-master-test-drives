@@ -23,6 +23,14 @@ jobs:
             echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc
 
       - run:
+          name: Docker update
+          command: export DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4) &&
+            DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker} &&
+            mkdir -p $DOCKER_CONFIG/cli-plugins &&
+            curl -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose &&
+            chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+
+      - run:
           name: Build & Test
           command: java -version &&
             mvn clean install -DskipTests &&
