@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Build
           command: java -version &&
-            mvn -B -DskipTests clean package
+            mvn clean install -DskipTests
 
       - run:
           name: Test
