@@ -6,8 +6,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
 
-import java.net.URI;
-
 @Component
 public class BankCompanyWebConfiguration {
     @Bean

@@ -13,14 +13,13 @@ import org.jesperancinha.smtd.carparts.model.jpa.Part
 import org.jesperancinha.smtd.carparts.repos.PartRepository
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.*
 
 @ExtendWith(MockKExtension::class)
 class PartServiceTimeoutKotlinTest {
     @InjectMockKs
     lateinit var partServiceTimeout: PartServiceTimeout
 
-    @MockK(relaxed = true)
+    @MockK
     lateinit var partRepository: PartRepository
 
     @Test

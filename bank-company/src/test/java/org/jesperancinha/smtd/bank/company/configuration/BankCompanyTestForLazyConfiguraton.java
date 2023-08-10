@@ -3,7 +3,6 @@ package org.jesperancinha.smtd.bank.company.configuration;
 import lombok.Data;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.jesperancinha.smtd.bank.company.model.Bank;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;

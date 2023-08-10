@@ -3,9 +3,7 @@ package org.jesperancinha.smtd.carparts.configuration.conditionals;
 import lombok.Builder;
 import lombok.Data;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
-import org.jesperancinha.smtd.carparts.beans.Garage;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

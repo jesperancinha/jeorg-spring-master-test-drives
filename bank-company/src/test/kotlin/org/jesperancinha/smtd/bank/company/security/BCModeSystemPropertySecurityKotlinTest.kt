@@ -1,12 +1,9 @@
 package org.jesperancinha.smtd.bank.company.security
 
 import io.kotest.matchers.collections.shouldContainAll
-import io.kotest.matchers.collections.shouldHaveSingleElement
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.should
-import io.kotest.matchers.string.shouldStartWith
-import org.assertj.core.api.Assertions
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeAll

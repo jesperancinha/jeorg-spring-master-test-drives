@@ -2,15 +2,12 @@ package org.jesperancinha.smtd.furniture.controller
 
 import io.micrometer.core.instrument.Counter
 import io.micrometer.core.instrument.MeterRegistry
+import jakarta.validation.Valid
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.furniture.dto.ChairDto
 import org.jesperancinha.smtd.furniture.service.ChairDtoValidator
-import org.springframework.beans.propertyeditors.CustomDateEditor
-import org.springframework.validation.Validator
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.WebDataBinder
 import org.springframework.web.bind.annotation.*
-import jakarta.validation.Valid
 
 
 @RestController

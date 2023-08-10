@@ -25,7 +25,7 @@ class BankServiceKotlinTest @Autowired constructor(
     private val bank: Bank
 
 ) {
-    @MockkBean(relaxed = true)
+    @MockkBean
     lateinit var bankCompanyBankRepository: BankCompanyBankRepository
 
     @BeforeEach

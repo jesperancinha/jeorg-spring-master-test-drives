@@ -16,7 +16,7 @@ class HelloMockkTest : StringSpec() {
 
     override fun extensions() = listOf(SpringExtension)
 
-    @MockkBean(relaxed = true)
+    @MockkBean
     lateinit var service: Service
 
     init {

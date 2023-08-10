@@ -1,7 +1,6 @@
 package org.jesperancinha.smtd.service
 
 import io.micrometer.common.KeyValue
-import io.micrometer.observation.Observation
 import io.micrometer.observation.Observation.Context
 import io.micrometer.observation.ObservationHandler
 import io.micrometer.observation.annotation.Observed

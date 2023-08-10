@@ -3,7 +3,6 @@ package org.jesperancinha.smtd.furniture.service
 import org.assertj.core.api.Assertions.assertThat
 import org.easymock.EasyMock.*
 import org.easymock.EasyMockExtension
-import org.easymock.TestSubject
 import org.jesperancinha.smtd.furniture.model.Chair
 import org.jesperancinha.smtd.furniture.repository.ChairRepository
 import org.junit.jupiter.api.AfterEach

@@ -15,12 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.createContext;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.currentStatus;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializationCount;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.initializeTest;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalCompletion;
-import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.principalTestResult;
+import static org.jesperancinha.smtd.bank.company.security.BCModeTestUtils.*;
 import static org.springframework.security.core.context.SecurityContextHolder.MODE_THREADLOCAL;
 
 @SpringBootTest

@@ -15,7 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 class BankCompanyUserDetailsServiceKotlinTest {
     @Test
     fun loadUserByUsername(
-        @MockK(relaxed = true) bankCompanyUserRepository: BankCompanyUserRepository
+        @MockK bankCompanyUserRepository: BankCompanyUserRepository
     ) {
         val bankCompanyUserDetailsService = BankCompanyUserDetailsService(bankCompanyUserRepository)
         val companyTest = "Company Test"
