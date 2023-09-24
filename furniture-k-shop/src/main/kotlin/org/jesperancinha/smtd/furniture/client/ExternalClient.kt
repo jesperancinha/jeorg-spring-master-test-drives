@@ -12,5 +12,5 @@ class ExternalClient(
 
     fun externalChairs(): List<Chair> =
         restTemplate.getForObject("http://localhost:9001", Array<Chair>::class.java)
-            .toList()
+            ?.toList() ?: emptyList()
 }

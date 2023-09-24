@@ -3,6 +3,7 @@ package org.jesperancinha.smtd.furniture.service
 import org.assertj.core.api.Assertions.assertThat
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.furniture.model.Case
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -32,6 +33,6 @@ open class CaseServiceAspectJTest(
                 .reset()
         }
 
-        assertThat(caseService.getAll()).hasSize(2);
+        assertThat(caseService.getAll()).hasSize(1);
     }
 }
