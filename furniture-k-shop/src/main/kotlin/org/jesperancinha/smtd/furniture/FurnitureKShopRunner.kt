@@ -1,5 +1,7 @@
 package org.jesperancinha.smtd.furniture
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.datatype.jsr310.JSR310Module
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -26,7 +28,8 @@ open class FurnitureKShopRunner(
         ConsolerizerComposer.outSpace()
             .black()
             .bgCyan()
-            .jsonPrettyPrint(healthProperties)
+            .jsonPrettyPrint(
+                ObjectMapper().findAndRegisterModules().writeValueAsString(healthProperties))
             .reset()
     }
 }
