@@ -41,7 +41,7 @@
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
-        <camel.version>3.21.0</camel.version>
+        <camel.version>3.21.2</camel.version>
 
         <!-- Logs -->
         <slf4j.version>2.0.9</slf4j.version>
