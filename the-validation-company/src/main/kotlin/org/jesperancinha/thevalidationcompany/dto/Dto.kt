@@ -1,8 +1,9 @@
 package org.jesperancinha.thevalidationcompany.dto
 
-import com.fasterxml.jackson.annotation.JsonSetter
+import jakarta.validation.constraints.AssertTrue
+import jakarta.validation.constraints.Negative
 import jakarta.validation.constraints.NotNull
-import org.springframework.lang.NonNull
+import jakarta.validation.constraints.Positive
 
 data class AccountNumbersDto(
     val accountNumberLong: Long,
@@ -18,5 +19,15 @@ data class AccountNumbersPassiveDto(
     val accountNumberNullable: Long?,
     val accountNumber: Int,
     val accountNumberEven: Int,
-    val accountNumberOdd: Int
-)
+    val accountNumberOdd: Int,
+    @field:Positive
+    val accountNumberPositive: Int,
+    @field:Negative
+    val accountNumberNegative: Int
+) {
+    @AssertTrue(message = "accountNumberEven should be even")
+    fun isEvenEven() = accountNumberEven % 2 == 0
+
+    @AssertTrue(message = "accountNumberOdd should be odd")
+    fun isOddOdd() = accountNumberOdd % 2 != 0
+}

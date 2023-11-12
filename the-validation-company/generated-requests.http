@@ -6,28 +6,110 @@ Content-Type: application/json
   "accountNumberLong":  "123",
   "accountNumberNullable": "123",
   "accountNumber": "123",
-  "accountNumberEven": "123",
+  "accountNumberEven": "122",
   "accountNumberOdd": "123"
 }
 
-### Failing request
+### Failing request accountNumberLong Null value
 POST http://localhost:8080/app/number/create/account/programmatic
 Content-Type: application/json
 
 {
   "accountNumberNullable": "123",
   "accountNumber": "123",
-  "accountNumberEven": "123",
+  "accountNumberEven": "122",
   "accountNumberOdd": "123"
 }
 
-### Failing request
+### Failing request accountNumberLong Null value
 POST http://localhost:8080/app/number/create/account/automatic
 Content-Type: application/json
 
 {
   "accountNumberNullable": "123",
   "accountNumber": "123",
-  "accountNumberEven": "123",
+  "accountNumberEven": "122",
   "accountNumberOdd": "123"
+}
+
+### Failing request accountNumberPositive is negative
+POST http://localhost:8080/app/number/create/account/programmatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "122",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": -123
+}
+
+### Failing request accountNumberPositive is negative
+POST http://localhost:8080/app/number/create/account/automatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "122",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": -123
+}
+
+### Failing request accountNumberNegative is positive
+POST http://localhost:8080/app/number/create/account/programmatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "122",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": 123,
+  "accountNumberNegative": 123
+}
+
+### Failing request accountNumberNegative is positive
+POST http://localhost:8080/app/number/create/account/automatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "122",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": 123,
+  "accountNumberNegative": 123
+}
+
+### Failing request accountNumberEven is Odd
+POST http://localhost:8080/app/number/create/account/programmatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "123",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": 123,
+  "accountNumberNegative": -123
+}
+
+### Failing request accountNumberEven is Odd
+POST http://localhost:8080/app/number/create/account/automatic
+Content-Type: application/json
+
+{
+  "accountNumberLong": 0,
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "123",
+  "accountNumberOdd": "123",
+  "accountNumberPositive": 123,
+  "accountNumberNegative": -123
 }
