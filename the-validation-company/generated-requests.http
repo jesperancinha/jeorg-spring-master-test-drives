@@ -1,0 +1,11 @@
+###
+POST http://localhost:8080/app/number/create/account
+Content-Type: application/json
+
+{
+  "accountNumberLong":  "123",
+  "accountNumberNullable": "123",
+  "accountNumber": "123",
+  "accountNumberEven": "123",
+  "accountNumberOdd": "123"
+}
