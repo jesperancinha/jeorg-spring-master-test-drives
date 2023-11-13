@@ -1,4 +1,4 @@
-package org.jesperancinha.thevalidationcompany.rest
+package org.jesperancinha.thevalidationcompany.rest.fiveminutes
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.nulls.shouldBeNull

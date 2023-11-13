@@ -1,4 +1,4 @@
-package org.jesperancinha.thevalidationcompany.rest;
+package org.jesperancinha.thevalidationcompany.rest.fiveminutes;
 
 import jakarta.validation.Valid
 import jakarta.validation.Validator

@@ -1,11 +1,9 @@
-package org.jesperancinha.thevalidationcompany.rest;
+package org.jesperancinha.thevalidationcompany.rest.fiveminutes;
 
 import jakarta.validation.ConstraintViolation
-import jakarta.validation.Payload
 import jakarta.validation.Valid
 import jakarta.validation.Validator
 import org.jesperancinha.thevalidationcompany.fiveminutes.asserts.AccountAssertsDto
-import org.jesperancinha.thevalidationcompany.fiveminutes.custom.MandatoryPostAddressPayload
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
