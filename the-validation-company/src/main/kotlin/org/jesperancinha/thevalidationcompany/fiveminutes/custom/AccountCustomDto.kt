@@ -78,7 +78,7 @@ class BothNullOrBothNotNullConstraintValidator : ConstraintValidator<OrAllOrNone
         val beanWrapper = BeanWrapperImpl(obj)
         return fields
             .mapNotNull { propertyName -> beanWrapper.getPropertyValue(propertyName) }
-            .count() % 2 == 0
+            .count().run { fields.size == this || this == 0 }
     }
 }
 

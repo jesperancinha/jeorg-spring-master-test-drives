@@ -28,13 +28,13 @@ class NumberController {
 
     @PostMapping(path = ["create/account/programmatic"], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun createNumberAccountPayloadProgrammatically(@RequestBody accountNumbersDto: AccountNumbersPassiveDto) =
-        ResponseEntity.ok(accountNumbersDto)
-            .apply {
+            run {
                 val violations: Set<ConstraintViolation<AccountNumbersPassiveDto>> =
                     validator.validate(accountNumbersDto)
                 if (violations.isNotEmpty()) {
                     throw ConstraintViolationException(violations)
                 }
+                ResponseEntity.ok(accountNumbersDto)
             }
 
     @PostMapping(path = ["create/account/automatic"], produces = [MediaType.APPLICATION_JSON_VALUE])
