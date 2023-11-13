@@ -1,5 +1,6 @@
 package org.jesperancinha.thevalidationcompany.rest;
 
+import jakarta.validation.ConstraintViolation
 import jakarta.validation.Valid
 import jakarta.validation.Validator
 import org.jesperancinha.thevalidationcompany.fiveminutes.json.AccountAssertsJsonDto
@@ -18,17 +19,17 @@ class FiveMinutesControllerJson {
     lateinit var validator: Validator
 
     @PostMapping("asserts/json")
-    fun postRequestCustom(@RequestBody @Valid accountAssertsJsonDto: AccountAssertsJsonDto) =
+    fun postRequestJson(@RequestBody @Valid accountAssertsJsonDto: AccountAssertsJsonDto) =
         ResponseEntity.ok(accountAssertsJsonDto)
 
     @PostMapping("asserts/json/programmatic")
-    fun postRequestProgrammaticCustom(@RequestBody accountAssertsJsonDto: AccountAssertsJsonDto) =
+    fun postRequestProgrammaticJson(@RequestBody accountAssertsJsonDto: AccountAssertsJsonDto) =
         run {
             val violations = validator.validate(accountAssertsJsonDto)
             violations
                 .takeIf { it.isNotEmpty() }?.let { ResponseEntity
                     .badRequest()
-                    .body(it.map { it.message }) }
+                    .body(it.map(ConstraintViolation<AccountAssertsJsonDto>::getMessage)) }
                 ?: run {
                     ResponseEntity
                         .ok(accountAssertsJsonDto)

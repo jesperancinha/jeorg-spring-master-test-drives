@@ -21,17 +21,17 @@ class FiveMinutesControllerAsserts {
     lateinit var validator: Validator
 
     @PostMapping("asserts")
-    fun postRequestCustom(@RequestBody @Valid accountAssertsDto: AccountAssertsDto) =
+    fun postRequestAsserts(@RequestBody @Valid accountAssertsDto: AccountAssertsDto) =
         ResponseEntity.ok(accountAssertsDto)
 
     @PostMapping("asserts/programmatic")
-    fun postRequestProgrammaticCustom(@RequestBody accountAssertsDto: AccountAssertsDto) =
+    fun postRequestProgrammaticAsserts(@RequestBody accountAssertsDto: AccountAssertsDto) =
         run {
             val violations = validator.validate(accountAssertsDto)
             violations
                 .takeIf { it.isNotEmpty() }?.let { ResponseEntity
                     .badRequest()
-                    .body(it.map { it.message }) }
+                    .body(it.map(ConstraintViolation<AccountAssertsDto>::getMessage)) }
                 ?: run {
                     ResponseEntity
                         .ok(accountAssertsDto)

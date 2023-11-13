@@ -4,8 +4,6 @@ import jakarta.validation.ConstraintViolation
 import jakarta.validation.Payload
 import jakarta.validation.Valid
 import jakarta.validation.Validator
-import org.jesperancinha.thevalidationcompany.fiveminutes.custom.AccountCustomDto
-import org.jesperancinha.thevalidationcompany.fiveminutes.custom.MandatoryPostAddressPayload
 import org.jesperancinha.thevalidationcompany.fiveminutes.payload.AccountPayloadDto
 import org.jesperancinha.thevalidationcompany.fiveminutes.payload.ErrorLength
 import org.jesperancinha.thevalidationcompany.fiveminutes.payload.WarningLength
@@ -28,7 +26,7 @@ class FiveMinutesControllerPayload {
         ResponseEntity.ok(accountPayloadDto)
 
     @PostMapping("payload/programmatic")
-    fun postRequestProgrammaticCustom(@RequestBody accountPayloadDto: AccountPayloadDto) =
+    fun postRequestProgrammaticPayload(@RequestBody accountPayloadDto: AccountPayloadDto) =
         run {
             val violations = validator.validate(accountPayloadDto)
             fun handleViolation(violation: ConstraintViolation<AccountPayloadDto>): ResponseEntity<Any>? {
