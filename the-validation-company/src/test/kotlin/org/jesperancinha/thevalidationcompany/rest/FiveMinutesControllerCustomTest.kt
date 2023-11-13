@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class FiveMinutesControllerTest @Autowired constructor(
+class FiveMinutesControllerCustomTest @Autowired constructor(
     val mockMvc: MockMvc
 ) {
 
@@ -57,6 +57,30 @@ class FiveMinutesControllerTest @Autowired constructor(
                     AccountCustomDto(
                         postAddress = null,
                         houseNumber = 10,
+                        street = "Up the street",
+                        postCode = "1234AA"
+                    )
+                )
+            ).contentType(MediaType.APPLICATION_JSON)
+        )
+
+            .andExpect(status().isOk)
+            .andReturn()
+            .run {this.response.contentAsString }
+            .run { this.shouldNotBeNull() }
+
+    }
+    @Test
+    fun `should post custom request and success with street only and no house number`() {
+        mockMvc.perform(
+            post(
+                "/5minutes/custom/programmatic",
+
+                ).content(
+                objectMapper.writeValueAsString(
+                    AccountCustomDto(
+                        postAddress = "P.O.BOX WHATEVER HUGS",
+                        houseNumber = null,
                         street = "Up the street",
                         postCode = "1234AA"
                     )
