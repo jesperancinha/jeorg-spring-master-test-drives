@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.string.shouldContain
-import org.jesperancinha.thevalidationcompany.fiveminutes.custom.AccountCustomDto
+import org.jesperancinha.thevalidationcompany.fiveminutes.asserts.AccountAssertsDto
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -17,21 +17,21 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class FiveMinutesControllerCustomTest @Autowired constructor(
+class FiveMinutesControllerAssertsTest @Autowired constructor(
     val mockMvc: MockMvc
 ) {
 
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
-    fun `should post custom request and fail when neither street or postAdress are filled in`() {
+    fun `should post asserts request and fail when neither street or postAdress are filled in`() {
         mockMvc.perform(
             post(
-                "/5minutes/custom",
+                "/5minutes/asserts",
 
                 ).content(
                 objectMapper.writeValueAsString(
-                    AccountCustomDto(
+                    AccountAssertsDto(
                         postAddress = null,
                         houseNumber = null,
                         street = null,
@@ -40,7 +40,6 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().is4xxClientError)
             .andReturn()
             .run { this.response.errorMessage }
@@ -49,14 +48,14 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
     }
 
     @Test
-    fun `should post custom request and success with street and houseNumber`() {
+    fun `should post asserts request and success with street and houseNumber`() {
         mockMvc.perform(
             post(
-                "/5minutes/custom",
+                "/5minutes/asserts",
 
                 ).content(
                 objectMapper.writeValueAsString(
-                    AccountCustomDto(
+                    AccountAssertsDto(
                         postAddress = null,
                         houseNumber = 10,
                         street = "Up the street",
@@ -74,16 +73,16 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
     }
 
     @Test
-    fun `should post custom request and success with street only and no house number`() {
+    fun `should post asserts request and success with street only and no house number`() {
         mockMvc.perform(
             post(
-                "/5minutes/custom/programmatic",
+                "/5minutes/asserts/programmatic",
 
                 ).content(
                 objectMapper.writeValueAsString(
-                    AccountCustomDto(
-                        postAddress = "P.O.BOX WHATEVER HUGS",
-                        houseNumber = null,
+                    AccountAssertsDto(
+                        postAddress = null,
+                        houseNumber = 1,
                         street = "Up the street",
                         postCode = "1234AA"
                     )
@@ -99,29 +98,29 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
     }
 
     @Test
-    fun `should post custom request and fail with street null and no house number`() {
+    fun `should post asserts request and fail with street null and house number`() {
         mockMvc.perform(
             post(
-                "/5minutes/custom/programmatic",
+                "/5minutes/asserts/programmatic",
 
                 ).content(
                 objectMapper.writeValueAsString(
-                    AccountCustomDto(
+                    AccountAssertsDto(
                         postAddress = null,
-                        houseNumber = null,
+                        houseNumber = 1,
                         street = null,
                         postCode = "1234AA"
                     )
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { response }
+            .run { this.response }
             .run {
-                contentAsString.shouldNotBeNull()
-                errorMessage.shouldBeNull()
+                this.contentAsString.shouldNotBeNull()
+                    .run { println(this) }
+                this.errorMessage.shouldBeNull()
             }
 
     }
