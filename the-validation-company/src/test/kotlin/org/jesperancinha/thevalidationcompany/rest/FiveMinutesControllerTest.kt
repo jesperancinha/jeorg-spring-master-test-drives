@@ -1,6 +1,7 @@
 package org.jesperancinha.thevalidationcompany.rest
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.string.shouldContain
 import org.jesperancinha.thevalidationcompany.fiveminutes.custom.AccountCustomDto
 import org.junit.jupiter.api.Test
@@ -22,7 +23,7 @@ class FiveMinutesControllerTest @Autowired constructor(
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
-    fun `should post custom request`() {
+    fun `should post custom request and fail when neither street or postAdress are filled in`() {
         mockMvc.perform(
             post(
                 "/5minutes/custom",
@@ -43,6 +44,30 @@ class FiveMinutesControllerTest @Autowired constructor(
             .andReturn()
             .run {this.response.errorMessage }
             .run { this shouldContain "Invalid request content" }
+
+    }
+    @Test
+    fun `should post custom request and success with street and houseNumber`() {
+        mockMvc.perform(
+            post(
+                "/5minutes/custom",
+
+                ).content(
+                objectMapper.writeValueAsString(
+                    AccountCustomDto(
+                        postAddress = null,
+                        houseNumber = 10,
+                        street = "Up the street",
+                        postCode = "1234AA"
+                    )
+                )
+            ).contentType(MediaType.APPLICATION_JSON)
+        )
+
+            .andExpect(status().isOk)
+            .andReturn()
+            .run {this.response.contentAsString }
+            .run { this.shouldNotBeNull() }
 
     }
 }

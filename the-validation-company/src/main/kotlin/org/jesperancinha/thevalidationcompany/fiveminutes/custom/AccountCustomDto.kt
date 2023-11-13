@@ -8,7 +8,20 @@ import org.springframework.beans.BeanWrapperImpl
 import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
-@AtLeastOne(fields = ["postAddress", "street"], message = "You need to fill in your postAddress or your street")
+
+class MandatoryHouseNumberStreetCombiPayload : Payload
+class MandatoryPostAddressPayload : Payload
+
+@AtLeastOne(
+    fields = ["postAddress", "street"],
+    message = "You need to fill in your postAddress or your street",
+    payload = [MandatoryPostAddressPayload::class]
+)
+@OrAllOrNone(
+    fields = ["street", "houseNumber"],
+    message = "If you give in a houseNumber or a street you need to fill out both!",
+    payload = [MandatoryHouseNumberStreetCombiPayload::class]
+)
 data class AccountCustomDto(
     val postAddress: String?,
     val street: String?,
@@ -20,6 +33,16 @@ data class AccountCustomDto(
 @Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS)
 @Constraint(validatedBy = [OneAtLeastNotNullConstraintValidator::class])
 annotation class AtLeastOne(
+    val groups: Array<KClass<*>> = [],
+    val payload: Array<KClass<out Payload>> = [],
+    val message: String = "Object instance of violates one not null constraint",
+    val fields: Array<String> = []
+)
+
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS)
+@Constraint(validatedBy = [BothNullOrBothNotNullConstraintValidator::class])
+annotation class OrAllOrNone(
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = [],
     val message: String = "Object instance of violates one not null constraint",
@@ -41,3 +64,21 @@ class OneAtLeastNotNullConstraintValidator : ConstraintValidator<AtLeastOne, Any
             .count() >= 1L
     }
 }
+
+
+@Component
+class BothNullOrBothNotNullConstraintValidator : ConstraintValidator<OrAllOrNone, Any> {
+    private lateinit var fields: Array<String>
+
+    override fun initialize(configuration: OrAllOrNone) {
+        fields = configuration.fields
+    }
+
+    override fun isValid(obj: Any, context: ConstraintValidatorContext): Boolean {
+        val beanWrapper = BeanWrapperImpl(obj)
+        return fields
+            .mapNotNull { propertyName -> beanWrapper.getPropertyValue(propertyName) }
+            .count() % 2 == 0
+    }
+}
+
