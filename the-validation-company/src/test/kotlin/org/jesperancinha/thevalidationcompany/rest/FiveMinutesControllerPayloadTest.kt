@@ -42,7 +42,7 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response.errorMessage }
+            .run { response.errorMessage }
             .run { this shouldContain "Invalid request content" }
 
     }
@@ -50,10 +50,7 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
     @Test
     fun `should post payload request and fail when postAddress is longer than 20 and shorter than 25`() {
         mockMvc.perform(
-            post(
-                "/5minutes/payload",
-
-                ).content(
+            post("/5minutes/payload").content(
                 objectMapper.writeValueAsString(
                     AccountPayloadDto(
                         postAddress = "P.O.BOX WHATEVER HUGZZ",
@@ -64,10 +61,9 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response.errorMessage }
+            .run { response.errorMessage }
             .run { this shouldContain "Invalid request content" }
 
     }
@@ -92,8 +88,8 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
 
             .andExpect(status().`is`(199))
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 
@@ -116,7 +112,7 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response.errorMessage }
-            .run { this.shouldBeNull() }
+            .run { response.errorMessage }
+            .run { shouldBeNull() }
     }
 }

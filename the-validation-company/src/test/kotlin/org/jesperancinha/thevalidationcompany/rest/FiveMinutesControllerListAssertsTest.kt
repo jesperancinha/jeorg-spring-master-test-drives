@@ -43,7 +43,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response.errorMessage }
+            .run { response.errorMessage }
             .run { this shouldContain "Invalid request content" }
 
     }
@@ -68,8 +68,8 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 
@@ -93,8 +93,8 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 
@@ -173,11 +173,11 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response }
+            .run { response }
             .run {
-                this.contentAsString.shouldNotBeNull()
+                contentAsString.shouldNotBeNull()
                     .run { println(this) }
-                this.errorMessage.shouldBeNull()
+                errorMessage.shouldBeNull()
             }
 
     }
@@ -202,8 +202,8 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 
@@ -227,8 +227,8 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 }

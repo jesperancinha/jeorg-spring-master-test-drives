@@ -43,7 +43,7 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { this.response.errorMessage }
+            .run { response.errorMessage }
             .run { this shouldContain "Invalid request content" }
 
     }
@@ -68,8 +68,8 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
-            .run { this.shouldNotBeNull() }
+            .run { response.contentAsString }
+            .run { shouldNotBeNull() }
 
     }
 
@@ -93,10 +93,10 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { this.response.contentAsString }
+            .run { response.contentAsString }
             .run {
                 println(this)
-                this.shouldNotBeNull()
+                shouldNotBeNull()
             }
 
     }
