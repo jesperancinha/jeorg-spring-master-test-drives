@@ -8,9 +8,9 @@ import org.springframework.beans.BeanWrapperImpl
 import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
-@AtLeastOne(fields = ["postAddress", "street"])
+@AtLeastOne(fields = ["postAddress", "street"], message = "You need to fill in your postAddress or your street")
 data class AccountCustomDto(
-    val postAddress: String,
+    val postAddress: String?,
     val street: String?,
     val houseNumber: Long?,
     val postCode: String
@@ -29,6 +29,7 @@ annotation class AtLeastOne(
 @Component
 class OneAtLeastNotNullConstraintValidator : ConstraintValidator<AtLeastOne, Any> {
     private lateinit var fields: Array<String>
+
     override fun initialize(configuration: AtLeastOne) {
         fields = configuration.fields
     }
