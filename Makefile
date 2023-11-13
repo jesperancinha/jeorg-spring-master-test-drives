@@ -23,3 +23,5 @@ run-jar-health:
 	java -jar docker-boxing/docker-boxing-health/target/docker-boxing-health.jar
 run-jar-port:
 	java -jar docker-boxing/docker-boxing-port/target/docker-boxing-port.jar
+resolve:
+	mvn dependency:resolve
