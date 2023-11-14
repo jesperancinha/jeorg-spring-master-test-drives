@@ -49,7 +49,6 @@ annotation class OrAllOrNone(
     val fields: Array<String> = []
 )
 
-@Component
 class OneAtLeastNotNullConstraintValidator : ConstraintValidator<AtLeastOne, Any> {
     private lateinit var fields: Array<String>
 
@@ -66,7 +65,6 @@ class OneAtLeastNotNullConstraintValidator : ConstraintValidator<AtLeastOne, Any
 }
 
 
-@Component
 class BothNullOrBothNotNullConstraintValidator : ConstraintValidator<OrAllOrNone, Any> {
     private lateinit var fields: Array<String>
 
