@@ -3,6 +3,7 @@ package org.jesperancinha.thevalidationcompany.rest.fiveminutes
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
+import io.kotest.matchers.string.shouldBeEmpty
 import io.kotest.matchers.string.shouldContain
 import org.jesperancinha.thevalidationcompany.fiveminutes.json.AccountAssertsJsonDto
 import org.junit.jupiter.api.Test
@@ -44,7 +45,6 @@ class FiveMinutesControllerJsonTest @Autowired constructor(
             .andReturn()
             .run { this.response.errorMessage }
             .run { this shouldContain "Invalid request content" }
-
     }
 
     @Test
@@ -72,6 +72,39 @@ class FiveMinutesControllerJsonTest @Autowired constructor(
             }
             .run {
                 println(this)
+                this.shouldNotBeNull()
+            }
+
+    }
+
+    @Test
+    fun `should post assert_json request and fail with street and no houseNumber`() {
+        mockMvc.perform(
+            post(
+                "/5minutes/asserts/json",
+
+                ).content(
+                objectMapper.writeValueAsString(
+                    AccountAssertsJsonDto(
+                        postAddress = null,
+                        houseNumber = null,
+                        street = "Up the street",
+                        postCode = "1234AA"
+                    )
+                )
+            ).contentType(MediaType.APPLICATION_JSON)
+        )
+
+            .andExpect(status().isBadRequest)
+            .andReturn()
+            .run {
+                this.response.shouldNotBeNull()
+            }
+            .run {
+                this.errorMessage.shouldNotBeNull() shouldContain "Invalid request content"
+                this.contentAsString.shouldBeEmpty()
+                println(this.errorMessage)
+                println(this.contentAsString)
                 this.shouldNotBeNull()
             }
 
