@@ -13,10 +13,12 @@ data class AccountListAssertsDto(
     val postCode: String
 ) {
     @AssertTrue(message = "Or a street or a post address")
-    fun isStreetOrPostAddress() = street != null || postAddress != null
+    fun isStreetOrPostAddress() = street != null
+            || postAddress != null
 
     @AssertTrue(message = "Or street and house number or both null")
-    fun isStreetAndHouseNumberOrNull() = street != null && houseNumber != null || street == null && houseNumber == null
+    fun isStreetAndHouseNumberOrNull() = street != null && houseNumber != null
+            || street == null && houseNumber == null
 }
 
 interface Group2
