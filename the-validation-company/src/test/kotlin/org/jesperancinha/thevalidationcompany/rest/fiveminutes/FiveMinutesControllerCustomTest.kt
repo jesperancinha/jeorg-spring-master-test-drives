@@ -41,7 +41,7 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
             ).contentType(MediaType.APPLICATION_JSON)
         )
 
-            .andExpect(status().is4xxClientError)
+            .andExpect(status().isBadRequest)
             .andReturn()
             .run { response.errorMessage }
             .run { this shouldContain "Invalid request content" }
