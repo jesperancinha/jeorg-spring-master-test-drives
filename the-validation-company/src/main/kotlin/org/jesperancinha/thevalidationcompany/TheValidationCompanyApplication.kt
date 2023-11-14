@@ -2,7 +2,6 @@ package org.jesperancinha.thevalidationcompany
 
 import jakarta.validation.Validation
 import jakarta.validation.Validator
-import jakarta.validation.ValidatorFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean

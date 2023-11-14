@@ -24,7 +24,7 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
-    fun `should post custom request and fail when neither street or postAdress are filled in`() {
+    fun `should post custom request and fail when neither street or postAddress are filled in`() {
         mockMvc.perform(
             post(
                 "/5minutes/custom",
