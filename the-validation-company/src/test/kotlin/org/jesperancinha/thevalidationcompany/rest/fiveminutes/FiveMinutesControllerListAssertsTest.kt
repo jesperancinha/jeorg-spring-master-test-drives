@@ -105,10 +105,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
     @Test
     fun `should post lists request and fail with a longer postcode than with 6 characters programmatically`() {
         mockMvc.perform(
-            post(
-                "/5minutes/lists/programmatic",
-
-                ).content(
+            post("/5minutes/lists/programmatic").content(
                 objectMapper.writeValueAsString(
                     AccountListAssertsDto(
                         postAddress = null,
@@ -119,13 +116,13 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().isBadRequest)
             .andReturn()
-            .run { response }
             .run {
-                contentAsString.shouldNotBeNull()
-                errorMessage.shouldBeNull()
+                response.shouldNotBeNull().run {
+                    contentAsString.shouldNotBeNull()
+                    errorMessage.shouldBeNull()
+                }
             }
 
     }
@@ -147,11 +144,12 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
+            .run {
+                response.contentAsString
+                    .shouldNotBeNull()
+            }
 
     }
 
@@ -172,11 +170,11 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
+            .run {
+                response.contentAsString.shouldNotBeNull()
+            }
 
     }
 }
