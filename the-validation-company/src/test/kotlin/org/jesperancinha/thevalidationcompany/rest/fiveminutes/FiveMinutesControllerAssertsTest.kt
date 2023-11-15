@@ -2,8 +2,6 @@ package org.jesperancinha.thevalidationcompany.rest.fiveminutes
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.kotest.matchers.equality.shouldBeEqualToComparingFields
-import io.kotest.matchers.equality.shouldBeEqualUsingFields
 import io.kotest.matchers.equals.shouldBeEqual
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
