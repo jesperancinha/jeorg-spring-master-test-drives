@@ -1,4 +1,4 @@
-# JEORG-SMTD :: GM Client
+# the-validation-company
 
 ## About me
 
