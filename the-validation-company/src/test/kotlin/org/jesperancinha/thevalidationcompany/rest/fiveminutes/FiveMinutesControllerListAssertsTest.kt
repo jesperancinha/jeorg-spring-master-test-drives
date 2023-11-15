@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.string.shouldContain
 import org.jesperancinha.thevalidationcompany.fiveminutes.lists.AccountListAssertsDto
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,31 +24,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
-    fun `should post lists request and fail when neither street or postAddress are filled in`() {
-        mockMvc.perform(
-            post(
-                "/5minutes/lists",
-
-                ).content(
-                objectMapper.writeValueAsString(
-                    AccountListAssertsDto(
-                        postAddress = null,
-                        houseNumber = null,
-                        street = null,
-                        postCode = "1234AA"
-                    )
-                )
-            ).contentType(MediaType.APPLICATION_JSON)
-        )
-            .andExpect(status().is4xxClientError)
-            .andReturn()
-            .run { response.errorMessage }
-            .run { this shouldContain "Invalid request content" }
-
-    }
-
-    @Test
-    fun `should post lists request and success with street and houseNumber`() {
+    fun `should post lists successfully with 6 digits on lists`() {
         mockMvc.perform(
             post(
                 "/5minutes/lists",
@@ -73,8 +48,9 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
     }
 
+
     @Test
-    fun `should post lists request and success with street only and no house number`() {
+    fun `should post lists successfully with 6 digits on lists_programmatic`() {
         mockMvc.perform(
             post(
                 "/5minutes/lists/programmatic",
@@ -95,34 +71,6 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
             .andReturn()
             .run { response.contentAsString }
             .run { shouldNotBeNull() }
-
-    }
-
-    @Test
-    fun `should post lists request and fail with a longer postcode than with 6 characters programmatically`() {
-        mockMvc.perform(
-            post(
-                "/5minutes/lists/programmatic",
-
-                ).content(
-                objectMapper.writeValueAsString(
-                    AccountListAssertsDto(
-                        postAddress = null,
-                        houseNumber = 1,
-                        street = "Up the street",
-                        postCode = "1234AAA"
-                    )
-                )
-            ).contentType(MediaType.APPLICATION_JSON)
-        )
-
-            .andExpect(status().isBadRequest)
-            .andReturn()
-            .run { response }
-            .run {
-                contentAsString.shouldNotBeNull()
-                errorMessage.shouldBeNull()
-            }
 
     }
 
@@ -155,7 +103,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
     }
 
     @Test
-    fun `should post lists request and fail with street null and house number`() {
+    fun `should post lists request and fail with a longer postcode than with 6 characters programmatically`() {
         mockMvc.perform(
             post(
                 "/5minutes/lists/programmatic",
@@ -165,25 +113,25 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
                     AccountListAssertsDto(
                         postAddress = null,
                         houseNumber = 1,
-                        street = null,
-                        postCode = "1234AA"
+                        street = "Up the street",
+                        postCode = "1234AAA"
                     )
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-            .andExpect(status().is4xxClientError)
+
+            .andExpect(status().isBadRequest)
             .andReturn()
             .run { response }
             .run {
                 contentAsString.shouldNotBeNull()
-                    .run { println(this) }
                 errorMessage.shouldBeNull()
             }
 
     }
 
     @Test
-    fun `should post lists request and success with street only and no house number with postcode on group1`() {
+    fun `should post lists request and succeed with postcode on group1`() {
         mockMvc.perform(
             post(
                 "/5minutes/lists/programmatic/group1",
@@ -208,7 +156,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
     }
 
     @Test
-    fun `should post lists request and success with street only and no house number with postcode on group2`() {
+    fun `should post lists request and succeed with postcode on group2`() {
         mockMvc.perform(
             post(
                 "/5minutes/lists/programmatic/group2",
