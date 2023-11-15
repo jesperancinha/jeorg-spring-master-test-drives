@@ -24,7 +24,9 @@ class FiveMinutesControllerAssertsTest @Autowired constructor(
 ) {
 
     val objectMapper by lazy { ObjectMapper() }
-    var typeRef: TypeReference<HashMap<String, Any>> = object : TypeReference<HashMap<String, Any>>() {}
+    val typeRefMaps by lazy {
+        object : TypeReference<HashMap<String, Any>>() {}
+    }
 
     @Test
     fun `should post asserts request and fail when neither street or postAddress are filled in`() {
@@ -75,12 +77,12 @@ class FiveMinutesControllerAssertsTest @Autowired constructor(
             .shouldNotBeNull()
             .let {
                 val expected = objectMapper
-                    .readValue(objectString, typeRef)
+                    .readValue(objectString, typeRefMaps)
                     .apply {
                         remove("streetAndHouseNumberOrNull")
                         remove("streetOrPostAddress")
                     }
-                objectMapper.readValue(it, typeRef)
+                objectMapper.readValue(it, typeRefMaps)
                     .shouldBeEqual(expected)}
 
     }
@@ -111,12 +113,12 @@ class FiveMinutesControllerAssertsTest @Autowired constructor(
             .shouldNotBeNull()
             .let {
                 val expected = objectMapper
-                    .readValue(objectString, typeRef)
+                    .readValue(objectString, typeRefMaps)
                     .apply {
                         remove("streetAndHouseNumberOrNull")
                         remove("streetOrPostAddress")
                     }
-                objectMapper.readValue(it, typeRef)
+                objectMapper.readValue(it, typeRefMaps)
                 .shouldBeEqual(expected)}
 
 

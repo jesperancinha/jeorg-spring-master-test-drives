@@ -19,5 +19,6 @@ data class AccountAssertsJsonDto(
 
     @JsonIgnore
     @AssertTrue(message = "Or street and house number or both null")
-    fun isStreetAndHouseNumberOrNull() = street != null && houseNumber != null || street == null && houseNumber == null
+    fun isStreetAndHouseNumberOrNull() =
+        street != null && houseNumber != null || street == null && houseNumber == null
 }
