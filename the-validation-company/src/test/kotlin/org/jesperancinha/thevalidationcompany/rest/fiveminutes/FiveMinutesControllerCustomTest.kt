@@ -68,8 +68,8 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
+            .response.contentAsString
+            .shouldNotBeNull()
 
     }
 
@@ -93,7 +93,7 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
+            .response.contentAsString
             .run {
                 println(this)
                 shouldNotBeNull()
@@ -121,7 +121,7 @@ class FiveMinutesControllerCustomTest @Autowired constructor(
 
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { response }
+            .response.shouldNotBeNull()
             .run {
                 contentAsString.shouldNotBeNull()
                 errorMessage.shouldBeNull()

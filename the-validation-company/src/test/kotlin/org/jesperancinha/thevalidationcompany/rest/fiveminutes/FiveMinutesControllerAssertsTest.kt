@@ -143,7 +143,7 @@ class FiveMinutesControllerAssertsTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { response }
+            .response.shouldNotBeNull()
             .run {
                 contentAsString.shouldNotBeNull()
                     .run { println(this) }
