@@ -24,31 +24,7 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
-    fun `should post payload request and fail when postAddress is longer than 25`() {
-        mockMvc.perform(
-            post(
-                "/5minutes/payload",
-
-                ).content(
-                objectMapper.writeValueAsString(
-                    AccountPayloadDto(
-                        postAddress = "P.O.BOX WHATEVER HUGZZZZZZZ",
-                        houseNumber = null,
-                        street = null,
-                        postCode = "1234AA"
-                    )
-                )
-            ).contentType(MediaType.APPLICATION_JSON)
-        )
-            .andExpect(status().is4xxClientError)
-            .andReturn()
-            .run { response.errorMessage }
-            .run { this shouldContain "Invalid request content" }
-
-    }
-
-    @Test
-    fun `should post payload request and fail when postAddress is longer than 20 and shorter than 25`() {
+    fun `should post payload request and fail when postAddress is longer than 20 and shorter than 25 for payload endpoint`() {
         mockMvc.perform(
             post("/5minutes/payload").content(
                 objectMapper.writeValueAsString(
@@ -69,7 +45,7 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
     }
 
     @Test
-    fun `should post payload request and success with warning with length higher then 20 but less then 25`() {
+    fun `should post payload request and success with warning with length higher then 20 but less then 25 for the programmatic endpoint`() {
         mockMvc.perform(
             post(
                 "/5minutes/payload/programmatic",
@@ -88,13 +64,40 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
 
             .andExpect(status().`is`(199))
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
+            .response
+            .shouldNotBeNull()
+            .contentAsString
+            .shouldNotBeNull()
 
     }
 
     @Test
-    fun `should post payload with fail when length is above the forbidden limit of 25`() {
+    fun `should post payload with fail when length is above the forbidden limit of 25 for the payload endpoint`() {
+        mockMvc.perform(
+            post(
+                "/5minutes/payload",
+
+                ).content(
+                objectMapper.writeValueAsString(
+                    AccountPayloadDto(
+                        postAddress = "P.O.BOX WHATEVER HUGZZZZZZZZZZZ",
+                        houseNumber = null,
+                        street = "Up the street",
+                        postCode = "1234AA"
+                    )
+                )
+            ).contentType(MediaType.APPLICATION_JSON)
+        )
+            .andExpect(status().is4xxClientError)
+            .andReturn()
+            .response
+            .shouldNotBeNull()
+            .errorMessage
+            .shouldNotBeNull() shouldContain "Invalid request content"
+    }
+
+    @Test
+    fun `should post payload with fail when length is above the forbidden limit of 25 for the programmatic endpoint`() {
         mockMvc.perform(
             post(
                 "/5minutes/payload/programmatic",
@@ -112,7 +115,10 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { response.errorMessage }
-            .run { shouldBeNull() }
+            .response
+            .shouldNotBeNull()
+            .errorMessage
+            .shouldBeNull()
+
     }
 }
