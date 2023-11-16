@@ -40,12 +40,12 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
                 )
             ).contentType(MediaType.APPLICATION_JSON)
         )
-
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
-
+            .response
+            .shouldNotBeNull()
+            .contentAsString
+            .shouldNotBeNull()
     }
 
 
@@ -69,8 +69,10 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isOk)
             .andReturn()
-            .run { response.contentAsString }
-            .run { shouldNotBeNull() }
+            .response
+            .shouldNotBeNull()
+            .contentAsString
+            .shouldNotBeNull()
 
     }
 
@@ -94,7 +96,7 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
 
             .andExpect(status().isBadRequest)
             .andReturn()
-            .run { response }
+            .response
             .run {
                 contentAsString.shouldNotBeNull()
                 errorMessage shouldBe "Invalid request content."
@@ -146,10 +148,10 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
         )
             .andExpect(status().isOk)
             .andReturn()
-            .run {
-                response.contentAsString
-                    .shouldNotBeNull()
-            }
+            .response
+            .shouldNotBeNull()
+            .contentAsString
+            .shouldNotBeNull()
 
     }
 
@@ -172,9 +174,9 @@ class FiveMinutesControllerListAssertsTest @Autowired constructor(
         )
             .andExpect(status().isOk)
             .andReturn()
-            .run {
-                response.contentAsString.shouldNotBeNull()
-            }
-
+            .response
+            .shouldNotBeNull()
+            .contentAsString
+            .shouldNotBeNull()
     }
 }
