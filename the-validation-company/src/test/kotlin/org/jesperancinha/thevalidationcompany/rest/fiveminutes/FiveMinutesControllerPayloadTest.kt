@@ -39,8 +39,8 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
         )
             .andExpect(status().is4xxClientError)
             .andReturn()
-            .run { response.errorMessage }
-            .run { this shouldContain "Invalid request content" }
+            .response
+            .errorMessage shouldContain "Invalid request content"
 
     }
 
