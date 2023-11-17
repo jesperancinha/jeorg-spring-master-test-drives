@@ -1,11 +1,6 @@
 package org.jesperancinha.thevalidationcompany.dto
 
-import jakarta.validation.constraints.AssertTrue
-import jakarta.validation.constraints.DecimalMax
-import jakarta.validation.constraints.DecimalMin
-import jakarta.validation.constraints.Negative
-import jakarta.validation.constraints.NotNull
-import jakarta.validation.constraints.Positive
+import jakarta.validation.constraints.*
 import java.math.BigDecimal
 
 data class AccountNumbersDto(
