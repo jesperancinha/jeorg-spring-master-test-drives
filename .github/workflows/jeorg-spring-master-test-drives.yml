@@ -18,6 +18,9 @@ jobs:
             java-version: '19'
             distribution: 'adopt'
 
+        - name: Build and test Gradle projects
+          run: make build-gradle
+
         - name: Build and Test
           run:  mvn clean install -DskipTests &&
                 mvn test jacoco:prepare-agent package jacoco:report
