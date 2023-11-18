@@ -8,7 +8,8 @@ build-maven:
 	mvn test
 build-gradle:
 	cd the-validation-company; \
-	./gradlew build test
+	./gradlew build; \
+	gradle test
 test:
 	mvn test
 local:
