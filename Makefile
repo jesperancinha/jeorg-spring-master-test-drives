@@ -1,10 +1,14 @@
 SHELL := /bin/bash
 
 b: build
-build:
+build: build-gradle build-maven
+build-maven:
 	java -version
 	mvn clean install -DskipTests
 	mvn test
+build-gradle:
+	cd the-validation-company; \
+	./gradlew build test
 test:
 	mvn test
 local:
