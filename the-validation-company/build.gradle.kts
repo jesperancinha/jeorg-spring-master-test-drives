@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
 	id("org.springframework.boot") version "3.2.0"
 	id("io.spring.dependency-management") version "1.1.4"
@@ -9,10 +7,6 @@ plugins {
 
 group = "org.jesperancinha"
 version = "0.0.1-SNAPSHOT"
-
-java {
-	sourceCompatibility = JavaVersion.VERSION_17
-}
 
 repositories {
 	mavenCentral()
@@ -28,13 +22,6 @@ dependencies {
 	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs += "-Xjsr305=strict"
-		jvmTarget = "21"
-	}
-}
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 	testLogging {
@@ -46,6 +33,10 @@ tasks.withType<Test> {
 
 tasks.bootBuildImage {
 	builder.set("paketobuildpacks/builder-jammy-base:latest")
+}
+
+kotlin {
+	jvmToolchain(21)
 }
 
 sourceSets {
