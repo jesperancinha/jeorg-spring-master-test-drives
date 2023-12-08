@@ -24,6 +24,27 @@ class FiveMinutesControllerPayloadTest @Autowired constructor(
     val objectMapper by lazy { ObjectMapper() }
 
     @Test
+    fun `should post payload request and be successful`() {
+        mockMvc.perform(
+            post("/5minutes/payload").content(
+                objectMapper.writeValueAsString(
+                    AccountPayloadDto(
+                        postAddress = "P.O.BOX WHATEVER",
+                        houseNumber = null,
+                        street = null,
+                        postCode = "1234AA"
+                    )
+                )
+            ).contentType(MediaType.APPLICATION_JSON)
+        )
+            .andExpect(status().isOk)
+            .andReturn()
+            .response
+            .shouldNotBeNull()
+
+    }
+
+    @Test
     fun `should post payload request and fail when postAddress is longer than 20 and shorter than 25 for payload endpoint`() {
         mockMvc.perform(
             post("/5minutes/payload").content(
