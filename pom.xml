@@ -28,10 +28,10 @@
         <lombok.version>1.18.30</lombok.version>
         <jscience>4.3.1</jscience>
         <commons.lang3>3.4</commons.lang3>
-        <guava.version>32.1.3-jre</guava.version>
+        <guava.version>33.0.0-jre</guava.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <consolerizer.version>2.2.3</consolerizer.version>
-        <jackson.version>2.16.0</jackson.version>
+        <jackson.version>2.16.1</jackson.version>
 
         <!-- Databases -->
         <h2.version>2.2.224</h2.version>
@@ -44,8 +44,8 @@
         <camel.version>3.21.3</camel.version>
 
         <!-- Logs -->
-        <slf4j.version>2.0.9</slf4j.version>
-        <log4j.version>2.22.0</log4j.version>
+        <slf4j.version>2.0.10</slf4j.version>
+        <log4j.version>2.22.1</log4j.version>
 
         <!-- Test -->
         <assertj-core.version>3.13.2</assertj-core.version>
@@ -66,7 +66,7 @@
         <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.2.3</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <spring-boot-maven-plugin.version>3.2.0</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.2.1</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
         <ehcache.version>3.10.8</ehcache.version>
@@ -84,8 +84,8 @@
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <commons-io.version>2.15.1</commons-io.version>
         <cucumber.version>7.15.0</cucumber.version>
-        <mariadb-java-client.version>3.3.1</mariadb-java-client.version>
-        <embedded-mariadb.version>3.1.0</embedded-mariadb.version>
+        <mariadb-java-client.version>3.3.2</mariadb-java-client.version>
+        <embedded-mariadb.version>3.1.1</embedded-mariadb.version>
         <mariaDB4j-springboot.version>3.0.1</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
         <atomikos.transactions.version>6.0.0</atomikos.transactions.version>
@@ -93,7 +93,7 @@
         <cglib.version>3.3.0</cglib.version>
         <jstl.version>1.2</jstl.version>
         <commons-logging.version>1.3.0</commons-logging.version>
-        <groovy.version>3.0.19</groovy.version>
+        <groovy.version>3.0.20</groovy.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
         <cassandra-unit.version>4.3.1.0</cassandra-unit.version>
@@ -107,7 +107,7 @@
 
         <!-- Kotlin -->
         <kotlinx-serialization-json.version>1.6.2</kotlinx-serialization-json.version>
-        <kotlin.version>1.9.21</kotlin.version>
+        <kotlin.version>1.9.22</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>5.2.0</easymock.version>
         <micrometer.version>1.12.1</micrometer.version>
