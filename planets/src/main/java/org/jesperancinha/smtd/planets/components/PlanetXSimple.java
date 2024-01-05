@@ -2,7 +2,10 @@ package org.jesperancinha.smtd.planets.components;
 
 import jakarta.annotation.PostConstruct;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class PlanetXSimple {
@@ -11,7 +14,7 @@ public class PlanetXSimple {
 
     private final String temperature;
 
-    public PlanetXSimple(String temperature, String atmosphere) {
+    public PlanetXSimple(@Qualifier("temperature") final AtomicReference<String> temperature, @Qualifier("atmosphere") final AtomicReference<String> atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlanetXSimple constructor")
                 .orange("In the constructor we have no info when using FIELD injection")
@@ -22,8 +25,8 @@ public class PlanetXSimple {
                 .blue(temperature)
                 .newLine()
                 .reset();
-        this.temperature = temperature;
-        this.atmosphere = atmosphere;
+        this.temperature = temperature.get();
+        this.atmosphere = atmosphere.get();
     }
 
     @PostConstruct
