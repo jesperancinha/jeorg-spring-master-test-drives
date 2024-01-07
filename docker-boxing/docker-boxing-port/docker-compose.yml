@@ -1,6 +1,7 @@
 services:
 
   adopt-port-1:
+    hostname: adopt-port-1
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
     deploy:
@@ -9,6 +10,7 @@ services:
           memory: 500M
 
   adopt-port-2:
+    hostname: adopt-port-2
     build: .
     entrypoint: java -jar ~/docker-boxing-port.jar && tail -f /dev/null
     deploy:

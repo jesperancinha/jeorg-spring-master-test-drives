@@ -1,6 +1,7 @@
  services:
 
   adopt-health-1:
+    hostname: adopt-health-1
     build: .
     entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:
@@ -15,6 +16,7 @@
           memory: 500M
 
   adopt-health-2:
+    hostname: adopt-health-2
     build: .
     entrypoint: java -jar ~/docker-boxing-health.jar && tail -f /dev/null
     healthcheck:

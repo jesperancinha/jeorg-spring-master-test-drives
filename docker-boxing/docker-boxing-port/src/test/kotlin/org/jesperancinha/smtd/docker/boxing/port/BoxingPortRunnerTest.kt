@@ -38,16 +38,17 @@ internal class BoxingPortRunnerTest {
     class BoxerInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
         private val dockerCompose by lazy {
             DockerCompose(listOf(File("docker-compose.yml")))
-                .withExposedService("adopt-port-1_1", 8080, Wait.defaultWaitStrategy())
-                .withExposedService("adopt-port-2_1", 8080, Wait.defaultWaitStrategy())
-                .withLocalCompose(true)
+                .withExposedService("adopt-port-1", 8080, Wait.defaultWaitStrategy())
+                .withExposedService("adopt-port-2", 8080, Wait.defaultWaitStrategy())
+                .withLocalCompose(false)
                 .also { it.start() }
         }
 
         override fun initialize(applicationContext: ConfigurableApplicationContext) {
+            dockerCompose.start()
             logger.info("Starting IT -> ${LocalDateTime.now()}")
-            logger.info("Starting service 1 at ${dockerCompose.getServiceHost("adopt-port-1_1", 8080)}")
-            logger.info("Starting service 2 at ${dockerCompose.getServiceHost("adopt-port-2_1", 8080)}")
+            logger.info("Starting service 1 at ${dockerCompose.getServiceHost("adopt-port-1", 8080)}")
+            logger.info("Starting service 2 at ${dockerCompose.getServiceHost("adopt-port-2", 8080)}")
             logger.info("End IT -> ${LocalDateTime.now()}")
             logger.info("Time Elapsed IT -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
 
