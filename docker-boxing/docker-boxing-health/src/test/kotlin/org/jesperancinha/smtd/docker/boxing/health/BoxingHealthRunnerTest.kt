@@ -36,16 +36,16 @@ internal class BoxingHealthRunnerTest {
     class BoxerInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
         private val dockerCompose by lazy {
             DockerCompose(listOf(File("docker-compose.yml")))
-                .withExposedService("adopt-health-2_1", 8080, forHealthcheck())
-                .withExposedService("adopt-health-1_1", 8080, forHealthcheck())
-                .withLocalCompose(true)
+                .withExposedService("adopt-health-2", 8080, forHealthcheck())
+                .withExposedService("adopt-health-1", 8080, forHealthcheck())
+                .withLocalCompose(false)
                 .also { it.start() }
         }
 
         override fun initialize(applicationContextx: ConfigurableApplicationContext) {
             logger.info("Starting IT -> ${LocalDateTime.now()}")
-            logger.info("Starting service 1 at ${dockerCompose.getServiceHost("adopt-health-1_1", 8080)}")
-            logger.info("Starting service 2 at ${dockerCompose.getServiceHost("adopt-health-2_1", 8080)}")
+            logger.info("Starting service 1 at ${dockerCompose.getServiceHost("adopt-health-1", 8080)}")
+            logger.info("Starting service 2 at ${dockerCompose.getServiceHost("adopt-health-2", 8080)}")
             logger.info("End IT -> ${LocalDateTime.now()}")
             logger.info("Time Elapsed IT -> ${ChronoUnit.MILLIS.between(startup, LocalDateTime.now())} ms")
         }
