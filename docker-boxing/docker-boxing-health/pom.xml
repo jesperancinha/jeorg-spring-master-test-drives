@@ -13,7 +13,7 @@
 
     <description>An implementation of a Testcontainer based on Health</description>
 
-    <name>Docker boxing Health</name>
+    <name>JEORG-SMTD :: Docker boxing Health</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

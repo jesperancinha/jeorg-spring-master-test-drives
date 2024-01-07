@@ -12,7 +12,7 @@
     <artifactId>docker-boxing</artifactId>
     <packaging>pom</packaging>
 
-    <name>Docker boxing</name>
+    <name>JEORG-SMTD :: Docker boxing</name>
 
     <modules>
         <module>docker-boxing-port</module>

@@ -58,3 +58,4 @@ upgrade:
 		gradle wrapper --gradle-version $(GRADLE_VERSION); \
 		cd $$CURRENT; \
 	done
+local-pipeline: local no-test b
