@@ -123,7 +123,7 @@
         <kotlinx-coroutines-debug.version>1.7.3</kotlinx-coroutines-debug.version>
         <spring-boot-starter-parent.version>3.1.5</spring-boot-starter-parent.version>
         <micrometer-tracing-bridge-otel.version>1.2.1</micrometer-tracing-bridge-otel.version>
-        <opentelemetry-exporter-zipkin.version>1.33.0</opentelemetry-exporter-zipkin.version>
+        <opentelemetry-exporter-zipkin.version>1.34.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.4.2</loki-logback-appender.version>
     </properties>
 
