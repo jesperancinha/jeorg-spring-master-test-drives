@@ -2,7 +2,6 @@ package org.jesperancinha.smtd.planets.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 
 /**
@@ -11,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Data
-@Configuration
 @ConfigurationProperties(prefix = "smtd.earth",
         ignoreUnknownFields = true,
         ignoreInvalidFields = true)
