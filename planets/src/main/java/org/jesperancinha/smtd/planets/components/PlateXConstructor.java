@@ -2,7 +2,10 @@ package org.jesperancinha.smtd.planets.components;
 
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class PlateXConstructor {
@@ -11,7 +14,7 @@ public class PlateXConstructor {
 
     @Autowired
     PlateXConstructor(
-            final String atmosphere) {
+            @Qualifier("atmosphere") final AtomicReference<String> atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlateXConstructor constructor")
                 .orange("We can also initialize our beans atmosphere")
@@ -20,12 +23,12 @@ public class PlateXConstructor {
                 .newLine()
                 .reset();
 
-        this.atmosphere = atmosphere;
+        this.atmosphere = atmosphere.get();
     }
 
 
     @Autowired
-    public void setupAtmosphere(final String atmosphere) {
+    public void setupAtmosphere(@Qualifier("atmosphere") final AtomicReference<String> atmosphere) {
         ConsolerizerComposer.outSpace()
                 .yellow("PlateXConstructor#setupAtmosphere method")
                 .orange("We get the planet's data via method injection")

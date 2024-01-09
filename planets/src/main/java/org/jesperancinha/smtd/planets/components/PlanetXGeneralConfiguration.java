@@ -4,16 +4,18 @@ import org.jesperancinha.smtd.planets.dto.Planet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 @Configuration
 public class PlanetXGeneralConfiguration {
     @Bean
-    public String atmosphere(){
-        return "dense";
+    public AtomicReference<String> atmosphere(){
+        return new AtomicReference<>("dense");
     }
 
     @Bean
-    public String temperature(){
-        return "hot";
+    public AtomicReference<String> temperature(){
+        return new AtomicReference<>( "hot");
     }
 
     @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
