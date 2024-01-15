@@ -18,6 +18,7 @@
         <module>simple-app</module>
         <module>docker-boxing</module>
         <module>great-mathematicians</module>
+        <module>car-parts-reactive</module>
     </modules>
 
     <properties>
