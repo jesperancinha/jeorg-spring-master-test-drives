@@ -51,6 +51,7 @@ class CarController(
 
     @PostMapping("/parts")
     suspend fun createPart(@RequestBody carPart: CarPart) {
+        println(coroutineContext)
         println(carPartRepository)
     }
 }
