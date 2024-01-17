@@ -11,6 +11,7 @@
     <name>JEORG-SMTD :: Parent POM</name>
     <modules>
         <module>car-parts</module>
+        <module>car-parts-kotlin</module>
         <module>planets</module>
         <module>bank-company</module>
         <module>furniture-k-shop</module>
