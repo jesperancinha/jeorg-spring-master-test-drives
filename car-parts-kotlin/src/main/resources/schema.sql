@@ -1,4 +1,7 @@
-CREATE TABLE  PARTS (
-                               id INT NOT NULL,
-                               name VARCHAR(50)  NULL
+DROP TABLE IF EXISTS PARTS;
+
+CREATE TABLE IF NOT EXISTS PARTS
+(
+    id   INT NOT NULL,
+    name VARCHAR(50) NULL
 );
