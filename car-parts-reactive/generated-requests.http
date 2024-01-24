@@ -1,0 +1,11 @@
+###
+GET http://localhost:8080/parts
+
+<> 2024-01-15T074950.200.json
+<> 2024-01-15T074933.200.json
+
+###
+GET http://localhost:8080/break
+
+###
+GET http://localhost:8080/keys

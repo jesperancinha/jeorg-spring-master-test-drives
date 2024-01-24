@@ -1,7 +1,9 @@
 package org.jesperancinha.carpartsreactive
 
+import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.job
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories
@@ -28,6 +30,22 @@ class CarController(
         println(coroutineContext)
         return listOf("breaks", "keys", "lights")
     }
+
+    @GetMapping("/break")
+    suspend fun getBreak(): String {
+        println("Current Coroutine Context -> $coroutineContext")
+        println("Current Coroutine Context -> ${coroutineContext.job}")
+        println("Main Coroutine Context -> ${currentCoroutineContext()}")
+        println("Main Coroutine Context -> ${currentCoroutineContext().job}")
+        println("Current Thread -> ${Thread.currentThread()}")
+        return "break"
+    }
+
+    @GetMapping("/keys")
+    fun getKeys(): String {
+        return "keys"
+    }
+
     @GetMapping("/parts/correct")
     fun getPartsCorrect(): Flow<String> {
         return listOf("breaks", "keys", "lights").asFlow()
