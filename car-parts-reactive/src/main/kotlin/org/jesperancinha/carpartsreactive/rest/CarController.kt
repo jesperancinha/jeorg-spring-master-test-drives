@@ -29,7 +29,10 @@ class CarController(
      * The reason it is being used here is for educational purposes only
      * The Flow interface already uses suspend functions in its collector
      */
-    @GetMapping("/parts/suspend", produces = [MediaType.APPLICATION_JSON_VALUE])
+    @GetMapping(
+        "/parts/suspend",
+        produces = [MediaType.APPLICATION_JSON_VALUE]
+    )
     suspend fun getPartsUsingFlow(): Flow<String> {
         println(coroutineContext)
         return flow {
@@ -46,7 +49,10 @@ class CarController(
      * This way, a call to this method is non-blocking with or without the usage of the suspend keyword
      * The suspend keyword would only be necessary if we perform other operations between the entry point and the flow return value
      */
-    @GetMapping("/parts/correct", produces = [MediaType.APPLICATION_JSON_VALUE])
+    @GetMapping(
+        "/parts/correct",
+        produces = [MediaType.APPLICATION_JSON_VALUE]
+    )
     fun getPartsUsingFlowWithoutSuspend(): Flow<String> {
         // This wold never work because the call isn't suspending
         // This will not trigger Spring to use a coroutine here
