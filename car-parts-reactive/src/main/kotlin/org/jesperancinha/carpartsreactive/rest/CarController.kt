@@ -36,7 +36,6 @@ class CarController(
     suspend fun getPartsUsingFlow(): Flow<String> {
         println(coroutineContext)
         return flow {
-            println(FlowCollector::class::members)
             emit("breaks")
             emit("keys")
             emit("lights")
