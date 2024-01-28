@@ -2,7 +2,6 @@ package org.jesperancinha.carpartsreactive.rest
 
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.job
 import org.jesperancinha.carpartsreactive.CarPart
@@ -68,9 +67,9 @@ class CarController(
     @GetMapping("/break")
     suspend fun getBreak(): String {
         println("Current Coroutine Context -> $coroutineContext")
-        println("Current Coroutine Context -> ${coroutineContext.job}")
+        println("Current Coroutine Job -> ${coroutineContext.job}")
         println("Main Coroutine Context -> ${currentCoroutineContext()}")
-        println("Main Coroutine Context -> ${currentCoroutineContext().job}")
+        println("Main Coroutine Job -> ${currentCoroutineContext().job}")
         println("Current Thread -> ${Thread.currentThread()}")
         return "break"
     }
