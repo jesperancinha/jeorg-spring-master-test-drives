@@ -78,6 +78,14 @@ class CarController(
     fun getKeys(): String {
         return "keys"
     }
+    @GetMapping("/lights")
+    suspend fun getLights(): String {
+        println("Current Coroutine Context -> $coroutineContext")
+        println("Current Coroutine Job -> ${coroutineContext.job}")
+        println("Main Coroutine Context -> ${currentCoroutineContext()}")
+        println("Main Coroutine Job -> ${currentCoroutineContext().job}")
+        return "lights"
+    }
 
 
     @GetMapping("/parts/{id}")
