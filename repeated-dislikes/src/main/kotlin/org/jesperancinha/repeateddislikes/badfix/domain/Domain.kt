@@ -4,7 +4,7 @@ package org.jesperancinha.repeateddislikes.badfix.domain
 import jakarta.persistence.*
 import java.util.UUID
 
-const val SCHEMA_BAD = "bad"
+const val SCHEMA_BAD = "BADFIX"
 
 @Table(name = "users", schema = SCHEMA_BAD)
 @Entity(name = "badfix_user")
