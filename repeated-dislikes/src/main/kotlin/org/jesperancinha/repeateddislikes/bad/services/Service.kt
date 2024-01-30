@@ -3,6 +3,7 @@ package org.jesperancinha.repeateddislikes.bad.services
 import org.jesperancinha.repeateddislikes.bad.dao.ReceiptRepository
 import org.jesperancinha.repeateddislikes.bad.dao.ShopRepository
 import org.jesperancinha.repeateddislikes.bad.dao.UserRepository
+import org.jesperancinha.repeateddislikes.bad.dtos.toDto
 import org.springframework.stereotype.Service
 
 @Service
@@ -11,9 +12,9 @@ class DislikeService(
     val receiptRepository: ReceiptRepository,
     val shopRepository: ShopRepository
 ) {
-    fun getAllUsers() = userRepository.findAll()
+    fun getAllUsers() = userRepository.findAll().map { it.toDto() }
 
-    fun getAllReports() = receiptRepository.findAll()
+    fun getAllReceipts() = receiptRepository.findAll()
 
     fun getAllShops() = shopRepository.findAll()
 }

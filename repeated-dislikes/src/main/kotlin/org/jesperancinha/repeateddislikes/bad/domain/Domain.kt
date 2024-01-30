@@ -13,7 +13,7 @@ data class User(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: UUID,
     val name: String,
-    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.LAZY)
     @JoinTable(
         schema = SCHEMA_BAD,
         name = "bad_dislikes_relations",
@@ -21,12 +21,12 @@ data class User(
         inverseJoinColumns = [JoinColumn(name="receipt_id")]
     )
     val receipts: List<Receipt>,
-    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.LAZY)
     @JoinTable(
         schema = SCHEMA_BAD,
         name = "bad_dislikes_relations",
         joinColumns = [JoinColumn(name= "user_id")],
-        inverseJoinColumns = [JoinColumn(name="receipt_id")]
+        inverseJoinColumns = [JoinColumn(name="shop_id")]
     )
     val shops: List<Shop>
 )
@@ -44,6 +44,7 @@ data class Receipt(
 )
 
 
+
 @Table(name = "shops", schema = SCHEMA_BAD)
 @Entity
 data class Shop(
@@ -51,7 +52,7 @@ data class Shop(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: UUID,
     val name: String,
-    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.LAZY)
     @JoinTable(
         schema = SCHEMA_BAD,
         name = "bad_dislikes_relations",

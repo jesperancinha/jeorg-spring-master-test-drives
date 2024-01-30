@@ -14,8 +14,8 @@ class BadDislikesController(
     @GetMapping("users/all")
     fun getAllUsers() = dislikeService.getAllUsers()
 
-    @GetMapping("reports/all")
-    fun getAllReports() = dislikeService.getAllReports()
+    @GetMapping("receipts/all")
+    fun getAllReceipts() = dislikeService.getAllReceipts()
 
     @GetMapping("shops/all")
     fun getAllShops() = dislikeService.getAllShops()
