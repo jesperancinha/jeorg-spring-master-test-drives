@@ -6,8 +6,8 @@ import org.jesperancinha.repeateddislikes.bad.domain.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
-interface UserRepository : JpaRepository<User, UUID>
+interface BadUserRepository : JpaRepository<User, UUID>
 
-interface ReceiptRepository: JpaRepository<Receipt, UUID>
+interface BadReceiptRepository: JpaRepository<Receipt, UUID>
 
-interface ShopRepository: JpaRepository<Shop, UUID>
+interface BadShopRepository: JpaRepository<Shop, UUID>

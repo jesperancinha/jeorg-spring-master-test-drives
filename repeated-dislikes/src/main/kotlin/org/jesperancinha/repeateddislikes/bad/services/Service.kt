@@ -1,16 +1,14 @@
 package org.jesperancinha.repeateddislikes.bad.services
 
-import org.jesperancinha.repeateddislikes.bad.dao.ReceiptRepository
-import org.jesperancinha.repeateddislikes.bad.dao.ShopRepository
-import org.jesperancinha.repeateddislikes.bad.dao.UserRepository
+import org.jesperancinha.repeateddislikes.bad.dao.*
 import org.jesperancinha.repeateddislikes.bad.dtos.toDto
 import org.springframework.stereotype.Service
 
 @Service
-class DislikeService(
-    val userRepository: UserRepository,
-    val receiptRepository: ReceiptRepository,
-    val shopRepository: ShopRepository
+class BadDislikeService(
+    val userRepository: BadUserRepository,
+    val receiptRepository: BadReceiptRepository,
+    val shopRepository: BadShopRepository
 ) {
     fun getAllUsers() = userRepository.findAll().map { it.toDto() }
 

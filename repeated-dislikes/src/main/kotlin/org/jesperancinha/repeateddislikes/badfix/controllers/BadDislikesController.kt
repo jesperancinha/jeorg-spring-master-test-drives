@@ -1,14 +1,14 @@
-package org.jesperancinha.repeateddislikes.bad.controllers
+package org.jesperancinha.repeateddislikes.badfix.controllers
 
-import org.jesperancinha.repeateddislikes.bad.services.BadDislikeService
+import org.jesperancinha.repeateddislikes.badfix.services.BadFixDislikeService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("bad")
-class BadDislikesController(
-    val dislikeService: BadDislikeService
+@RequestMapping("badfix")
+class BadFixDislikesController(
+    val dislikeService: BadFixDislikeService
 ) {
 
     @GetMapping("users/all")
