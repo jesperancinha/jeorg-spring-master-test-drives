@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 GRADLE_VERSION ?= 8.5
-MODULE_LOCATIONS := the-validation-company
+MODULE_LOCATIONS := the-validation-company \
+					repeated-dislikes
 
 b: build
 build: build-gradle build-maven
