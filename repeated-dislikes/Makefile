@@ -1,0 +1,3 @@
+b: buildw
+buildw:
+	./gradlew
