@@ -15,26 +15,26 @@ data class User(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: String,
     val name: String,
-//    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
-//    @JoinTable(
-//        schema = SCHEMA_BAD,
-//        name = "bad_dislikes_relations",
-//        joinColumns = [JoinColumn(name= "id")],
-//        inverseJoinColumns = [JoinColumn(name="receipt_id")]
-//    )
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @JoinTable(
+        schema = SCHEMA_BAD,
+        name = "bad_dislikes_relations",
+        joinColumns = [JoinColumn(name= "id")],
+        inverseJoinColumns = [JoinColumn(name="receipt_id")]
+    )
 //    @CollectionIdJavaType(value = LongJavaType::class)
 //    @CollectionId(column = Column(name="user_receipt_id"))
-//    val receipts: List<Receipt>,
-//    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
-//    @JoinTable(
-//        schema = SCHEMA_BAD,
-//        name = "bad_dislikes_relations",
-//        joinColumns = [JoinColumn(name= "id")],
-//        inverseJoinColumns = [JoinColumn(name="receipt_id")]
-//    )
+    val receipts: List<Receipt>,
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @JoinTable(
+        schema = SCHEMA_BAD,
+        name = "bad_dislikes_relations",
+        joinColumns = [JoinColumn(name= "id")],
+        inverseJoinColumns = [JoinColumn(name="receipt_id")]
+    )
 //    @CollectionIdJavaType(value = LongJavaType::class)
 //    @CollectionId(column = Column(name="user_shop_id"))
-//    val shops: List<Shop>
+    val shops: List<Shop>
 )
 
 @Table(name = "receipt", schema = SCHEMA_BAD)
@@ -57,14 +57,14 @@ data class Shop(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: String,
     val name: String,
-//    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
-//    @JoinTable(
-//        schema = SCHEMA_BAD,
-//        name = "bad_dislikes_relations",
-//        joinColumns = [JoinColumn(name= "receipt_id")],
-//        inverseJoinColumns = [JoinColumn(name="id")]
-//    )
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @JoinTable(
+        schema = SCHEMA_BAD,
+        name = "bad_dislikes_relations",
+        joinColumns = [JoinColumn(name= "receipt_id")],
+        inverseJoinColumns = [JoinColumn(name="id")]
+    )
 //    @CollectionIdJavaType(value = LongJavaType::class)
-//    @CollectionId(column = Column(name="receipt_id"))
-//    val receipts: List<Receipt>
+//    @CollectionId(column = Column(name="shop_receipt_id"))
+    val receipts: List<Receipt>
 )

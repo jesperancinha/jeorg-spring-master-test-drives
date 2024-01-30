@@ -1,0 +1,1 @@
+SELECT LOG(2);
