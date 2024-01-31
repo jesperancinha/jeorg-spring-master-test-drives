@@ -8,24 +8,15 @@ values ('Cats Para Dice');
 SET @receipt1=random_uuid();
 SET @receipt2=random_uuid();
 SET @userid=(select ID from BAD.USERS WHERE NAME = 'CatOne');
+SET @shop1=(select ID from BAD.SHOPS WHERE NAME = 'Cats Para Dice');
 insert into BAD.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt1, @userid,
-        (select ID from BAD.SHOPS WHERE NAME = 'Cats Para Dice')
-       );
+values (@receipt1, @userid, @shop1);
 insert into BAD.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt2, @userid,
-        (select ID from BAD.SHOPS WHERE NAME = 'Cats Para Dice')
-       );
+values (@receipt2, @userid, @shop1);
 insert into BAD.BAD_DISLIKES_RELATIONS (ID, USER_ID, SHOP_ID, RECEIPT_ID)
-values (random_uuid(), @userid,
-        (select ID from BAD.SHOPS WHERE NAME = 'Cats Para Dice'),
-        @receipt1
-       );
+values (random_uuid(), @userid, @shop1, @receipt1);
 insert into BAD.BAD_DISLIKES_RELATIONS (ID, USER_ID, SHOP_ID, RECEIPT_ID)
-values (random_uuid(), @userid,
-        (select ID from BAD.SHOPS WHERE NAME = 'Cats Para Dice'),
-        @receipt2
-       );
+values (random_uuid(), @userid, @shop1, @receipt2);
 
 
 
@@ -39,34 +30,21 @@ values ('Cats Para Dice BadFix');
 SET @receipt1=random_uuid();
 SET @receipt2=random_uuid();
 SET @userid=(select ID from BADFIX.USERS WHERE NAME = 'CatOne BadFix');
+SET @shop1=(select ID from BADFIX.SHOPS WHERE NAME = 'Cats Para Dice BadFix');
 insert into BADFIX.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt1, @userid,
-        (select ID from BADFIX.SHOPS WHERE NAME = 'Cats Para Dice BadFix')
-       );
+values (@receipt1, @userid, @shop1);
 insert into BADFIX.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt2, @userid,
-        (select ID from BADFIX.SHOPS WHERE NAME = 'Cats Para Dice BadFix')
-       );
+values (@receipt2, @userid, @shop1);
 insert into BADFIX.BAD_DISLIKES_RELATIONS (ID, USER_ID, SHOP_ID, RECEIPT_ID)
-values (random_uuid(), @userid,
-        (select ID from BADFIX.SHOPS WHERE NAME = 'Cats Para Dice BadFix'),
-        @receipt1
-       );
+values (random_uuid(), @userid, @shop1, @receipt1);
 insert into BADFIX.BAD_DISLIKES_RELATIONS (ID, USER_ID, SHOP_ID, RECEIPT_ID)
-values (random_uuid(), @userid,
-        (select ID from BADFIX.SHOPS WHERE NAME = 'Cats Para Dice BadFix'),
-        @receipt2
-       );
-
-
-
+values (random_uuid(), @userid, @shop1, @receipt2);
 
 
 
 truncate table FIX.USERS;
 truncate table FIX.SHOPS;
 truncate table FIX.RECEIPTS;
-truncate table FIX.USERS_RECEIPTS;
 insert into FIX.USERS (ID, NAME)
 values (random_uuid(), 'CatOne Fix');
 insert into FIX.SHOPS (ID, NAME)
@@ -79,7 +57,3 @@ insert into FIX.RECEIPTS (ID, USER_ID, SHOP_ID)
 values (@receipt3, @userid, @shopid);
 insert into FIX.RECEIPTS (ID, USER_ID, SHOP_ID)
 values (@receipt4, @userid, @shopid);
-insert into FIX.USERS_RECEIPTS(USER_ID, RECEIPTS_ID)
-values (@userid, @receipt3);
-insert into FIX.USERS_RECEIPTS(USER_ID, RECEIPTS_ID)
-values (@userid, @receipt4);

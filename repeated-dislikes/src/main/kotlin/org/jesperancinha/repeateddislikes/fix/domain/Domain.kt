@@ -16,7 +16,10 @@ data class User(
     @OneToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
     @JoinTable(
         schema = SCHEMA,
-        name = "USERS_RECEIPTS"
+        name = "RECEIPTS",
+        joinColumns = [jakarta.persistence.JoinColumn(name = "USER_ID")],
+        inverseJoinColumns = [JoinColumn(name="ID")]
+
     )
     val receipts: List<Receipt>,
     @OneToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
@@ -26,7 +29,7 @@ data class User(
     )val shops: List<Shop>
 )
 
-@Table(name = "receipts", schema = SCHEMA)
+@Table(name = "RECEIPTS", schema = SCHEMA)
 @Entity
 data class Receipt(
     @Id

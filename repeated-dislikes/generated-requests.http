@@ -9,4 +9,8 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:8080/bad/users/all
+###
+GET http://localhost:8080/badfix/users/all
+###
 GET http://localhost:8080/fix/users/all
