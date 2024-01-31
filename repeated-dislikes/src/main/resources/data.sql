@@ -74,17 +74,12 @@ values (random_uuid(), 'Cats Para Dice Fix');
 SET @receipt3=random_uuid();
 SET @receipt4=random_uuid();
 SET @userid=(select ID from FIX.USERS WHERE NAME = 'CatOne Fix');
+SET @shopid=(select ID from FIX.SHOPS WHERE NAME = 'Cats Para Dice Fix');
 insert into FIX.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt3,
-        (select ID from FIX.USERS WHERE NAME = 'CatOne Fix'),
-        (select ID from FIX.SHOPS WHERE NAME = 'Cats Para Dice Fix')
-       );
+values (@receipt3, @userid, @shopid);
 insert into FIX.RECEIPTS (ID, USER_ID, SHOP_ID)
-values (@receipt4,
-        (select ID from FIX.USERS WHERE NAME = 'CatOne Fix'),
-        (select ID from FIX.SHOPS WHERE NAME = 'Cats Para Dice Fix')
-       );
+values (@receipt4, @userid, @shopid);
 insert into FIX.USERS_RECEIPTS(USER_ID, RECEIPTS_ID)
-values (@userid,@receipt3);
+values (@userid, @receipt3);
 insert into FIX.USERS_RECEIPTS(USER_ID, RECEIPTS_ID)
-values (@userid,@receipt4);
+values (@userid, @receipt4);
