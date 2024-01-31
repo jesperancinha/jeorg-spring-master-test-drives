@@ -3,6 +3,7 @@ package org.jesperancinha.repeateddislikes.badfix.domain
 
 import jakarta.persistence.*
 import java.util.UUID
+import kotlin.random.Random
 
 const val SCHEMA_BAD = "BADFIX"
 
@@ -30,6 +31,7 @@ data class User(
     )
     val shops: Set<Shop>
 )
+
 
 @Table(name = "receipts", schema = SCHEMA_BAD)
 @Entity(name = "badfix_receipt")
@@ -60,3 +62,4 @@ data class Shop(
     )
     val receipts: List<Receipt>
 )
+

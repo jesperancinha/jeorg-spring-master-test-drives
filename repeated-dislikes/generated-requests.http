@@ -1,0 +1,12 @@
+###
+POST http://localhost:8080/fix/users
+Content-Type: application/json
+
+{
+  "name": "Joao",
+  "receipts": [],
+  "shops": []
+}
+
+###
+GET http://localhost:8080/fix/users/all

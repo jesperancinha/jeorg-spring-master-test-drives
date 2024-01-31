@@ -11,7 +11,7 @@ const val SCHEMA = "fix"
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    val id: UUID,
+    val id: UUID? = UUID.randomUUID(),
     val name: String,
     @OneToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
     @JoinTable(

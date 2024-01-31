@@ -24,7 +24,7 @@ data class ShopDTO(
 )
 
 
-fun User.toDto() = UserDTO (
+fun User.toDto() = UserDTO(
     id = id,
     name = name,
     receipts = receipts.map { it.id },
