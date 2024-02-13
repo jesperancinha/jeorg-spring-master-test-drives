@@ -114,7 +114,7 @@
         <kotlin.version>1.9.22</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>5.2.0</easymock.version>
-        <micrometer.version>1.12.2</micrometer.version>
+        <micrometer.version>1.12.3</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
         <kotest.version>5.8.0</kotest.version>
         <mockk.version>1.13.9</mockk.version>
