@@ -83,7 +83,7 @@
         <bootstrap.version>5.3.3</bootstrap.version>
         <stomp-websocket.version>2.3.4</stomp-websocket.version>
         <sockjs-client.version>1.5.1</sockjs-client.version>
-        <webjars-locator-core.version>0.55</webjars-locator-core.version>
+        <webjars-locator-core.version>0.56</webjars-locator-core.version>
         <httpclient.version>4.5.14</httpclient.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <commons-io.version>2.15.1</commons-io.version>
