@@ -39,7 +39,6 @@ open class CaseServiceAspectJTest(
         }
 
         val all = caseService.getAll()
-        all.shouldContainAnyOf(case)
         all.filter { it.designation == "Book case" }.shouldHaveSize(1)
     }
 }

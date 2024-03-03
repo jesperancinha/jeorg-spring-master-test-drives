@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-GRADLE_VERSION ?= 8.5
+GRADLE_VERSION ?= 8.6
 MODULE_LOCATIONS := the-validation-company \
 					repeated-dislikes
 
