@@ -1,7 +1,6 @@
 package org.jesperancinha.smtd.furniture.service
 
 import io.kotest.matchers.collections.shouldHaveSize
-import jakarta.transaction.Transactional
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.furniture.model.Case
 import org.junit.jupiter.api.Test
@@ -17,8 +16,11 @@ open class CaseServiceAspectJTest(
     val caseService: CaseService
 ) {
 
+    /**
+     * All transactions fail because they all rollback due to exception.
+     * The expected result is 0 Books with the designation inserted into the database.
+     */
     @Test
-    @Transactional
     open fun insertCaseStartNonTransactional() {
         val case = Case(
             id = -1L,
@@ -36,6 +38,6 @@ open class CaseServiceAspectJTest(
         }
 
         val all = caseService.getAll()
-        all.filter { it.designation == "Book case 2" }.shouldHaveSize(1)
+        all.filter { it.designation == "Book case 2" }.shouldHaveSize(0)
     }
 }
