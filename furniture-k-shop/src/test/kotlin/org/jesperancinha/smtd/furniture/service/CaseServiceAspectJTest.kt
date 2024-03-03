@@ -1,9 +1,9 @@
 package org.jesperancinha.smtd.furniture.service
 
-import org.assertj.core.api.Assertions.assertThat
+import io.kotest.matchers.collections.shouldHaveSize
+import jakarta.transaction.Transactional
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.furniture.model.Case
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -18,14 +18,16 @@ open class CaseServiceAspectJTest(
 ) {
 
     @Test
-    fun insertCaseStartNonTransactional() {
+    @Transactional
+    open fun insertCaseStartNonTransactional() {
+        val case = Case(
+            id = -1L,
+            designation = "Book case 2",
+            weight = 230
+        )
         try {
             caseService.insertCaseStartOneTransactional(
-                Case(
-                    id = 100L,
-                    designation = "Book case",
-                    weight = 230
-                )
+                case
             )
         } catch (exception: Exception) {
             ConsolerizerComposer.outSpace()
@@ -33,6 +35,7 @@ open class CaseServiceAspectJTest(
                 .reset()
         }
 
-        assertThat(caseService.getAll()).hasSize(1);
+        val all = caseService.getAll()
+        all.filter { it.designation == "Book case 2" }.shouldHaveSize(1)
     }
 }
