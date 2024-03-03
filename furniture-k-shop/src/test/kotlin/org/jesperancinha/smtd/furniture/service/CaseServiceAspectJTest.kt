@@ -25,7 +25,7 @@ open class CaseServiceAspectJTest(
     fun insertCaseStartNonTransactional() {
         val case = Case(
             id = -1L,
-            designation = "Book case",
+            designation = "Book case 2",
             weight = 230
         )
         try {
@@ -39,6 +39,6 @@ open class CaseServiceAspectJTest(
         }
 
         val all = caseService.getAll()
-        all.filter { it.designation == "Book case" }.shouldHaveSize(1)
+        all.filter { it.designation == "Book case 2" }.shouldHaveSize(1)
     }
 }
