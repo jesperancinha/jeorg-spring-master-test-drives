@@ -19,7 +19,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("io.kotest:kotest-assertions-core:5.8.0")
-	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
+	testImplementation("io.kotest:kotest-runner-junit5:5.8.1")
 }
 
 tasks.withType<Test> {
