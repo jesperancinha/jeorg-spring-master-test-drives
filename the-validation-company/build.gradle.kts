@@ -1,7 +1,7 @@
 plugins {
 	id("org.springframework.boot") version "3.2.3"
 	id("io.spring.dependency-management") version "1.1.4"
-	kotlin("jvm") version "1.9.22"
+	kotlin("jvm") version "1.9.23"
 	kotlin("plugin.spring") version "1.9.23"
 }
 
@@ -19,7 +19,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("io.kotest:kotest-assertions-core:5.8.0")
-	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
+	testImplementation("io.kotest:kotest-runner-junit5:5.8.1")
 }
 
 tasks.withType<Test> {
