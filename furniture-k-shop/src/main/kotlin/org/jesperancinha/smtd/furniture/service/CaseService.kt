@@ -20,20 +20,27 @@ open class CaseService(
     fun getById(id: Long): Case? = caseRepository.findByIdOrNull(id)
 
     @Transactional(readOnly = true, propagation = Propagation.NESTED, rollbackFor = [CaseException::class])
-    open fun insertCase(case: Case) {
+    open fun insertFailCase(case: Case) {
         caseRepository.save(case)
         throw CaseException("FailCase")
     }
+
+    @Transactional
+    open fun insertCase(case: Case) = caseRepository.save(case)
 
     @Transactional(readOnly = true, propagation = Propagation.REQUIRES_NEW, rollbackFor = [CaseException::class])
     open fun insertCaseStartOneTransactional(case: Case) {
         caseRepository.save(case)
         try {
-            insertCase(case)
+            insertFailCase(case)
+
         } catch (caseException: CaseException) {
             ConsolerizerComposer.outSpace()
                 .green(caseException)
                 .reset()
+            caseRepository.findAll().forEach {
+                println(it)
+            }
             throw caseException
         }
     }
