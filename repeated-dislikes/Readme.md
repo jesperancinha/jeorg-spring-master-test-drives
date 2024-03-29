@@ -20,8 +20,6 @@ In this package we create a very inefficient way to work around the problem. It 
 
 Here we implement a response to the problem in `Package Bad`. Here we create tables correctly in the database without resourcing to too much code changes and creating a database `ER` model that makes sense
 
-
-
 ## About me
 
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)
