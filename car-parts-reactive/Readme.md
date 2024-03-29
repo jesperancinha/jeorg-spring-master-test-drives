@@ -4,6 +4,16 @@
 
 Study of a reactive application using Kotlin Coroutines
 
+## How to
+
+
+```shell
+git clone https://github.com/jesperancinha/jeorg-spring-master-test-drives.git
+cd car-parts-reactive
+make b
+make run
+```
+
 ## References
 
 ### Books
