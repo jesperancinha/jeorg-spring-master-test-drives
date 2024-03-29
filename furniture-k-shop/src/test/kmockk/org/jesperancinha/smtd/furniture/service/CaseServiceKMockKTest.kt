@@ -18,6 +18,8 @@ internal class CaseServiceKMockKTest {
 
     @Test
     fun insertCaseStartOneTransactional() {
+        every { caseRepository.findAll() } returns emptyList()
+
         val caseService = CaseService(caseRepository)
         val case = Case(
             id = 1L,
