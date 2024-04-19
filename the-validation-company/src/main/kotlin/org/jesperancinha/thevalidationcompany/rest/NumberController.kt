@@ -1,12 +1,10 @@
 package org.jesperancinha.thevalidationcompany.rest
 
 import jakarta.validation.ConstraintViolation
-import jakarta.validation.ConstraintViolationException
 import jakarta.validation.Valid
 import jakarta.validation.Validator
 import org.jesperancinha.thevalidationcompany.dto.AccountNumbersDto
 import org.jesperancinha.thevalidationcompany.dto.AccountNumbersPassiveDto
-import org.jesperancinha.thevalidationcompany.fiveminutes.json.AccountAssertsJsonDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
