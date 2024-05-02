@@ -3,6 +3,9 @@ name: JSMTD jeorg-spring-master-test-drives-pull-request
 on:
   pull_request:
     branches: [ main ]
+  push:
+    branches:
+      - '!master'
 
 jobs:
   build:
