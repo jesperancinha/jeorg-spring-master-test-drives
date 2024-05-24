@@ -1,8 +1,8 @@
 plugins {
-	id("org.springframework.boot") version "3.2.5"
+	id("org.springframework.boot") version "3.3.0"
 	id("io.spring.dependency-management") version "1.1.5"
-	kotlin("jvm") version "1.9.24"
-	kotlin("plugin.spring") version "1.9.24"
+	kotlin("jvm") version "2.0.0"
+	kotlin("plugin.spring") version "2.0.0"
 }
 
 group = "org.jesperancinha"
@@ -19,7 +19,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("io.kotest:kotest-assertions-core:5.9.0")
-	testImplementation("io.kotest:kotest-runner-junit5:5.8.1")
+	testImplementation("io.kotest:kotest-runner-junit5:5.9.0")
 }
 
 tasks.withType<Test> {
