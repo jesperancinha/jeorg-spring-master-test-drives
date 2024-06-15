@@ -7,7 +7,23 @@ updates:
     ignore:
       - dependency-name: "jakarta.servlet:jakarta.servlet-api"
         versions: ["6.0.0"]
+    groups:
+      postgresql:
+        patterns:
+          - "*postgresql*"
+      maven:
+        patterns:
+          - "*maven*"
+      kotlin:
+        patterns:
+          - "*kotlin*"
+
   - package-ecosystem: "gradle"
     directory: "/the-validation-company"
     schedule:
       interval: "daily"
+    groups:
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin.*"
+          - "com.google.devtools.ksp"
