@@ -60,3 +60,5 @@ upgrade:
 		cd $$CURRENT; \
 	done
 local-pipeline: local no-test b
+rewrite:
+	mvn rewrite:run
