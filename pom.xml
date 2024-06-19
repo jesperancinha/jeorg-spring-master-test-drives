@@ -40,7 +40,6 @@
         <h2.version>2.2.224</h2.version>
         <postgresql.version>42.7.3</postgresql.version>
         <hibernate-entitymanager.version>5.6.15.Final</hibernate-entitymanager.version>
-        <spring-data.version>2.2.4.RELEASE</spring-data.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
@@ -69,7 +68,7 @@
         <maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.3.0</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <spring-boot-starter-parent.version>3.2.5</spring-boot-starter-parent.version>
+        <spring-boot-starter-parent.version>3.3.0</spring-boot-starter-parent.version>
         <spring-boot-maven-plugin.version>3.3.0</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
