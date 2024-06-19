@@ -11,8 +11,7 @@ import org.springframework.test.context.ActiveProfiles
 
 @ActiveProfiles("aspectj")
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-open class CaseServiceAspectJTest(
-    @Autowired
+open class CaseServiceAspectJTest @Autowired constructor(
     val caseService: CaseService
 ) {
 
