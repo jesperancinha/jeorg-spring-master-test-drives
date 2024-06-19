@@ -40,7 +40,6 @@
         <h2.version>2.2.224</h2.version>
         <postgresql.version>42.7.3</postgresql.version>
         <hibernate-entitymanager.version>5.6.15.Final</hibernate-entitymanager.version>
-        <spring-data.version>2.2.4.RELEASE</spring-data.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
         <!-- Camel -->
