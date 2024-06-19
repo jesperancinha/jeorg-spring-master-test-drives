@@ -17,6 +17,9 @@ updates:
       kotlin:
         patterns:
           - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
 
   - package-ecosystem: "gradle"
     directory: "/the-validation-company"
