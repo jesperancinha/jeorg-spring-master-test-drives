@@ -62,3 +62,5 @@ upgrade:
 local-pipeline: local no-test b
 rewrite:
 	mvn rewrite:run
+deps-plugins-update:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/pluginUpdatesOne.sh | bash
