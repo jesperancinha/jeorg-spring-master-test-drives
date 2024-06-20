@@ -20,6 +20,9 @@ updates:
       spring:
         patterns:
           - "*spring*"
+      openrewrite:
+        patterns:
+          - "*openrewrite*"
 
   - package-ecosystem: "gradle"
     directory: "/the-validation-company"
