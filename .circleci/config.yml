@@ -33,7 +33,8 @@ jobs:
 
       - run:
           name: Build
-          command: export JAVA_HOME=/opt/jdk21 &&
+          command: ls ls /opt/jdk21 &&
+            export JAVA_HOME=/opt/jdk21 &&
             docker-compose -v &&
             export PATH=$JAVA_HOME/bin:$PATH &&
             java -version &&
