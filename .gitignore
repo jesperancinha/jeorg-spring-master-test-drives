@@ -47,3 +47,10 @@ tmlog*.log
 
 # Codecov
 codecov.yml
+
+## Automation
+cypressUpdateOne.sh
+docker-composetmp.yml
+packagetmp.json
+pluginUpdatesOne.sh
+javaUpdatesOne.sh
