@@ -1,8 +1,6 @@
-FROM azul/zulu-openjdk:21.0.1-jre-headless
+FROM eclipse-temurin:21-alpine
 
-RUN apt update -y
-
-RUN apt install curl -y
+RUN apk add curl
 
 COPY target/docker-boxing-port.jar ~/
 
