@@ -34,6 +34,9 @@ jobs:
       - run:
           name: Build
           command: docker-compose -v &&
+            export JAVA_HOME=/opt/jdk21 &&
+            echo "export JAVA_HOME=/opt/jdk21" >> ~/.bashrc &&
+            echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc
             java -version &&
             mvn clean install -DskipTests
 
