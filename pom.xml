@@ -28,7 +28,7 @@
 
         <!-- External -->
         <spring.version>5.2.1.RELEASE</spring.version>
-        <lombok.version>1.18.32</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
         <jscience>4.3.1</jscience>
         <commons.lang3>3.4</commons.lang3>
         <guava.version>33.2.1-jre</guava.version>
