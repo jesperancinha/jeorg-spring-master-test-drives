@@ -23,6 +23,10 @@ updates:
       openrewrite:
         patterns:
           - "*openrewrite*"
+      jackson:
+        patterns:
+          - "*jackson*"
+          - "jackson*"
 
   - package-ecosystem: "gradle"
     directory: "/the-validation-company"
@@ -33,3 +37,7 @@ updates:
         patterns:
           - "org.jetbrains.kotlin.*"
           - "com.google.devtools.ksp"
+      jackson:
+        patterns:
+          - "*jackson*"
+          - "jackson*"
