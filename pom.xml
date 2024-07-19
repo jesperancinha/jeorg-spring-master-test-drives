@@ -68,7 +68,7 @@
         <maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.3.1</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <spring-boot-starter-parent.version>3.3.1</spring-boot-starter-parent.version>
+        <spring-boot-starter-parent.version>3.3.2</spring-boot-starter-parent.version>
         <spring-boot-maven-plugin.version>3.3.1</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
@@ -86,7 +86,7 @@
         <httpclient.version>4.5.14</httpclient.version>
         <commons-lang3.version>3.15.0</commons-lang3.version>
         <commons-io.version>2.16.1</commons-io.version>
-        <cucumber.version>7.18.0</cucumber.version>
+        <cucumber.version>7.18.1</cucumber.version>
         <mariadb-java-client.version>3.4.1</mariadb-java-client.version>
         <embedded-mariadb.version>3.1.7</embedded-mariadb.version>
         <mariaDB4j-springboot.version>3.1.0</mariaDB4j-springboot.version>
