@@ -27,6 +27,10 @@ updates:
         patterns:
           - "*jackson*"
           - "jackson*"
+      micrometer:
+        patterns:
+          - "*micrometer*"
+          - "micrometer*"
 
   - package-ecosystem: "gradle"
     directory: "/the-validation-company"
