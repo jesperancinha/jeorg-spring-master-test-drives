@@ -1,5 +1,5 @@
-SHELL := /bin/bash
-GRADLE_VERSION ?= 8.6
+include Makefile.mk
+
 MODULE_LOCATIONS := the-validation-company \
 					repeated-dislikes
 
@@ -10,7 +10,7 @@ build-maven:
 	mvn clean install -DskipTests
 	mvn test
 build-gradle:
-	cd the-validation-company; \
+	gradle wrapper; \
 	./gradlew build; \
 	gradle test
 test:
@@ -66,7 +66,9 @@ deps-plugins-update:
 	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/pluginUpdatesOne.sh | bash -s -- $(PARAMS)
 deps-java-update:
 	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/javaUpdatesOne.sh | bash
-deps-quick-update: deps-plugins-update deps-java-update
+deps-gradle-update:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/gradleUpdatesOne.sh | bash
+deps-quick-update: deps-plugins-update deps-java-update deps-gradle-update
 accept-prs:
 	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/acceptPR.sh | bash
 

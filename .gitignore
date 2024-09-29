@@ -30,7 +30,7 @@ hs_err_pid*
 target
 build
 bin
-
+.gradle
 
 # OS
 .DS_Store

@@ -33,7 +33,7 @@ updates:
           - "micrometer*"
 
   - package-ecosystem: "gradle"
-    directory: "/the-validation-company"
+    directory: "/"
     schedule:
       interval: "daily"
     groups:
