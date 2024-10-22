@@ -23,12 +23,14 @@ start-service-crac: cleanup
 	$(SETUP); \
 	java -version; \
 	java -XX:CRaCCheckpointTo=./tmp_checkpoint -jar target/crac-service-java.jar
+start-siege:
+	siege -c 1 -r 100000 -b http://localhost:8080
 create-checkpoint:
 	$(SETUP); \
 	jcmd target/crac-service-java.jar JDK.checkpoint
 start-checkpoint:
 	$(SETUP); \
-	java -XX:CRaCRestoreFrom=./tmp_checkpoint -XX:CRaCCheckpointTo=./tmp_checkpoint2
+	java -XX:CRaCRestoreFrom=./tmp_checkpoint
 cleanup:
 	if [ -d tmp_checkpoint ]; then rm -rf tmp_checkpoint; fi;
 docker-build-start:
