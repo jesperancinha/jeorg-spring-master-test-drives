@@ -20,6 +20,7 @@
         <module>docker-boxing</module>
         <module>great-mathematicians</module>
         <module>car-parts-reactive</module>
+        <module>crac-service-java</module>
     </modules>
 
     <properties>
@@ -127,6 +128,7 @@
         <opentelemetry-exporter-zipkin.version>1.43.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.5.2</loki-logback-appender.version>
         <rewrite-maven-plugin.version>5.42.2</rewrite-maven-plugin.version>
+        <crac.version>1.4.0</crac.version>
     </properties>
 
     <build>
@@ -603,6 +605,11 @@
                 <groupId>com.github.loki4j</groupId>
                 <artifactId>loki-logback-appender</artifactId>
                 <version>${loki-logback-appender.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.crac</groupId>
+                <artifactId>crac</artifactId>
+                <version>${crac.version}</version>
             </dependency>
 
             <dependency>

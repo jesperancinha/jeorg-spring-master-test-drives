@@ -1,0 +1,6 @@
+services:
+  crac_service:
+    hostname: crac_service
+    container_name: crac_service
+    build:
+      context: .
