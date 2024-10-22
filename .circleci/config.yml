@@ -14,12 +14,12 @@ jobs:
       - checkout
 
       - run:
-          name: Install SDK 11
-          command: wget https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.25%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.25_9.tar.gz &&
-            tar -xvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.25_9.tar.gz &&
-            sudo mv jdk-11*/ /opt/jdk11 &&
-            export JAVA_HOME=/opt/jdk11 &&
-            echo "export JAVA_HOME=/opt/jdk11" >> ~/.bashrc &&
+          name: Install SDK 21
+          command: wget https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz &&
+            tar -xvf OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz &&
+            sudo mv jdk-21*/ /opt/jdk21 &&
+            export JAVA_HOME=/opt/jdk21 &&
+            echo "export JAVA_HOME=/opt/jdk21" >> ~/.bashrc &&
             echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc
 
       - run:
@@ -34,8 +34,8 @@ jobs:
       - run:
           name: Build
           command: ls -l &&
-            ls /opt/jdk11 &&
-            export JAVA_HOME=/opt/jdk11 &&
+            ls /opt/jdk21 &&
+            export JAVA_HOME=/opt/jdk21 &&
             docker-compose -v &&
             export PATH=$JAVA_HOME/bin:$PATH &&
             java -version &&
