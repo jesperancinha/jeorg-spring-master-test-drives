@@ -17,6 +17,7 @@ Running the Makefile in the IDE creates some pointers that may confuse the whole
 
 ## Resources
 
+-   [CRaC - Coordinated Restore at Checkpoint by Michael Bien](https://mbien.dev/blog/entry/crac-coordinated-restore-at-checkpoint)
 -   [Runtime efficiency with Spring (today and tomorrow)](https://spring.io/blog/2023/10/16/runtime-efficiency-with-spring)
 -   [Open JDK CRaC wiki](https://wiki.openjdk.org/display/crac)
 -   [SpringBoot 3.2 + CRaC](https://foojay.io/today/springboot-3-2-crac/)
