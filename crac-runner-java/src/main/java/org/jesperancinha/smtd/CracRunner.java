@@ -2,7 +2,6 @@ package org.jesperancinha.smtd;
 
 import org.crac.*;
 
-import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class CracRunner implements Resource, AutoCloseable {
@@ -14,16 +13,18 @@ public class CracRunner implements Resource, AutoCloseable {
     @Override
     public void beforeCheckpoint(Context<? extends Resource> context) throws Exception {
         System.out.println("Before Checkpoint!");
+        count.addAndGet(1);
     }
 
     @Override
     public void afterRestore(Context<? extends Resource> context) throws Exception {
         System.out.println("After Restore!");
+        count.addAndGet(1);
     }
 
     static AtomicInteger count = new AtomicInteger(0);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(Runtime.version());
 
         count.addAndGet(1);
