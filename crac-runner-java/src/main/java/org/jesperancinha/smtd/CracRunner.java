@@ -3,14 +3,9 @@ package org.jesperancinha.smtd;
 import org.crac.*;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static java.nio.channels.Channels.newWriter;
-
 public class CracRunner implements Resource, AutoCloseable {
-
-    private OutputStreamWriter writer;
 
     public CracRunner() {
         Core.getGlobalContext().register(this);
@@ -43,14 +38,14 @@ public class CracRunner implements Resource, AutoCloseable {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-        } else{
+        } else {
             System.out.println("Process will continue with PID: " + ProcessHandle.current().pid());
             System.out.println("Counter is at: " + count);
         }
     }
 
     @Override
-    public void close() throws Exception {
-
+    public void close() {
+        System.out.println("This is resource is now closed!");
     }
 }
