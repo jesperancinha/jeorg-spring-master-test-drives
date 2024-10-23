@@ -21,6 +21,7 @@
         <module>great-mathematicians</module>
         <module>car-parts-reactive</module>
         <module>crac-service-java</module>
+        <module>crac-runner-java</module>
     </modules>
 
     <properties>
