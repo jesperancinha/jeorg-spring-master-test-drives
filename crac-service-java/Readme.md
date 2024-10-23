@@ -26,6 +26,7 @@ Running the Makefile in the IDE creates some pointers that may confuse the whole
 -   [CRaC (Coordinated Restore at Checkpoint)](https://openjdk.org/projects/crac/)
 -   [Introduction to Project CRaC: Enhancing Runtime Efficiency in Java & Spring Development](https://www.youtube.com/watch?v=sVXUx_Y4hRU)
 -   [How to Run a Java Application with CRaC in a Docker Container](https://foojay.io/today/how-to-run-a-java-application-with-crac-in-a-docker-container/)
+-   [Using CRIU with Azul - Permissions](https://docs.azul.com/core/crac/crac-debugging)
 
 ## About me
 
