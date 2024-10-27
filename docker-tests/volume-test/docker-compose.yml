@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - shared_data:/usr/share/nginx/html
+
+  worker1:
+    image: eclipse-temurin:21-alpine
+    volumes:
+      - shared_data:/data
+    command: ["sh", "-c", "echo 'This is a shared file. Text from worker 1' >> /data/shared_file.txt"]
+
+  worker2:
+    image: eclipse-temurin:21-alpine
+    volumes:
+      - shared_data:/data
+    command: ["sh", "-c", "echo 'This is a shared file. Text from worker 2' >> /data/shared_file.txt"]
+
+volumes:
+  shared_data:
