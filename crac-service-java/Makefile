@@ -22,7 +22,7 @@ start-service: cleanup
 start-service-crac: cleanup
 	$(SETUP); \
 	java -version; \
-	java -XX:CRaCCheckpointTo=./tmp_checkpoint -jar target/crac-service-java.jar
+	java -XX:CRaCCheckpointTo=./tmp_checkpoint -cp target/crac-service-java.jar org.jesperancinha.cracservice.CracServiceApplication
 start-siege:
 	siege -c 1 -r 100000 -b http://localhost:8080
 create-checkpoint:
