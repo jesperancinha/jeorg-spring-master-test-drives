@@ -30,7 +30,7 @@ create-checkpoint:
 	jcmd target/crac-service-java.jar JDK.checkpoint
 start-checkpoint:
 	$(SETUP); \
-	java -XX:CRaCRestoreFrom=./tmp_checkpoint
+	java -XX:CRaCRestoreFrom=./tmp_checkpoint -jar target/crac-service-java.jar
 cleanup:
 	if [ -d tmp_checkpoint ]; then rm -rf tmp_checkpoint; fi;
 docker-build-start:
