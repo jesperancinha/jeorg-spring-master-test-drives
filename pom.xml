@@ -71,7 +71,7 @@
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <spring-boot-starter-parent.version>3.3.5</spring-boot-starter-parent.version>
-        <spring-boot-maven-plugin.version>3.3.5</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.4.0</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
         <ehcache.version>3.10.8</ehcache.version>
