@@ -13,6 +13,9 @@ There are a few profiles available.
 ```bash
 curl -i -X POST http://localhost:8081/chairs -H 'Content-type: application/json' --data '{ "id": "1", "designation":"TABLE123", "weight":"100"}'
 ```
+```bash
+curl -i -X GET http://localhost:8081/hello
+```
 
 ### Profile `broken`
 
