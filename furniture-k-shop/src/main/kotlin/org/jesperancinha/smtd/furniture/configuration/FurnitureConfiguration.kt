@@ -7,14 +7,12 @@ import org.springframework.web.servlet.function.RequestPredicates.GET
 import org.springframework.web.servlet.function.RouterFunction
 import org.springframework.web.servlet.function.RouterFunctions
 import org.springframework.web.servlet.function.ServerResponse
-import java.lang.invoke.VarHandle.AccessMode.GET
 
 @Configuration
 open class FurnitureConfiguration {
 
     @Bean
     open fun restTemplate(): RestTemplate = RestTemplate()
-
 
     @Bean
     open fun routes(): RouterFunction<ServerResponse> {
