@@ -37,6 +37,16 @@ tasks.bootBuildImage {
 	builder.set("paketobuildpacks/builder-jammy-base:latest")
 }
 
+tasks {
+	bootJar {
+		archiveFileName.set("the-validation-company.jar") // Customize the JAR file name
+	}
+
+	jar {
+		enabled = false
+	}
+}
+
 kotlin {
 	jvmToolchain(21)
 }
