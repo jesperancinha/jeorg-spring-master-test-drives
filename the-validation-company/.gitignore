@@ -38,3 +38,5 @@ out/
 
 # CDS
 application.jsa
+classlist.txt
+*.jsa
