@@ -27,20 +27,41 @@ cds-launch-logs-detail:
 # Spring CDS --- The old way
 # This command will hang in a Spring application
 cds-old-class-list:
-	java -Xlog:class+load -jar the-validation-company/the-validation-company.jar > classlist.txt
+	java -Xlog:class+load -jar build/libs/the-validation-company.jar > classlist.txt
 # This would create the jsa file - it doesn't work in spring applications
 # Use cds-archive to create the Java Shared Archive file instead
 cds-old-archive:
 	java -Xshare:dump \
          -XX:SharedClassListFile=classlist.txt \
          -XX:SharedArchiveFile=application.jsa \
-         -cp the-validation-company/the-validation-company.jar
+         -cp build/libs/the-validation-company.jar
 cds-old-launch:
 	java -Xshare:on \
          -XX:SharedArchiveFile=application.jsa \
+         -XX:+UnlockDiagnosticVMOptions \
+         -XX:NativeMemoryTracking=summary \
          -jar the-validation-company/the-validation-company.jar
 cds-old-launch-logs:
 	java -Xshare:on \
          -XX:SharedArchiveFile=application.jsa \
          -Xlog:cds \
          -jar the-validation-company/the-validation-company.jar
+# Verify CDS
+cds-verify-class-loading:
+	jcmd the-validation-company/the-validation-company.jar VM.classloader_stats
+	jcmd build/libs/the-validation-company.jar VM.classloader_stats
+cds-verify-cds-logs:
+	java -Xshare:on -Xlog:cds -jar the-validation-company/the-validation-company.jar
+	java -Xlog:cds -jar build/libs/the-validation-company.jar
+cds-verify-class-loaders:
+	jcmd the-validation-company/the-validation-company.jar VM.classloaders
+	jcmd build/libs/the-validation-company.jar VM.classloaders
+cds-verify-native-memory:
+	jcmd the-validation-company/the-validation-company.jar VM.native_memory summary
+	jcmd build/libs/the-validation-company.jar VM.native_memory summary
+cds-verify-issued-commands:
+	jcmd the-validation-company/the-validation-company.jar VM.command_line
+	jcmd build/libs/the-validation-company.jar VM.command_line
+cds-verify-system-properties:
+	jcmd the-validation-company/the-validation-company.jar VM.system_properties
+	jcmd build/libs/the-validation-company.jar VM.system_properties
