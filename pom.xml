@@ -112,7 +112,7 @@
 
         <!-- Kotlin -->
         <kotlinx-serialization-json.version>1.7.3</kotlinx-serialization-json.version>
-        <kotlin.version>2.0.21</kotlin.version>
+        <kotlin.version>2.1.0</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>5.5.0</easymock.version>
         <micrometer.version>1.14.1</micrometer.version>
@@ -128,7 +128,7 @@
         <micrometer-tracing-bridge-otel.version>1.4.0</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.44.1</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.5.2</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>5.45.1</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>5.46.1</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
@@ -469,11 +469,6 @@
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk7</artifactId>
-                <version>${kotlin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-stdlib-common</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
             <dependency>
