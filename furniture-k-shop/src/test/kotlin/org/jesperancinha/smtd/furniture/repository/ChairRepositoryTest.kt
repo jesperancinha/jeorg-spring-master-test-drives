@@ -26,8 +26,6 @@ open class ChairRepositoryTest(
     val chairList: MutableList<Chair>,
     @Autowired
     val caseList: MutableList<Case>,
-    @MockitoBean
-    val healthProperties: HealthProperties
 ) {
 
     @Test
@@ -56,7 +54,6 @@ open class ChairRepositoryTest(
         )
         assertThat(caseList).hasSize(2)
         assertThat(chairList).hasSize(1)
-        assertThat(healthProperties).isNotNull()
     }
 
     /**
@@ -67,6 +64,5 @@ open class ChairRepositoryTest(
     fun testChairRepository2() {
         assertThat(caseList).hasSize(0)
         assertThat(chairList).hasSize(1)
-        assertThat(healthProperties).isNotNull()
     }
 }
