@@ -9,14 +9,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.actuate.autoconfigure.health.HealthProperties
-import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.annotation.DirtiesContext
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.ContextHierarchy
+import org.springframework.test.context.bean.override.mockito.MockitoBean
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
-@MockBean(HealthProperties::class)
 @ContextHierarchy(
     value = [
         ContextConfiguration(classes = [ChairConfigurationTest::class]),
@@ -26,7 +25,9 @@ open class ChairRepositoryTest(
     @Autowired
     val chairList: MutableList<Chair>,
     @Autowired
-    val caseList: MutableList<Case>
+    val caseList: MutableList<Case>,
+    @MockitoBean
+    val healthProperties: HealthProperties
 ) {
 
     @Test
@@ -55,6 +56,7 @@ open class ChairRepositoryTest(
         )
         assertThat(caseList).hasSize(2)
         assertThat(chairList).hasSize(1)
+        assertThat(healthProperties).isNotNull()
     }
 
     /**
@@ -65,5 +67,6 @@ open class ChairRepositoryTest(
     fun testChairRepository2() {
         assertThat(caseList).hasSize(0)
         assertThat(chairList).hasSize(1)
+        assertThat(healthProperties).isNotNull()
     }
 }

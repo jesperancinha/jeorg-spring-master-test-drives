@@ -8,10 +8,10 @@ import org.jesperancinha.smtd.furniture.service.ChairService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.bean.override.mockito.MockitoBean
 
 
 @SpringBootTest
@@ -44,9 +44,9 @@ open class PrecedenceTest(
     @Configuration
     @ComponentScan(basePackages = ["org.jesperancinha.smtd.furniture.service"])
     open class InnerPrecedenceConfiguration {
-        @MockBean
+        @MockitoBean
         lateinit var chairRepository : ChairRepository
-        @MockBean
+        @MockitoBean
         lateinit var caseRepository: CaseRepository
     }
 }
