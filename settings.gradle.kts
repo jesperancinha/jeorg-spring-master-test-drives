@@ -4,3 +4,4 @@ plugins {
 rootProject.name = "jeorg-spring-master-test-drives"
 include("the-validation-company")
 include("repeated-dislikes")
+include("the-validation-company-simple-cds")
