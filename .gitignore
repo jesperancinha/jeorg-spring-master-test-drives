@@ -60,6 +60,7 @@ javaUpdatesOne.sh
 tmp_checkpoint
 tmp_checkpoint2
 stats-restore
+dependency-reduced-pom.xml
 
 # CDS
 the-validation-company/the-validation-company
