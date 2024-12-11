@@ -10,6 +10,8 @@ build: clean
 	gradle build;
 run:
 	java -jar build/libs/the-validation-company-simple-cds.jar --keep
+verify-cds:
+	find ~/.sdkman/ -name "classes.jsa"
 
 # CDS
 cds-class-list:
