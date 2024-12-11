@@ -35,8 +35,11 @@ class PostControllerTest {
     internal class TestConfig {
 
         @Bean
+        fun extensionBean(): String = "I'm an extension bean"
+
+        @Bean
         @Primary
-        fun postRepository(): CarPartRepository = mockk<CarPartRepository>()
+        fun String.postRepository(): CarPartRepository = println(this).run{ mockk<CarPartRepository>() }
     }
 
     @Autowired
