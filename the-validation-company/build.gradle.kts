@@ -39,7 +39,7 @@ tasks.bootBuildImage {
 
 tasks {
 	bootJar {
-		archiveFileName.set("the-validation-company.jar") // Customize the JAR file name
+		archiveFileName.set("the-validation-company.jar")
 	}
 
 	jar {
