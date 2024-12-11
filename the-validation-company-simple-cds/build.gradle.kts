@@ -22,7 +22,17 @@ tasks.test {
 }
 
 application {
-    mainClass.set("nl.coin.smtd.MainKt")
+    mainClass.set("nl.coin.smtd.Main")
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "nl.coin.smtd.Main"
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from({
+        configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) }
+    })
 }
 
 kotlin {
