@@ -1,3 +1,17 @@
+## How to run
+
+```shell
+make cds-class-list
+make cds-archive
+make cds-launch
+make cds-launch-logs
+make cds-verify-class-loading
+make cds-verify-cds-logs
+make cds-verify-class-loaders
+make cds-verify-native-memory
+make cds-verify-issued-commands
+make cds-verify-system-properties
+```
 
 ## Resources
 

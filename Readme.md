@@ -96,6 +96,12 @@ sequenceDiagram
 
 i.e. [mermaid-plugin](https://chrome.google.com/webstore/detail/mermaid-diagrams/phfcghedmopjadpojhmmaffjmfiakfil/related)
 
+## GraalVM installation
+
+```shell
+gu install native-image
+```
+
 ## Tech-stack Cloud
 
 `@Transational timeout`, `TestRestTemplate`, `HealthIndicator`, `actuator`, `Embedded`, `JPA`, `Big Data`

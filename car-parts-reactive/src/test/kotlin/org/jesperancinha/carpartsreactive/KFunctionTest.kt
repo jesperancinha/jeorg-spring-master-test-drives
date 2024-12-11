@@ -11,6 +11,8 @@ import kotlin.reflect.jvm.isAccessible
 
 @Configuration
 class AppConfig {
+    @Bean
+    fun name(): String  = "World"
 
     @Bean
     fun myService(name: String = "World"): MyService {

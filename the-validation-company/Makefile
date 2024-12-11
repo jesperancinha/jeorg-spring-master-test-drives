@@ -7,9 +7,9 @@ wrapper:
 clean:
 	if [ -d build ]; then rm -r build; fi;
 build: clean
-	./gradlew build;
+	gradle build;
 run:
-	./gradlew bootRun;
+	gradle bootRun;
 
 # Spring CDS ---
 
