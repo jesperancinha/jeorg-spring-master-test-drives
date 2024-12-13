@@ -398,20 +398,20 @@ The difference between the above two is that ImportAutoConfiguration is a restri
 ## 37 @AutoConfigure test annotations
 
 1. `@DataCassandraTest`
-1. `@DataJdbcTest`
-1. `@DataJpaTest`
-1. `@DataLdapTest`
-1. `@DataMongoTest`
-1. `@DataNeo4jTest`
-1. `@DataR2dbcTest`
-1. `@DataRedisTest`
-1. `@JdbcTest`
-1. `@JooqTest`
-1. `@JsonTest`
-1. `@RestClientTest`	
-1. `@WebFluxTest`
-1. `@WebMvcTest`
-1. `@WebServiceClientTest`
+2. `@DataJdbcTest`
+3. `@DataJpaTest`
+4. `@DataLdapTest`
+5. `@DataMongoTest`
+6. `@DataNeo4jTest`
+7. `@DataR2dbcTest`
+8. `@DataRedisTest`
+9. `@JdbcTest`
+10. `@JooqTest`
+11. `@JsonTest`
+12. `@RestClientTest`	
+13. `@WebFluxTest`
+14. `@WebMvcTest`
+15. `@WebServiceClientTest`
 
 ## 38 `spring.factories`
 

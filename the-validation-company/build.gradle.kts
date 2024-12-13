@@ -64,3 +64,4 @@ sourceSets {
 	}
 }
 tasks.register("prepareKotlinBuildScriptModel"){}
+tasks.register("wrapper"){}

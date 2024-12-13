@@ -1,5 +1,7 @@
 package org.jesperancinha.carpartsreactive
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -15,12 +17,30 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
+import org.springframework.http.codec.json.Jackson2JsonDecoder
+import org.springframework.http.codec.json.Jackson2JsonEncoder
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 import org.springframework.test.web.reactive.server.WebTestClient
+import org.springframework.web.reactive.config.WebFluxConfigurer
 import java.util.*
 
 @SpringBootTest
 class CarPartsReactiveApplicationTests {
+
+    @Configuration
+    class WebFluxConfig : WebFluxConfigurer {
+        @Bean
+        fun objectMapper(): ObjectMapper =
+            ObjectMapper().registerModule(KotlinModule.Builder().build())
+
+        @Bean
+        fun jackson2JsonDecoder(objectMapper: ObjectMapper) =
+            Jackson2JsonDecoder(objectMapper)
+
+        @Bean
+        fun jackson2JsonEncoder(objectMapper: ObjectMapper) =
+            Jackson2JsonEncoder(objectMapper)
+    }
 
     @Test
     fun contextLoads() {
