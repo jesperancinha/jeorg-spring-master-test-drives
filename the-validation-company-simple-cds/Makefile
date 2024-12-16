@@ -11,11 +11,15 @@ clean:
 build: clean
 	gradle build;
 run:
-	java -jar build/libs/the-validation-company-simple-cds.jar --keep
+	java -XX:+UnlockDiagnosticVMOptions \
+         -XX:NativeMemoryTracking=summary \
+		 -jar build/libs/the-validation-company-simple-cds.jar --keep
 verify-cds:
 	find ~/.sdkman/ -name "classes.jsa"
 
 # CDS
+cds-extract:
+	java -Djarmode=tools -jar build/libs/the-validation-company-simple-cds.jar extract
 cds-class-list:
 	java -Xshare:off -XX:DumpLoadedClassList=classlist.txt -cp build/libs/the-validation-company-simple-cds.jar nl.coin.smtd.Main
 cds-archive:
