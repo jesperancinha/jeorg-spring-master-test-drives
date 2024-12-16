@@ -13,6 +13,7 @@ build: clean
 run:
 	java -XX:+UnlockDiagnosticVMOptions \
          -XX:NativeMemoryTracking=summary \
+         -Xlog:startuptime \
 		 -jar build/libs/the-validation-company-simple-cds.jar --keep
 verify-cds:
 	find ~/.sdkman/ -name "classes.jsa"
@@ -29,6 +30,7 @@ cds-archive:
          -cp build/libs/the-validation-company-simple-cds.jar
 cds-launch:
 	java -Xshare:on \
+		 -Xlog:startuptime \
          -XX:SharedArchiveFile=application.jsa \
          -XX:+UnlockDiagnosticVMOptions \
          -XX:NativeMemoryTracking=summary \
