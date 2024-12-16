@@ -6,6 +6,8 @@ wrapper:
   	gradle wrapper;
 clean:
 	if [ -d build ]; then rm -r build; fi;
+	if [ -f application.jsa ]; then rm application.jsa; fi;
+	if [ -f classlist.txt ]; then rm classlist.txt; fi;
 build: clean
 	gradle build;
 run:
