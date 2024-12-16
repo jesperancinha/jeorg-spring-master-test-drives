@@ -22,7 +22,10 @@ verify-cds:
 cds-extract:
 	java -Djarmode=tools -jar build/libs/the-validation-company-simple-cds.jar extract
 cds-class-list:
-	java -Xshare:off -XX:DumpLoadedClassList=classlist.txt -cp build/libs/the-validation-company-simple-cds.jar nl.coin.smtd.Main
+	java -Xshare:off \
+		 -XX:DumpLoadedClassList=classlist.txt \
+		 -cp build/libs/the-validation-company-simple-cds.jar \
+		 nl.coin.smtd.Main
 cds-archive:
 	java -Xshare:dump \
          -XX:SharedClassListFile=classlist.txt \
