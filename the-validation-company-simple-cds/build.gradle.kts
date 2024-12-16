@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "nl.coin.smtd"
+group = "org.jesperancinha.smtd"
 version = "unspecified"
 
 repositories {
@@ -22,12 +22,12 @@ tasks.test {
 }
 
 application {
-    mainClass.set("nl.coin.smtd.Main")
+    mainClass.set("org.jesperancinha.smtd.Main")
 }
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "nl.coin.smtd.Main"
+        attributes["Main-Class"] = "org.jesperancinha.smtd.Main"
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({
