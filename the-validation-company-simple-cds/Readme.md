@@ -1,13 +1,13 @@
 ## Report results
 
-| Property                     | Java Application | Spring Application |
-|------------------------------|------------------|--------------------|
-| Startup wo/CDS (ms)          | ?                | ?                  |
-| Startup w/CDS (ms)           | ?                | ?                  |
-| Committed memory wo/CDS (ms) | ?                | ?                  |
-| Committed memory w/CDS (ms)  | ?                | ?                  |
-| Total classes wo/CDS (ms)    | ?                | ?                  |
-| Total classes w/CDS (ms)     | ?                | ?                  |
+| Property                     | Java Application   | Spring Application |
+|------------------------------|--------------------|--------------------|
+| Startup wo/CDS (ms)          | 23.11              | ?                  |
+| Startup w/CDS (ms)           | 29.27              | ?                  |
+| Committed memory wo/CDS (Mb) | 12.952             | ?                  |
+| Committed memory w/CDS (Mb)  | 8.080              | ?                  |
+| Total classes wo/CDS         | 815                | ?                  |
+| Total classes w/CDS          | 818                | ?                  |
 
 ## How to run
 
