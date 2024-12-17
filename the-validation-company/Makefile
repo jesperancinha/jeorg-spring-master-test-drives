@@ -57,21 +57,28 @@ cds-old-launch-logs:
          -Xlog:cds \
          -jar the-validation-company/the-validation-company.jar
 # Verify CDS
+verify-class-loading:
+	jcmd build/libs/the-validation-company.jar VM.classloader_stats
+verify-cds-logs:
+	java -Xlog:cds -jar build/libs/the-validation-company.jar
+verify-native-memory:
+	jcmd build/libs/the-validation-company.jar VM.native_memory summary
+verify-class-loaders:
+	jcmd build/libs/the-validation-company.jar VM.classloaders
+verify-issued-commands:
+	jcmd build/libs/the-validation-company.jar VM.command_line
+verify-system-properties:
+	jcmd build/libs/the-validation-company.jar VM.system_properties
+
 cds-verify-class-loading:
 	jcmd the-validation-company/the-validation-company.jar VM.classloader_stats
-	jcmd build/libs/the-validation-company.jar VM.classloader_stats
 cds-verify-cds-logs:
 	java -Xshare:on -Xlog:cds -jar the-validation-company/the-validation-company.jar
-	java -Xlog:cds -jar build/libs/the-validation-company.jar
 cds-verify-class-loaders:
 	jcmd the-validation-company/the-validation-company.jar VM.classloaders
-	jcmd build/libs/the-validation-company.jar VM.classloaders
 cds-verify-native-memory:
 	jcmd the-validation-company/the-validation-company.jar VM.native_memory summary
-	jcmd build/libs/the-validation-company.jar VM.native_memory summary
 cds-verify-issued-commands:
 	jcmd the-validation-company/the-validation-company.jar VM.command_line
-	jcmd build/libs/the-validation-company.jar VM.command_line
 cds-verify-system-properties:
 	jcmd the-validation-company/the-validation-company.jar VM.system_properties
-	jcmd build/libs/the-validation-company.jar VM.system_properties
