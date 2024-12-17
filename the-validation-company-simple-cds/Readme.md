@@ -2,10 +2,12 @@
 
 | Property                     | Java Application | Spring Application |
 |------------------------------|------------------|--------------------|
-| Startup w/CDS (ms)           | ?                | ?                  |
 | Startup wo/CDS (ms)          | ?                | ?                  |
+| Startup w/CDS (ms)           | ?                | ?                  |
 | Committed memory wo/CDS (ms) | ?                | ?                  |
 | Committed memory w/CDS (ms)  | ?                | ?                  |
+| Total classes wo/CDS (ms)    | ?                | ?                  |
+| Total classes w/CDS (ms)     | ?                | ?                  |
 
 ## How to run
 
