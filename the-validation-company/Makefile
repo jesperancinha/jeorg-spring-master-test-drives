@@ -11,16 +11,26 @@ clean:
 	if [ -f classlist.txt ]; then rm classlist.txt; fi;
 build: clean
 	gradle build;
-run:
+run-gradle:
 	gradle bootRun;
+run:
+	java -XX:+UnlockDiagnosticVMOptions \
+         -XX:NativeMemoryTracking=summary \
+         -Xlog:startuptime \
+		 -jar build/libs/the-validation-company.jar --keep
 
 # Spring CDS ---
-
 cds-extract:
 	java -Djarmode=tools -jar build/libs/the-validation-company.jar extract
 cds-archive:
 	java -XX:ArchiveClassesAtExit=./application.jsa \
 		-Dspring.context.exit=onRefresh \
+		-Dspring.aot.enabled=true \
+		-jar the-validation-company/the-validation-company.jar
+cds-archive-aot:
+	java -XX:ArchiveClassesAtExit=./application.jsa \
+		-Dspring.context.exit=onRefresh \
+		-Dspring.aot.enabled=true \
 		-jar the-validation-company/the-validation-company.jar
 cds-launch:
 	java -XX:SharedArchiveFile=application.jsa \
@@ -56,6 +66,7 @@ cds-old-launch-logs:
          -XX:SharedArchiveFile=application.jsa \
          -Xlog:cds \
          -jar the-validation-company/the-validation-company.jar
+
 # Verify CDS
 verify-class-loading:
 	jcmd build/libs/the-validation-company.jar VM.classloader_stats
