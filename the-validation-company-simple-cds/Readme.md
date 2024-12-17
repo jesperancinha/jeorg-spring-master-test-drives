@@ -1,9 +1,11 @@
 ## Report results
 
-| Plaftorm           | Without CDS (ms) | With CDS (ms) |
-|--------------------|------------------|---------------|
-| Java Application   | ?                | ?             |
-| Spring Application | ?                | ?             |
+| Property                     | Java Application | Spring Application |
+|------------------------------|------------------|--------------------|
+| Startup w/CDS (ms)           | ?                | ?                  |
+| Startup wo/CDS (ms)          | ?                | ?                  |
+| Committed memory wo/CDS (ms) | ?                | ?                  |
+| Committed memory w/CDS (ms)  | ?                | ?                  |
 
 ## How to run
 
