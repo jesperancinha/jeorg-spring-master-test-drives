@@ -33,7 +33,7 @@
         <lombok.version>1.18.36</lombok.version>
         <jscience>4.3.1</jscience>
         <commons.lang3>3.4</commons.lang3>
-        <guava.version>33.3.1-jre</guava.version>
+        <guava.version>33.4.0-jre</guava.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <consolerizer.version>2.2.3</consolerizer.version>
         <jackson.version>2.18.2</jackson.version>
