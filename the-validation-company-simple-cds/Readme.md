@@ -1,3 +1,10 @@
+## Report results
+
+| Plaftorm           | Without CDS (ms) | With CDS (ms) |
+|--------------------|------------------|---------------|
+| Java Application   | ?                | ?             |
+| Spring Application | ?                | ?             |
+
 ## How to run
 
 ```shell
