@@ -40,6 +40,8 @@ cds-archive-aot:
 		-jar the-validation-company/the-validation-company.jar
 cds-launch:
 	java -XX:SharedArchiveFile=application.jsa \
+		-XX:+UnlockDiagnosticVMOptions \
+      	-XX:NativeMemoryTracking=summary \
 		-jar the-validation-company/the-validation-company.jar
 cds-launch-logs:
 	java -XX:ArchiveClassesAtExit=application.jsa \
