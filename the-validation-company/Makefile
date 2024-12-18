@@ -17,7 +17,12 @@ run:
 	java -XX:+UnlockDiagnosticVMOptions \
          -XX:NativeMemoryTracking=summary \
          -Xlog:startuptime \
-		 -jar build/libs/the-validation-company.jar --keep
+		 -jar build/libs/the-validation-company.jar
+run-unpacked:
+	java -XX:+UnlockDiagnosticVMOptions \
+         -XX:NativeMemoryTracking=summary \
+         -Xlog:startuptime \
+		 -jar the-validation-company/the-validation-company.jar
 
 # Spring CDS ---
 cds-extract:
