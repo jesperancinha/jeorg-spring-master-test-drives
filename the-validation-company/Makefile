@@ -26,7 +26,7 @@ cds-extract:
 cds-archive:
 	java -XX:ArchiveClassesAtExit=./application.jsa \
 		-Dspring.context.exit=onRefresh \
-		-Dspring.aot.enabled=true \
+		-Dspring.aot.enabled=false \
 		-jar the-validation-company/the-validation-company.jar
 cds-archive-aot:
 	java -XX:ArchiveClassesAtExit=./application.jsa \
