@@ -2,18 +2,18 @@
 
 | Property                             | Java Application | Spring Application |
 |--------------------------------------|------------------|--------------------|
-| Startup wo/CDS (ms)                  | 23.11            | ?                  |
-| Startup wo/CDS unpacked (ms)         | NA               | ?                  |
-| Startup w/CDS (ms)                   | 29.27            | ?                  |
-| Startup w/CDS + AOT (ms)             | NA               | ?                  |
-| Committed memory wo/CDS              | 12.952           | ?                  |
-| Committed memory wo/CDS unpacked(Mb) | NA               | ?                  |
-| Committed memory w/CDS (Mb)          | 8.080            | ?                  |
-| Committed memory w/CDS + AOT (Mb)    | NA               | ?                  |
-| Total classes wo/CDS                 | 815              | ?                  |
-| Total classes wo/CDS unpacked        | NA               | ?                  |
-| Total classes w/CDS                  | 818              | ?                  |
-| Total classes w/CDS + AOT            | NA               | ?                  |
+| Startup wo/CDS (ms)                  | 23.11            | 930                |
+| Startup wo/CDS unpacked (ms)         | NA               | 808                |
+| Startup w/CDS (ms)                   | 29.27            | 430                |
+| Startup w/CDS + AOT (ms)             | NA               | 297                |
+| Committed memory wo/CDS              | 12.952           | 12.952             |
+| Committed memory wo/CDS unpacked(Mb) | NA               | 12.952             |
+| Committed memory w/CDS (Mb)          | 8.080            | 55.640             |
+| Committed memory w/CDS + AOT (Mb)    | NA               | 53.880             |
+| Total classes wo/CDS                 | 815              | 9209               |
+| Total classes wo/CDS unpacked        | NA               | 9096               |
+| Total classes w/CDS                  | 818              | 8975               |
+| Total classes w/CDS + AOT            | NA               | 8704               |
 
 ## How to run
 
