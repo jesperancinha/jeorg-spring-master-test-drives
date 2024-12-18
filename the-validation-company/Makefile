@@ -21,7 +21,8 @@ run:
 
 # Spring CDS ---
 cds-extract:
-	java -Djarmode=tools -jar build/libs/the-validation-company.jar extract
+	java -Djarmode=tools \
+		-jar build/libs/the-validation-company.jar extract
 cds-archive:
 	java -XX:ArchiveClassesAtExit=./application.jsa \
 		-Dspring.context.exit=onRefresh \
