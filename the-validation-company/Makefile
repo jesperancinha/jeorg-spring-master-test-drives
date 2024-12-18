@@ -46,7 +46,8 @@ cds-launch:
 cds-launch-aot:
 	java -XX:SharedArchiveFile=application.jsa \
 		-XX:+UnlockDiagnosticVMOptions \
-      	-XX:NativeMemoryTracking=summary \
+		-XX:NativeMemoryTracking=summary \
+      	-Dspring.aot.enabled=true \
 		-jar the-validation-company/the-validation-company.jar
 cds-launch-logs:
 	java -XX:ArchiveClassesAtExit=application.jsa \
