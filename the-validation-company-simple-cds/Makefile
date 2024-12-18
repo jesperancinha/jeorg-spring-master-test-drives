@@ -20,7 +20,8 @@ verify-cds:
 
 # CDS
 cds-extract:
-	java -Djarmode=tools -jar build/libs/the-validation-company-simple-cds.jar extract
+	java -Djarmode=tools \
+		  -jar build/libs/the-validation-company-simple-cds.jar extract
 cds-class-list:
 	java -Xshare:off \
 		 -XX:DumpLoadedClassList=classlist.txt \
