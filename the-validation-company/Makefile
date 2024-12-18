@@ -43,6 +43,11 @@ cds-launch:
 		-XX:+UnlockDiagnosticVMOptions \
       	-XX:NativeMemoryTracking=summary \
 		-jar the-validation-company/the-validation-company.jar
+cds-launch-aot:
+	java -XX:SharedArchiveFile=application.jsa \
+		-XX:+UnlockDiagnosticVMOptions \
+      	-XX:NativeMemoryTracking=summary \
+		-jar the-validation-company/the-validation-company.jar
 cds-launch-logs:
 	java -XX:ArchiveClassesAtExit=application.jsa \
 		-Xlog:cds=debug:file=the-validation-company/cds.log -Dspring.context.exit=onRefresh -jar the-validation-company/the-validation-company.jar
