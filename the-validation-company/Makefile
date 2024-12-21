@@ -107,3 +107,12 @@ cds-verify-issued-commands:
 	jcmd the-validation-company/the-validation-company.jar VM.command_line
 cds-verify-system-properties:
 	jcmd the-validation-company/the-validation-company.jar VM.system_properties
+
+# JLINK experiments
+cds-jlink-jre:
+	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
+	jlink --module-path $JAVA_HOME/jmods \
+          --add-modules java.base,java.logging \
+          --output the-validation-company-jre; \
+    du -sh the-validation-company-jre; \
+    the-validation-company-jre/bin/java -XX:SharedArchiveFile=the-validation-company-jre/lib/classes.jsa -cp build/libs/the-validation-company.jar org.jesperancinha.thevalidationcompany.TheValidationCompanyApplicationKt;

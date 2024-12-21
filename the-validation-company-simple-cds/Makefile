@@ -58,3 +58,6 @@ cds-verify-issued-commands:
 cds-verify-system-properties:
 	jcmd build/libs/the-validation-company-simple-cds.jar VM.system_properties
 cds-verify-all: cds-verify-class-loading cds-launch-logs cds-verify-class-loaders cds-verify-native-memory cds-verify-issued-commands cds-verify-system-properties
+
+# JLINK usage
+cds-jli
