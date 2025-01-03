@@ -42,5 +42,6 @@ out/
 classlist.txt
 loaded-classes.txt
 lazy-application
-classes.lst
+*.lst
 classes.lst.0
+*.log

@@ -28,7 +28,8 @@ cds-create-start:
 	java -XX:ArchiveClassesAtExit=./application.jsa \
 		-Dspring.context.exit=onRefresh \
 		-jar lazy-application/lazy-application.jar
-	java -Xshare:on\
+	java -Xshare:on \
+		 -Xlog:cds=debug:file=cds.log \
 		 -XX:+UnlockDiagnosticVMOptions \
 		 -XX:SharedArchiveFile=application.jsa -jar lazy-application/lazy-application.jar
 cds-create-start2:
