@@ -1,7 +1,6 @@
 package org.jesperancinha.smtd.lazyapplication
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
@@ -9,8 +8,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Lazy
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import java.lang.Thread.sleep
-import java.time.LocalDateTime
 
 data class ThisIsLoaded(val value: String) {
     fun performAction() {
