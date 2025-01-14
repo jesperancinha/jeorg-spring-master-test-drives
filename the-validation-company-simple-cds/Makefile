@@ -62,7 +62,7 @@ cds-verify-all: cds-verify-class-loading cds-launch-logs cds-verify-class-loader
 # JLINK experiments
 cds-jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
-	jlink --module-path $JAVA_HOME/jmods \
+	jlink --module-path $(JAVA_HOME)/jmods \
           --add-modules java.base \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
@@ -86,3 +86,14 @@ run-traditional-docker-image:
 	docker images --filter "reference=the-validation-company-traditional"
 show-jlink-images:
 	docker images --filter "reference=the-validation-company*"
+
+cds-jlink-feature-jre:
+	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
+	jlink --module-path $(JAVA_HOME)/jmods:../print-module/build/libs --add-modules java.base,java.desktop,java.management,java.logging,java.instrument,jesperancinha.module \
+          --output the-validation-company-jre; \
+    du -sh the-validation-company-jre; \
+    the-validation-company-jre/bin/java \
+		-jar build/libs/the-validation-company-simple-cds.jar
+build-aux: clean
+	export JAVA_HOME=./the-validation-company-jre; \
+	gradle build --stacktrace ;
