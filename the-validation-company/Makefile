@@ -115,4 +115,10 @@ cds-jlink-jre:
           --add-modules java.base,java.logging \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
-    the-validation-company-jre/bin/java -XX:SharedArchiveFile=the-validation-company-jre/lib/classes.jsa -cp build/libs/the-validation-company.jar org.jesperancinha.thevalidationcompany.TheValidationCompanyApplicationKt;
+    the-validation-company-jre/bin/java \
+		-jar build/libs/the-validation-company.jar
+docker-delete:
+	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company" | xargs -I {}  docker stop {}
+	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company" | xargs -I {}  docker rm {}
+build-jlink-docker-image: cds-jlink-jre
+	docker build -t the-validation-company:latest .
