@@ -112,13 +112,30 @@ cds-verify-system-properties:
 cds-jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $JAVA_HOME/jmods \
-          --add-modules java.base,java.logging \
+          --add-modules java.base,java.logging,java.desktop,java.management,java.naming,java.security.jgss,java.instrument \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
     the-validation-company-jre/bin/java \
+		-Dspring.context.exit=onRefresh \
 		-jar build/libs/the-validation-company.jar
 docker-delete:
-	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company" | xargs -I {}  docker stop {}
-	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company" | xargs -I {}  docker rm {}
+	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker stop {}
+	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker rm {}
+	docker images -a --format '{{.ID}}' --filter "reference=the-validation-company*" | xargs -I {} docker rmi {}
 build-jlink-docker-image: cds-jlink-jre
 	docker build -t the-validation-company:latest .
+build-traditional-docker-image:
+	cp build/libs/the-validation-company.jar traditional
+	docker build -t the-validation-company-traditional:latest traditional/.
+	java \
+		-Dspring.context.exit=onRefresh \
+		-jar build/libs/the-validation-company.jar
+build-jlink-example-images: build-jlink-docker-image build-traditional-docker-image
+run-link-docker-image:
+	docker run --rm the-validation-company:latest
+	docker images --filter "reference=the-validation-company"
+run-traditional-docker-image:
+	docker run --rm the-validation-company-traditional:latest
+	docker images --filter "reference=the-validation-company-traditional"
+show-jlink-images:
+	docker images --filter "reference=the-validation-company*"
