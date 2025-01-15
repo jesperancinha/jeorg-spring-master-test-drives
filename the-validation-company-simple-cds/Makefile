@@ -96,4 +96,14 @@ cds-jlink-feature-jre:
 		-jar build/libs/the-validation-company-simple-cds.jar
 build-aux: clean
 	export JAVA_HOME=./the-validation-company-jre; \
-	gradle build --stacktrace ;
+	gradle build --stacktrace;
+compile-with-external:
+	kotlinc -d app.jar \
+		   -classpath ../print-module/build/libs/print-module.jar:../print-module/build/libs/kotlin-stdlib-2.1.0.jar \
+		   src/main/kotlin/org/jesperancinha/smtd/SimpleCdsApplication.kt
+run-with-external:
+	java -classpath app.jar:../print-module/build/libs/kotlin-stdlib-2.1.0.jar \
+		 org.jesperancinha.smtd.SimpleCdsApplication
+run-with-custom-jre-external:
+	the-validation-company-jre/bin/java -classpath app.jar:../print-module/build/libs/kotlin-stdlib-2.1.0.jar \
+		 org.jesperancinha.smtd.SimpleCdsApplication

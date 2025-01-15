@@ -9,3 +9,4 @@ inspect:
 	jar -tf build/libs/print-module.jar
 list-modules:
 	java --module-path build/libs --list-modules
+	jar --describe-module --file build/libs/print-module.jar

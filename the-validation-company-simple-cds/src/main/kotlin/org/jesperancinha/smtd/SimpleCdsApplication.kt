@@ -4,7 +4,7 @@ import java.lang.Thread.sleep
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.toJavaDuration
 
-object Main {
+object SimpleCdsApplication {
     @JvmStatic
     fun main(args: Array<String>) {
         println("Hello and welcome!")
@@ -15,6 +15,7 @@ object Main {
             sleep(1.hours.toJavaDuration())
         }
 
-//        org.jesperancinha.smtd.utils.Utility.printValue("ThisWorks!")
+        // This is part of the Example! It works with custom build. Please check the Makefile of this project for more
+        //org.jesperancinha.smtd.utils.Auxiliary.printJavatoConsole("ThisWorks!")
     }
 }
