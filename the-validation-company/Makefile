@@ -109,9 +109,13 @@ cds-verify-system-properties:
 	jcmd the-validation-company/the-validation-company.jar VM.system_properties
 
 # JLINK experiments
-cds-jlink-jre:
+copy-jre-to-local:
+	if [ -d traditional/current ]; then rm -rf traditional/current; fi; \
+	mkdir -p traditional/current;
+	cp -r $(JAVA_HOME)/ traditional/;
+jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
-	jlink --module-path $JAVA_HOME/jmods \
+	jlink --module-path $(JAVA_HOME)/jmods \
           --add-modules java.base,java.logging,java.desktop,java.management,java.naming,java.security.jgss,java.instrument \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
@@ -122,9 +126,9 @@ docker-delete:
 	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker stop {}
 	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker rm {}
 	docker images -a --format '{{.ID}}' --filter "reference=the-validation-company*" | xargs -I {} docker rmi {}
-build-jlink-docker-image: cds-jlink-jre
+build-jlink-docker-image: jlink-jre
 	docker build -t the-validation-company:latest .
-build-traditional-docker-image:
+build-traditional-docker-image:copy-jre-to-local
 	cp build/libs/the-validation-company.jar traditional
 	docker build -t the-validation-company-traditional:latest traditional/.
 	java \

@@ -40,4 +40,8 @@ out/
 application.jsa
 classlist.txt
 *.jsa
+
+# JLink
 the-validation-company-jre
+current
+

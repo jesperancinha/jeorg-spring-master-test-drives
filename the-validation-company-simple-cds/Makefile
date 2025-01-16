@@ -60,7 +60,11 @@ cds-verify-system-properties:
 cds-verify-all: cds-verify-class-loading cds-launch-logs cds-verify-class-loaders cds-verify-native-memory cds-verify-issued-commands cds-verify-system-properties
 
 # JLINK experiments
-cds-jlink-jre:
+copy-jre-to-local:
+	if [ -d traditional/current ]; then rm -rf traditional/current; fi; \
+	mkdir -p traditional/current;
+	cp -r $(JAVA_HOME)/ traditional/;
+jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $(JAVA_HOME)/jmods \
           --add-modules java.base \
@@ -72,9 +76,9 @@ docker-delete:
 	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker stop {}
 	docker ps -a --format '{{.ID}}' --filter "name=the-validation-company*" | xargs -I {}  docker rm {}
 	docker images -a --format '{{.ID}}' --filter "reference=the-validation-company*" | xargs -I {} docker rmi {}
-build-jlink-docker-image: cds-jlink-jre
+build-jlink-docker-image: jlink-jre
 	docker build -t the-validation-company:latest .
-build-traditional-docker-image:
+build-traditional-docker-image: copy-jre-to-local
 	cp build/libs/the-validation-company-simple-cds.jar traditional
 	docker build -t the-validation-company-traditional:latest traditional/.
 build-jlink-example-images: build-jlink-docker-image build-traditional-docker-image
@@ -87,7 +91,7 @@ run-traditional-docker-image:
 show-jlink-images:
 	docker images --filter "reference=the-validation-company*"
 
-cds-jlink-feature-jre:
+jlink-feature-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $(JAVA_HOME)/jmods:../print-module/build/libs --add-modules java.base,java.desktop,java.management,java.logging,java.instrument,jesperancinha.module \
           --output the-validation-company-jre; \

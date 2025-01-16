@@ -27,7 +27,7 @@ application {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "org.jesperancinha.smtd.Main"
+        attributes["Main-Class"] = "org.jesperancinha.smtd.SimpleCdsApplication"
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({
