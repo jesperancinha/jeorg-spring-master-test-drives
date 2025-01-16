@@ -1,4 +1,12 @@
-## Report results
+## JLink
+
+To better perform test with JLink and compare differences, make sure that your local runtime, matche the one of the docker images. Ideally, this project should be tested using Temurin images:
+
+```shell
+sdk install java 21.0.5-tem
+```
+
+## CDS Report results
 
 | Property                             | Java Application | Spring Application |
 |--------------------------------------|------------------|--------------------|

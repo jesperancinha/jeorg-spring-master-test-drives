@@ -110,9 +110,9 @@ cds-verify-system-properties:
 
 # JLINK experiments
 copy-jre-to-local:
-	if [ -d traditional/current ]; then rm -rf traditional/current; fi; \
-	mkdir -p traditional/current;
-	cp -r $(JAVA_HOME)/ traditional/;
+	if [ -d current-jdk/current ]; then rm -rf current-jdk/current; fi; \
+	mkdir -p current-jdk/current;
+	cp -r $(JAVA_HOME)/ current-jdk/;
 jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $(JAVA_HOME)/jmods \
@@ -128,18 +128,24 @@ docker-delete:
 	docker images -a --format '{{.ID}}' --filter "reference=the-validation-company*" | xargs -I {} docker rmi {}
 build-jlink-docker-image: jlink-jre
 	docker build -t the-validation-company:latest .
-build-traditional-docker-image:copy-jre-to-local
-	cp build/libs/the-validation-company.jar traditional
-	docker build -t the-validation-company-traditional:latest traditional/.
-	java \
+build-current-jdk-docker-image:copy-jre-to-local
+	cp build/libs/the-validation-company.jar current-jdk
+	docker build -t the-validation-company-current-jdk:latest current-jdk/.
+	current-jdk/current/bin/java \
 		-Dspring.context.exit=onRefresh \
 		-jar build/libs/the-validation-company.jar
-build-jlink-example-images: build-jlink-docker-image build-traditional-docker-image
+build-traditional-jre-docker-image: copy-jre-to-local
+	cp build/libs/the-validation-company.jar traditional-jre
+	docker build -t the-validation-company-traditional-jre:latest traditional-jre/.
+build-jlink-example-images: build-jlink-docker-image build-current-jdk-docker-image build-traditional-jre-docker-image
 run-link-docker-image:
 	docker run --rm the-validation-company:latest
 	docker images --filter "reference=the-validation-company"
-run-traditional-docker-image:
-	docker run --rm the-validation-company-traditional:latest
-	docker images --filter "reference=the-validation-company-traditional"
+run-current-jdk-docker-image:
+	docker run --rm the-validation-company-current-jdk:latest
+	docker images --filter "reference=the-validation-company-current-jdk"
+run-traditional-jre-docker-image:
+	docker run --rm the-validation-company-current-jdk:latest
+	docker images --filter "reference=the-validation-company-traditional-jre"
 show-jlink-images:
 	docker images --filter "reference=the-validation-company*"
