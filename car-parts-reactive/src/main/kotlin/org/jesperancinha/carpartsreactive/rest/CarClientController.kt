@@ -31,4 +31,7 @@ class CarClientController {
                 "Error: ${clientResponse.statusCode()}"
             }
         }
+
+    @GetMapping("/empty")
+    suspend fun empty(): String? = null
 }
