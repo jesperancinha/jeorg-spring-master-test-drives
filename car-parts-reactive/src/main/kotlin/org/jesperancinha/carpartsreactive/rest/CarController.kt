@@ -16,6 +16,9 @@ class CarController(
     val carPartRepository: CarPartRepository
 ) {
 
+    /**
+     * suspend doesn't work well fora list. It will return a list, but the elements of the list will not a part of a reactive runtime
+     */
     @GetMapping("/parts/list", "/parts")
     suspend fun getParts(): List<String> {
         println(coroutineContext)
@@ -78,6 +81,7 @@ class CarController(
     fun getKeys(): String {
         return "keys"
     }
+
     @GetMapping("/lights")
     suspend fun getLights(): String {
         println("Current Coroutine Context -> $coroutineContext")
