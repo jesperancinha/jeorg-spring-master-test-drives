@@ -106,7 +106,7 @@ jlink-feature-jre:
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
     the-validation-company-jre/bin/java \
-		-jar build/libs/the-validation-company-simple-cds.jar
+		-jar app.jar
 build-aux: clean
 	export JAVA_HOME=./the-validation-company-jre; \
 	gradle build --stacktrace;
