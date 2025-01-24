@@ -68,6 +68,7 @@ jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $(JAVA_HOME)/jmods \
           --add-modules java.base \
+          --launcher \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
     the-validation-company-jre/bin/java \
@@ -120,3 +121,10 @@ run-with-external:
 run-with-custom-jre-external:
 	the-validation-company-jre/bin/java -classpath app.jar:../print-module/build/libs/kotlin-stdlib-2.1.0.jar \
 		 org.jesperancinha.smtd.SimpleCdsApplication
+
+jlink-feature-runnable-jre:
+	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
+	jlink --module-path $(JAVA_HOME)/jmods:../runnable-module/build/libs --add-modules java.base,java.desktop,java.management,java.logging,java.instrument,runnable.module \
+          --output the-validation-company-jre \
+          --launcher runnable=runnable.module/org.jesperancinha.smtd.Runnable; \
+    du -sh the-validation-company-jre; \
