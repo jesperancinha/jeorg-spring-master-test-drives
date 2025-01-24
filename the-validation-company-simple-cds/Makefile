@@ -68,7 +68,6 @@ jlink-jre:
 	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
 	jlink --module-path $(JAVA_HOME)/jmods \
           --add-modules java.base \
-          --launcher \
           --output the-validation-company-jre; \
     du -sh the-validation-company-jre; \
     the-validation-company-jre/bin/java \
@@ -128,3 +127,15 @@ jlink-feature-runnable-jre:
           --output the-validation-company-jre \
           --launcher runnable=runnable.module/org.jesperancinha.smtd.Runnable; \
     du -sh the-validation-company-jre; \
+
+jlink-small-jre:
+	if [ -d the-validation-company-jre ]; then rm -rf the-validation-company-jre; fi; \
+	jlink --module-path $(JAVA_HOME)/jmods \
+          --add-modules java.base \
+          --no-header-files \
+          --strip-debug \
+          --compress=2 \
+          --output the-validation-company-jre; \
+    du -sh the-validation-company-jre; \
+    the-validation-company-jre/bin/java \
+		-jar build/libs/the-validation-company-simple-cds.jar
