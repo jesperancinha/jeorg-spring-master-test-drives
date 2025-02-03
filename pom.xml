@@ -89,7 +89,7 @@
         <httpclient.version>4.5.14</httpclient.version>
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <commons-io.version>2.18.0</commons-io.version>
-        <cucumber.version>7.20.1</cucumber.version>
+        <cucumber.version>7.21.0</cucumber.version>
         <mariadb-java-client.version>3.5.1</mariadb-java-client.version>
         <embedded-mariadb.version>3.1.10</embedded-mariadb.version>
         <mariaDB4j-springboot.version>3.1.0</mariaDB4j-springboot.version>
