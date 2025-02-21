@@ -113,7 +113,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring-boot-maven-plugin.version}</version>
+				<version>${spring-boot.version}</version>
 				<configuration>
 					<executable>true</executable>
 					<mainClass>org.jesperancinha.carpartsreactive.CarPartsReactiveApplicationKt</mainClass>
