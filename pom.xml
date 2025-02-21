@@ -71,7 +71,7 @@
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <spring-boot-starter-parent.version>3.4.2</spring-boot-starter-parent.version>
+        <spring-boot-starter-parent.version>3.4.3</spring-boot-starter-parent.version>
         <spring-boot-maven-plugin.version>3.4.3</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
@@ -149,7 +149,7 @@
                         <dependency>
                             <groupId>org.openrewrite.recipe</groupId>
                             <artifactId>rewrite-spring</artifactId>
-                            <version>6.1.0</version>
+                            <version>6.2.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
