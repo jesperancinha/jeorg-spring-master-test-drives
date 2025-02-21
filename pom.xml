@@ -72,7 +72,7 @@
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <spring-boot-starter-parent.version>3.4.2</spring-boot-starter-parent.version>
-        <spring-boot-maven-plugin.version>3.4.2</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.4.3</spring-boot-maven-plugin.version>
 
         <!-- EH Cache -->
         <ehcache.version>3.10.8</ehcache.version>
@@ -129,7 +129,7 @@
         <micrometer-tracing-bridge-otel.version>1.4.3</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.47.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.1.4</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.2.0</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
