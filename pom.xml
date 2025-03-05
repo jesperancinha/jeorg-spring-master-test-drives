@@ -123,12 +123,12 @@
         <kotlinx-coroutines-core.version>1.10.1</kotlinx-coroutines-core.version>
         <kotlinx-coroutines-core-jvm.version>1.10.1</kotlinx-coroutines-core-jvm.version>
         <springmockk.version>4.0.2</springmockk.version>
-        <testcontainers.version>1.20.5</testcontainers.version>
+        <testcontainers.version>1.20.6</testcontainers.version>
         <kotlinx-coroutines-debug.version>1.10.1</kotlinx-coroutines-debug.version>
         <micrometer-tracing-bridge-otel.version>1.4.3</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.47.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.2.2</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.2.3</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
