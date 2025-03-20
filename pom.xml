@@ -112,7 +112,7 @@
 
         <!-- Kotlin -->
         <kotlinx-serialization-json.version>1.8.0</kotlinx-serialization-json.version>
-        <kotlin.version>2.1.10</kotlin.version>
+        <kotlin.version>2.1.20</kotlin.version>
         <jackson-module-kotlin.version>2.12.1</jackson-module-kotlin.version>
         <easymock.version>5.5.0</easymock.version>
         <micrometer.version>1.14.5</micrometer.version>
@@ -128,7 +128,7 @@
         <micrometer-tracing-bridge-otel.version>1.4.4</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.48.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.3.1</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.3.2</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
