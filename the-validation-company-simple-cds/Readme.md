@@ -42,9 +42,13 @@ make cds-verify-system-properties
 
 ### Online Videos
 
-- [Java's Startup Booster: CDS @ Java by Stack Walker](https://www.youtube.com/watch?v=vvlQv1Dh-HU)
+-   [Java's Startup Booster: CDS @ Java by Stack Walker](https://www.youtube.com/watch?v=vvlQv1Dh-HU)
 
 ### Online Document
 
-- [AppCDS Autogenerate - Sip of Java](https://inside.java/2022/09/26/sip067/)
-- [CDS and AppCDS in Hotspot](https://dev.java/learn/jvm/cds-appcds/)
+-   [AppCDS Autogenerate - Sip of Java](https://inside.java/2022/09/26/sip067/)
+-   [CDS and AppCDS in Hotspot](https://dev.java/learn/jvm/cds-appcds/)
+
+## About me
+
+[![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=for-the-badge&logo=github&color=grey "GitHub")](https://github.com/jesperancinha)
