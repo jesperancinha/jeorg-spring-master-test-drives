@@ -71,7 +71,7 @@
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-        <spring-boot.version>3.4.5</spring-boot.version>
+        <spring-boot.version>3.5.0</spring-boot.version>
 
         <!-- EH Cache -->
         <ehcache.version>3.10.8</ehcache.version>
@@ -88,7 +88,7 @@
         <httpclient.version>4.5.14</httpclient.version>
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <commons-io.version>2.19.0</commons-io.version>
-        <cucumber.version>7.22.2</cucumber.version>
+        <cucumber.version>7.23.0</cucumber.version>
         <mariadb-java-client.version>3.5.3</mariadb-java-client.version>
         <embedded-mariadb.version>3.1.13</embedded-mariadb.version>
         <mariaDB4j-springboot.version>3.2.0</mariaDB4j-springboot.version>
@@ -148,7 +148,7 @@
                         <dependency>
                             <groupId>org.openrewrite.recipe</groupId>
                             <artifactId>rewrite-spring</artifactId>
-                            <version>6.7.0</version>
+                            <version>6.8.2</version>
                         </dependency>
                     </dependencies>
                 </plugin>
