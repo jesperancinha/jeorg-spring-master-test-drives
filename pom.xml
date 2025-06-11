@@ -41,7 +41,7 @@
 
         <!-- Databases -->
         <h2.version>2.3.232</h2.version>
-        <postgresql.version>42.7.6</postgresql.version>
+        <postgresql.version>42.7.7</postgresql.version>
         <hibernate-entitymanager.version>5.6.15.Final</hibernate-entitymanager.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
@@ -127,7 +127,7 @@
         <kotlinx-coroutines-debug.version>1.10.2</kotlinx-coroutines-debug.version>
         <micrometer-tracing-bridge-otel.version>1.5.1</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.51.0</opentelemetry-exporter-zipkin.version>
-        <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
+        <loki-logback-appender.version>2.0.0</loki-logback-appender.version>
         <rewrite-maven-plugin.version>6.11.0</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
