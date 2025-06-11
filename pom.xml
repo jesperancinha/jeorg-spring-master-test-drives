@@ -41,7 +41,7 @@
 
         <!-- Databases -->
         <h2.version>2.3.232</h2.version>
-        <postgresql.version>42.7.6</postgresql.version>
+        <postgresql.version>42.7.7</postgresql.version>
         <hibernate-entitymanager.version>5.6.15.Final</hibernate-entitymanager.version>
         <hibernate-core.version>5.4.24.Final</hibernate-core.version>
 
