@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -31,10 +32,10 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs += "-Xjsr305=strict"
-		jvmTarget = "21"
+kotlin {
+	compilerOptions {
+		freeCompilerArgs.add("-Xjsr305=strict")
+		jvmTarget.set(JVM_21)
 	}
 }
 
