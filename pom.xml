@@ -128,7 +128,7 @@
         <micrometer-tracing-bridge-otel.version>1.5.1</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.51.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>2.0.0</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.11.0</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.12.0</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
