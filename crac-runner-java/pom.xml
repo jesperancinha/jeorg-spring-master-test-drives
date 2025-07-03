@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>crac-runner-java</artifactId>
+    <name>JEORG-SMTD :: C.R.A.C Runner Java</name>
 
     <dependencies>
         <dependency>
