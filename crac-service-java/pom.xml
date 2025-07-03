@@ -8,6 +8,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>crac-service-java</artifactId>
+    <name>JEORG-SMTD :: C.R.A.C Service Java</name>
 
     <dependencies>
         <dependency>
