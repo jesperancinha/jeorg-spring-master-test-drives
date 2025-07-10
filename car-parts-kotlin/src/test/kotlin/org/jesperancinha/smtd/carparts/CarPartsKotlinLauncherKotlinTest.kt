@@ -1,11 +1,9 @@
 package org.jesperancinha.smtd.carparts
 
-import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.nulls.shouldBeNull
 import io.kotest.matchers.nulls.shouldNotBeNull
 import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.shouldHave
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 import org.jesperancinha.smtd.carparts.MarkedUtils.getPartWithANullField
 import org.jesperancinha.smtd.carparts.controller.PartController
@@ -15,7 +13,6 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
-import org.springframework.data.repository.findByIdOrNull
 import org.springframework.test.context.jdbc.Sql
 import kotlin.reflect.full.declaredMemberProperties
 
@@ -42,7 +39,7 @@ class CarPartsKotlinLauncherKotlinTest @Autowired constructor(
 
     @Test
     fun `should get a null value even though it shouldn't be null`() {
-        partRepository.findByIdOrNull(1).should {
+        partRepository.findById(1).get().shouldNotBeNull().should {
             it.shouldNotBeNull().id shouldBe 1L
             val name: String = it.shouldNotBeNull().name
             name.shouldBeNull()
