@@ -8,5 +8,5 @@ spring-boot-aot = { id = "org.springframework.boot.aot", version = "3.5.4" }
 spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.7" }
 
 [libraries]
-kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "5.9.1" }
-kotest-runner-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version = "5.9.1" }
+kotest-assertions-core-jvm = { group = "io.kotest", name = "kotest-assertions-core-jvm", version = "6.0.0" }
+kotest-runner-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version = "6.0.0" }
