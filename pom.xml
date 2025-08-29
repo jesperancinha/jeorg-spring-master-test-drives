@@ -36,7 +36,6 @@
         <guava.version>33.4.8-jre</guava.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <consolerizer.version>2.2.3</consolerizer.version>
-        <jackson.version>2.19.2</jackson.version>
         <aspectj-maven-plugin.version>1.12.6</aspectj-maven-plugin.version>
 
         <!-- Databases -->
@@ -320,11 +319,6 @@
                 <version>${jscience}</version>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.kohsuke.args4j</groupId>
                 <artifactId>args4j-maven-plugin</artifactId>
                 <version>${args4j-maven-plugin.version}</version>
@@ -563,21 +557,6 @@
                 <artifactId>easymock</artifactId>
                 <version>${easymock.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.datatype</groupId>
-                <artifactId>jackson-datatype-jsr310</artifactId>
-                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.loki4j</groupId>
