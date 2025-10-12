@@ -80,7 +80,7 @@
         <cucumber.version>7.30.0</cucumber.version>
         <mariadb-java-client.version>3.5.6</mariadb-java-client.version>
         <embedded-mariadb.version>3.1.16</embedded-mariadb.version>
-        <mariaDB4j-springboot.version>3.2.0</mariaDB4j-springboot.version>
+        <mariaDB4j-springboot.version>3.3.0</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
         <atomikos.transactions.version>6.0.0</atomikos.transactions.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
@@ -116,7 +116,7 @@
         <micrometer-tracing-bridge-otel.version>1.5.4</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.54.1</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>2.0.0</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.19.0</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.20.1</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
