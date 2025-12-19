@@ -78,7 +78,7 @@
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-io.version>2.21.0</commons-io.version>
         <cucumber.version>7.33.0</cucumber.version>
-        <mariadb-java-client.version>3.5.6</mariadb-java-client.version>
+        <mariadb-java-client.version>3.5.7</mariadb-java-client.version>
         <embedded-mariadb.version>3.1.18</embedded-mariadb.version>
         <mariaDB4j-springboot.version>3.3.0</mariaDB4j-springboot.version>
         <postgresql-embedded.version>2.10</postgresql-embedded.version>
@@ -101,7 +101,7 @@
 
         <!-- Kotlin -->
         <kotlinx-serialization-json.version>1.9.0</kotlinx-serialization-json.version>
-        <kotlin.version>2.2.21</kotlin.version>
+        <kotlin.version>2.3.0</kotlin.version>
         <easymock.version>5.6.0</easymock.version>
         <micrometer.version>1.16.1</micrometer.version>
         <omni-coveragereporter-maven-plugin.version>0.4.5</omni-coveragereporter-maven-plugin.version>
@@ -111,12 +111,12 @@
         <kotlinx-coroutines-core.version>1.10.2</kotlinx-coroutines-core.version>
         <kotlinx-coroutines-core-jvm.version>1.10.2</kotlinx-coroutines-core-jvm.version>
         <springmockk.version>4.0.2</springmockk.version>
-        <testcontainers.version>1.21.3</testcontainers.version>
+        <testcontainers.version>1.21.4</testcontainers.version>
         <kotlinx-coroutines-debug.version>1.10.2</kotlinx-coroutines-debug.version>
         <micrometer-tracing-bridge-otel.version>1.6.1</micrometer-tracing-bridge-otel.version>
         <opentelemetry-exporter-zipkin.version>1.57.0</opentelemetry-exporter-zipkin.version>
         <loki-logback-appender.version>2.0.1</loki-logback-appender.version>
-        <rewrite-maven-plugin.version>6.25.0</rewrite-maven-plugin.version>
+        <rewrite-maven-plugin.version>6.26.0</rewrite-maven-plugin.version>
         <crac.version>1.5.0</crac.version>
     </properties>
 
@@ -136,7 +136,7 @@
                         <dependency>
                             <groupId>org.openrewrite.recipe</groupId>
                             <artifactId>rewrite-spring</artifactId>
-                            <version>6.20.0</version>
+                            <version>6.21.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
