@@ -35,7 +35,7 @@ dependencies {
 kotlin {
 	compilerOptions {
 		freeCompilerArgs.add("-Xjsr305=strict")
-		jvmTarget.set(JVM_21)
+		jvmTarget.set(JVM_25)
 	}
 }
 
