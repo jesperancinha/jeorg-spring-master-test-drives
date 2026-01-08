@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     ignore:
       - dependency-name: "jakarta.servlet:jakarta.servlet-api"
         versions: ["6.0.0"]
@@ -35,7 +35,7 @@ updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       kotlin:
         patterns:
